@@ -7,3 +7,9 @@ The git pull command is used to fetch and download content from a remote reposit
 ```git pull```
 
 ### pushing
+
+```git add .```
+
+```git push```
+
+```git commit -m <nomeCommit>```
