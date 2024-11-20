@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project",
+      "program": "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/build/Debug/outDebug"
+    }
+  ]
+}
