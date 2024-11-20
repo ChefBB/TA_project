@@ -8,7 +8,8 @@ The git pull command is used to fetch and download content from a remote reposit
 
 ### pushing
 
-```git add .```
+```git add '<file>'```
+when creating a new file, specify this
 
 ```git commit -m <nomeCommit>```
 
