@@ -11,12 +11,14 @@ parser = argparse.ArgumentParser(
 path= '/Users/brunobarbieri/Library/CloudStorage/OneDrive-UniversityofPisa/TA_Project/'
 
 parser.add_argument(
-    '--dataset', type=str, required=True,
-    default= path + 'data/lab_lem_merge.csv')
+    '--dataset', type=str, required= False,
+    default= path + 'data/lab_lem_merge.csv'
+)
 
 args = parser.parse_args()
 
 df = pd.read_csv(args.dataset)
+
 
 #########################
 # create folder to save data
@@ -30,6 +32,7 @@ folder_name = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
 folder_path= path + 'neural_networks/' + folder_name
 
 os.makedirs(folder_path)
+
 
 #########################
 # Initialize the tokenizer
@@ -47,6 +50,7 @@ import joblib
 
 joblib.dump(tokenizer, folder_path + '/basic_tokenizer.pkl')
 
+
 #########################
 # add padding
 #########################
@@ -58,24 +62,81 @@ padded_sequences = pad_sequences(
     padding='post', truncating='post'
 )
 
+
+#########################
+# preprocess non-text data
+#########################
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+stanza_numbers = scaler.fit_transform(df[['stanza_number']])
+
+booleans = df[['is_country', 'is_pop', 'is_rap',
+               'is_rb', 'is_rock', 'is_chorus']].astype(int).values
+
+# additional_data = [stanza_numbers] + booleans
+
+
+#########################
+# obtain labels
+#########################
+from tensorflow.keras.utils import to_categorical
+import numpy as np
+
+emotion_mapping = {
+    "joy": 0,
+    "trust": 1,
+    "fear": 2,
+    "surprise": 3,
+    "sadness": 4,
+    "disgust": 5,
+    "anger": 6,
+    "anticipation": 7
+}
+
+labels_indices = np.array([emotion_mapping[label] for label in df['label']])
+
+labels = to_categorical(labels_indices, num_classes=8)
+
+
 #########################
 # 1dconvnet model
 #########################
+import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (
     Input, Embedding, Conv1D, GlobalMaxPooling1D,
-    Dense, Concatenate, Dropout, Flatten
+    Dense, Concatenate, Dropout
 )
 
-text_input = Input(shape=(max_seq_length,), name='text_input')
-embedding = Embedding(
-    input_dim=vocab_size, output_dim= 128,
-    input_length=max_seq_length) (text_input)
-conv1 = Conv1D(filters=64, kernel_size=3, activation='relu')(embedding)
+lyrics_input = Input(shape=(max_seq_length,),name= 'text_input')
+
+embedding_lyrics = Embedding(
+    input_dim= vocab_size, output_dim= 128,
+    input_length= max_seq_length
+) (lyrics_input)
+
+conv1 = Conv1D(
+    filters= 64, kernel_size= 3, activation= 'relu'
+) (embedding_lyrics)
+
 pooling = GlobalMaxPooling1D()(conv1)
 
 # Additional Features Branch
-additional_input = Input(shape=(6,), name='additional_input')
+stanza_number_input = Input(shape=(1,), name='stanza_number')
+
+bool_inputs = [
+    Input(shape= (1,), name= name, dtype= 'int32')
+    for name in [
+        'is_country', 'is_pop', 'is_rap',
+        'is_rb', 'is_rock', 'is_chorus'
+    ]
+]
+
+# Concatenate all inputs
+additional_input = Concatenate(name= 'additional_input') (
+    [stanza_number_input] + bool_inputs
+)
 
 # Combine the Branches
 combined = Concatenate()([pooling, additional_input])
@@ -84,12 +145,22 @@ dropout = Dropout(0.5)(dense1)
 output = Dense(8, activation='softmax', name='output')(dropout)
 
 # Define the Model
-model = Model(inputs=[text_input, additional_input], outputs=output)
+model = Model(
+    inputs=[lyrics_input, stanza_number_input] + bool_inputs,
+    outputs=output
+)
 
 # Compile the Model
 model.compile(
-    optimizer='adam', loss='sparse_categorical_crossentropy',
+    optimizer='adam', loss='categorical_crossentropy',
     metrics=['accuracy']
+)
+
+model.fit(
+    [padded_sequences, stanza_numbers] + list(booleans.T),
+    labels,
+    epochs=5,
+    batch_size=32
 )
 
 # Model Summary
