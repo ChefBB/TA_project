@@ -102,7 +102,6 @@ labels = to_categorical(labels_indices, num_classes=8)
 #########################
 # 1dconvnet model
 #########################
-import tensorflow as tf
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (
     Input, Embedding, Conv1D, GlobalMaxPooling1D,
