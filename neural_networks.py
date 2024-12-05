@@ -100,6 +100,22 @@ labels = to_categorical(labels_indices, num_classes=8)
 
 
 #########################
+# split data
+#########################
+from sklearn.model_selection import train_test_split
+
+(
+    padded_sequences_train, padded_sequences_test,
+    stanza_numbers_train, stanza_numbers_test,
+    booleans_train, booleans_test, 
+    y_train, y_test
+) = train_test_split(
+    padded_sequences, stanza_numbers, booleans,
+    labels, test_size=0.3, random_state=42
+)
+
+
+#########################
 # 1dconvnet model
 #########################
 from tensorflow.keras.models import Model
@@ -156,8 +172,8 @@ model.compile(
 )
 
 model.fit(
-    [padded_sequences, stanza_numbers] + list(booleans.T),
-    labels,
+    [padded_sequences_train, stanza_numbers_train] + list(booleans_train.T),
+    y_train,
     epochs=5,
     batch_size=32
 )
@@ -165,5 +181,55 @@ model.fit(
 # Model Summary
 model.summary()
 
+# Model evaluation on the test set
+loss, accuracy = model.evaluate(
+    [padded_sequences_test, stanza_numbers_test] + list(booleans_test.T), 
+    y_test
+)
+
+
+#########################
 # Save the Model
+#########################
 model.save(folder_path + '/multi_input_emotion_model.h5')
+
+
+#########################
+# roc curve
+#########################
+from sklearn.metrics import roc_curve, auc
+from sklearn.preprocessing import label_binarize
+import matplotlib.pyplot as plt
+
+# Binarize labels for multi-class support
+classes = df['label'].unique()
+y_train_bin = label_binarize(y_train, classes=classes)
+y_test_bin = label_binarize(y_test, classes=classes)
+
+# Get the predicted probabilities from the Keras model
+y_score = model.predict(
+    [padded_sequences_test, stanza_numbers_test] + list(booleans_test.T)
+)
+
+# Plot ROC curves for each class
+plt.figure(figsize=(10, 8))
+for i, class_name in enumerate(classes):
+    # Compute ROC curve and AUC for each class
+    fpr, tpr, _ = roc_curve(y_test_bin[:, i], y_score[:, i])
+    roc_auc = auc(fpr, tpr)
+    plt.plot(fpr, tpr, label=f"Class {class_name} (AUC = {roc_auc:.2f})")
+
+# Add a reference line (y = x)
+plt.plot([0, 1], [0, 1], 'k--', lw=2)
+
+# Configure the plot
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Curve for 1D Convolutional Neural Network")
+plt.legend(loc="lower right")
+plt.grid(alpha=0.3)
+plt.savefig(folder_path + 'roc_curve.png')
+
+plt.show()
