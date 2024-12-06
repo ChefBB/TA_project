@@ -107,7 +107,7 @@ from sklearn.model_selection import train_test_split
 (
     padded_sequences_train, padded_sequences_test,
     stanza_numbers_train, stanza_numbers_test,
-    booleans_train, booleans_test, 
+    booleans_train, booleans_test,
     y_train, y_test
 ) = train_test_split(
     padded_sequences, stanza_numbers, booleans,
@@ -213,7 +213,7 @@ y_score = model.predict(
 )
 
 # Plot ROC curves for each class
-plt.figure(figsize=(10, 8))
+plt.figure(figsize=(8, 6))
 for i, class_name in enumerate(classes):
     # Compute ROC curve and AUC for each class
     fpr, tpr, _ = roc_curve(y_test_bin[:, i], y_score[:, i])
@@ -237,7 +237,7 @@ plt.savefig(folder_path + '/roc_curve.png')
 #########################
 # Training and Validation Loss/Accuracy Curve
 #########################
-plt.figure(figsize=(12, 6))
+plt.figure(figsize=(8, 6))
 plt.plot(history.history['accuracy'], label='Training Accuracy', marker='o')
 plt.plot(history.history['val_accuracy'], label='Validation Accuracy', marker='o')
 plt.title('Training and Validation Accuracy')
