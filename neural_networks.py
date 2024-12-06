@@ -132,7 +132,7 @@ embedding_lyrics = Embedding(
 ) (lyrics_input)
 
 conv1 = Conv1D(
-    filters= 64, kernel_size= 3, activation= 'relu'
+    filters= 64, kernel_size= 5, activation= 'relu'
 ) (embedding_lyrics)
 
 pooling = GlobalMaxPooling1D()(conv1)
@@ -156,7 +156,7 @@ additional_input = Concatenate(name= 'additional_input') (
 # Combine the Branches
 combined = Concatenate()([pooling, additional_input])
 dense1 = Dense(64, activation='relu')(combined)
-dropout = Dropout(0.5)(dense1)
+dropout = Dropout(0.4)(dense1)
 output = Dense(8, activation='softmax', name='output')(dropout)
 
 # Define the Model
@@ -171,10 +171,11 @@ model.compile(
     metrics=['accuracy']
 )
 
-model.fit(
+history = model.fit(
     [padded_sequences_train, stanza_numbers_train] + list(booleans_train.T),
     y_train,
-    epochs=5,
+    validation_split= 0.1,
+    epochs= 10,
     batch_size=32
 )
 
@@ -217,7 +218,7 @@ for i, class_name in enumerate(classes):
     # Compute ROC curve and AUC for each class
     fpr, tpr, _ = roc_curve(y_test_bin[:, i], y_score[:, i])
     roc_auc = auc(fpr, tpr)
-    plt.plot(fpr, tpr, label=f"Class {class_name} (AUC = {roc_auc:.2f})")
+    plt.plot(fpr, tpr, label=f"{class_name} (AUC = {roc_auc:.2f})")
 
 # Add a reference line (y = x)
 plt.plot([0, 1], [0, 1], 'k--', lw=2)
@@ -230,6 +231,18 @@ plt.ylabel("True Positive Rate")
 plt.title("ROC Curve for 1D Convolutional Neural Network")
 plt.legend(loc="lower right")
 plt.grid(alpha=0.3)
-plt.savefig(folder_path + 'roc_curve.png')
+plt.savefig(folder_path + '/roc_curve.png')
 
-plt.show()
+
+#########################
+# Training and Validation Loss/Accuracy Curve
+#########################
+plt.figure(figsize=(12, 6))
+plt.plot(history.history['accuracy'], label='Training Accuracy', marker='o')
+plt.plot(history.history['val_accuracy'], label='Validation Accuracy', marker='o')
+plt.title('Training and Validation Accuracy')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.legend()
+plt.grid(True)
+plt.savefig(folder_path + '/accuracy.png')
