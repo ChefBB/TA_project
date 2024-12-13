@@ -15,6 +15,13 @@ parser.add_argument(
     default= path + 'data/lab_lem_merge.csv'
 )
 
+# 1: 1DConvnet
+# 2: RNN
+parser.add_argument(
+    '--type', type= int, required= False,
+    default= 1
+)
+
 args = parser.parse_args()
 
 df = pd.read_csv(args.dataset)
@@ -27,7 +34,10 @@ import os
 from datetime import datetime
 
 # Get the current date and time as a string in the format DD-MM-YYYY_HH-MM-SS
-folder_name = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
+folder_name = datetime.now().strftime(
+    ('1DConvnet' if args.type == 1 else 'RNN') +
+    "_%d-%m-%Y_%H-%M-%S"
+)
 
 folder_path= path + 'neural_networks/' + folder_name
 
@@ -116,12 +126,12 @@ from sklearn.model_selection import train_test_split
 
 
 #########################
-# 1dconvnet model
+# RNNs
 #########################
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (
     Input, Embedding, Conv1D, GlobalMaxPooling1D,
-    Dense, Concatenate, Dropout
+    Dense, Concatenate, Dropout, GRU
 )
 
 lyrics_input = Input(shape=(max_seq_length,),name= 'text_input')
@@ -131,11 +141,24 @@ embedding_lyrics = Embedding(
     input_length= max_seq_length
 ) (lyrics_input)
 
-conv1 = Conv1D(
-    filters= 64, kernel_size= 5, activation= 'relu'
-) (embedding_lyrics)
+if args.type == 1:
+    conv1 = Conv1D(
+        filters= 64, kernel_size= 5, activation= 'relu'
+    ) (embedding_lyrics)
 
-pooling = GlobalMaxPooling1D()(conv1)
+    pooling = GlobalMaxPooling1D()(conv1)
+    
+if args.type == 2:
+    gru1 = GRU(
+        64, return_sequences= True,
+        name= "recurrent_layer1"
+    ) (embedding_lyrics)
+    recurrent_layers = GRU(
+        64, return_sequences= False,
+        name= "recurrent_layer2"
+    ) (gru1)
+    
+lyrics_dropout = Dropout(0.3) (pooling if args.type == 1 else recurrent_layers)
 
 # Additional Features Branch
 stanza_number_input = Input(shape=(1,), name='stanza_number')
@@ -154,9 +177,11 @@ additional_input = Concatenate(name= 'additional_input') (
 )
 
 # Combine the Branches
-combined = Concatenate()([pooling, additional_input])
+combined = Concatenate()([
+    lyrics_dropout, additional_input
+])
 dense1 = Dense(64, activation='relu')(combined)
-dropout = Dropout(0.4)(dense1)
+dropout = Dropout(0.5)(dense1)
 output = Dense(8, activation='softmax', name='output')(dropout)
 
 # Define the Model
