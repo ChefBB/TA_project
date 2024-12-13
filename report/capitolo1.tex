@@ -3,20 +3,18 @@
 
 % copy-pasted from project proposal
 The dataset used for the project is a set of lyrics of songs extracted
-from the Genius Song Lyrics Dataset (\cite{geniusdataset}).
+from the Genius Song Lyrics Dataset\textsuperscript{\cite{geniusdataset}}.
 The dataset contains 11 attributes
-that represent various song data, including the lyrics. It
-has a total of over 3 million songs by 641,349 different artists.
+that represent various song data, including the lyrics.
 The original dataset includes songs in all languages: for our aim
-we will be using the english ones only. For now we are keeping
-every other column including, of course, the lyrics one, since
-we might be able to use them. Then, each song will be divided
-into its composing stanzas, which are the actual subject of our analysis. 
+we will be using the english ones only. 
 
-In order to create the ground truth to train the models, we will be
-using the already existing Meta's Bart large Multi Natural Language
-Inference (MNLI). We will be using Robert Plutchik's 8 primary emotions
-as labels; the emotions included in this representation are:
+\section{Ground Truth}
+The dataset has no emotion label, which is needed for training the models.
+To create the ground truth for models' training, the model
+Albert Base v2\textsuperscript{\cite{albert-base-v2}} was used.
+The stanzas are labeled using Robert Plutchik's 8 primary emotions;
+the emotions included in this representation are:
 anger, fear, sadness, disgust, surprise, anticipation, trust, and joy.
 Such multifaceted emotions allow us to finely analyze the feelings and
 moods conveyed by songs.

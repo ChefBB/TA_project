@@ -31,6 +31,18 @@
       \verb https://www.kaggle.com/datasets/carlosgdcj/genius-song-lyrics-with-language-information?select=song_lyrics.csv
       \endverb
     \endentry
+    \entry{albert-base-v2}{misc}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{Albert Base v2}
+      \verb{urlraw}
+      \verb https://huggingface.co/albert/albert-base-v2
+      \endverb
+      \verb{url}
+      \verb https://huggingface.co/albert/albert-base-v2
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
