@@ -1,0 +1,9 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\thispagestyle {empty}
+\contentsline {chapter}{Introduction}{1}{}%
+\contentsline {chapter}{\numberline {1}Dataset overview}{2}{}%
+\contentsline {chapter}{\numberline {2}Preprocessing}{3}{}%
+\contentsline {chapter}{\numberline {3}Dataset overview}{4}{}%
+\contentsline {chapter}{\numberline {4}Dataset overview}{5}{}%
+\contentsline {chapter}{Key findings and conclusions}{6}{}%
