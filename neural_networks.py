@@ -158,7 +158,7 @@ if args.type == 2:
         name= "recurrent_layer2"
     ) (gru1)
     
-lyrics_dropout = Dropout(0.3) (pooling if args.type == 1 else recurrent_layers)
+lyrics_dropout = Dropout(0.2) (pooling if args.type == 1 else recurrent_layers)
 
 # Additional Features Branch
 stanza_number_input = Input(shape=(1,), name='stanza_number')
@@ -181,7 +181,7 @@ combined = Concatenate()([
     lyrics_dropout, additional_input
 ])
 dense1 = Dense(64, activation='relu')(combined)
-dropout = Dropout(0.5)(dense1)
+dropout = Dropout(0.3)(dense1)
 output = Dense(8, activation='softmax', name='output')(dropout)
 
 # Define the Model

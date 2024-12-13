@@ -24,7 +24,8 @@
 \usepackage{mathptmx} % font Times New Roman (simile)
 \usepackage{graphicx} % inserimento di immagini
 \usepackage{csquotes} % per le citazioni "in blocco"
-%\usepackage[backend=biber, sorting=nty, ]{biblatex} % bibliografia con pacchetto biblatex (https://ctan.org/pkg/biblatex?lang=en)
+\usepackage[backend=biber, sorting=none, ]{biblatex} % bibliografia con pacchetto biblatex (https://ctan.org/pkg/biblatex?lang=en)
+\addbibresource{bibliography.bib}
 \appto{\bibsetup}{\raggedright}
 
 \usepackage{titlesec} % per la formattazione dei titoli delle sezioni, capitoli etc.
@@ -93,33 +94,20 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 % \end{figure}
 
 \begin{center}
-    % {\LARGE{ Data Science and Business Informatics Master Course \\}}
-    % \vspace{2cm}
-    {\LARGE { TEXT ANALYTICS }}\\
-    \vspace{2cm}
-    {\Large { Group 2 }}\\
+    {\LARGE{ Emotion Detection on song lyrics stanzas \\}}
     \vspace{3cm}
-    {\large { Barbieri, Bosco, Ferrara, Rotellini, Zizza }}
+    {\Large { TEXT ANALYTICS }}\\
+    \vspace{1.5cm}
+    {\Large { Group 2 }}\\
+    \vspace{1.5cm}
+    {\Large { Barbieri, Bosco, Ferrara, Rotellini, Zizza }}
 \end{center}
-
-% \vspace{2cm}
-
-% \begin{minipage}[t]{0.47\textwidth}
-%   {\large{\bf Relatore:\\ Nome Cognome}}
-% 	\vspace{0.5cm}
-% 	{\large{\bf \\Correlatore:\\ Nome Cognome}}
-% \end{minipage}\hfill\begin{minipage}[t]{0.47\textwidth}\raggedleft
-%   {\large{\bf Group 12\\ }}
-%   \vspace{0.5cm}
-  
-% \end{minipage}
-
-% \vspace{25mm}
 
 % \centering{\large{\bf ANNO ACCADEMICO 20xx/20xx }}
 \end{titlepage}
 % Fine frontespizio
 
+\renewcommand{\contentsname}{Index}
 \tableofcontents
 \thispagestyle{empty}
 
@@ -156,10 +144,12 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 
 \addcontentsline{toc}{chapter}{Key findings and conclusions} % Capitolo non numerato
 \input{conclusioni.tex}
+\clearpage
 
-\bibliographystyle{plain} % We choose the "plain" reference style
-\bibliography{bibliography} % Entries are in the refs.bib file
-%\addbibresource{bibliography.bib}
-%\printbibliography
+% \renewcommand{\contentsname}{Bibliography}
+% \bibliographystyle{plain} % We choose the "plain" reference style
+% \bibliography{bibliography} % Entries are in the refs.bib file
+% \addbibresource{bibliography.bib}
+\printbibliography
 
 \end{document}

@@ -1,0 +1,5 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'capitolo1.blg'
+[134] biber:340> INFO - === Fri Dec 13, 2024, 18:35:53
+[407] Utils.pm:410> ERROR - Cannot find 'capitolo1.bcf'!
+[407] Biber.pm:136> INFO - ERRORS: 1
