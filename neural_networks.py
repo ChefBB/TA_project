@@ -118,11 +118,29 @@ from sklearn.model_selection import train_test_split
     padded_sequences_train, padded_sequences_test,
     stanza_numbers_train, stanza_numbers_test,
     booleans_train, booleans_test,
+    titles_train, titles_test,
     y_train, y_test
 ) = train_test_split(
-    padded_sequences, stanza_numbers, booleans,
+    padded_sequences, stanza_numbers, booleans, df['title'],
     labels, test_size=0.3, random_state=42
 )
+
+
+#########################
+# title unsupervised learning
+#########################
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.decomposition import NMF
+import numpy as np
+
+# Convert song titles to a TF-IDF matrix
+tfidf_vectorizer = TfidfVectorizer(max_features=1000, stop_words='english')
+tfidf_matrix_train = tfidf_vectorizer.fit_transform(titles_train)
+
+# Apply NMF for topic modeling
+num_topics = 8
+nmf_model = NMF(n_components=num_topics, random_state=42)
+topic_distributions_train = nmf_model.fit_transform(tfidf_matrix_train)
 
 
 #########################
@@ -171,9 +189,12 @@ bool_inputs = [
     ]
 ]
 
+# title topic
+topic_input = Input(shape=(num_topics,), name="Topic_Input")
+
 # Concatenate all inputs
 additional_input = Concatenate(name= 'additional_input') (
-    [stanza_number_input] + bool_inputs
+    [stanza_number_input, topic_input] + bool_inputs
 )
 
 # Combine the Branches
@@ -186,7 +207,7 @@ output = Dense(8, activation='softmax', name='output')(dropout)
 
 # Define the Model
 model = Model(
-    inputs=[lyrics_input, stanza_number_input] + bool_inputs,
+    inputs=[lyrics_input, stanza_number_input, topic_input] + bool_inputs,
     outputs=output
 )
 
@@ -197,19 +218,28 @@ model.compile(
 )
 
 history = model.fit(
-    [padded_sequences_train, stanza_numbers_train] + list(booleans_train.T),
+    [
+        padded_sequences_train, stanza_numbers_train, topic_distributions_train
+    ] + list(booleans_train.T),
     y_train,
     validation_split= 0.1,
     epochs= 10,
-    batch_size=32
+    batch_size= 32
 )
 
 # Model Summary
 model.summary()
 
+# get test topics
+tfidf_matrix_test = tfidf_vectorizer.fit_transform(titles_test)
+
+topic_distributions_test = nmf_model.transform(tfidf_matrix_test)
+
 # Model evaluation on the test set
 loss, accuracy = model.evaluate(
-    [padded_sequences_test, stanza_numbers_test] + list(booleans_test.T), 
+    [
+        padded_sequences_test, stanza_numbers_test, topic_distributions_test
+    ] + list(booleans_test.T), 
     y_test
 )
 
@@ -234,7 +264,9 @@ y_test_bin = label_binarize(y_test, classes=classes)
 
 # Get the predicted probabilities from the Keras model
 y_score = model.predict(
-    [padded_sequences_test, stanza_numbers_test] + list(booleans_test.T)
+    [
+        padded_sequences_test, stanza_numbers_test, topic_distributions_test
+    ] + list(booleans_test.T)
 )
 
 # Plot ROC curves for each class
