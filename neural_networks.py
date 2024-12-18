@@ -22,6 +22,12 @@ parser.add_argument(
     default= 1
 )
 
+# number of epochs
+parser.add_argument(
+    '--epochs', type= int, required= False,
+    default= 10
+)
+
 args = parser.parse_args()
 
 df = pd.read_csv(args.dataset)
@@ -223,7 +229,7 @@ history = model.fit(
     ] + list(booleans_train.T),
     y_train,
     validation_split= 0.1,
-    epochs= 10,
+    epochs= args.epochs,
     batch_size= 32
 )
 

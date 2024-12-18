@@ -2,9 +2,9 @@
 \babel@toc {italian}{}\relax 
 \thispagestyle {empty}
 \contentsline {chapter}{Introduction}{1}{}%
-\contentsline {chapter}{\numberline {1}Dataset overview}{2}{}%
-\contentsline {section}{\numberline {1.1}Ground Truth}{2}{}%
-\contentsline {chapter}{\numberline {2}Preprocessing}{3}{}%
-\contentsline {chapter}{\numberline {3}Static Models}{4}{}%
-\contentsline {chapter}{\numberline {4}Neural Networks}{5}{}%
-\contentsline {chapter}{Key findings and conclusions}{6}{}%
+\contentsline {chapter}{\numberline {1}Dataset overview}{3}{}%
+\contentsline {section}{\numberline {1.1}Ground Truth}{3}{}%
+\contentsline {chapter}{\numberline {2}Preprocessing}{4}{}%
+\contentsline {chapter}{\numberline {3}Static Models}{5}{}%
+\contentsline {chapter}{\numberline {4}Neural Networks}{6}{}%
+\contentsline {chapter}{Key findings and conclusions}{7}{}%
