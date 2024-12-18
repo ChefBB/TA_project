@@ -12,24 +12,27 @@ Songs have the unique ability to engage people in ways that few other
 mediums can match. While beats and melodies contribute to this impact,
 it is often the lyrics that give songs their true emotional strength.
 Lyrics serve as one of the main foundations of songs, playing
-a crucial role in expressing feelings in many different ways.\\
+a crucial role in expressing feelings in many different ways.
+Analyzing the emotional tone of song texts can give useful insights about individual mental states,
+cultural trends, social issues and more.\\
+% The main goal of this project is to perform emotion detection on stanzas of songs.
+This emotional tone data can be useful
+for many things, such as automatized playlist creation, or songs' organization,
+offering an alternative to the more traditional genre-based classification.\\
 
-Despite this, the focus is often shifted more on song genres, themes,
-or artists, rather than on the specific emotions conveyed through lyrics.
-Analyzing the emotional tone of song texts can give useful insights about cultural trends, social issues,
-individual mental states and more. Furthermore, this type of analysis
-could help identify how specific
-emotional responses are evoked, making it a useful tool across various fields.\\
-
-The main goal of this project is to perform emotion
-detection on stanzas of songs. Lyrics' emotional tone can be useful
-for many things, such as generating potentially useful information for automatized
-playlist creation and songs' organization.\\
-The decision to perform the task on stanzas rather than songs was taken in order
-to gain a deeper understanding of the fluctuations of emotions inside
-songs, as songs often describe complicated situations and states of mind.\\
-
-
+The project's goal was to develop various Machine Learning models that perform this task.
+Instead of detecting emotions for entire songs, the models assign emotion labels
+to individual stanzas, to obtain a deeper understanding of
+emotional fluctuations within the lyrics.
+The emotional classification is based on Robert Plutchik's eight primary emotions
+(shown in figure~\ref{fig:primary_emotions}),
+offering a comprehensive range for representing diverse emotional states.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale= 0.5]{pictures/plutchik_primary_emotions.png}
+    \caption{Plutchik's eight primary emotions}
+    \label{fig:primary_emotions}
+\end{figure}
 
 
 Furthermore, we intend to compare different textual preprocessing and
