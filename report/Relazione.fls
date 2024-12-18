@@ -229,6 +229,11 @@ INPUT ./introduzione.tex
 INPUT ./introduzione.tex
 INPUT introduzione.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT ./pictures/plutchik_primary_emotions.png
+INPUT ./pictures/plutchik_primary_emotions.png
+INPUT ./pictures/plutchik_primary_emotions.png
+INPUT ./pictures/plutchik_primary_emotions.png
+INPUT ./pictures/plutchik_primary_emotions.png
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmro7t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
