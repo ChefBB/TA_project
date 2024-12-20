@@ -3,27 +3,28 @@
 This report illustrates development and findings of Group 2's project for
 the course Text Analytics, Academic Year 2024-2025.
 
-\section*{Team members and roles}
+% \section*{Team members and roles}
 
 
 % copy-pasted from project proposal
 \section*{Motivation and project goal}
-Songs have the unique ability to engage people in ways that few other
-mediums can match. While beats and melodies contribute to this impact,
-it is often the lyrics that give songs their true emotional strength.
-Lyrics serve as one of the main foundations of songs, playing
-a crucial role in expressing feelings in many different ways.
-Analyzing the emotional tone of song texts can give useful insights about individual mental states,
-cultural trends, social issues and more.\\
+% Songs have the unique ability to engage people in ways that few other
+% mediums can match. While beats and melodies contribute to this impact,
+% it is often the lyrics that give songs their true emotional strength.
+% Lyrics serve as one of the main foundations of songs, playing
+% a crucial role in expressing feelings in many different ways.
+% Analyzing the emotional tone of song texts can give useful insights about individual mental states,
+% cultural trends, social issues and more.\\
 % The main goal of this project is to perform emotion detection on stanzas of songs.
-This emotional tone data can be useful
+This project's goal is the development of various Machine Learning models that perform 
+emotion detection on songs' lyrics.\\
+The emotional tone of songs can be useful
 for many things, such as automatized playlist creation, or songs' organization,
 offering an alternative to the more traditional genre-based classification.\\
-
-The project's goal was to develop various Machine Learning models that perform this task.
-Instead of detecting emotions for entire songs, the models assign emotion labels
-to individual stanzas, to obtain a deeper understanding of
-emotional fluctuations within the lyrics.
+To obtain a deeper understanding of
+emotional fluctuations within the texts,
+the models assign emotion labels
+to individual stanzas instead of full songs.
 The emotional classification is based on Robert Plutchik's eight primary emotions
 (shown in figure~\ref{fig:primary_emotions}),
 offering a comprehensive range for representing diverse emotional states.\\
@@ -35,8 +36,22 @@ offering a comprehensive range for representing diverse emotional states.\\
 \end{figure}
 
 
-Furthermore, we intend to compare different textual preprocessing and
-Machine Learning models, in order to explore different possibilities and
-evaluate their performances.
+% Furthermore, we intend to compare different textual preprocessing and
+% Machine Learning models, in order to explore different possibilities and
+% evaluate their performances.
 
-\section*{Chapter overview}
+
+\section*{Dataset overview}
+The dataset utilized in this project represents a subset of songs
+derived from the Genius Song Lyrics Dataset\textsuperscript{\cite{geniusdataset}}.
+The dataset contains 11 attributes
+that represent various song-related information, including the lyrics.
+The original dataset includes songs in all languages; this work focused
+solely on English-language songs.\\
+
+The dataset originally didn't contain emotion labels, essential for training the models.
+To create the ground truth, the model
+Albert Base v2\textsuperscript{\cite{albert-base-v2}} was used, classifying
+stanzas' lyrics into Plutchik's eight primary emotions.
+Due to the limited computational power, this process was time-intensive,
+utlimately resulting in a limited dataset.
