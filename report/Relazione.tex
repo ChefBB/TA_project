@@ -115,6 +115,8 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 \tableofcontents
 \thispagestyle{empty}
 
+
+\renewcommand{\listfigurename}{List of figures}
 \listoffigures
 
 \thispagestyle{empty}
@@ -127,22 +129,23 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 \clearpage
 
 % Dataset overview
-\input{capitolo1.tex}
-
-\clearpage
+% !!! cut, content in intro
+% \input{dataset_overview.tex}
+% 
+% \clearpage
 
 % Preprocessing
-\input{capitolo2.tex}
+\input{preprocessing.tex}
 
 \clearpage
 
 % static models
-\input{capitolo3.tex}
+\input{static_models.tex}
 
 \clearpage
 
 % neural networks
-\input{capitolo4.tex}
+\input{neural_networks.tex}
 
 \clearpage
 

@@ -49,6 +49,23 @@ folder_path= path + 'neural_networks/' + folder_name
 
 os.makedirs(folder_path)
 
+#########################
+# undersampling
+#########################
+# from sklearn.utils import resample
+
+# # Find the smallest class size
+# min_size = df['label'].value_counts().min()
+
+# # Downsample each class to the smallest size
+# downsampled_samples = []
+# for class_label, group in df.groupby('label'):
+#     sampled_group = resample(group, replace=False, n_samples=min_size, random_state=42)
+#     downsampled_samples.append(sampled_group)
+
+# # Combine the downsampled groups
+# df = pd.concat(downsampled_samples)
+
 
 #########################
 # Initialize the tokenizer
@@ -128,7 +145,7 @@ from sklearn.model_selection import train_test_split
     y_train, y_test
 ) = train_test_split(
     padded_sequences, stanza_numbers, booleans, df['title'],
-    labels, test_size=0.3, random_state=42
+    labels, test_size=0.2, random_state=42
 )
 
 
@@ -150,7 +167,7 @@ topic_distributions_train = nmf_model.fit_transform(tfidf_matrix_train)
 
 
 #########################
-# RNNs
+# NNs
 #########################
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (
@@ -165,6 +182,7 @@ embedding_lyrics = Embedding(
     input_length= max_seq_length
 ) (lyrics_input)
 
+# CNN
 if args.type == 1:
     conv1 = Conv1D(
         filters= 64, kernel_size= 5, activation= 'relu'
@@ -172,13 +190,14 @@ if args.type == 1:
 
     pooling = GlobalMaxPooling1D()(conv1)
     
+# RNN
 if args.type == 2:
     gru1 = GRU(
         64, return_sequences= True,
         name= "recurrent_layer1"
     ) (embedding_lyrics)
     recurrent_layers = GRU(
-        64, return_sequences= False,
+        32, return_sequences= False,
         name= "recurrent_layer2"
     ) (gru1)
     
@@ -228,7 +247,7 @@ history = model.fit(
         padded_sequences_train, stanza_numbers_train, topic_distributions_train
     ] + list(booleans_train.T),
     y_train,
-    validation_split= 0.1,
+    validation_split= 0.2,
     epochs= args.epochs,
     batch_size= 32
 )
