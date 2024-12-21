@@ -1,18 +1,19 @@
 # Fdb version 4
-["biber Relazione"] 1734693233.81044 "Relazione.bcf" "Relazione.bbl" "Relazione" 1734694044.06013 0
-  "Relazione.bcf" 1734694043.78731 107825 47bf2b6f3130d62e9a0e4485c1cb80ee "pdflatex"
+["biber Relazione"] 1734693233.81044 "Relazione.bcf" "Relazione.bbl" "Relazione" 1734779725.52554 0
+  "Relazione.bcf" 1734779725.30652 107825 47bf2b6f3130d62e9a0e4485c1cb80ee "pdflatex"
   "bibliography.bib" 1734112379.21561 281 f725ed65e945b73067ef6b9e459276b9 ""
   (generated)
   "Relazione.bbl"
   "Relazione.blg"
   (rewritten before read)
-["pdflatex"] 1734694040.62743 "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" "Relazione.pdf" "Relazione" 1734694044.06085 0
+["pdflatex"] 1734779722.85384 "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" "Relazione.pdf" "Relazione" 1734779725.52622 0
   "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" 1734693822.21507 5584 209cf0ea14d963c372f631d963c3f568 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm" 1136768653 2124 2601a75482e9426d33db523edf23570a ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm" 1136768653 1352 fa28a7e6d323c65ce7d13d5342ff6be2 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm" 1136768653 4408 25b74d011a4c66b7f212c0cc3c90061b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmrc7t.tfm" 1136768653 2680 312a2d12b1f1df8ee0212e7ba1962402 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm" 1136768653 2288 f478fc8fed18759effb59f3dad7f3084 ""
@@ -30,6 +31,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb" 1136849748 45458 a3faba884469519614ca56ba5f6b1de1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf" 1136768653 1372 788387fea833ef5963f4c5bffe33eb89 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf" 1136768653 1380 0ea3a3370054be6da6acd929ec569f06 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf" 1136768653 3556 8a9a6dcbcd146ef985683f677f4758a6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmrc7t.vf" 1136768653 1948 7330aeef3af211edff3b35fb2c12a0fd ""
   "/usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf" 1136768653 1384 a9d8adaf491ce34e5fba99dc7bbe5f39 ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -97,6 +99,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omxztmcm.fd" 1137110629 329 c8cddcc90b6f567b28408eb374773c9c ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd" 1137110629 961 15056f4a61917ceed3a44e4ac11fcc52 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd" 1137110629 329 aee7226812ba4138ac67a018466b488d ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd" 1137110629 619 96f56dc5d1ef1fe1121f1cfeec70ee0c ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty" 1698436711 48766 0b93839be28e9744a24c45075c75b2e2 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty" 1698869629 12667 e4b5eb11e4b7239e6c8a52bbe074a6c6 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty" 1698869629 7147 d45559f8a31b8c53ada0640516660003 ""
@@ -106,14 +109,14 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1718359646.02718 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1718359419 8221430 7882b9a7879b697c1714b9ec0b6e673c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Relazione.aux" 1734694043.78054 2200 828c96e882c8ace0183c811ee09b18a4 "pdflatex"
+  "Relazione.aux" 1734779725.29646 2200 828c96e882c8ace0183c811ee09b18a4 "pdflatex"
   "Relazione.bbl" 1734693236.34666 1487 001cada2f2bbad48e8ccdc642e220945 "biber Relazione"
-  "Relazione.lof" 1734694043.78916 215 1857f2eaadfa02d505a79f31f1a24989 "pdflatex"
-  "Relazione.run.xml" 1734694043.78883 2342 970c0f2d0f46e721449f504a912ff2cf "pdflatex"
+  "Relazione.lof" 1734779725.30897 215 1857f2eaadfa02d505a79f31f1a24989 "pdflatex"
+  "Relazione.run.xml" 1734779725.30856 2342 970c0f2d0f46e721449f504a912ff2cf "pdflatex"
   "Relazione.tex" 1734693822.21507 5584 209cf0ea14d963c372f631d963c3f568 ""
-  "Relazione.toc" 1734694043.78907 649 e74cdb8876240668db05bb876fc17a14 "pdflatex"
+  "Relazione.toc" 1734779725.30885 649 e74cdb8876240668db05bb876fc17a14 "pdflatex"
   "conclusioni.tex" 1730279224.25046 62 7089c5b6b39378069969b592fc5a44b9 ""
-  "introduzione.tex" 1734693653.85296 2698 624bab3f1c903c9ae575e35ba6258bd7 ""
+  "introduzione.tex" 1734779722.43552 3685 46d1958035843f0d19b2286a289df92d ""
   "neural_networks.tex" 1734693976.04185 138 845701219702ee1417c02c90f94ad819 ""
   "pictures/plutchik_primary_emotions.png" 1734535482.46716 53124 2dc2318f2b06154e3cbbbaaa4e7ed1fa ""
   "preprocessing.tex" 1734107667.80373 45 8583005022378ce4cef4a0d2ea062e03 ""

@@ -44,14 +44,43 @@ offering a comprehensive range for representing diverse emotional states.\\
 \section*{Dataset overview}
 The dataset utilized in this project represents a subset of songs
 derived from the Genius Song Lyrics Dataset\textsuperscript{\cite{geniusdataset}}.
-The dataset contains 11 attributes
-that represent various song-related information, including the lyrics.
 The original dataset includes songs in all languages; this work focused
-solely on English-language songs.\\
+solely on English-language songs.
+The dataset contains various attributes. The ones relevant
+for model training are:
 
-The dataset originally didn't contain emotion labels, essential for training the models.
-To create the ground truth, the model
-Albert Base v2\textsuperscript{\cite{albert-base-v2}} was used, classifying
-stanzas' lyrics into Plutchik's eight primary emotions.
-Due to the limited computational power, this process was time-intensive,
-utlimately resulting in a limited dataset.
+\begin{itemize}
+    \item \textbf{title:} the song's title;
+    % \item \textbf{artist:} the artist
+    % \item \textbf{year:}
+    % \item \textbf{views:}
+    % \item \textbf{features:}
+
+    % \item \textbf{id:}
+    \item \textbf{lemmatized\_stanzas:} lyrics of the single stanza;
+    
+    \item \textbf{stanza\_number:} identifies the position of the stanza in the song;
+
+    \item \textbf{is\_chorus:} boolean variable that attests whether the stanza is
+        a chorus;
+    
+    \item \textbf{tag:} represents the genre of the song. for easier handling,
+        it is split into boolean attributes
+        (is\_country, is\_pop, is\_rap, is\_rb, is\_rock);
+
+    \item \textbf{label:} represents the emotional classification of the stanza,
+        assigned by Albert Base v2\textsuperscript{\cite{albert-base-v2}} model.
+    
+    % \item \textbf{is\_country:}
+    % \item \textbf{is\_pop:}
+    % \item \textbf{is\_rap:}
+    % \item \textbf{is\_rb:}
+    % \item \textbf{is\_rock:}
+\end{itemize}
+
+% The dataset originally didn't contain emotion labels, essential for training the models.
+% To create the ground truth, the model
+% Albert Base v2\textsuperscript{\cite{albert-base-v2}} was used, classifying
+% stanzas' lyrics into Plutchik's eight primary emotions.
+Due to limited computational power, the labeling process was time-intensive,
+ultimately resulting in a limited dataset.\\
