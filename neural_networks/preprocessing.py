@@ -34,16 +34,15 @@ def preprocess (df: pd.DataFrame, folder_path: str) -> tuple:
     # !!! does not seem to help
     # from sklearn.utils import resample
 
-    # # Find the smallest class size
     # min_size = df['label'].value_counts().min()
 
-    # # Downsample each class to the smallest size
     # downsampled_samples = []
     # for class_label, group in df.groupby('label'):
-    #     sampled_group = resample(group, replace=False, n_samples=min_size, random_state=42)
+    #     sampled_group = resample(
+    #         group, replace=False, n_samples=min_size, random_state=42
+    #     )
     #     downsampled_samples.append(sampled_group)
 
-    # # Combine the downsampled groups
     # df = pd.concat(downsampled_samples)
 
 
@@ -78,6 +77,7 @@ def preprocess (df: pd.DataFrame, folder_path: str) -> tuple:
     
     joblib.dump(nmf_model, folder_path + '/nmf_model.joblib')
     
+    # apply to test set
     topic_distributions_test = topic_analysis(
         tfidf_vectorizer= tfidf_vectorizer,
         nmf_model= nmf_model,
@@ -109,6 +109,7 @@ def preprocess (df: pd.DataFrame, folder_path: str) -> tuple:
     
     joblib.dump(scaler, folder_path + '/scaler.joblib')
     
+    # apply on test set
     scaled_stanza_numbers_test = scale_stanza_numbers(scaler, stanza_numbers_test)
     
     
