@@ -71,6 +71,7 @@ from tensorflow.keras.layers import (
     Input, Embedding, Conv1D, GlobalMaxPooling1D,
     Dense, Concatenate, Dropout, GRU
 )
+from tensorflow.keras.optimizers import RMSprop
 
 lyrics_input = Input(shape=(preprocessing.max_seq_length,),name= 'text_input')
 
@@ -81,26 +82,44 @@ embedding_lyrics = Embedding(
 
 # CNN
 if args.type == 1:
-    conv1 = Conv1D(
-        filters= 64, kernel_size= 5, activation= 'relu'
+    conv = Conv1D(
+        filters= 64, kernel_size= 8, activation= 'relu',
+        name= 'conv_layer1'
     ) (embedding_lyrics)
+    
+    conv = Conv1D(
+        filters= 32, kernel_size= 8, activation= 'relu',
+        name= 'conv_layer2'
+    ) (conv)
 
-    pooling = GlobalMaxPooling1D()(conv1)
+    pooling = GlobalMaxPooling1D()(conv)
     
 # RNN
 if args.type == 2:
-    gru1 = GRU(
-        64, return_sequences= True,
-        name= "recurrent_layer1", dropout= 0.3
+    recurrent_layer = GRU(
+        128, return_sequences= True,
+        name= "recurrent_layer1",
+        activation='tanh', recurrent_activation='sigmoid',
+        dropout= 0.4, recurrent_dropout= 0.3
     ) (embedding_lyrics)
+    
+    recurrent_layer = GRU(
+        64, return_sequences= True,
+        name= "recurrent_layer2",
+        activation='tanh', recurrent_activation='sigmoid',
+        dropout= 0.4, recurrent_dropout= 0.3
+    ) (recurrent_layer)
     
     recurrent_layers = GRU(
         32, return_sequences= False,
-        name= "recurrent_layer2"
-    ) (gru1)
+        activation='tanh', recurrent_activation='sigmoid',
+        name= "recurrent_layer3"
+    ) (recurrent_layer)
 
     
-lyrics_dropout = Dropout(0.3) (pooling if args.type == 1 else recurrent_layers)
+lyrics_dropout = Dropout(0.3 if args.type == 1
+                         else 0.5) (pooling if args.type == 1
+                                    else recurrent_layers)
 
 # additional features
 stanza_number_input = Input(shape=(1,), name='stanza_number')
@@ -117,9 +136,14 @@ bool_inputs = [
 topic_input = Input(shape=(preprocessing.num_topics,), name="Topic_Input")
 
 # concatenate all inputs
-additional_input = Concatenate(name= 'additional_input') (
+additional_input = Concatenate() (
     [stanza_number_input, topic_input] + bool_inputs
 )
+
+additional_input = Dense(
+    32, activation= 'relu',
+    name= 'additional_input'
+)(additional_input)
 
 # combine branches
 combined = Concatenate()([
@@ -136,7 +160,8 @@ model = Model(
 )
 
 model.compile(
-    optimizer='adam', loss='categorical_crossentropy',
+    optimizer=('adam' if args.type == 1 else RMSprop(learning_rate=0.001)),
+    loss='categorical_crossentropy',
     metrics=['accuracy']
 )
 
