@@ -84,22 +84,22 @@ embedding_lyrics = Embedding(
 # CNN
 if args.type == 1:
     conv = Conv1D(
-        filters= 128, kernel_size= 5, activation= 'relu',
+        filters= 12, kernel_size= 4, activation= 'relu',
         name= 'conv_layer1'
     ) (embedding_lyrics)
     
-    conv = Conv1D(
-        filters= 64, kernel_size= 8, activation= 'relu',
-        name= 'conv_layer2'
-    ) (conv)
+    # conv = Conv1D(
+    #     filters= 64, kernel_size= 8, activation= 'relu',
+    #     name= 'conv_layer2'
+    # ) (conv)
     
     conv = Conv1D(
-        filters= 32, kernel_size= 16, activation= 'relu',
+        filters= 8, kernel_size= 6, activation= 'relu',
         name= 'conv_layer3'
     ) (conv)
     
     conv = Conv1D(
-        filters= 32, kernel_size= 32, activation= 'relu',
+        filters= 6, kernel_size= 8, activation= 'relu',
         name= 'conv_layer4'
     ) (conv)
 
@@ -196,7 +196,8 @@ loss, accuracy = model.evaluate(x_test, y_test)
 
 y_pred = model.predict(x_test)
 
-y_pred_bin = np.argmax(y_pred, axis=1)
+y_test_encoded = np.argmax(y_test, axis=1)
+y_pred_encoded = np.argmax(y_pred, axis=1)
 
 
 #########################
@@ -215,6 +216,6 @@ graphs.roc_curve_graph(
 
 graphs.accuracy_curve(history, folder_path)
 
-graphs.confusion_matrix_graph(y_test, y_pred_bin, classes, folder_path)
+graphs.confusion_matrix_graph(y_test_encoded, y_pred_encoded, classes, folder_path)
 
-graphs.plot_class_wise_accuracy(y_test, y_pred_bin, classes, folder_path)
+graphs.plot_class_wise_accuracy(y_test_encoded, y_pred_encoded, classes, folder_path)
