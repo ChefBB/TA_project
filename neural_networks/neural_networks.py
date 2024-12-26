@@ -2,6 +2,7 @@ import argparse
 import pandas as pd
 import preprocessing
 import graphs
+import numpy as np
 
 #########################
 # arguments
@@ -83,13 +84,23 @@ embedding_lyrics = Embedding(
 # CNN
 if args.type == 1:
     conv = Conv1D(
-        filters= 64, kernel_size= 8, activation= 'relu',
+        filters= 128, kernel_size= 5, activation= 'relu',
         name= 'conv_layer1'
     ) (embedding_lyrics)
     
     conv = Conv1D(
-        filters= 32, kernel_size= 8, activation= 'relu',
+        filters= 64, kernel_size= 8, activation= 'relu',
         name= 'conv_layer2'
+    ) (conv)
+    
+    conv = Conv1D(
+        filters= 32, kernel_size= 16, activation= 'relu',
+        name= 'conv_layer3'
+    ) (conv)
+    
+    conv = Conv1D(
+        filters= 32, kernel_size= 32, activation= 'relu',
+        name= 'conv_layer4'
     ) (conv)
 
     pooling = GlobalMaxPooling1D()(conv)
@@ -183,22 +194,27 @@ x_test = [
 
 loss, accuracy = model.evaluate(x_test, y_test)
 
+y_pred = model.predict(x_test)
+
+y_pred_bin = np.argmax(y_pred, axis=1)
+
 
 #########################
 # Save the Model
 #########################
 model.save(folder_path + '/multi_input_emotion_model.h5')
 
-
-test_data = [
-    padded_sequences_test, stanza_numbers_test, topic_distributions_test
-] + list(booleans_test.T)
+classes = df['label'].unique()
 
 graphs.roc_curve_graph(
-    model, classes = df['label'].unique(),
+    y_pred = y_pred,
+    classes = classes,
     folder_path= folder_path,
-    x_test= x_test,
     y_test= y_test
 )
 
 graphs.accuracy_curve(history, folder_path)
+
+graphs.confusion_matrix_graph(y_test, y_pred_bin, classes, folder_path)
+
+graphs.plot_class_wise_accuracy(y_test, y_pred_bin, classes, folder_path)
