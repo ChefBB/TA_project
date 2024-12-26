@@ -4,24 +4,22 @@
 from sklearn.metrics import roc_curve, auc
 from sklearn.preprocessing import label_binarize
 import matplotlib.pyplot as plt
-from tensorflow.keras.models import Model
 from tensorflow.keras.callbacks import History
 import pandas as pd
+from sklearn.metrics import ConfusionMatrixDisplay
+import numpy as np
 
 
 #########################
 # ROC Curve
 #########################
-def roc_curve_graph(model: Model, classes: pd.Series | list, folder_path: str, x_test, y_test):
+def roc_curve_graph(y_test, y_pred, classes: pd.Series | list,
+                    folder_path: str):
     y_test_bin = label_binarize(y_test, classes=classes)
-
-    y_score = model.predict(
-        x_test
-    )
 
     plt.figure(figsize=(8, 6))
     for i, class_name in enumerate(classes):
-        fpr, tpr, _ = roc_curve(y_test_bin[:, i], y_score[:, i])
+        fpr, tpr, _ = roc_curve(y_test_bin[:, i], y_pred[:, i])
         roc_auc = auc(fpr, tpr)
         plt.plot(fpr, tpr, label=f"{class_name} (AUC = {roc_auc:.2f})")
 
@@ -51,3 +49,40 @@ def accuracy_curve(history: History, folder_path: str):
     plt.legend()
     plt.grid(True)
     plt.savefig(folder_path + '/accuracy.png')
+    
+
+#########################
+# Confusion matrix graph
+#########################
+def confusion_matrix_graph(y_test, y_pred, classes: pd.Series | list,
+                           folder_path: str):
+    print(y_test)
+    print(y_pred)
+    ConfusionMatrixDisplay.from_predictions(y_test, y_pred, display_labels= classes)
+    plt.title("Confusion Matrix")
+    plt.savefig(folder_path + '/confusion_matrix.png')
+
+
+#########################
+# Confusion matrix graph
+#########################
+def plot_class_wise_accuracy(y_test, y_pred, classes: pd.Series | list, folder_path: str):
+    class_accuracies = []
+    for i, label in enumerate(classes):
+        indices = np.where(np.array(y_test) == i)
+        correct = np.sum(np.array(y_pred)[indices] == i)
+        total = len(indices[0])
+        class_accuracy = correct / total if total > 0 else 0
+        class_accuracies.append(class_accuracy)
+    
+    plt.figure(figsize=(10, 6))
+    plt.bar(classes, class_accuracies, color="skyblue", edgecolor="black")
+    plt.xlabel("Classes")
+    plt.ylabel("Accuracy")
+    plt.title("Class-Wise Accuracy")
+    plt.ylim(0, 1)
+    plt.xticks(rotation=45, ha="right")
+    for i, acc in enumerate(class_accuracies):
+        plt.text(i, acc + 0.02, f"{acc:.2f}", ha="center", va="bottom", fontsize=10)
+    
+    plt.savefig(folder_path + '/class_accuracy.png')
