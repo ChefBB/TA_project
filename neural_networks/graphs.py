@@ -75,8 +75,9 @@ def plot_class_wise_accuracy(y_test, y_pred, classes: pd.Series | list, folder_p
         class_accuracy = correct / total if total > 0 else 0
         class_accuracies.append(class_accuracy)
     
-    plt.figure(figsize=(12, 12))
+    plt.figure(figsize=(10, 8))
     plt.bar(classes, class_accuracies)
+    plt.grid()
     plt.xlabel("Classes")
     plt.ylabel("Accuracy")
     plt.title("Class-Wise Accuracy")
