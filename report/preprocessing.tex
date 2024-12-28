@@ -1,5 +1,30 @@
 \chapter{Preprocessing}
 \label{ch:capitolo2}
 
-The first step in the preprocessing phase involved sampling the original dataset while preserving the original proportions of the different genres. 
-This ensured that the genre distribution in the subset remained representative of the full dataset.
+The first step in the preprocessing phase involved sampling from the original dataset while preserving the proportions of the different genres. 
+This ensured that the genre distribution in the subset remained representative of the full dataset.\\
+\\
+The preliminary text cleaning process focused on the \textit{lyrics} attribute, which was the attribute of the original dataset that contained
+the entire lyrics of each song (in string format). Initially, we built a RegEx to clean the lyrics' strings from noise, specifically targeting words enclosed between square brackets that were irrelevant for the stanza splitting process.
+Many of the keywords marking different stanzas were written within square brackets, and removing the non-keyword items within brackets was essential to prevent potential issues. \\
+The crucial step was the stanza splitting. After cleaning the strings from the noisy square-bracketed items, we split them based on various keywords used to denote stanzas (such as \textit{chorus, verse, intro, outro, refrain, hook} etc.). 
+The RegEx we developed also accounted for the different formats in which these keywords appeared; between square brackets, parentheses, without brackets, only a double newline character between one stanza and the other.
+The output of this step was, for each song record, a list of stings, corresponding to a list of stanzas (with the stanza's header as the corresponding keyword). \\
+Next, we removed the resulting strings that were uninformative; such as empty strings or those with fewer than 20 characters, which were too short to provide useful content. \\
+As a result, the output of this preliminary preprocessing phase is a dataset in which the records are not whole songs anymore but single stanzas; each numbered based on its position in the song. \\
+\\
+A further and deeper cleaning process on the stanzas involved the creation of the boolean feature \textit{is\_chorus}; \textit{true} value for repeated stanzas for the same song or stanzas that had \textit{hook, chorus, refrain, bridge} as a header. \\
+We then removed the stanza headers and the newline characters between verses to obtain cleaner stanzas. \\ 
+Since choruses, hooks, bridges and refrains often repeat throughout songs, we decided to drop duplicate stanzas in order to avoid redundant data.
+This resulted in a dataset of cleaned and non-duplicate stanzas: the starting point for the text lemmatization process.
+\\
+The next step involved lemmatizing stanzas using the \textit{spaCy} library. We created a list of lemmatized tokens (filtering punctuation and empty words). 
+We opted for lemmatization over stemming because lemmatization produces more accurate and meaningful results, particularly for tasks requiring semantic understanding, such as in our case.
+
+
+
+
+
+
+
+
