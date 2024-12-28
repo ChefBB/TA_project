@@ -216,6 +216,10 @@ graphs.roc_curve_graph(
 
 graphs.accuracy_curve(history, folder_path)
 
-graphs.confusion_matrix_graph(y_test_encoded, y_pred_encoded, classes, folder_path)
+graphs.confusion_matrix_graph(
+    y_test_encoded, y_pred_encoded, classes, folder_path
+)
 
-graphs.plot_class_wise_accuracy(y_test_encoded, y_pred_encoded, classes, folder_path)
+graphs.plot_class_wise_accuracy(
+    y_test_encoded, y_pred_encoded, classes, folder_path
+)
