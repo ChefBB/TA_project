@@ -176,6 +176,10 @@ INPUT ./abstract.tex
 INPUT abstract.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
 INPUT ./introduzione.tex
 INPUT ./introduzione.tex
@@ -217,6 +221,7 @@ INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT ./pictures/plutchik_primary_emotions.png
@@ -230,13 +235,8 @@ INPUT ./preprocessing.tex
 INPUT ./preprocessing.tex
 INPUT preprocessing.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT ./static_models.tex
 INPUT ./static_models.tex
 INPUT static_models.tex
