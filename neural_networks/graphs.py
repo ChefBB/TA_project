@@ -41,8 +41,8 @@ def roc_curve_graph(y_test, y_pred, classes: pd.Series | list,
 #########################
 def accuracy_curve(history: History, folder_path: str):
     plt.figure(figsize=(8, 6))
-    plt.plot(history.history['accuracy'], label='Training Accuracy', marker='o')
-    plt.plot(history.history['val_accuracy'], label='Validation Accuracy', marker='o')
+    plt.plot(history.history['categorical_accuracy'], label='Training Accuracy', marker='o')
+    plt.plot(history.history['val_categorical_accuracy'], label='Validation Accuracy', marker='o')
     plt.title('Training and Validation Accuracy')
     plt.xlabel('Epochs')
     plt.ylabel('Accuracy')
@@ -57,7 +57,7 @@ def accuracy_curve(history: History, folder_path: str):
 def confusion_matrix_graph(y_test, y_pred, classes: pd.Series | list,
                            folder_path: str):
     ConfusionMatrixDisplay.from_predictions(y_test, y_pred, display_labels= classes)
-    plt.figure(figsize= (12, 12))
+    # plt.figure(figsize= (12, 12))
     plt.title("Confusion Matrix")
     plt.xticks(rotation= 90)
     plt.savefig(folder_path + '/confusion_matrix.png')
