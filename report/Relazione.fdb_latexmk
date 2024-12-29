@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber Relazione"] 1735481952.47363 "Relazione.bcf" "Relazione.bbl" "Relazione" 1735508828.50629 0
-  "Relazione.bcf" 1735508827 107825 078555ea9f76382054247207ba136185 "pdflatex"
+["biber Relazione"] 1735481952.47363 "Relazione.bcf" "Relazione.bbl" "Relazione" 1735509363.73673 0
+  "Relazione.bcf" 1735509362 107825 078555ea9f76382054247207ba136185 "pdflatex"
   "bibliography.bib" 1734112379.21561 281 f725ed65e945b73067ef6b9e459276b9 ""
   (generated)
   "Relazione.bbl"
   "Relazione.blg"
   (rewritten before read)
-["pdflatex"] 1735508826.19839 "c:/Users/Gagia/Desktop/progetto TXA/report/Relazione.tex" "Relazione.pdf" "Relazione" 1735508828.50771 0
+["pdflatex"] 1735509361.60591 "c:/Users/Gagia/Desktop/progetto TXA/report/Relazione.tex" "Relazione.pdf" "Relazione" 1735509363.7378 0
   "C:/Users/Gagia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1735202916 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Gagia/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1730486100 11948315 6548ab8caeecfc235d79a24208231612 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -105,15 +105,15 @@
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1718356376 7243 e5dac1240636811edb77568b81818372 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Relazione.aux" 1735508827 2386 6c1aa8d366d5882b6421ce48ad0e2ca6 "pdflatex"
+  "Relazione.aux" 1735509362 2386 6c1aa8d366d5882b6421ce48ad0e2ca6 "pdflatex"
   "Relazione.bbl" 0 -1 0 "biber Relazione"
-  "Relazione.lof" 1735508827 185 c789822d8e808ccbcabed3a40b43711d "pdflatex"
-  "Relazione.run.xml" 1735508827 2342 39703a4b1b390891bcfc527fce93ed41 "pdflatex"
+  "Relazione.lof" 1735509363 185 c789822d8e808ccbcabed3a40b43711d "pdflatex"
+  "Relazione.run.xml" 1735509363 2342 39703a4b1b390891bcfc527fce93ed41 "pdflatex"
   "Relazione.tex" 1735506929 6071 6a8b9b0a781b4a1870fa5187723bbeec ""
   "abstract.tex" 1735508825 1755 eec6dbbca7ca17e6286a4f128473c2e6 ""
   "c:/Users/Gagia/Desktop/progetto TXA/report/Relazione.tex" 1735506929 6071 6a8b9b0a781b4a1870fa5187723bbeec ""
   "conclusioni.tex" 1735204911 62 7089c5b6b39378069969b592fc5a44b9 ""
-  "introduzione.tex" 1735507699 2602 ded2b4047c72995ef41c48805d40a8f9 ""
+  "introduzione.tex" 1735509360 2617 d335d66e2dfaf6cbedd73be626fa7db9 ""
   "neural_networks.tex" 1735204937 138 845701219702ee1417c02c90f94ad819 ""
   "pictures/plutchik_primary_emotions.png" 1735204971 53124 c92c5ae70719468a069243c05127e594 ""
   "preprocessing.tex" 1735508586 8374 8164154e3e13d822b93f7655257e36ae ""

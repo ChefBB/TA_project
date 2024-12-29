@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  29 DEC 2024 22:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  29 DEC 2024 22:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -645,10 +645,10 @@ Overfull \vbox (9.74998pt too high) has occurred while \output is active []
 <pictures/plutchik_primary_emotions.png, id=7, 357.335pt x 356.33125pt>
 File: pictures/plutchik_primary_emotions.png Graphic file (type png)
 <use pictures/plutchik_primary_emotions.png>
-Package pdftex.def Info: pictures/plutchik_primary_emotions.png  used on input line 30.
+Package pdftex.def Info: pictures/plutchik_primary_emotions.png  used on input line 29.
 (pdftex.def)             Requested size: 107.20132pt x 106.90019pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--33
+Underfull \hbox (badness 10000) in paragraph at lines 12--32
 
  []
 
@@ -767,7 +767,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  123i,21n,121p,1231b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (9 pages, 101202 bytes).
+Output written on Relazione.pdf (9 pages, 101221 bytes).
 PDF statistics:
  56 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
