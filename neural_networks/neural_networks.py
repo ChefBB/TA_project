@@ -160,7 +160,7 @@ additional_input = Dense(
 combined = Concatenate()([
     lyrics_dropout, additional_input
 ])
-dense1 = Dense(64, activation='relu')(combined)
+dense1 = Dense(32, activation='relu')(combined)
 dropout = Dropout(0.3)(dense1)
 output = Dense(8, activation='softmax', name='output')(dropout)
 
@@ -170,10 +170,13 @@ model = Model(
     outputs=output
 )
 
+
+from tensorflow.keras.metrics import TopKCategoricalAccuracy
+
 model.compile(
     optimizer=('adam' if args.type == 1 else RMSprop(learning_rate=0.001)),
     loss='categorical_crossentropy',
-    metrics=['accuracy']
+    metrics=['categorical_accuracy']
 )
 
 history = model.fit(

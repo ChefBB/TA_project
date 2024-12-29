@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  26 DEC 2024 20:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  28 DEC 2024 13:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -664,23 +664,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--126
 
 [2] (./preprocessing.tex
 Capitolo 1.
-) [3
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--23
+
+ []
 
 
-] (./static_models.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--23
+
+ []
+
+[3
+
+
+]) [4] (./static_models.tex
 Capitolo 2.
-) [4
+) [5
 
 
 ] (./neural_networks.tex
 Capitolo 3.
-) [5
+) [6
 
 
-] (./conclusioni.tex) [6
+] (./conclusioni.tex) [7
 
 
-] [7
+] [8
 
 
 ] (./Relazione.aux)
@@ -695,16 +705,16 @@ Package logreq Info: Writing requests to 'Relazione.run.xml'.
 Here is how much of TeX's memory you used:
  16188 strings out of 474116
  318390 string characters out of 5743682
- 1935187 words of memory out of 5000000
+ 1937187 words of memory out of 5000000
  38356 multiletter control sequences out of 15000+600000
  581068 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,19n,121p,1215b,1787s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (9 pages, 95481 bytes).
+Output written on Relazione.pdf (10 pages, 100093 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 61 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
