@@ -14,7 +14,7 @@
 \linespread{1.5}
 
 % Librerie utili
-\usepackage[italian]{babel} % applicazione regole di scrittura per la lingua italiana 
+\usepackage[english]{babel} % applicazione regole di scrittura per la lingua italiana 
 \usepackage[utf8]{inputenc} % codifica UTF-8
 \usepackage{scrlayer-scrpage} % stili pagina per il frontespizio
 \ifoot[]{}
@@ -100,7 +100,7 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 \begin{center}
     {\LARGE{ Emotion Detection in Song Lyrics Stanzas \\}}
     \vspace{3cm}
-    {\Large { TEXT ANALYTICS }}\\
+    {\Large { TEXT ANALYTICS - A.Y. 2024/2025 }}\\
     \vspace{1.5cm}
     {\Large { Group 2 }}\\
     \vspace{1.5cm}
@@ -112,19 +112,21 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 % Fine frontespizio
 
 
-
-
-\renewcommand{\listfigurename}{List of figures}
-\listoffigures
-
-\thispagestyle{empty}
-\clearpage
 \setcounter{page}{1}
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 \addcontentsline{toc}{chapter}{Introduction} % Capitolo non numerato
+
+% Abstract section
+\section*{Abstract}
+Analyzing the emotional tone of songs texts can give insights into societal trends and this information can be useful especially for recommendation algorithms.
+This study aims to build 4 Machine Learning models that classify emotions expressed in English song lyrics at the stanza level; 
+the emotion labels are given according to Plutchik's 8 primary emotions. \textbf{DA FINIRE e far stare nella stessa pagina con l'introduzione}
+
+% Introduction (on the same page)
 \input{introduzione.tex}
 
 \clearpage
+
 
 % Dataset overview
 % !!! cut, content in intro
@@ -132,7 +134,7 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 % 
 % \clearpage
 
-% Preprocessing
+% IN REALTA' DOVREBBE ESSERE LA SEZIONE "METHODS" 
 \input{preprocessing.tex}
 
 \clearpage
@@ -156,5 +158,11 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 % \bibliography{bibliography} % Entries are in the refs.bib file
 % \addbibresource{bibliography.bib}
 \printbibliography
+\renewcommand{\listfigurename}{List of figures}
+\listoffigures
+
+\thispagestyle{empty}
+\clearpage
+
 
 \end{document}
