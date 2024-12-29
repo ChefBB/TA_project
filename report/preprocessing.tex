@@ -94,16 +94,13 @@ used to denote stanzas (such as \texttt{chorus}, \texttt{verse}, \texttt{intro},
 \texttt{outro}, \texttt{refrain}, \texttt{hook}, etc.).
 The RegEx developed accounted for the different formats in which these keywords
 appeared, including square brackets, parentheses, or no brackets at all, as well
-as stanzas separated by double newline characters.\\
-
+as stanzas separated by double newline characters.
 The output of this step was, for each song record, a list of strings
 representing individual stanzas, with each stanza labeled by its corresponding
-header keyword.\\
-
+header keyword.
 Subsequently, uninformative strings—such as empty strings or those with fewer
 than 20 characters—were removed, as they were too short to provide meaningful
-content.\\
-
+content.
 As a result, the output of this preliminary preprocessing phase was a dataset
 where the records were no longer whole songs but individual stanzas, each
 numbered according to its position within the song.\\
@@ -130,22 +127,21 @@ numbered according to its position within the song.\\
 A further and more detailed cleaning process on the stanzas led to the creation
 of the boolean feature \texttt{is\_chorus}, which was assigned a \texttt{true}
 value for repeated stanzas within the same song or for stanzas with headers such
-as \texttt{hook}, \texttt{chorus}, \texttt{refrain}, or \texttt{bridge}.\\
-
+as \texttt{hook}, \texttt{chorus}, \texttt{refrain}, or \texttt{bridge}.
 Next, stanza headers and newline characters between verses were removed to obtain
-cleaner stanzas.\\
-
+cleaner stanzas.
 Since choruses, hooks, bridges, and refrains often repeat throughout songs,
 duplicate stanzas were discarded to avoid redundant data. This resulted in a
 dataset of cleaned, non-duplicate stanzas, which served as the checkpoint for
 the labeling step and the starting point for the text lemmatization process.\\
-
-For the labeling step, the Albert Base v2 model was employed. This
-transformer model is specifically designed to be fine-tuned on tasks that
-require an understanding of the entire sentence, such as sequence classification.\\
 
 The subsequent step involved lemmatizing the stanzas using the \texttt{spaCy}
 library. A list of lemmatized tokens was created by filtering out punctuation
 and empty words. Lemmatization was chosen over stemming because it produces
 more accurate and meaningful results, particularly for tasks requiring semantic
 understanding, such as the one at hand.\\
+
+
+For the labeling step, the Albert Base v2 model was employed. This
+transformer model is specifically designed to be fine-tuned on tasks that
+require an understanding of the entire sentence, such as sequence classification.\\
