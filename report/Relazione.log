@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  29 DEC 2024 17:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  29 DEC 2024 19:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -649,29 +649,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--34
  <./pictures/plutchik_primary_emotions.png>] (./preprocessing.tex
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
+Underfull \hbox (badness 10000) in paragraph at lines 54--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--46
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 47--66
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 47--66
+Underfull \hbox (badness 10000) in paragraph at lines 83--90
 
  []
 
 [3
 
 
-] [4]) [5] (./static_models.tex
+]
+Underfull \hbox (badness 10000) in paragraph at lines 91--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--142
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 143--146
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 147--145
+
+ []
+
+[5] (./static_models.tex
 Chapter 2.
 ) [6
 
@@ -703,15 +738,15 @@ Package logreq Info: Writing requests to 'Relazione.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16123 strings out of 474116
- 317822 string characters out of 5743682
- 1940187 words of memory out of 5000000
- 38291 multiletter control sequences out of 15000+600000
+ 16124 strings out of 474116
+ 317837 string characters out of 5743682
+ 1937187 words of memory out of 5000000
+ 38292 multiletter control sequences out of 15000+600000
  578912 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,21n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (10 pages, 101327 bytes).
+Output written on Relazione.pdf (10 pages, 100529 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream
