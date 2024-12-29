@@ -92,23 +92,23 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 \begin{document}
 
 % Frontespizio
-\begin{titlepage}
+% \begin{titlepage}
 % \begin{figure}
 %     \centering\includegraphics[scale=0.5]{immagini/cherubino_pant541.png}
 % \end{figure}
 
-\begin{center}
-    {\LARGE{ Emotion Detection in Song Lyrics Stanzas \\}}
-    \vspace{3cm}
-    {\Large { TEXT ANALYTICS - A.Y. 2024/2025 }}\\
-    \vspace{1.5cm}
-    {\Large { Group 2 }}\\
-    \vspace{1.5cm}
-    {\Large { Barbieri, Bosco, Ferrara, Rotellini, Zizza }}
-\end{center}
+% \begin{center}
+%     {\LARGE{ Emotion Detection in Song Lyrics Stanzas \\}}
+%     \vspace{3cm}
+%     {\Large { TEXT ANALYTICS - A.Y. 2024/2025 }}\\
+%     \vspace{1.5cm}
+%     {\Large { Group 2 }}\\
+%     \vspace{1.5cm}
+%     {\Large { Barbieri, Bosco, Ferrara, Rotellini, Zizza }}
+% \end{center}
 
 % \centering{\large{\bf ANNO ACCADEMICO 20xx/20xx }}
-\end{titlepage}
+% \end{titlepage}
 % Fine frontespizio
 
 
@@ -117,10 +117,16 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 \addcontentsline{toc}{chapter}{Introduction} % Capitolo non numerato
 
 % Abstract section
-\section*{Abstract}
-Analyzing the emotional tone of songs texts can give insights into societal trends and this information can be useful especially for recommendation algorithms.
-This study aims to build 4 Machine Learning models that classify emotions expressed in English song lyrics at the stanza level; 
-the emotion labels are given according to Plutchik's 8 primary emotions. \textbf{DA FINIRE e far stare nella stessa pagina con l'introduzione}
+\input{abstract.tex}
+% \section*{Abstract}
+% Analyzing the emotional tone of songs texts can give insights into
+% societal trends and this information can be useful especially for recommendation
+% algorithms.
+% This study aims to build 4 Machine Learning models that classify
+% emotions expressed in English song lyrics at the stanza level; 
+% the emotion labels are given according to
+% Plutchik's 8 primary emotions.
+\textbf{DA FINIRE e far stare nella stessa pagina con l'introduzione}
 
 % Introduction (on the same page)
 \input{introduzione.tex}
@@ -154,8 +160,8 @@ the emotion labels are given according to Plutchik's 8 primary emotions. \textbf
 \clearpage
 
 % \renewcommand{\contentsname}{Bibliography}
-% \bibliographystyle{plain} % We choose the "plain" reference style
-% \bibliography{bibliography} % Entries are in the refs.bib file
+% \bibliographystyle{plain}
+% \bibliography{bibliography}
 % \addbibresource{bibliography.bib}
 \printbibliography
 \renewcommand{\listfigurename}{List of figures}
