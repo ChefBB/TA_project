@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  30 DEC 2024 11:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  30 DEC 2024 11:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -667,41 +667,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--105
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--135
+Underfull \hbox (badness 10000) in paragraph at lines 127--137
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--141
+Underfull \hbox (badness 10000) in paragraph at lines 138--143
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--152
+Underfull \hbox (badness 10000) in paragraph at lines 146--154
 
  []
 
-[4]) [5] (./static_models.tex
-Chapter 2.
-) [6
+[4]) [5] (./conclusioni.tex) [6
 
 
-] (./neural_networks.tex
-Chapter 3.
-) [7
-
-
-] (./conclusioni.tex) [8
-
-
-] [9
+] [7
 
 
 ] (./Relazione.lof)
 \tf@lof=\write4
 \openout4 = `Relazione.lof'.
 
- [10
+ [8
 
 ] (./Relazione.aux)
  ***********
@@ -713,18 +703,18 @@ Package logreq Info: Writing requests to 'Relazione.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16124 strings out of 474116
- 317801 string characters out of 5743682
+ 16110 strings out of 474116
+ 317507 string characters out of 5743682
  1937187 words of memory out of 5000000
- 38292 multiletter control sequences out of 15000+600000
+ 38284 multiletter control sequences out of 15000+600000
  578912 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,21n,121p,1215b,1757s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (10 pages, 101388 bytes).
+Output written on Relazione.pdf (8 pages, 100759 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 55 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
