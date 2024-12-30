@@ -3,6 +3,9 @@ import pandas as pd
 import preprocessing
 import graphs
 import numpy as np
+import tensorflow as tf
+from sklearn.model_selection import train_test_split
+
 
 #########################
 # arguments
@@ -31,6 +34,11 @@ parser.add_argument(
     default= 10
 )
 
+parser.add_argument(
+    '--semisupervised', type= int, required= False,
+    dafault= 0
+)
+
 args = parser.parse_args()
 
 df = pd.read_csv(args.dataset)
@@ -44,6 +52,7 @@ from datetime import datetime
 
 folder_name = datetime.now().strftime(
     ('1DConvnet' if args.type == 1 else 'RNN') +
+    ('SEMI_SUPERVISED' if args.semisupervised == 1 else '') +
     "_%d-%m-%Y_%H-%M-%S"
 )
 
@@ -179,15 +188,43 @@ model.compile(
     metrics=['categorical_accuracy']
 )
 
+X_train = [
+    padded_sequences_train, stanza_numbers_train, topic_distributions_train
+] + list(booleans_train.T)
+
+(
+    X_train, X_val,
+    y_train, y_val,
+) = (
+    train_test_split(X_train, y_train, test_size=0.3, random_state=42)
+)
+
 history = model.fit(
-    [
-        padded_sequences_train, stanza_numbers_train, topic_distributions_train
-    ] + list(booleans_train.T),
-    y_train,
-    validation_split= 0.3,
+    X_train, y_train,
+    validation_data=(X_val, y_val),
     epochs= args.epochs,
     batch_size= 32
 )
+
+if args.semisupervised == 1:
+    X_unlabeled = pd.read_csv(
+        path + 'data/cleaned_strings_df.csv'
+    ).iloc[130001:].sample(frac= 0.1, random_state= 42)
+    # TODO preprocessing on unlabeled data
+    pseudo_labels = model.predict(X_unlabeled)
+    pseudo_labels = np.argmax(pseudo_labels, axis=1)
+    X_combined = np.vstack((X_train, X_unlabeled))
+    y_combined = np.vstack((
+        y_train,
+        tf.keras.utils.to_categorical(pseudo_labels, num_classes=8)))
+    model.fit(
+        X_combined, y_combined,
+        validation_data=(X_val, y_val),
+        epochs=args.epochs,
+        batch_size=32
+    )
+
+    
 
 model.summary()
 

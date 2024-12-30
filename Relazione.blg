@@ -1,5 +1,0 @@
-[0] Config.pm:308> INFO - This is Biber 2.20
-[0] Config.pm:311> INFO - Logfile is 'Relazione.blg'
-[120] biber:340> INFO - === Fri Dec 13, 2024, 18:33:48
-[369] Utils.pm:410> ERROR - Cannot find 'Relazione.bcf'!
-[369] Biber.pm:136> INFO - ERRORS: 1
