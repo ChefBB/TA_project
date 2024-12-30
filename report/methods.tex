@@ -42,8 +42,8 @@ relevant for model training are:
 % To create the ground truth, the model
 % Albert Base v2\textsuperscript{\cite{albert-base-v2}} was used, classifying
 % stanzas' lyrics into Plutchik's eight primary emotions.
-All of these attributes, except for the \texttt{title} one, were the result
-of the preprocessing phase, as will be described in section~\ref{preprocessing}.
+All of these attributes, except for \texttt{title}, were the result
+of the preprocessing phase, as described in section~\ref{preprocessing}.
 Due to limited computational power, the labeling process was time-intensive,
 ultimately resulting in a limited dataset consisting of
 \textbf{(QUANTE? AGGIUNGEREI NUMERO STROFE)}.
@@ -51,10 +51,10 @@ ultimately resulting in a limited dataset consisting of
 
 \section{Preprocessing}
 \label{preprocessing}
-The first step in the preprocessing phase of this dataset involved sampling
-from the original dataset while preserving the proportions of the different genres. 
-This ensured that the genre distribution in the subset remained representative
-of the full dataset.\\
+The initial preprocessing step involved sampling from the original dataset
+while maintaining the proportional distribution of genres.
+This approach ensured that the genre representation in the sampled subset
+accurately reflected that of the full dataset.\\
 
 % The preliminary text cleaning process focused on the \texttt{lyrics} attribute,
 % which was the attribute of the original dataset that contained
@@ -87,14 +87,15 @@ irrelevant to the stanza splitting process. Many keywords marking different
 stanzas were written within square brackets, and removing non-keyword items
 inside brackets was crucial to avoid potential issues.\\
 
-The next critical step was stanza splitting. After cleaning the strings from
-noisy square-bracketed items, the lyrics were split based on various keywords
+The next critical step was stanza splitting. After cleaning texts from
+noisy square-bracketed items, lyrics were split based on various keywords
 used to denote stanzas (such as "chorus", "verse", "intro", "outro", "refrain", "hook", etc.).
 The RegEx developed accounted for the different formats in which these keywords
 appeared, including square brackets, parentheses, or no brackets at all, as well
 as stanzas separated only by double newline characters.
 The output of this step was, for each song record, a list of strings
-representing individual stanzas (each stanza has also a header with the corresponding keyword; this aspect will be discussed in the next paragraph).
+representing individual stanzas (each stanza has also a header with the corresponding
+keyword; this aspect will be discussed in the next paragraph).
 Next, uninformative strings—such as empty strings or those with fewer
 than 20 characters—were removed, as they were too short to provide meaningful
 content.
