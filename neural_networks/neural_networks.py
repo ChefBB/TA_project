@@ -52,7 +52,7 @@ from datetime import datetime
 
 folder_name = datetime.now().strftime(
     ('1DConvnet' if args.type == 1 else 'RNN') +
-    ('SEMI_SUPERVISED' if args.semisupervised == 1 else '') +
+    ('SEMI_SUPERVISED' if args.semisupervised != 0 else '') +
     "_%d-%m-%Y_%H-%M-%S"
 )
 
@@ -138,7 +138,7 @@ lyrics_input = Input(shape=(preprocessing.max_seq_length,),name= 'text_input')
 
 embedding_lyrics = Embedding(
     input_dim= preprocessing.vocab_size, output_dim= 128,
-    input_length= preprocessing.max_seq_length
+    # input_length= preprocessing.max_seq_length
 ) (lyrics_input)
 
 # CNN
@@ -254,15 +254,22 @@ X_val = [
 
 history = model.fit(
     X_train, preprocessed_data['train']['y'],
-    validation_data=(X_val, y_val),
+    validation_data=(X_val, preprocessed_data['val']['y']),
     epochs= args.epochs,
     batch_size= 32
 )
 
-if args.semisupervised == 1:
+if args.semisupervised != 0:
     X_unlabeled = pd.read_csv(
-        path + 'data/cleaned_strings_df.csv'
-    ).iloc[130001:].sample(frac= 0.05, random_state= 42)
+        path + 'data/def_lemmatized_df.csv'
+    ).iloc[130001:].dropna().sample(frac= 0.05, random_state= 42)
+    
+    X_unlabeled = {
+        'lemmatized_stanzas': X_unlabeled['lemmatized_stanzas'],
+        'stanza_numbers': X_unlabeled[['stanza_number']],
+        'booleans': preprocessing.booleans_conv(X_unlabeled),
+        'titles': X_unlabeled['title']
+    }
 
     X_unlabeled_preprocessed = preprocessing.preprocess_new_data(
         X_unlabeled, folder_path
@@ -275,13 +282,14 @@ if args.semisupervised == 1:
     ] + list(X_unlabeled_preprocessed['booleans'].T)
 
     X_unlabeled_preprocessed['y'] = np.argmax(model.predict(X_list), axis= 1)
+    X_unlabeled['y'] = X_unlabeled_preprocessed['y']
     
-    preprocessed_data['train'] = {
-        key: preprocessed_data['train'][key] + X_unlabeled_preprocessed[key]
-        for key in preprocessed_data['train']
+    data['train'] = {
+        key: np.concatenate(data['train'][key], X_unlabeled[key])
+        for key in data['train']
     }
     
-    preprocessed_data = preprocessing.preprocess(preprocessed_data, folder_path)
+    preprocessed_data = preprocessing.preprocess(data, folder_path)
 
     X_train = [
         preprocessed_data['train']['padded_sequences'],
@@ -298,8 +306,8 @@ if args.semisupervised == 1:
     
     model.fit(
         X_train, preprocessed_data['train']['y'],
-        validation_data=(X_val, y_val),
-        epochs= args.epochs,
+        validation_data=(X_val, preprocessed_data['val']['y']),
+        epochs= args.semisupervised,
         batch_size=32
     )
 
@@ -332,7 +340,7 @@ graphs.roc_curve_graph(
     y_pred = y_pred,
     classes = classes,
     folder_path= folder_path,
-    y_test= y_test
+    y_test= preprocessed_data['test']['y']
 )
 
 graphs.accuracy_curve(history, folder_path)
