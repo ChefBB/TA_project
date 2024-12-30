@@ -2,7 +2,6 @@ import pandas as pd
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.utils import to_categorical
-from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF
@@ -27,106 +26,115 @@ emotion_mapping = {
 }
 
 
-def preprocess (df: pd.DataFrame, folder_path: str) -> tuple:
+def preprocess (data: dict, folder_path: str) -> dict:
     #########################
     # undersampling
     #########################
     # !!! does not seem to help
     # from sklearn.utils import resample
-
+    # 
     # min_size = df['label'].value_counts().min()
-
+    # 
     # downsampled_samples = []
     # for class_label, group in df.groupby('label'):
     #     sampled_group = resample(
     #         group, replace=False, n_samples=min_size, random_state=42
     #     )
     #     downsampled_samples.append(sampled_group)
-
+    # 
     # df = pd.concat(downsampled_samples)
-
-
-
-    #########################
-    # split data
-    #########################
-    (
-        lemmatized_stanzas_train, lemmatized_stanzas_test,
-        stanza_numbers_train, stanza_numbers_test,
-        booleans_train, booleans_test,
-        titles_train, titles_test,
-        y_train, y_test
-    ) = train_test_split(
-        df['lemmatized_stanzas'], df[['stanza_number']], booleans_conv(df), df['title'],
-        df['label'], test_size=0.3, random_state=42
-    )
     
     
     #########################
     # title unsupervised learning
     #########################
+    preprocessed_data = {
+        'train': {
+            'booleans': data['train']['booleans'],
+            'y': preprocess_labels(data['train']['y'])
+        },
+        'val': {
+            'booleans': data['val']['booleans'],
+            'y': preprocess_labels(data['val']['y'])
+        },
+        'test': {
+            'booleans': data['test']['booleans'],
+            'y': preprocess_labels(data['test']['y'])
+        }
+    }
+    
     # convert song titles to TF-IDF matrix
     tfidf_vectorizer = TfidfVectorizer(max_features=1000, stop_words='english')
-    tfidf_matrix_train = tfidf_vectorizer.fit_transform(titles_train)
+    tfidf_matrix_train = tfidf_vectorizer.fit_transform(data['train']['titles'])
     
     joblib.dump(tfidf_vectorizer, folder_path + '/tfidf_vectorizer.joblib')
 
     # NMF for topic modeling
     nmf_model = NMF(n_components=num_topics, random_state=42)
-    topic_distributions_train = nmf_model.fit_transform(tfidf_matrix_train)
+    preprocessed_data['train']['topic_distributions'] = nmf_model.fit_transform(tfidf_matrix_train)
     
     joblib.dump(nmf_model, folder_path + '/nmf_model.joblib')
     
-    # apply to test set
-    topic_distributions_test = topic_analysis(
+    # apply to test, val sets
+    preprocessed_data['val']['topic_distributions'] = topic_analysis(
         tfidf_vectorizer= tfidf_vectorizer,
         nmf_model= nmf_model,
-        titles= titles_test
+        titles= data['val']['titles']
+    )
+    
+    preprocessed_data['test']['topic_distributions'] = topic_analysis(
+        tfidf_vectorizer= tfidf_vectorizer,
+        nmf_model= nmf_model,
+        titles= data['test']['titles']
     )
     
     #########################
     # Initialize the tokenizer
     #########################
     tokenizer = Tokenizer(num_words= vocab_size, oov_token="<UNK>")
-    tokenizer.fit_on_texts(lemmatized_stanzas_train)
+    tokenizer.fit_on_texts(data['train']['lemmatized_stanzas'])
 
-    sequences_train = tokenize(tokenizer, lemmatized_stanzas_train)
+    preprocessed_data['train']['sequences'] = tokenize(tokenizer, data['train']['lemmatized_stanzas'])
     
-    sequences_test = tokenize(tokenizer, lemmatized_stanzas_test)
-    
-    padded_sequences_train = padding(sequences_train)
+    preprocessed_data['val']['sequences'] = tokenize(tokenizer, data['val']['lemmatized_stanzas'])
 
-    padded_sequences_test = padding(sequences_test)
+    preprocessed_data['test']['sequences'] = tokenize(tokenizer, data['test']['lemmatized_stanzas'])
+
     
-    joblib.dump(tokenizer, folder_path + '/basic_tokenizer.pkl')
+    preprocessed_data['train']['padded_sequences'] = padding(preprocessed_data['train']['sequences'])
+
+    preprocessed_data['val']['padded_sequences'] = padding(preprocessed_data['val']['sequences'])
+
+    preprocessed_data['test']['padded_sequences'] = padding(preprocessed_data['test']['sequences'])
+    
+    joblib.dump(tokenizer, folder_path + '/basic_tokenizer.joblib')
     
     
     #########################
     # preprocess non-text data
     #########################
     scaler = StandardScaler()
-    scaled_stanza_numbers_train = scaler.fit_transform(stanza_numbers_train)
+    preprocessed_data['train']['stanza_numbers'] = scaler.fit_transform(data['train']['stanza_numbers'])
     
     joblib.dump(scaler, folder_path + '/scaler.joblib')
     
-    # apply on test set
-    scaled_stanza_numbers_test = scale_stanza_numbers(scaler, stanza_numbers_test)
+    # apply on val, test sets
+    preprocessed_data['val']['stanza_numbers'] = scale_stanza_numbers(
+        scaler, data['val']['stanza_numbers'])
+
+    
+    preprocessed_data['test']['stanza_numbers'] = scale_stanza_numbers(
+        scaler, data['test']['stanza_numbers'])
     
     
-    return (
-        padded_sequences_train, padded_sequences_test,
-        scaled_stanza_numbers_train, scaled_stanza_numbers_test,
-        booleans_train, booleans_test,
-        topic_distributions_train, topic_distributions_test,
-        preprocess_labels(y_train), preprocess_labels(y_test)
-    )
+    return preprocessed_data
     
-    
+
     
 #########################
 # obtain labels
 #########################
-def preprocess_labels (labels: pd.Series) -> np.array:
+def preprocess_labels (labels: pd.Series | list) -> np.array:
     labels_indices = np.array([emotion_mapping[label] for label in labels])
 
     return to_categorical(labels_indices, num_classes=8)
@@ -174,3 +182,41 @@ def topic_analysis (tfidf_vectorizer: TfidfVectorizer,
 def scale_stanza_numbers (scaler: StandardScaler,
                          stanza_numbers: pd.Series | list) -> np.ndarray:
     return scaler.transform(stanza_numbers)
+
+
+
+#########################
+# preprocessing of unseen data
+#########################
+def preprocess_new_data(df: pd.DataFrame, path: str) -> dict:
+    data = {'booleans': booleans_conv(df)}
+    
+    
+    with open(path + 'tfidf_vectorizer.joblib', 'rb') as f:
+        tfidf_vectorizer = joblib.load(f)
+        
+    with open(path + 'nmf_model.joblib', 'rb') as f:
+        nmf_model = joblib.load(f)
+    
+    data['topic_distributions'] = topic_analysis(
+        tfidf_vectorizer,
+        nmf_model,
+        df['title']
+    )
+    
+    
+    with open(path + 'basic_tokenizer.joblib', 'rb') as f:
+        basic_tokenizer = joblib.load(f)
+        
+    data['sequences'] = tokenize(basic_tokenizer, df['lemmatized_stanzas'])
+    
+    data['padded_sequences'] = padding(data['sequences'])
+    
+    
+    with open(path + 'scaler.joblib', 'rb') as f:
+        scaler = joblib.load(f)
+    
+    data['stanza_numbers'] = scale_stanza_numbers(scaler, df['stanza_number'])
+    
+    
+    return data

@@ -36,7 +36,7 @@ parser.add_argument(
 
 parser.add_argument(
     '--semisupervised', type= int, required= False,
-    dafault= 0
+    default= 0
 )
 
 args = parser.parse_args()
@@ -64,13 +64,64 @@ os.makedirs(folder_path)
 #########################
 # preprocessing
 #########################
+
+#########################
+# split data
+#########################
+# test split
 (
-    padded_sequences_train, padded_sequences_test,
+    lemmatized_stanzas_train, lemmatized_stanzas_test,
     stanza_numbers_train, stanza_numbers_test,
     booleans_train, booleans_test,
-    topic_distributions_train, topic_distributions_test,
+    titles_train, titles_test,
     y_train, y_test
-) = preprocessing.preprocess(df, folder_path)
+) = train_test_split(
+    df['lemmatized_stanzas'], df[['stanza_number']],
+    preprocessing.booleans_conv(df), df['title'],
+    df['label'], test_size=0.3, random_state=42
+)
+
+# validation split
+(
+    lemmatized_stanzas_train, lemmatized_stanzas_val,
+    stanza_numbers_train, stanza_numbers_val,
+    booleans_train, booleans_val,
+    titles_train, titles_val,
+    y_train, y_val
+) = (
+    train_test_split(
+        lemmatized_stanzas_train, stanza_numbers_train,
+        booleans_train, titles_train,
+        y_train, test_size=0.3, random_state=42)
+)
+
+
+data = {
+    'train': {
+        'lemmatized_stanzas': lemmatized_stanzas_train,
+        'stanza_numbers': stanza_numbers_train,
+        'booleans': booleans_train,
+        'titles': titles_train,
+        'y': y_train
+    },
+    'val': {
+        'lemmatized_stanzas': lemmatized_stanzas_val,
+        'stanza_numbers': stanza_numbers_val,
+        'booleans': booleans_val,
+        'titles': titles_val,
+        'y': y_val
+    },
+    'test': {
+        'lemmatized_stanzas': lemmatized_stanzas_test,
+        'stanza_numbers': stanza_numbers_test,
+        'booleans': booleans_test,
+        'titles': titles_test,
+        'y': y_test
+    }
+}
+
+
+preprocessed_data = preprocessing.preprocess(data, folder_path)
 
 
 #########################
@@ -189,18 +240,20 @@ model.compile(
 )
 
 X_train = [
-    padded_sequences_train, stanza_numbers_train, topic_distributions_train
-] + list(booleans_train.T)
+    preprocessed_data['train']['padded_sequences'],
+    preprocessed_data['train']['stanza_numbers'],
+    preprocessed_data['train']['topic_distributions']
+] + list(preprocessed_data['train']['booleans'].T)
 
-(
-    X_train, X_val,
-    y_train, y_val,
-) = (
-    train_test_split(X_train, y_train, test_size=0.3, random_state=42)
-)
+X_val = [
+    preprocessed_data['val']['padded_sequences'],
+    preprocessed_data['val']['stanza_numbers'],
+    preprocessed_data['val']['topic_distributions']
+] + list(preprocessed_data['val']['booleans'].T)
+
 
 history = model.fit(
-    X_train, y_train,
+    X_train, preprocessed_data['train']['y'],
     validation_data=(X_val, y_val),
     epochs= args.epochs,
     batch_size= 32
@@ -209,18 +262,44 @@ history = model.fit(
 if args.semisupervised == 1:
     X_unlabeled = pd.read_csv(
         path + 'data/cleaned_strings_df.csv'
-    ).iloc[130001:].sample(frac= 0.1, random_state= 42)
-    # TODO preprocessing on unlabeled data
-    pseudo_labels = model.predict(X_unlabeled)
-    pseudo_labels = np.argmax(pseudo_labels, axis=1)
-    X_combined = np.vstack((X_train, X_unlabeled))
-    y_combined = np.vstack((
-        y_train,
-        tf.keras.utils.to_categorical(pseudo_labels, num_classes=8)))
+    ).iloc[130001:].sample(frac= 0.05, random_state= 42)
+
+    X_unlabeled_preprocessed = preprocessing.preprocess_new_data(
+        X_unlabeled, folder_path
+    )
+    
+    X_list = [
+        X_unlabeled_preprocessed['padded_sequences'],
+        X_unlabeled_preprocessed['stanza_numbers'],
+        X_unlabeled_preprocessed['topic_distributions']
+    ] + list(X_unlabeled_preprocessed['booleans'].T)
+
+    X_unlabeled_preprocessed['y'] = np.argmax(model.predict(X_list), axis= 1)
+    
+    preprocessed_data['train'] = {
+        key: preprocessed_data['train'][key] + X_unlabeled_preprocessed[key]
+        for key in preprocessed_data['train']
+    }
+    
+    preprocessed_data = preprocessing.preprocess(preprocessed_data, folder_path)
+
+    X_train = [
+        preprocessed_data['train']['padded_sequences'],
+        preprocessed_data['train']['stanza_numbers'],
+        preprocessed_data['train']['topic_distributions']
+    ] + list(preprocessed_data['train']['booleans'].T)
+
+    X_val = [
+        preprocessed_data['val']['padded_sequences'],
+        preprocessed_data['val']['stanza_numbers'],
+        preprocessed_data['val']['topic_distributions']
+    ] + list(preprocessed_data['val']['booleans'].T)
+    
+    
     model.fit(
-        X_combined, y_combined,
+        X_train, preprocessed_data['train']['y'],
         validation_data=(X_val, y_val),
-        epochs=args.epochs,
+        epochs= args.epochs,
         batch_size=32
     )
 
@@ -229,14 +308,16 @@ if args.semisupervised == 1:
 model.summary()
 
 x_test = [
-    padded_sequences_test, stanza_numbers_test, topic_distributions_test
-] + list(booleans_test.T)
+    preprocessed_data['test']['padded_sequences'],
+    preprocessed_data['test']['stanza_numbers'],
+    preprocessed_data['test']['topic_distributions']
+] + list(preprocessed_data['test']['booleans'].T)
 
-loss, accuracy = model.evaluate(x_test, y_test)
+loss, accuracy = model.evaluate(x_test, preprocessed_data['test']['y'])
 
 y_pred = model.predict(x_test)
 
-y_test_encoded = np.argmax(y_test, axis=1)
+y_test_encoded = np.argmax(preprocessed_data['test']['y'], axis=1)
 y_pred_encoded = np.argmax(y_pred, axis=1)
 
 
