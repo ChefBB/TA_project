@@ -3,8 +3,8 @@
 
 % This section will provide an overview about the data, methods and procedures used in the project.\\
 
-The dataset used in this project represents a sampled subset of English-language
-songs derived from the Genius Song Lyrics Dataset\textsuperscript{\cite{geniusdataset}}.
+The dataset used in this project is a sampled subset of English-language
+songs derived from the \textit{Genius Song Lyrics Dataset}\textsuperscript{\cite{geniusdataset}}.
 % The original dataset (3m records) included songs in many different languages;
 % however, this work focused exclusively on English-language ones.
 The original dataset contained numerous attributes; the ones considered
@@ -43,7 +43,7 @@ relevant for model training are:
 % Albert Base v2\textsuperscript{\cite{albert-base-v2}} was used, classifying
 % stanzas' lyrics into Plutchik's eight primary emotions.
 All of these attributes, except for the \texttt{title} one, were the result
-of the preprocessing phase, as will be described later in section~\ref{preprocessing}\\
+of the preprocessing phase, as will be described in section~\ref{preprocessing}.
 Due to limited computational power, the labeling process was time-intensive,
 ultimately resulting in a limited dataset consisting of
 \textbf{(QUANTE? AGGIUNGEREI NUMERO STROFE)}.
@@ -79,7 +79,6 @@ of the full dataset.\\
 % which the records are not whole songs anymore but single stanzas; each numbered
 % based on its position in the song. \\
 
-
 The preliminary text cleaning process focused on the \texttt{lyrics} attribute,
 which contained the complete lyrics of each song in string format.
 Initially, a regular expression (RegEx) was built to remove noise from the
@@ -88,17 +87,15 @@ irrelevant to the stanza splitting process. Many keywords marking different
 stanzas were written within square brackets, and removing non-keyword items
 inside brackets was crucial to avoid potential issues.\\
 
-The next critical step was stanza splitting. After cleaning the strings of
+The next critical step was stanza splitting. After cleaning the strings from
 noisy square-bracketed items, the lyrics were split based on various keywords
-used to denote stanzas (such as \texttt{chorus}, \texttt{verse}, \texttt{intro},
-\texttt{outro}, \texttt{refrain}, \texttt{hook}, etc.).
+used to denote stanzas (such as "chorus", "verse", "intro", "outro", "refrain", "hook", etc.).
 The RegEx developed accounted for the different formats in which these keywords
 appeared, including square brackets, parentheses, or no brackets at all, as well
-as stanzas separated by double newline characters.
+as stanzas separated only by double newline characters.
 The output of this step was, for each song record, a list of strings
-representing individual stanzas, with each stanza labeled by its corresponding
-header keyword.
-Subsequently, uninformative strings—such as empty strings or those with fewer
+representing individual stanzas (each stanza has also a header with the corresponding keyword; this aspect will be discussed in the next paragraph).
+Next, uninformative strings—such as empty strings or those with fewer
 than 20 characters—were removed, as they were too short to provide meaningful
 content.
 As a result, the output of this preliminary preprocessing phase was a dataset
@@ -124,10 +121,10 @@ numbered according to its position within the song.\\
 % We opted for lemmatization over stemming because lemmatization produces more
 % accurate and meaningful results, particularly for tasks requiring semantic
 % understanding, such as in our case.
-A further and more detailed cleaning process on the stanzas led to the creation
+A further and more detailed cleaning process on the stanzas involved the creation
 of the boolean feature \texttt{is\_chorus}, which was assigned a \texttt{true}
 value for repeated stanzas within the same song or for stanzas with headers such
-as \texttt{hook}, \texttt{chorus}, \texttt{refrain}, or \texttt{bridge}.
+as "hook", "chorus", "refrain", or "bridge".
 Next, stanza headers and newline characters between verses were removed to obtain
 cleaner stanzas.
 Since choruses, hooks, bridges, and refrains often repeat throughout songs,
@@ -141,8 +138,19 @@ and empty words. Lemmatization was chosen over stemming because it produces
 more accurate and meaningful results, particularly for tasks requiring semantic
 understanding, such as the one at hand.\\
 
+<<<<<<< HEAD
 
 For the labeling step, Albert Base v2\cite{albert-base-v2}
 was employed. This transformer model is specifically designed to be fine-tuned on
 tasks that require an understanding of the entire sentence, such as sequence
 classification.\\
+=======
+Since the dataset was not pre-labeled at the stanza level, the ALBERT Base v2 transformer model was employed for this task.
+This transformer model is specifically designed to be fine-tuned on tasks that
+require an understanding of the entire sentence, such as sequence classification.\\
+
+
+\section{Models developement}
+\section{Evaluation}
+
+>>>>>>> df71a4cc51d58fc4f271ba3eeb25415e136a3945
