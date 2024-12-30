@@ -162,7 +162,7 @@ def padding (sequences):
 #########################
 def booleans_conv (df: pd.DataFrame) -> np.ndarray:
     return df[['is_country', 'is_pop', 'is_rap',
-                'is_rb', 'is_rock', 'is_chorus']].astype(int).values
+               'is_rb', 'is_rock', 'is_chorus']].astype(int).values
 
 
 #########################
@@ -181,42 +181,43 @@ def topic_analysis (tfidf_vectorizer: TfidfVectorizer,
 #########################
 def scale_stanza_numbers (scaler: StandardScaler,
                          stanza_numbers: pd.Series | list) -> np.ndarray:
+    # stanza_numbers = stanza_numbers.reshape(-1, 1)
     return scaler.transform(stanza_numbers)
-
 
 
 #########################
 # preprocessing of unseen data
 #########################
-def preprocess_new_data(df: pd.DataFrame, path: str) -> dict:
-    data = {'booleans': booleans_conv(df)}
+def preprocess_new_data(data: dict, path: str) -> dict:
+    processed_data = {'booleans': data['booleans']}
     
-    
-    with open(path + 'tfidf_vectorizer.joblib', 'rb') as f:
+    with open(path + '/tfidf_vectorizer.joblib', 'rb') as f:
         tfidf_vectorizer = joblib.load(f)
         
-    with open(path + 'nmf_model.joblib', 'rb') as f:
+    with open(path + '/nmf_model.joblib', 'rb') as f:
         nmf_model = joblib.load(f)
     
-    data['topic_distributions'] = topic_analysis(
+    processed_data['topic_distributions'] = topic_analysis(
         tfidf_vectorizer,
         nmf_model,
-        df['title']
+        data['titles']
     )
     
     
-    with open(path + 'basic_tokenizer.joblib', 'rb') as f:
+    with open(path + '/basic_tokenizer.joblib', 'rb') as f:
         basic_tokenizer = joblib.load(f)
         
-    data['sequences'] = tokenize(basic_tokenizer, df['lemmatized_stanzas'])
+    processed_data['sequences'] = tokenize(basic_tokenizer, data['lemmatized_stanzas'])
     
-    data['padded_sequences'] = padding(data['sequences'])
+    processed_data['padded_sequences'] = padding(processed_data['sequences'])
     
     
-    with open(path + 'scaler.joblib', 'rb') as f:
+    with open(path + '/scaler.joblib', 'rb') as f:
         scaler = joblib.load(f)
     
-    data['stanza_numbers'] = scale_stanza_numbers(scaler, df['stanza_number'])
+    processed_data['stanza_numbers'] = scale_stanza_numbers(
+        scaler, data['stanza_numbers']
+    )
     
     
-    return data
+    return processed_data
