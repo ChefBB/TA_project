@@ -5,6 +5,7 @@ import graphs
 import numpy as np
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
+from contextlib import redirect_stdout
 
 
 #########################
@@ -340,9 +341,12 @@ if args.semisupervised != 0:
         batch_size=32
     )
 
-    
 
-model.summary()
+# save summary
+with open(folder_path + "/model_summary.txt", "w") as f:
+    with redirect_stdout(f):
+        model.summary()
+
 
 x_test = [
     preprocessed_data['test']['padded_sequences'],
