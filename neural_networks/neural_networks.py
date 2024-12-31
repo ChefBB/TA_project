@@ -68,6 +68,8 @@ os.makedirs(folder_path)
 #########################
 # split data
 #########################
+
+
 # test split
 (
     lemmatized_stanzas_train, lemmatized_stanzas_test,
@@ -78,7 +80,7 @@ os.makedirs(folder_path)
 ) = train_test_split(
     df['lemmatized_stanzas'], df[['stanza_number']],
     preprocessing.booleans_conv(df), df['title'],
-    df['label'], test_size=0.3, random_state=42
+    preprocessing.preprocess_labels(df['label']), test_size=0.3, random_state=42
 )
 
 # validation split
@@ -280,14 +282,42 @@ if args.semisupervised != 0:
         X_unlabeled_preprocessed['stanza_numbers'],
         X_unlabeled_preprocessed['topic_distributions']
     ] + list(X_unlabeled_preprocessed['booleans'].T)
-
-    X_unlabeled_preprocessed['y'] = np.argmax(model.predict(X_list), axis= 1)
-    X_unlabeled['y'] = X_unlabeled_preprocessed['y']
     
-    data['train'] = {
-        key: np.concatenate(data['train'][key], X_unlabeled[key])
-        for key in data['train']
-    }
+    predictions = model.predict(X_list)
+
+    max_indices = np.argmax(predictions, axis=1)
+
+    # Create one-hot encoded results
+    one_hot_batch = np.zeros_like(predictions)
+    one_hot_batch[np.arange(predictions.shape[0]), max_indices] = 1
+    
+    X_unlabeled['y'] = one_hot_batch
+    
+    data['train']['lemmatized_stanzas'] = pd.concat(
+        [data['train']['lemmatized_stanzas'], X_unlabeled['lemmatized_stanzas']],
+        ignore_index= True
+    )
+    
+    data['train']['stanza_numbers'] = pd.concat(
+        [data['train']['stanza_numbers'], X_unlabeled['stanza_numbers']],
+        ignore_index= True
+    )
+    
+    data['train']['booleans'] = np.concatenate((
+        data['train']['booleans'], X_unlabeled['booleans']), axis= 0)
+
+    data['train']['titles'] = pd.concat(
+        [data['train']['titles'], X_unlabeled['titles']],
+        ignore_index= True
+    )
+    
+    data['train']['y'] = np.concatenate((
+        data['train']['y'], X_unlabeled['y']), axis= 0)
+    
+    print(len(data['train']['stanza_numbers']))
+    print(len(data['train']['stanza_numbers']))
+
+
     
     preprocessed_data = preprocessing.preprocess(data, folder_path)
 
@@ -302,7 +332,6 @@ if args.semisupervised != 0:
         preprocessed_data['val']['stanza_numbers'],
         preprocessed_data['val']['topic_distributions']
     ] + list(preprocessed_data['val']['booleans'].T)
-    
     
     model.fit(
         X_train, preprocessed_data['train']['y'],

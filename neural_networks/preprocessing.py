@@ -51,15 +51,15 @@ def preprocess (data: dict, folder_path: str) -> dict:
     preprocessed_data = {
         'train': {
             'booleans': data['train']['booleans'],
-            'y': preprocess_labels(data['train']['y'])
+            'y': data['train']['y']
         },
         'val': {
             'booleans': data['val']['booleans'],
-            'y': preprocess_labels(data['val']['y'])
+            'y': data['val']['y']
         },
         'test': {
             'booleans': data['test']['booleans'],
-            'y': preprocess_labels(data['test']['y'])
+            'y': data['test']['y']
         }
     }
     
