@@ -40,6 +40,10 @@ parser.add_argument(
     default= 0
 )
 
+parser.add_argument(
+    '--reset', action= 'store_true'
+)
+
 args = parser.parse_args()
 
 df = pd.read_csv(args.dataset)
@@ -60,6 +64,18 @@ folder_name = datetime.now().strftime(
 folder_path= path + 'neural_networks/' + folder_name
 
 os.makedirs(folder_path)
+
+
+with open(folder_path + "/model_summary.txt", "w") as f:
+    with redirect_stdout(f):
+        print(('1DConvnet' if args.type == 1 else 'RNN'))
+        print(('semisupervised learning' if args.semisupervised != 0
+               else 'supervised learning') + '\n')
+        print('Epochs: ' + args.epochs)
+        if args.semisupervised!= 0:
+            print('Epochs with pseudo-labeled data: ' + args.semisupervised)
+            print('Reset model weights after first training: ' + args.reset)
+        print('\n')
 
 
 #########################
@@ -314,10 +330,6 @@ if args.semisupervised != 0:
     
     data['train']['y'] = np.concatenate((
         data['train']['y'], X_unlabeled['y']), axis= 0)
-    
-    print(len(data['train']['stanza_numbers']))
-    print(len(data['train']['stanza_numbers']))
-
 
     
     preprocessed_data = preprocessing.preprocess(data, folder_path)
@@ -333,6 +345,16 @@ if args.semisupervised != 0:
         preprocessed_data['val']['stanza_numbers'],
         preprocessed_data['val']['topic_distributions']
     ] + list(preprocessed_data['val']['booleans'].T)
+
+    if args.reset:
+        for layer in model.layers:
+            if (
+                hasattr(layer, 'kernel_initializer') and
+                hasattr(layer, 'bias_initializer')
+            ):
+                layer.kernel.assign(layer.kernel_initializer(layer.kernel.shape))
+                layer.bias.assign(layer.bias_initializer(layer.bias.shape))
+
     
     model.fit(
         X_train, preprocessed_data['train']['y'],
