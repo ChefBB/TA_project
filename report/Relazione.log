@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  1 JAN 2025 12:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  1 JAN 2025 12:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -677,7 +677,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--155
 
  []
 
-) [4] [5] (./conclusions.tex) [6
+
+Overfull \hbox (9.47198pt too wide) in paragraph at lines 158--162
+\OT1/ptm/m/n/12 Inverse Doc-u-ment Fre-quency. The boolean at-tributes are con-verted to in-te-gers, while \OT1/cmtt/m/n/12 stanza[]number
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--162
+
+ []
+
+[4]) [5] (./conclusions.tex) [6
 
 ] (./Relazione.lof)
 \tf@lof=\write4
@@ -703,7 +713,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  123i,21n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (7 pages, 99281 bytes).
+Output written on Relazione.pdf (7 pages, 99885 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  32 compressed objects within 1 object stream

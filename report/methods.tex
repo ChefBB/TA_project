@@ -148,16 +148,24 @@ require an understanding of the entire sentence, such as sequence classification
 
 \section*{Static Models}
 The development of static models was simple and straight forward.
-Static models were developed to provide a performance comparison
+Static models were mainly developed to provide a performance comparison
 for the more complex Neural Networks.
-Both Random Forest and SVM do not take \texttt{title} as input,
-working with the other attributes alone.\\
+The two architectures are the same, consisting of a preprocessing
+layer to handle the inputs, followed by the classifier itself.\\
 
-The 
+% Both Random Forest and SVM do not take \texttt{title} as input,
+% working with the other attributes alone.
+The preprocessing layers handle both \texttt{title} and
+\texttt{lemmatized\_stanzas} through
+Term Frequency-Inverse Document Frequency. The boolean attributes
+are converted to integers, while \texttt{stanza\_number} is scaled.\\
 
-Random Search was chosen for hyperparameter tuning for both 
+Random Search was chosen for hyperparameter tuning, for both models.
+Cross validation is also used in order to provide a more accurate
+estimate of model performance.
 
 \section*{Neural Networks}
+
 
 
 \section*{Evaluation}
