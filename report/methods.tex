@@ -153,8 +153,6 @@ for the more complex Neural Networks.
 The two architectures are the same, consisting of a preprocessing
 layer to handle the inputs, followed by the classifier itself.\\
 
-% Both Random Forest and SVM do not take \texttt{title} as input,
-% working with the other attributes alone.
 The preprocessing layers handle both \texttt{title} and
 \texttt{lemmatized\_stanzas} through
 Term Frequency-Inverse Document Frequency. The boolean attributes
@@ -164,6 +162,8 @@ Random Search was chosen for hyperparameter tuning, for both models.
 Cross validation is also used in order to provide a more accurate
 estimate of model performance.
 
+
+
 \section*{Neural Networks}
 The Neural Network models can be trained with the \texttt{neural\_networks.py}
 script. This script offers the possibility of configuring certain parameters for
@@ -171,10 +171,16 @@ training. The architectures were developed and tuned through empirical,
 reiterated testing.\\
 
 Both the Recurrent and One-Dimensional Convolutional Neural Network
-have the same non recurrent architecture. As for static models,
-Term Frequency-Inverse Document Frequency is used for preprocessing
-\texttt{title} into topic analysis. Boolean attributes are converted into
-integers, while \texttt{stanza\_number} is scaled. 
+have the same non recurrent architecture. Except for\texttt{lemmatized\_stanzas}
+and \texttt{title},
+other attributes are preprocessed as in Static Models' preprocessing.\\
+
+Term Frequency-Inverse Document Frequency is applied to \texttt{title},
+followed by Non-Negative Matrix Factorization, to perform topic modeling.\\
+
+\texttt{lemmatized\_stanzas} is first tokenized, and then padded in order to
+get an input with consistent shape.
+
 
 
 \section*{Evaluation}
