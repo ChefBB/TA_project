@@ -1,5 +1,5 @@
 % Carattere dimensione 12
-\documentclass[12pt, openany]{report}
+\documentclass[12pt,openany]{report}
 
 % Per la stampa fronte-retro sostituire con:
 % \documentclass[12pt, twoside]{report}
@@ -95,11 +95,10 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 % Formato delle intestazioni
 \titleformat{\chapter}[hang]
   {\normalfont\LARGE\bfseries}{\thechapter.}{0.5em}{\LARGE}
-% \titlespacing*{\chapter}{0pt}{-20pt}{25pt}
 \titlespacing*{\chapter}{0pt}{30pt}{25pt}
 
 \newcommand{\firstchapter}{
-  \titlespacing*{\chapter}{0pt}{10pt}{25pt} % Reduce space before first chapter title
+  \titlespacing*{\chapter}{0pt}{0pt}{25pt} % Reduce space before first chapter title
 }
 
 
@@ -144,7 +143,7 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 % emotions expressed in English song lyrics at the stanza level; 
 % the emotion labels are given according to
 % Plutchik's 8 primary emotions.
-\textbf{DA FINIRE CON CONCLUSIONI e far stare nella stessa pagina con l'introduzione}
+\textbf{DA FINIRE CON CONCLUSIONI}
 
 % Introduction (on the same page)
 \input{introduzione.tex}
