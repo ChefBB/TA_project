@@ -165,7 +165,16 @@ Cross validation is also used in order to provide a more accurate
 estimate of model performance.
 
 \section*{Neural Networks}
+The Neural Network models can be trained with the \texttt{neural\_networks.py}
+script. This script offers the possibility of configuring certain parameters for
+training. The architectures were developed and tuned through empirical,
+reiterated testing.\\
 
+Both the Recurrent and One-Dimensional Convolutional Neural Network
+have the same non recurrent architecture. As for static models,
+Term Frequency-Inverse Document Frequency is used for preprocessing
+\texttt{title} into topic analysis. Boolean attributes are converted into
+integers, while \texttt{stanza\_number} is scaled. 
 
 
 \section*{Evaluation}
