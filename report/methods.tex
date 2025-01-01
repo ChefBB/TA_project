@@ -1,4 +1,4 @@
-\chapter{Methods}
+\chapter*{Methods}
 \label{ch:capitolo2}
 
 % This section will provide an overview about the data, methods and procedures used in the project.\\
@@ -49,7 +49,7 @@ ultimately resulting in a limited dataset consisting of
 \textbf{(QUANTE? AGGIUNGEREI NUMERO STROFE)}.
 
 
-\section{Preprocessing}
+\section*{Preprocessing}
 \label{preprocessing}
 The initial preprocessing step involved sampling from the original dataset
 while maintaining the proportional distribution of genres.
@@ -141,7 +141,7 @@ and empty words. Lemmatization was chosen over stemming because it produces
 more accurate and meaningful results, particularly for tasks requiring semantic
 understanding, such as the one at hand.\\
 
-Since the dataset was not pre-labeled at the stanza level, the ALBERT Base v2 transformer model was employed for this task.
+Since the dataset was not pre-labeled at the stanza level, ALBERT Base v2 was employed for this task.
 This transformer model is specifically designed to be fine-tuned on tasks that
 require an understanding of the entire sentence, such as sequence classification.\\
 

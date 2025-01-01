@@ -1,5 +1,5 @@
 % Carattere dimensione 12
-\documentclass[12pt]{report}
+\documentclass[12pt, openany]{report}
 
 % Per la stampa fronte-retro sostituire con:
 % \documentclass[12pt, twoside]{report}
@@ -19,7 +19,7 @@
 \usepackage{scrlayer-scrpage} % stili pagina per il frontespizio
 \ifoot[]{}
 \cfoot[]{}
-\ofoot[\pagemark]{\pagemark}
+\cfoot[\pagemark]{\pagemark}
 \pagestyle{scrplain}
 \usepackage{mathptmx} % font Times New Roman (simile)
 \usepackage{graphicx} % inserimento di immagini
@@ -82,12 +82,30 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 \setlength{\parindent}{0pt}
 
 
-% END of listing package 
+% END of listing package
+
+\makeatletter
+\renewcommand{\chapter}{%
+  \thispagestyle{plain}% Optional: Adjust page style
+  \global\@topnum\z@
+  \@afterindentfalse
+  \secdef\@schapter\@schapter}
+\makeatother
 
 % Formato delle intestazioni
-\titleformat{\chapter}[block]
+\titleformat{\chapter}[hang]
   {\normalfont\LARGE\bfseries}{\thechapter.}{0.5em}{\LARGE}
-\titlespacing*{\chapter}{0pt}{-20pt}{25pt}
+% \titlespacing*{\chapter}{0pt}{-20pt}{25pt}
+\titlespacing*{\chapter}{0pt}{30pt}{25pt}
+
+\newcommand{\firstchapter}{
+  \titlespacing*{\chapter}{0pt}{10pt}{25pt} % Reduce space before first chapter title
+}
+
+
+% \titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{\thechapter}{1em}{}
+% \titlespacing*{\chapter}{0pt}{-2em}{1em}
+
 
 \begin{document}
 
@@ -131,8 +149,6 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 % Introduction (on the same page)
 \input{introduzione.tex}
 
-\clearpage
-
 
 % Dataset overview
 % !!! cut, content in intro
@@ -155,8 +171,7 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 
 % \clearpage
 
-\addcontentsline{toc}{chapter}{Key findings and conclusions} % Capitolo non numerato
-\input{conclusioni.tex}
+\input{conclusions.tex}
 \clearpage
 
 % \renewcommand{\contentsname}{Bibliography}
@@ -167,8 +182,8 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 \renewcommand{\listfigurename}{List of figures}
 \listoffigures
 
-\thispagestyle{empty}
-\clearpage
+% \thispagestyle{empty}
+% \clearpage
 
 
 \end{document}
