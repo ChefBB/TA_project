@@ -28,24 +28,6 @@ emotion_mapping = {
 
 def preprocess (data: dict, folder_path: str) -> dict:
     #########################
-    # undersampling
-    #########################
-    # !!! does not seem to help
-    # from sklearn.utils import resample
-    # 
-    # min_size = df['label'].value_counts().min()
-    # 
-    # downsampled_samples = []
-    # for class_label, group in df.groupby('label'):
-    #     sampled_group = resample(
-    #         group, replace=False, n_samples=min_size, random_state=42
-    #     )
-    #     downsampled_samples.append(sampled_group)
-    # 
-    # df = pd.concat(downsampled_samples)
-    
-    
-    #########################
     # title unsupervised learning
     #########################
     preprocessed_data = {
@@ -70,7 +52,7 @@ def preprocess (data: dict, folder_path: str) -> dict:
     joblib.dump(tfidf_vectorizer, folder_path + '/tfidf_vectorizer.joblib')
 
     # NMF for topic modeling
-    nmf_model = NMF(n_components=num_topics, random_state=42)
+    nmf_model = NMF(n_components=num_topics)
     preprocessed_data['train']['topic_distributions'] = nmf_model.fit_transform(tfidf_matrix_train)
     
     joblib.dump(nmf_model, folder_path + '/nmf_model.joblib')
