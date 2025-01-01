@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber Relazione"] 1735554777.6216 "Relazione.bcf" "Relazione.bbl" "Relazione" 1735554782.07575 0
-  "Relazione.bcf" 1735554781.88979 107825 078555ea9f76382054247207ba136185 "pdflatex"
+["biber Relazione"] 1735728171.00248 "Relazione.bcf" "Relazione.bbl" "Relazione" 1735728976.48723 0
+  "Relazione.bcf" 1735728976.22646 107825 078555ea9f76382054247207ba136185 "pdflatex"
   "bibliography.bib" 1734112379.21561 281 f725ed65e945b73067ef6b9e459276b9 ""
   (generated)
   "Relazione.bbl"
   "Relazione.blg"
   (rewritten before read)
-["pdflatex"] 1735554779.77069 "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" "Relazione.pdf" "Relazione" 1735554782.07638 0
-  "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" 1735554704.23418 6073 8f0f9c0fd62a3ebbbe5f76a55b8f0551 ""
+["pdflatex"] 1735728973.53306 "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" "Relazione.pdf" "Relazione" 1735728976.48797 0
+  "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" 1735728972.9208 6452 16535805d2fe15f67c5dc45f23a9ce23 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -109,15 +109,15 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1718359646.02718 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1718359419 8221430 7882b9a7879b697c1714b9ec0b6e673c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Relazione.aux" 1735554781.88506 1640 691d3263cc5a15c3675e6eeb200a6132 "pdflatex"
-  "Relazione.bbl" 1735554779.73206 1487 001cada2f2bbad48e8ccdc642e220945 "biber Relazione"
-  "Relazione.lof" 1735554781.89154 145 4510116ae327e797a8ba3c66f41b0098 "pdflatex"
-  "Relazione.run.xml" 1735554781.89136 2342 fdd720ce795ac3cc0ce6fceafe4ae2e0 "pdflatex"
-  "Relazione.tex" 1735554704.23418 6073 8f0f9c0fd62a3ebbbe5f76a55b8f0551 ""
-  "abstract.tex" 1735554198.72949 1755 eec6dbbca7ca17e6286a4f128473c2e6 ""
-  "conclusioni.tex" 1730279224.25046 62 7089c5b6b39378069969b592fc5a44b9 ""
+  "Relazione.aux" 1735728976.22074 1284 4a9d0a27c2bda98b2126ca28c6168603 "pdflatex"
+  "Relazione.bbl" 1735728173.58828 1487 001cada2f2bbad48e8ccdc642e220945 "biber Relazione"
+  "Relazione.lof" 1735728976.22934 125 db74c1e6000bec46b9cf575da2c7e82d "pdflatex"
+  "Relazione.run.xml" 1735728976.22885 2342 fdd720ce795ac3cc0ce6fceafe4ae2e0 "pdflatex"
+  "Relazione.tex" 1735728972.9208 6452 16535805d2fe15f67c5dc45f23a9ce23 ""
+  "abstract.tex" 1735728858.24812 1908 7c8d1b3ca577893225e276e62f4ede0e ""
+  "conclusions.tex" 1735728094.93339 60 2d4329482950baa58eb2d01c2174744e ""
   "introduzione.tex" 1735554198.73019 2617 d335d66e2dfaf6cbedd73be626fa7db9 ""
-  "methods.tex" 1735554774.52284 8344 32148a50ebc1171c77de882040e7b23c ""
+  "methods.tex" 1735728236.49196 8324 afc5986abbf1c622e335e3f69bbc7ba2 ""
   "pictures/plutchik_primary_emotions.png" 1734535482.46716 53124 2dc2318f2b06154e3cbbbaaa4e7ed1fa ""
   (generated)
   "Relazione.aux"
