@@ -6,6 +6,7 @@ import numpy as np
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from contextlib import redirect_stdout
+from sklearn.utils import resample
 
 
 #########################
@@ -41,7 +42,11 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    '--reset', action= 'store_true'
+    '--reset', action= 'store_true', 
+)
+
+parser.add_argument(
+    '--even-labels', action= 'store_true', 
 )
 
 args = parser.parse_args()
@@ -71,10 +76,10 @@ with open(folder_path + "/model_summary.txt", "w") as f:
         print(('1DConvnet' if args.type == 1 else 'RNN'))
         print(('semisupervised learning' if args.semisupervised != 0
                else 'supervised learning') + '\n')
-        print('Epochs: ' + args.epochs)
+        print(f'Epochs: {args.epochs}')
         if args.semisupervised!= 0:
-            print('Epochs with pseudo-labeled data: ' + args.semisupervised)
-            print('Reset model weights after first training: ' + args.reset)
+            print(f'Epochs with pseudo-labeled data: {args.semisupervised}')
+            print(f'Reset model weights after first training: {args.reset}')
         print('\n')
 
 
@@ -86,6 +91,24 @@ with open(folder_path + "/model_summary.txt", "w") as f:
 # split data
 #########################
 
+#########################
+# undersampling
+#########################
+# !!! does not seem to help
+if args.even_labels:
+    min_size = df['label'].value_counts().min()
+
+    downsampled_samples = []
+    for class_label, group in df.groupby('label'):
+        sampled_group = resample(
+            group, replace=False, n_samples=min_size, random_state=42
+        )
+        downsampled_samples.append(sampled_group)
+
+    # could reuse for testing but seems problematic as pollutes the test set
+    # cut_df = df[~df.isin(pd.concat(downsampled_samples)).all(axis=1)]
+
+    df = pd.concat(downsampled_samples)
 
 # test split
 (
@@ -97,7 +120,7 @@ with open(folder_path + "/model_summary.txt", "w") as f:
 ) = train_test_split(
     df['lemmatized_stanzas'], df[['stanza_number']],
     preprocessing.booleans_conv(df), df['title'],
-    preprocessing.preprocess_labels(df['label']), test_size=0.3, random_state=42
+    preprocessing.preprocess_labels(df['label']), test_size=0.3
 )
 
 # validation split
@@ -111,7 +134,7 @@ with open(folder_path + "/model_summary.txt", "w") as f:
     train_test_split(
         lemmatized_stanzas_train, stanza_numbers_train,
         booleans_train, titles_train,
-        y_train, test_size=0.3, random_state=42)
+        y_train, test_size=0.3)
 )
 
 
@@ -281,7 +304,7 @@ history = model.fit(
 if args.semisupervised != 0:
     X_unlabeled = pd.read_csv(
         path + 'data/def_lemmatized_df.csv'
-    ).iloc[130001:].dropna().sample(frac= 0.05, random_state= 42)
+    ).iloc[130001:].dropna().sample(frac= 0.05)
     
     X_unlabeled = {
         'lemmatized_stanzas': X_unlabeled['lemmatized_stanzas'],
@@ -304,7 +327,6 @@ if args.semisupervised != 0:
 
     max_indices = np.argmax(predictions, axis=1)
 
-    # Create one-hot encoded results
     one_hot_batch = np.zeros_like(predictions)
     one_hot_batch[np.arange(predictions.shape[0]), max_indices] = 1
     
