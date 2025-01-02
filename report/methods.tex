@@ -178,22 +178,25 @@ script. This script offers the possibility of configuring various parameters for
 training, which was used to test different configurations:
 \begin{itemize}
     \item \textbf{\texttt{type}}: specifies which type of Neural
-    Network is to be trained (\texttt{1} is default, for One-Dimensional
-    Convolutional Neural Networks; \texttt{2} indicates the training of a
-    Recurrent Neural Network)
+    Network is to be trained. \texttt{1} is default, indicating
+    One-Dimensional Convolutional Neural Networks training.
+    Setting it to \texttt{2} trains a Recurrent Neural Network.
 
-    \item \textbf{\texttt{epochs}}: specifies number of epochs
+    \item \textbf{\texttt{epochs}}: Defines the number of epochs for training,
+    allowing control over the duration of the learning process.
 
-    \item \textbf{\texttt{semisupervised}}: specifies number of epochs
-    for semi-supervised learning; if not specified, only labeled data is used
+    \item \textbf{\texttt{semisupervised}}: Specifies the number of epochs
+    dedicated to semi-supervised learning. If this parameter is omitted,
+    the model is trained using only labeled data.
 
-    \item \textbf{\texttt{reset}}: if included, the model is reset before
-    starting training on newly pseudo-labeled data. In this case, semi-supervised
-    learning is used for a sort of data augmentation rather than transfer
-    learning
-
-    \item \textbf{\texttt{even-labels}}:
-
+    \item \textbf{\texttt{reset}}: When included, the model is reset before
+    starting training on newly pseudo-labeled data. This approach repurposes
+    semi-supervised learning as a form of data augmentation rather than as
+    transfer learning, providing an opportunity to enhance performance with
+    pseudo-labeled examples.
+    
+    \item \textbf{\texttt{even-labels}}: When included, ensures even class
+    representation in the dataset by downsampling overrepresented classes.
 \end{itemize}
 
 The architectures were developed and tuned through empirical,
