@@ -79,7 +79,7 @@ accurately reflected that of the full dataset.\\
 % which the records are not whole songs anymore but single stanzas; each numbered
 % based on its position in the song. \\
 
-The preliminary text cleaning process focused on the \texttt{lyrics} attribute,
+The preliminary text cleaning process focused on \texttt{lyrics},
 which contained the complete lyrics of each song in string format.
 Initially, a regular expression (RegEx) was built to remove noise from the
 lyrics, specifically targeting words enclosed in square brackets that were
@@ -125,8 +125,8 @@ numbered according to its position within the song.\\
 
 
 A further and more detailed cleaning process on the stanzas involved the creation
-of the boolean feature \texttt{is\_chorus}, which was assigned a \texttt{true}
-value for repeated stanzas within the same song or for stanzas with headers such
+of the boolean feature \texttt{is\_chorus}, which was assigned \texttt{true}
+for repeated stanzas within the same song or for stanzas with headers such
 as "hook", "chorus", "refrain", or "bridge".
 Next, stanza headers and newline characters between verses were removed to obtain
 cleaner stanzas.
@@ -135,7 +135,8 @@ duplicate stanzas were discarded to avoid redundant data. This resulted in a
 dataset of cleaned, non-duplicate stanzas, which served as the checkpoint for
 the labeling step and the starting point for the text lemmatization process.\\
 
-The subsequent step involved lemmatizing the stanzas using the \texttt{spaCy}
+The subsequent step involved lemmatizing the stanzas using the
+\texttt{spaCy}\textsuperscript{\cite{spacy}}
 library. A list of lemmatized tokens was created by filtering out punctuation
 and empty words. Lemmatization was chosen over stemming because it produces
 more accurate and meaningful results, particularly for tasks requiring semantic
@@ -143,43 +144,80 @@ understanding, such as the one at hand.\\
 
 Since the dataset was not pre-labeled at the stanza level, ALBERT Base v2 was employed for this task.
 This transformer model is specifically designed to be fine-tuned on tasks that
-require an understanding of the entire sentence, such as sequence classification.\\
+require an understanding of the entire sentence, such as sequence classification.
 
 
 \section*{Static Models}
-The development of static models was simple and straight forward.
+The development of static models was straight forward, emphasizing simplicity.
 Static models were mainly developed to provide a performance comparison
 for the more complex Neural Networks.
-The two architectures are the same, consisting of a preprocessing
-layer to handle the inputs, followed by the classifier itself.\\
+The two models share the same architectural framework: a preprocessing
+layer to handle the inputs, followed by a classifier for prediction.\\
 
-The preprocessing layers handle both \texttt{title} and
+The preprocessing layer processes both \texttt{title} and
 \texttt{lemmatized\_stanzas} through
-Term Frequency-Inverse Document Frequency. The boolean attributes
-are converted to integers, while \texttt{stanza\_number} is scaled.\\
+Term Frequency-Inverse Document Frequency, % TODO: why tf-idf???
+to quantify term-wise importance
+within the dataset. The boolean attributes
+are converted to integers for compatibility with the model,
+while \texttt{stanza\_number} is scaled
+to ensure uniformity and prevent bias due to its magnitude.\\
 
-Random Search was chosen for hyperparameter tuning, for both models.
-Cross validation is also used in order to provide a more accurate
-estimate of model performance.
+To optimize model performance, hyperparameter space exploration was conducted
+using Random Search.
+Cross-validation is also used in order to provide a more accurate
+estimate of model performance, ensuring that the results are less influenced
+by dataset splits. Additionally, cross-validation helps prevent overfitting,
+especially in cases of limited data availability or class imbalance. 
 
 
 
 \section*{Neural Networks}
 The Neural Network models can be trained with the \texttt{neural\_networks.py}
-script. This script offers the possibility of configuring certain parameters for
-training. The architectures were developed and tuned through empirical,
+script. This script offers the possibility of configuring various parameters for
+training, which was used to test different configurations:
+\begin{itemize}
+    \item \textbf{\texttt{type}}: specifies which type of Neural
+    Network is to be trained (\texttt{1} is default, for One-Dimensional
+    Convolutional Neural Networks; \texttt{2} indicates the training of a
+    Recurrent Neural Network)
+
+    \item \textbf{\texttt{epochs}}: specifies number of epochs
+
+    \item \textbf{\texttt{semisupervised}}: specifies number of epochs
+    for semi-supervised learning; if not specified, only labeled data is used
+
+    \item \textbf{\texttt{reset}}: if included, the model is reset before
+    starting training on newly pseudo-labeled data. In this case, semi-supervised
+    learning is used for a sort of data augmentation rather than transfer
+    learning
+
+    \item \textbf{\texttt{even-labels}}:
+
+\end{itemize}
+
+The architectures were developed and tuned through empirical,
 reiterated testing.\\
 
-Both the Recurrent and One-Dimensional Convolutional Neural Network
-have the same non recurrent architecture. Except for\texttt{lemmatized\_stanzas}
-and \texttt{title},
-other attributes are preprocessed as in Static Models' preprocessing.\\
+% Both the Recurrent and One-Dimensional Convolutional Neural Network
+% have the same non recurrent architecture. Except for\texttt{lemmatized\_stanzas}
+% and \texttt{title},
+% other attributes are preprocessed as in Static Models' preprocessing.\\
 
-Term Frequency-Inverse Document Frequency is applied to \texttt{title},
-followed by Non-Negative Matrix Factorization, to perform topic modeling.\\
+Both the Recurrent Neural Network (RNN) and the One-Dimensional Convolutional
+Neural Network (1D-CNN) share a similar non-recurrent preprocessing
+architecture. While most attributes are processed in the same manner as in
+the Static Models, specific steps are applied to \texttt{lemmatized\_stanzas}
+and \texttt{title}.
+Term Frequency-Inverse Document Frequency is applied on \texttt{title},
+followed by Non-Negative Matrix Factorization
+to extract latent topics, providing a richer representation of the
+textual data.\\
 
-\texttt{lemmatized\_stanzas} is first tokenized, and then padded in order to
-get an input with consistent shape.\\
+\texttt{lemmatized\_stanzas} are used for the sequential part of the Networks.
+Elements are first tokenized, and then padded in order to
+get an input with consistent shape, which is essential for both types of
+recurrent layers.\\
 
 The script offers the option of downsampling classes in order to get
 uniform label representation.\\
