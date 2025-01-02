@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  2 JAN 2025 16:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  2 JAN 2025 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -695,52 +695,32 @@ Overfull \hbox (4.89194pt too wide) in paragraph at lines 192--197
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--204
-
- []
-
-
-Overfull \hbox (24.00146pt too wide) in paragraph at lines 210--219
-\OT1/ptm/m/n/12 pro-cessed in the same man-ner as in the Static Mod-els, spe-cific steps are ap-plied to \OT1/cmtt/m/n/12 lemmatized[]stanzas
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 210--219
+Underfull \hbox (badness 10000) in paragraph at lines 211--220
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 220--224
+Underfull \hbox (badness 10000) in paragraph at lines 221--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--227
-
+Overfull \hbox (13.87929pt too wide) in paragraph at lines 254--257
+\OT1/ptm/m/n/12 The RNN struc-ture fo-cuses on cap-tur-ing se-quen-tial de-pen-den-cies in the lyrics data (em-bed-ding[]lyrics).
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
-
+[6]
+Overfull \hbox (1.94025pt too wide) in paragraph at lines 277--293
+[]\OT1/ptm/m/n/12 Additional Fea-tures In-put: stanza[]number[]input (nu-meric in-put for stanza num-ber, scaled). Boolean
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
-
- []
-
-) [6] (./conclusions.tex) [7
+) [7] (./conclusions.tex) [8
 
 ] (./Relazione.lof)
 \tf@lof=\write4
 \openout4 = `Relazione.lof'.
 
- [8
+ [9
 
 ] (./Relazione.aux)
  ***********
@@ -752,18 +732,18 @@ Package logreq Info: Writing requests to 'Relazione.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16112 strings out of 474116
- 317618 string characters out of 5743682
+ 16115 strings out of 474116
+ 317656 string characters out of 5743682
  1937187 words of memory out of 5000000
- 38286 multiletter control sequences out of 15000+600000
- 578912 words of font info for 72 fonts, out of 8000000 for 9000
+ 38288 multiletter control sequences out of 15000+600000
+ 581045 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,21n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (8 pages, 103598 bytes).
+Output written on Relazione.pdf (9 pages, 106935 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 34 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

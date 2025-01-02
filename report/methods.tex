@@ -200,20 +200,21 @@ training, which was used to test different configurations:
 \end{itemize}
 
 The architectures were developed and tuned through empirical,
-reiterated testing.\\
+reiterated testing. These parameters helped with the process, and can
+be used for further experimentation.
 
 % Both the Recurrent and One-Dimensional Convolutional Neural Network
 % have the same non recurrent architecture. Except for\texttt{lemmatized\_stanzas}
 % and \texttt{title},
 % other attributes are preprocessed as in Static Models' preprocessing.\\
 
-Both the Recurrent Neural Network (RNN) and the One-Dimensional Convolutional
-Neural Network (1D-CNN) share a similar non-recurrent preprocessing
-architecture. While most attributes are processed in the same manner as in
-the Static Models, specific steps are applied to \texttt{lemmatized\_stanzas}
+Both the Recurrent Neural Network and the One-Dimensional Convolutional
+Neural Network share the same preprocessing
+architecture. Most attributes are processed in the same manner as in
+the Static Models; specific steps are applied to \texttt{lemmatized\_stanzas}
 and \texttt{title}.
-Term Frequency-Inverse Document Frequency is applied on \texttt{title},
-followed by Non-Negative Matrix Factorization
+Non-Negative Matrix Factorization is applied to \texttt{title} in addition to
+Term Frequency-Inverse Document Frequency
 to extract latent topics, providing a richer representation of the
 textual data.\\
 
@@ -222,17 +223,73 @@ Elements are first tokenized, and then padded in order to
 get an input with consistent shape, which is essential for both types of
 recurrent layers.\\
 
-The script offers the option of downsampling classes in order to get
-uniform label representation.\\
+\subsection*{One-Dimensional Convolutional Neural Network}
+% The Convolutional part of the network uses three convolutional
+% layers, followed by a 1-Dimensional Global Max Pooling layer, to reduce
+% dimensionality. This convolutional pipeline is then concatenated with the
+% other pipelines.
 
-\textbf{cnn architecture}\\
+The 1D-CNN architecture is designed to extract and learn local patterns in
+the tokenized lyrics data (embedding\_lyrics). Its structure consists of
+multiple convolutional layers followed by global pooling and dropout for
+regularization.
 
-\textbf{rnn architecture}\\
+Convolutional Layers:
+The network starts with a Conv1D layer (conv\_layer1) that applies 12 filters
+with a kernel size of 4 and uses the ReLU activation function.
+Subsequent Conv1D layers (conv\_layer3 and conv\_layer4) progressively reduce
+the number of filters (8 and 6, respectively) while adjusting the kernel sizes
+(6 and 8). This setup enables the model to detect increasingly abstract
+patterns.
 
-\textbf{optional semisupervised learning, reset}\\
+Global Max Pooling:
+After the convolutional layers, a GlobalMaxPooling1D layer is applied. This operation reduces the output from the convolutional layers into a fixed-length vector by taking the maximum value along the sequence dimension, effectively summarizing the most prominent features.
+Regularization:
+A Dropout layer with a rate of 0.3 is applied to the pooled features to reduce
+the risk of overfitting by randomly zeroing some of the layer's outputs during
+training.
 
-\textbf{graphs}
 
+\subsection*{Recurrent Neural Network}
+The RNN structure focuses on capturing sequential dependencies in the lyrics
+data (embedding\_lyrics). It uses gated recurrent units (GRU) with
+regularization to model temporal relationships. Here's the breakdown:
+
+Recurrent Layers:
+The first GRU layer (recurrent\_layer1) has 128 units and outputs sequences
+for further processing. It employs the following:
+Activation functions: tanh for the hidden state and sigmoid for the recurrent
+gate.
+Dropout: Applied to the inputs (rate = 0.4) and recurrent connections
+(rate = 0.3).
+The second GRU layer (recurrent\_layer2) reduces the number of units to 64
+while maintaining sequential outputs.
+The final GRU layer (recurrent\_layer3) outputs a fixed-length vector with
+32 units, summarizing the sequential information into a single representation.
+Regularization:
+A Dropout layer with a higher rate of 0.5 is applied to the GRU output to
+prevent overfitting, reflecting the additional complexity of the RNN structure.
+
+
+\subsection*{Shared Components}
+Both architectures integrate additional features and combine them with the textual data's representation:
+
+Additional Features Input:
+stanza\_number\_input (numeric input for stanza number, scaled).
+Boolean Inputs: Flags for specific categories are processed as integer inputs.
+Topic Modeling Input: Outputs from Non-Negative Matrix Factorization (NMF)
+representing the title's topics.
+Dense Layer for Additional Inputs:
+The additional inputs are concatenated and passed through a Dense layer with
+32 units and ReLU activation to create a compact representation.
+Combining Textual and Additional Features:
+The output of the lyrics-processing branch (either the pooled 1D-CNN output
+or the GRU output) is concatenated with the processed additional features.
+Dense Layers for Classification:
+The combined representation is passed through a Dense layer with 32 units
+(ReLU activation), followed by a Dropout layer with a rate of 0.3.
+Finally, the output layer uses 8 units with a softmax activation, corresponding
+to the classification into 8 emotion categories.
 
 
 \section*{Evaluation}
