@@ -43,18 +43,6 @@
       \verb https://huggingface.co/albert/albert-base-v2
       \endverb
     \endentry
-    \entry{spacy}{misc}{}{}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labeltitlesource}{title}
-      \field{title}{spaCy}
-      \verb{urlraw}
-      \verb https://spacy.io
-      \endverb
-      \verb{url}
-      \verb https://spacy.io
-      \endverb
-    \endentry
   \enddatalist
 \endrefsection
 \endinput
