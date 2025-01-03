@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  3 JAN 2025 18:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  3 JAN 2025 18:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -610,29 +610,35 @@ Package biblatex Info: Reference segment=0 on input line 111.
 File: pictures/plutchik_primary_emotions.png Graphic file (type png)
 <use pictures/plutchik_primary_emotions.png>
 Package pdftex.def Info: pictures/plutchik_primary_emotions.png  used on input line 19.
-(pdftex.def)             Requested size: 107.20132pt x 106.90019pt.
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 23.
+(pdftex.def)             Requested size: 89.33353pt x 89.08258pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--22
+
+ []
+
+)
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 158.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 23.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 158.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 23.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 158.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 23.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 158.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 158.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 158.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 158.
 
 
 Package scrlayer-scrpage Warning: \headheight to low.
@@ -642,18 +648,98 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                processing, but you should do this yourself,
 (scrlayer-scrpage)                e.g., setting geometry's option
 (scrlayer-scrpage)                `head=21.74998pt'.
-(scrlayer-scrpage)                I'll also decrease \topmargin on input line 23.
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 158.
 
 
 Overfull \vbox (9.74998pt too high) has occurred while \output is active []
 
  [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}]) (./methods.tex
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc} <./pictures/plutchik_primary_emotions.png>] (./methods.tex
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 13.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [2 <./pictures/plutchik_primary_emotions.png>] [3] [4] [5] [6]) (./results.tex [7]) (./discussion.tex) (./conclusions.tex) [8] (./Relazione.lof)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 51--55
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 56--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--90
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--96
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 122--127
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 128--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--180
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 186--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--204
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 232--242
+
+ []
+
+) (./results.tex [7]
+Underfull \hbox (badness 10000) in paragraph at lines 12--16
+
+ []
+
+) (./discussion.tex) (./conclusions.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+) [8] (./Relazione.lof)
 \tf@lof=\write4
 \openout4 = `Relazione.lof'.
 
@@ -671,13 +757,13 @@ Package logreq Info: Writing requests to 'Relazione.run.xml'.
 Here is how much of TeX's memory you used:
  16216 strings out of 474116
  319670 string characters out of 5743682
- 1936187 words of memory out of 5000000
+ 1937187 words of memory out of 5000000
  38375 multiletter control sequences out of 15000+600000
  582403 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,21n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (9 pages, 115235 bytes).
+Output written on Relazione.pdf (9 pages, 117770 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
