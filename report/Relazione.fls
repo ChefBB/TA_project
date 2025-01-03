@@ -146,6 +146,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/ragged2e/ragged2e.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/ragged2e/ragged2e.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
