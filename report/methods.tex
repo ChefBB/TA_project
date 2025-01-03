@@ -102,34 +102,46 @@ require an understanding of the entire sentence, such as sequence classification
 
 %MODELLI STATICI
 \subsection*{Static Models}
-Firstly, it is important to illustrate the feature creation step applied in order
-to enhance model performance.
-This step involved generating five features for each emotion class using Term
-Frequency-Inverse Document Frequency (TF-IDF), a statistical measure that
-evaluates how informative and important a word is within a document or class.
-In this project, TF-IDF was applied to identify the five most informative words
-for characterizing each emotion.
-The \texttt{min\_df} and \texttt{max\_df} parameters were employed during the
-TF-IDF computation to establish minimum and maximum thresholds.
-Specifically, a word was considered informative for a class if it appeared at
-least twice and in up to the 80\% of the stanzas associated with that class.
-These features quantify the number of times that certain word appears for each
-class.
-This step was incorporated into the project's pipeline because the initial model
-training, that will be illustrated in the following sections, revealed suboptimal
-classification performance. 
-The addition of these features led to a slight improvement in the results.
-\textbf{E' EFFETTIVAMENTE VERO?}\\
+% Firstly, it is important to illustrate the feature creation step applied in order
+% to enhance model performance.
+% This step involved generating five features for each emotion class using Term
+% Frequency-Inverse Document Frequency (TF-IDF), a statistical measure that
+% evaluates how informative and important a word is within a document or class.
+% In this project, TF-IDF was applied to identify the five most informative words
+% for characterizing each emotion.
+% The \texttt{min\_df} and \texttt{max\_df} parameters were employed during the
+% TF-IDF computation to establish minimum and maximum thresholds.
+% Specifically, a word was considered informative for a class if it appeared at
+% least twice and in up to the 80\% of the stanzas associated with that class.
+% These features quantify the number of times that certain word appears for each
+% class.
+% This step was incorporated into the project's pipeline because the initial model
+% training, that will be illustrated in the following sections, revealed suboptimal
+% classification performance. 
+% The addition of these features led to a slight improvement in the results.
+% \textbf{E' EFFETTIVAMENTE VERO?}\\
 
 The development of static models was then simple and straight forward.
-Static models were mainly developed to provide a performance comparison
+Static models are here meant to provide a performance comparison
 for the more complex Neural Networks.
 The two architectures are the same, consisting of a preprocessing
 layer to handle the inputs, followed by the classifier itself.\\
 
 The preprocessing layers handle both \texttt{title} and
-\texttt{lemmatized\_stanzas} through TF-IDF. The boolean attributes
-are converted to integers, while \texttt{stanza\_number} is scaled.\\
+\texttt{lemmatized\_stanzas} through TF-IDF. 
+To help with classification, additional features displaying the five most
+frequent words for each class was added.
+This was also obtained through TF-IDF.
+% The \texttt{min\_df} and \texttt{max\_df} parameters were employed during the
+% TF-IDF computation to establish minimum and maximum thresholds.
+A word was considered informative for a class if it appeared at
+least twice and in up to 80\% of the stanzas associated with that class.
+These features quantify the number of times that certain word appears for each
+class.
+% 
+% 
+The boolean attributes are converted to integers, while \texttt{stanza\_number}
+is scaled.\\
 
 Random Search was chosen for hyperparameter tuning, for both models.
 Cross validation is also used in order to provide a more accurate
@@ -191,18 +203,18 @@ additional features.
 The combined representation is passed through a Dense layer with 32 units
 (ReLU activation), followed by a Dropout layer with a rate of 0.3.
 Finally, the output layer uses 8 units with a softmax activation, corresponding
-to the classification into 8 emotion categories.
+to the classification into 8 emotion categories.\\
 
 
-\section*{Evaluation}
-The performances of the models were evaluated using the
-\texttt{classification\_report} function from the \texttt{scikit-learn} library. 
-This function is particularly useful as it offers an overview of key evaluation
-metrics commonly used in Machine Learning, i.e. accuracy, precision, recall,
-and F1-score.\\
-For the static models implemented in this project, the classification report
-revealed an accuracy of 34\% for the Random Forest algorithm and 43\% for SVM. 
-These results can be considered reasonable, given that the task at hand is a
-multi-class classification problem with 8 classes.\\
-
-\textbf{AGGIUNGERE ALTRO}
+The models are trained using categorical cross-entropy as the loss function,
+as it consistently produced better-performing results for both types of
+neural networks.
+As evaluation metric, the better performing one was categorical accuracy.
+Other metrics were tested for evaluation purposes, particularly
+top-k categorical accuracy with $k=2$, which yielded interesting insights
+by considering a prediction correct if the true label is among the top two
+predicted classes. While it showed potential in improving generalization and
+preventing overfitting, it was ultimately discarded as a primary evaluation
+metric. This is because, with $k=2$, the model has a 25\% baseline
+chance of being correct when there are eight possible classes, which reduces
+the precision required for accurate learning and limits performance improvements.
