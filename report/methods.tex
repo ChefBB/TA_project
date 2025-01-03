@@ -156,11 +156,6 @@ get an input with consistent shape, which is essential for both types of
 recurrent layers.\\
 
 \subsubsection*{One-Dimensional Convolutional Neural Network}
-% The Convolutional part of the network uses three convolutional
-% layers, followed by a 1-Dimensional Global Max Pooling layer, to reduce
-% dimensionality. This convolutional pipeline is then concatenated with the
-% other pipelines.
-
 The Convolutional part of the architecture is designed to extract and learn
 local patterns in \texttt{embedding\_lyrics}.
 Its structure consists of three convolutional layers, each applying filters of
@@ -175,10 +170,11 @@ overfitting.
 \subsubsection*{Recurrent Neural Network}
 The Recurrent part of the architecture is designed to extract and learn
 local patterns in \texttt{embedding\_lyrics}.
-Its structure consists of three gated recurrent units (\texttt{GRU})
-to model temporal relationships. These are progressively formed by smaller
-numbers of units, in order to capture patterns. All three layers in the
-architecture use the \texttt{tanh} activation function to compute the hidden state and
+Its structure consists of three Gated Recurrent Units (\texttt{GRU} layers)
+to model temporal relationships. These are characterized by progressively smaller
+numbers of units; this allows pattern capture at different abstraction levels.
+All three layers in the architecture use the \texttt{tanh} activation function
+to compute the hidden state and
 the \texttt{sigmoid} activation function for the recurrent gate.
 The first and second layers return the full sequence of hidden states for each
 time step in the input sequence, enabling richer learning of patterns over time.
@@ -192,7 +188,6 @@ The inputs are passed them through a dense layer to create a compact
 representation.
 The output of the lyrics-processing branch is concatenated with the processed
 additional features.
-% Dense Layers for Classification:
 The combined representation is passed through a Dense layer with 32 units
 (ReLU activation), followed by a Dropout layer with a rate of 0.3.
 Finally, the output layer uses 8 units with a softmax activation, corresponding
