@@ -185,7 +185,7 @@ get an input with consistent shape, which is essential for both types of
 recurrent layers.\\
 
 \subsubsection*{One-Dimensional Convolutional Neural Network}
-The Convolutional part of the architecture is designed to extract and learn
+The Convolutional part of the architecture is specifically designed to extract and learn
 local patterns in \texttt{embedding\_lyrics}.
 Its structure consists of three convolutional layers, each applying filters of
 varying sizes. This allows to detect patterns at different granularities.
@@ -197,7 +197,7 @@ overfitting.
 
 
 \subsubsection*{Recurrent Neural Network}
-The Recurrent part of the architecture is designed to extract and learn
+The Recurrent part of the architecture is specifically designed to extract and learn
 local patterns in \texttt{embedding\_lyrics}.
 Its structure consists of three Gated Recurrent Units (\texttt{GRU} layers)
 to model temporal relationships. These are characterized by progressively smaller
