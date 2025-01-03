@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  2 JAN 2025 16:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  2 JAN 2025 18:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -481,31 +481,47 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \TX@delta=\dimen167
 \TX@cols=\count411
 \TX@ftn=\toks27
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/ragged2e/ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip77
+\RaggedLeftLeftskip=\skip78
+\RaggedRightLeftskip=\skip79
+\CenteringRightskip=\skip80
+\RaggedLeftRightskip=\skip81
+\RaggedRightRightskip=\skip82
+\CenteringParfillskip=\skip83
+\RaggedLeftParfillskip=\skip84
+\RaggedRightParfillskip=\skip85
+\JustifyingParfillskip=\skip86
+\CenteringParindent=\skip87
+\RaggedLeftParindent=\skip88
+\RaggedRightParindent=\skip89
+\JustifyingParindent=\skip90
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 109.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 111.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (./Relazione.aux)
 \openout1 = `Relazione.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -586,30 +602,21 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Relazione.bbl' found.
  (./Relazione.bbl)
-Package biblatex Info: Reference section=0 on input line 109.
-Package biblatex Info: Reference segment=0 on input line 109.
+Package biblatex Info: Reference section=0 on input line 111.
+Package biblatex Info: Reference segment=0 on input line 111.
 \c@lstlisting=\count418
  (./abstract.tex
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 29.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )) (./introduzione.tex
-Underfull \hbox (badness 10000) in paragraph at lines 12--22
-
- []
-
 <pictures/plutchik_primary_emotions.png, id=1, 357.335pt x 356.33125pt>
 File: pictures/plutchik_primary_emotions.png Graphic file (type png)
 <use pictures/plutchik_primary_emotions.png>
 Package pdftex.def Info: pictures/plutchik_primary_emotions.png  used on input line 30.
 (pdftex.def)             Requested size: 107.20132pt x 106.90019pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--33
-
- []
-
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 33.
-(/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 33.
@@ -646,81 +653,16 @@ Overfull \vbox (9.74998pt too high) has occurred while \output is active []
 
  [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}]) (./methods.tex [2 <./pictures/plutchik_primary_emotions.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 54--58
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--105
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 127--137
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 138--144
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--156
-
- []
-
-
-Overfull \hbox (1.95857pt too wide) in paragraph at lines 157--165
-[]\OT1/ptm/m/n/12 The pre-pro-cess-ing layer pro-cesses both \OT1/cmtt/m/n/12 title \OT1/ptm/m/n/12 and \OT1/cmtt/m/n/12 lemmatized[]stanzas \OT1/ptm/m/n/12 through Term Frequency-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--165
-
- []
-
-[4]
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}]) (./methods.tex [2 <./pictures/plutchik_primary_emotions.png>] [3] [4]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 180.
-
-Overfull \hbox (4.89194pt too wide) in paragraph at lines 192--197
-\OT1/ptm/m/n/12 rather than as trans-fer learn-ing, pro-vid-ing an op-por-tu-nity to en-hance per-for-mance with pseudo-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 211--220
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 221--225
-
- []
-
-
-Overfull \hbox (13.87929pt too wide) in paragraph at lines 254--257
-\OT1/ptm/m/n/12 The RNN struc-ture fo-cuses on cap-tur-ing se-quen-tial de-pen-den-cies in the lyrics data (em-bed-ding[]lyrics).
- []
-
-[6]
-Overfull \hbox (1.94025pt too wide) in paragraph at lines 277--293
-[]\OT1/ptm/m/n/12 Additional Fea-tures In-put: stanza[]number[]input (nu-meric in-put for stanza num-ber, scaled). Boolean
- []
-
-) [7] (./conclusions.tex) [8
+ [5]) [6] (./conclusions.tex) [7
 
 ] (./Relazione.lof)
 \tf@lof=\write4
 \openout4 = `Relazione.lof'.
 
- [9
+ [8
 
 ] (./Relazione.aux)
  ***********
@@ -732,18 +674,18 @@ Package logreq Info: Writing requests to 'Relazione.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16115 strings out of 474116
- 317656 string characters out of 5743682
- 1937187 words of memory out of 5000000
- 38288 multiletter control sequences out of 15000+600000
+ 16202 strings out of 474116
+ 319563 string characters out of 5743682
+ 1936187 words of memory out of 5000000
+ 38371 multiletter control sequences out of 15000+600000
  581045 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,21n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,21n,121p,1215b,1757s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (9 pages, 106935 bytes).
+Output written on Relazione.pdf (8 pages, 103663 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 55 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
