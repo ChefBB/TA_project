@@ -81,9 +81,6 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 }
 
 
-\setlength{\parindent}{0pt}
-
-
 % END of listing package
 
 \makeatletter
@@ -103,34 +100,10 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
   \titlespacing*{\chapter}{0pt}{0pt}{25pt} % Reduce space before first chapter title
 }
 
-
-% \titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{\thechapter}{1em}{}
-% \titlespacing*{\chapter}{0pt}{-2em}{1em}
-
+\setlength{\parindent}{0pt}
 
 \begin{document}
 \justify
-
-% Frontespizio
-% \begin{titlepage}
-% \begin{figure}
-%     \centering\includegraphics[scale=0.5]{immagini/cherubino_pant541.png}
-% \end{figure}
-
-% \begin{center}
-%     {\LARGE{ Emotion Detection in Song Lyrics Stanzas \\}}
-%     \vspace{3cm}
-%     {\Large { TEXT ANALYTICS - A.Y. 2024/2025 }}\\
-%     \vspace{1.5cm}
-%     {\Large { Group 2 }}\\
-%     \vspace{1.5cm}
-%     {\Large { Barbieri, Bosco, Ferrara, Rotellini, Zizza }}
-% \end{center}
-
-% \centering{\large{\bf ANNO ACCADEMICO 20xx/20xx }}
-% \end{titlepage}
-% Fine frontespizio
-
 
 \setcounter{page}{1}
 \addtocontents{toc}{\protect\thispagestyle{empty}}
