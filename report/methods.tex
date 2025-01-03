@@ -119,30 +119,48 @@ complexity required for detecting emotional tones in complex pieces of text.
 
 %MODELLI STATICI
 \subsection*{Static Models}
-% Firstly, it is important to illustrate the feature creation step applied in order
-% to enhance model performance.
-% This step involved generating five features for each emotion class using Term
-% Frequency-Inverse Document Frequency (TF-IDF), a statistical measure that
-% evaluates how informative and important a word is within a document or class.
-% In this project, TF-IDF was applied to identify the five most informative words
-% for characterizing each emotion.
-% The \texttt{min\_df} and \texttt{max\_df} parameters were employed during the
-% TF-IDF computation to establish minimum and maximum thresholds.
-% Specifically, a word was considered informative for a class if it appeared at
-% least twice and in up to the 80\% of the stanzas associated with that class.
-% These features quantify the number of times that certain word appears for each
-% class.
-% This step was incorporated into the project's pipeline because the initial model
-% training, that will be illustrated in the following sections, revealed suboptimal
-% classification performance. 
-% The addition of these features led to a slight improvement in the results.
-% \textbf{E' EFFETTIVAMENTE VERO?}\\
-
 The development of static models was then simple and straight forward.
 Static models are here meant to provide a performance comparison
 for the more complex Neural Networks.
 The two architectures are the same, consisting of a preprocessing
 layer to handle the inputs, followed by the classifier itself.\\
+
+The preprocessing layers managed two key textual inputs, \texttt{title} and
+\texttt{lemmatized stanzas}, using Term Frequency-Inverse Document Frequency
+(TF-IDF) for feature extraction. An additional analysis aimed at identifying the
+most significant features for each emotion label in the dataset was conducted to
+enhance classification.\\
+
+The feature importance analysis was performed on the already labeled and
+lemmatized dataset, following these steps:\\
+
+Custom Stopword List Creation: A custom stopword list was compiled, consisting
+of the most frequent and generic words in the dataset, along with additional
+punctuation marks and common typographical errors not covered by the default
+NLTK stopword lists.
+
+Stopword Removal: Irrelevant words identified by the custom stopword list
+were removed from the lemmatized stanzas to reduce noise in the data.
+
+TF-IDF Analysis per Label: A function was developed to compute TF-IDF scores for
+a given text, with parameters \texttt{min\_df} set to 2 and \texttt{max\_df} set
+to 0.80.
+This configuration ensured that words appearing in fewer than two documents or
+in more than 80\% of the documents were ignored, minimizing the influence of
+extremely rare or overly common words. The function was applied separately to
+the cleaned stanzas for each label, with the aim of identifying the most
+relevant features per emotion category.\\
+
+The results, however, did not meet expectations, though the outcome was not
+entirely surprising. Most labels shared at least two common features, and
+certain labels (such as surprise and trust) shared all features.
+Additionally, all identified features exhibited very low TF-IDF scores,
+below 0.05.
+This result appears to be inherent to the nature of the dataset: song lyrics
+frequently contain repetitive and generic language, making it difficult to
+distinguish specific emotions based solely on textual features.
+Consequently, the analysis was concluded at this point.\\
+
 
 The preprocessing layers handle both \texttt{title} and
 \texttt{lemmatized\_stanzas} through TF-IDF. 
