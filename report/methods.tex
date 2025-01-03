@@ -46,7 +46,7 @@ Due to limited computational power, the labeling process was time-intensive,
 ultimately resulting in a limited dataset, with a few more than 100.000 entries.
 
 %PREPROCESSING
-\subsection*{Preprocessing}
+\section*{Preprocessing}
 \label{preprocessing}
 The initial preprocessing step involved sampling from the original dataset
 while maintaining the proportional distribution of genres.
@@ -98,7 +98,24 @@ Since the dataset was not pre-labeled at the stanza level, ALBERT Base v2 was em
 This transformer model is specifically designed to be fine-tuned on tasks that
 require an understanding of the entire sentence, such as sequence classification.
 
-
+\section*{Models}
+The selected model architectures are:
+\begin{itemize} 
+    \item \textbf{Random Forest}: A robust ensemble learning method known for
+    its ability to handle complex, high-dimensional datasets effectively.
+    \item \textbf{Support Vector Machine (SVM)}: A powerful classifier that
+    excels in separating classes by finding the optimal hyperplane,
+    particularly effective in text classification tasks.
+    \item \textbf{One-Dimensional Convolutional Neural Network (1D-CNN)}:
+    Designed to capture local patterns in sequential data, leveraging
+    convolutional layers to learn hierarchical features.
+    \item \textbf{Recurrent Neural Network (RNN)}: Utilized for its strength
+    in processing sequential data, with the ability to capture contextual
+    relationships between words across different stanzas.
+\end{itemize}
+Their different approaches and depths are an important point of the study, as they
+offer interesting insights into the possible different techniques and levels of
+complexity required for detecting emotional tones in complex pieces of text.
 
 %MODELLI STATICI
 \subsection*{Static Models}
