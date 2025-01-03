@@ -1,7 +1,7 @@
 \chapter*{Methods}
 \label{ch:capitolo2}
 
-% This section will provide an overview about the data, methods and procedures used in the project.\\
+% This section will provide an overview about the data, methods and procedures followed in the project.\\
 
 The dataset used in this project is a sampled subset of English-language
 songs derived from the \textit{Genius Song Lyrics Dataset}\textsuperscript{\cite{geniusdataset}}.
@@ -24,9 +24,7 @@ relevant for model training are:
     \item \textbf{is\_chorus:} boolean variable that attests whether the stanza is
         a chorus or not;
     
-    \item \textbf{tag:} represents the genre of the song. For easier handling,
-        this attribute of the original dataset has been one-hot encoded into various boolean variables
-        (is\_country, is\_pop, is\_rap, is\_rb, is\_rock);
+    \item \textbf{is\_country, is\_pop, is\_rap, is\_rb, is\_rock:} boolean variables, result of a one-hot encoding process, that represent songs genres;
 
     \item \textbf{label:} represents the emotional classification of the stanza,
         assigned by Albert Base v2\textsuperscript{\cite{albert-base-v2}} model.
@@ -48,8 +46,8 @@ Due to limited computational power, the labeling process was time-intensive,
 ultimately resulting in a limited dataset consisting of
 \textbf{(QUANTE? AGGIUNGEREI NUMERO STROFE)}.
 
-
-\section*{Preprocessing}
+%PREPROCESSING
+\subsection*{Preprocessing}
 \label{preprocessing}
 The initial preprocessing step involved sampling from the original dataset
 while maintaining the proportional distribution of genres.
@@ -79,7 +77,7 @@ accurately reflected that of the full dataset.\\
 % which the records are not whole songs anymore but single stanzas; each numbered
 % based on its position in the song. \\
 
-The preliminary text cleaning process focused on \texttt{lyrics},
+The preliminary text cleaning process focused on the \texttt{lyrics} attribute,
 which contained the complete lyrics of each song in string format.
 Initially, a regular expression (RegEx) was built to remove noise from the
 lyrics, specifically targeting words enclosed in square brackets that were
@@ -125,8 +123,8 @@ numbered according to its position within the song.\\
 
 
 A further and more detailed cleaning process on the stanzas involved the creation
-of the boolean feature \texttt{is\_chorus}, which was assigned \texttt{true}
-for repeated stanzas within the same song or for stanzas with headers such
+of the boolean feature \texttt{is\_chorus}, which was assigned a \texttt{true}
+value for repeated stanzas within the same song or for stanzas with headers such
 as "hook", "chorus", "refrain", or "bridge".
 Next, stanza headers and newline characters between verses were removed to obtain
 cleaner stanzas.
@@ -135,8 +133,7 @@ duplicate stanzas were discarded to avoid redundant data. This resulted in a
 dataset of cleaned, non-duplicate stanzas, which served as the checkpoint for
 the labeling step and the starting point for the text lemmatization process.\\
 
-The subsequent step involved lemmatizing the stanzas using the
-\texttt{spaCy}\textsuperscript{\cite{spacy}}
+The subsequent step involved lemmatizing the stanzas using the \texttt{spaCy}
 library. A list of lemmatized tokens was created by filtering out punctuation
 and empty words. Lemmatization was chosen over stemming because it produces
 more accurate and meaningful results, particularly for tasks requiring semantic
@@ -144,60 +141,67 @@ understanding, such as the one at hand.\\
 
 Since the dataset was not pre-labeled at the stanza level, ALBERT Base v2 was employed for this task.
 This transformer model is specifically designed to be fine-tuned on tasks that
-require an understanding of the entire sentence, such as sequence classification.
+require an understanding of the entire sentence, such as sequence classification.\\
 
 
-\section*{Static Models}
-The development of static models was straight forward, emphasizing simplicity.
+
+%MODELLI STATICI
+\subsection*{Static Models}
+Firstly, it is important to illustrate the feature creation step applied in order to enhance model performance. 
+This step involved generating five features for each emotion class using Term Frequency-Inverse Document Frequency (TF-IDF), a statistical measure that evaluates how informative and important a word is within a document or class.
+In this project, TF-IDF was applied to identify the five most informative words for characterizing each emotion.
+The \texttt{min\_df} and \texttt{max\_df} parameters were employed during the TF-IDF computation to establish minimum and maximum thresholds.
+Specifically, a word was considered informative for a class if it appeared at least twice and in up to the 80\% of the stanzas associated with that class.
+These features quantify the number of times that certain word appears for each class.
+This step was incorporated into the project's pipeline because the initial model training, that will be illustrated in the following sections, revealed suboptimal classification performance. 
+The addition of these features led to a slight improvement in the results.\textbf{E' EFFETTIVAMENTE VERO?}\\
+
+The development of static models was then simple and straight forward.
 Static models were mainly developed to provide a performance comparison
 for the more complex Neural Networks.
-The two models share the same architectural framework: a preprocessing
-layer to handle the inputs, followed by a classifier for prediction.\\
+The two architectures are the same, consisting of a preprocessing
+layer to handle the inputs, followed by the classifier itself.\\
 
-The preprocessing layer processes both \texttt{title} and
-\texttt{lemmatized\_stanzas} through
-Term Frequency-Inverse Document Frequency, % TODO: why tf-idf???
-to quantify term-wise importance
-within the dataset. The boolean attributes
-are converted to integers for compatibility with the model,
-while \texttt{stanza\_number} is scaled
-to ensure uniformity and prevent bias due to its magnitude.\\
+The preprocessing layers handle both \texttt{title} and
+\texttt{lemmatized\_stanzas} through TF-IDF. The boolean attributes
+are converted to integers, while \texttt{stanza\_number} is scaled.\\
 
-To optimize model performance, hyperparameter space exploration was conducted
-using Random Search.
-Cross-validation is also used in order to provide a more accurate
-estimate of model performance, ensuring that the results are less influenced
-by dataset splits. Additionally, cross-validation helps prevent overfitting,
-especially in cases of limited data availability or class imbalance. 
+Random Search was chosen for hyperparameter tuning, for both models.
+Cross validation is also used in order to provide a more accurate
+estimate of model performance.
 
 
+%RETI NEURALI
+% \subsection*{Neural Networks}
+% The Neural Network models can be trained with the \texttt{neural\_networks.py}
+% script. This script offers the possibility of configuring certain parameters for
+% training. The architectures were developed and tuned through empirical, reiterated testing.\\
 
-\section*{Neural Networks}
-The Neural Network models can be trained with the \texttt{neural\_networks.py}
-script. This script offers the possibility of configuring various parameters for
-training, which was used to test different configurations:
-\begin{itemize}
-    \item \textbf{\texttt{type}}: specifies which type of Neural
-    Network is to be trained. \texttt{1} is default, indicating
-    One-Dimensional Convolutional Neural Networks training.
-    Setting it to \texttt{2} trains a Recurrent Neural Network.
+% Both the Recurrent and One-Dimensional Convolutional Neural Network
+% have the same non recurrent architecture. Except for \texttt{lemmatized\_stanzas}
+% and \texttt{title}, other attributes are preprocessed as in Static Models' preprocessing.\\
 
-    \item \textbf{\texttt{epochs}}: Defines the number of epochs for training,
-    allowing control over the duration of the learning process.
+% Term Frequency-Inverse Document Frequency is applied to \texttt{title},
+% followed by Non-Negative Matrix Factorization, to perform topic modeling.\\
 
-    \item \textbf{\texttt{semisupervised}}: Specifies the number of epochs
-    dedicated to semi-supervised learning. If this parameter is omitted,
-    the model is trained using only labeled data.
+% \texttt{lemmatized\_stanzas} is first tokenized, and then padded in order to
+% get an input with consistent shape.\\
 
-    \item \textbf{\texttt{reset}}: When included, the model is reset before
-    starting training on newly pseudo-labeled data. This approach repurposes
-    semi-supervised learning as a form of data augmentation rather than as
-    transfer learning, providing an opportunity to enhance performance with
-    pseudo-labeled examples.
-    
-    \item \textbf{\texttt{even-labels}}: When included, ensures even class
-    representation in the dataset by downsampling overrepresented classes.
-\end{itemize}
+% The script offers the option of downsampling classes in order to get
+% uniform label representation.\\
+
+% \textbf{cnn architecture}\\
+
+% \textbf{rnn architecture}\\
+
+% \textbf{optional semisupervised learning, reset}\\
+
+% \textbf{graphs}
+
+% %EVALUATION
+% \subsection*{Evaluation}
+
+
 
 The architectures were developed and tuned through empirical,
 reiterated testing. These parameters helped with the process, and can
@@ -255,21 +259,10 @@ Dropout is applied on every layer, to prevent overfitting and add regularization
 
 
 \subsection*{Shared Components}
-% The two pipelines described above are concatenated with a simple pipeline,
-% which handles remaining features.
 The remaining features are handled by a simple pipeline, which concatenates
 their Input layers.
 The inputs are passed them through a dense layer to create a compact
 representation.
-% Additional Features Input:
-% stanza\_number\_input (numeric input for stanza number, scaled).
-% Boolean Inputs: Flags for specific categories are processed as integer inputs.
-% Topic Modeling Input: Outputs from Non-Negative Matrix Factorization (NMF)
-% representing the title's topics.
-% Dense Layer for Additional Inputs:
-% The additional inputs are concatenated and passed through a Dense layer with
-% 32 units and ReLU activation to create a compact representation.
-% Combining Textual and Additional Features:
 The output of the lyrics-processing branch is concatenated with the processed
 additional features.
 % Dense Layers for Classification:
@@ -280,3 +273,9 @@ to the classification into 8 emotion categories.
 
 
 \section*{Evaluation}
+The performances of the models were evaluated using the \texttt{classification\_report} function from the \texttt{scikit-learn} library. 
+This function is particularly useful as it offers an overview of key evaluation metrics commonly used in Machine Learning, i.e. accuracy, precision, recall, and F1-score.\\
+For the static models implemented in this project, the classification report revealed an accuracy of 34\% for the Random Forest algorithm and 43\% for SVM. 
+These results can be considered reasonable, given that the task at hand is a multi-class classification problem with 8 classes.\\
+
+\textbf{AGGIUNGERE ALTRO}
