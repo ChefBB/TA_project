@@ -43,8 +43,7 @@ relevant for model training are:
 All of these attributes, except for \texttt{title}, were the result
 of the preprocessing phase, as described in section~\ref{preprocessing}.
 Due to limited computational power, the labeling process was time-intensive,
-ultimately resulting in a limited dataset consisting of
-\textbf{(QUANTE? AGGIUNGEREI NUMERO STROFE)}.
+ultimately resulting in a limited dataset, with a few more than 100.000 entries.
 
 %PREPROCESSING
 \subsection*{Preprocessing}
@@ -53,29 +52,6 @@ The initial preprocessing step involved sampling from the original dataset
 while maintaining the proportional distribution of genres.
 This approach ensured that the genre representation in the sampled subset
 accurately reflected that of the full dataset.\\
-
-% The preliminary text cleaning process focused on the \texttt{lyrics} attribute,
-% which was the attribute of the original dataset that contained
-% the entire lyrics of each song (in string format). Initially, we built a RegEx
-% to clean the lyrics' strings from noise, specifically targeting words enclosed
-% between square brackets that were irrelevant for the stanza splitting process.
-% Many of the keywords marking different stanzas were written within square brackets,
-% and removing the non-keyword items within brackets was essential to prevent
-% potential issues. \\
-% The crucial step was the stanza splitting. After cleaning the strings from the
-% noisy square-bracketed items, we split them based on various keywords used to
-% denote stanzas (such as \texttt{chorus, verse, intro, outro, refrain, hook} etc.). 
-% The RegEx we developed also accounted for the different formats in which these
-% keywords appeared; between square brackets, parentheses, without brackets, only a
-% double newline character between one stanza and the other.
-% The output of this step was, for each song record, a list of stings, corresponding
-% to a list of stanzas (with the stanza's header as the corresponding keyword). \\
-% Next, we removed the resulting strings that were uninformative; such as empty
-% strings or those with fewer than 20 characters, which were too short to provide
-% useful content. \\
-% As a result, the output of this preliminary preprocessing phase is a dataset in
-% which the records are not whole songs anymore but single stanzas; each numbered
-% based on its position in the song. \\
 
 The preliminary text cleaning process focused on the \texttt{lyrics} attribute,
 which contained the complete lyrics of each song in string format.
@@ -101,27 +77,6 @@ As a result, the output of this preliminary preprocessing phase was a dataset
 where the records were no longer whole songs but individual stanzas, each
 numbered according to its position within the song.\\
 
-% A further and deeper cleaning process on the stanzas involved the creation of the
-% boolean feature \texttt{is\_chorus}; \texttt{true} value for repeated stanzas for
-% the same song or stanzas that had \texttt{hook, chorus, refrain, bridge} as a
-% header. \\
-% We then removed the stanza headers and the newline characters between verses to
-% obtain cleaner stanzas. \\ 
-% Since choruses, hooks, bridges and refrains often repeat throughout songs, we
-% decided to drop duplicate stanzas in order to avoid redundant data.
-% This resulted in a dataset of cleaned and non-duplicate stanzas: the checkpoint
-% for the labelling step and the starting point for the text lemmatization process.
-% To label the dataset, the Albert Base v2 model has been used; this transformer
-% model is primarily aimed at being fine-tuned on tasks that use the whole sentence
-% to make decisions, such as sequence classification. 
-% \\
-% The next step involved lemmatizing stanzas using the \texttt{spaCy} library. We
-% created a list of lemmatized tokens (filtering punctuation and empty words). 
-% We opted for lemmatization over stemming because lemmatization produces more
-% accurate and meaningful results, particularly for tasks requiring semantic
-% understanding, such as in our case.
-
-
 A further and more detailed cleaning process on the stanzas involved the creation
 of the boolean feature \texttt{is\_chorus}, which was assigned a \texttt{true}
 value for repeated stanzas within the same song or for stanzas with headers such
@@ -141,20 +96,30 @@ understanding, such as the one at hand.\\
 
 Since the dataset was not pre-labeled at the stanza level, ALBERT Base v2 was employed for this task.
 This transformer model is specifically designed to be fine-tuned on tasks that
-require an understanding of the entire sentence, such as sequence classification.\\
+require an understanding of the entire sentence, such as sequence classification.
 
 
 
 %MODELLI STATICI
 \subsection*{Static Models}
-Firstly, it is important to illustrate the feature creation step applied in order to enhance model performance. 
-This step involved generating five features for each emotion class using Term Frequency-Inverse Document Frequency (TF-IDF), a statistical measure that evaluates how informative and important a word is within a document or class.
-In this project, TF-IDF was applied to identify the five most informative words for characterizing each emotion.
-The \texttt{min\_df} and \texttt{max\_df} parameters were employed during the TF-IDF computation to establish minimum and maximum thresholds.
-Specifically, a word was considered informative for a class if it appeared at least twice and in up to the 80\% of the stanzas associated with that class.
-These features quantify the number of times that certain word appears for each class.
-This step was incorporated into the project's pipeline because the initial model training, that will be illustrated in the following sections, revealed suboptimal classification performance. 
-The addition of these features led to a slight improvement in the results.\textbf{E' EFFETTIVAMENTE VERO?}\\
+Firstly, it is important to illustrate the feature creation step applied in order
+to enhance model performance.
+This step involved generating five features for each emotion class using Term
+Frequency-Inverse Document Frequency (TF-IDF), a statistical measure that
+evaluates how informative and important a word is within a document or class.
+In this project, TF-IDF was applied to identify the five most informative words
+for characterizing each emotion.
+The \texttt{min\_df} and \texttt{max\_df} parameters were employed during the
+TF-IDF computation to establish minimum and maximum thresholds.
+Specifically, a word was considered informative for a class if it appeared at
+least twice and in up to the 80\% of the stanzas associated with that class.
+These features quantify the number of times that certain word appears for each
+class.
+This step was incorporated into the project's pipeline because the initial model
+training, that will be illustrated in the following sections, revealed suboptimal
+classification performance. 
+The addition of these features led to a slight improvement in the results.
+\textbf{E' EFFETTIVAMENTE VERO?}\\
 
 The development of static models was then simple and straight forward.
 Static models were mainly developed to provide a performance comparison
@@ -170,48 +135,10 @@ Random Search was chosen for hyperparameter tuning, for both models.
 Cross validation is also used in order to provide a more accurate
 estimate of model performance.
 
-
-%RETI NEURALI
-% \subsection*{Neural Networks}
-% The Neural Network models can be trained with the \texttt{neural\_networks.py}
-% script. This script offers the possibility of configuring certain parameters for
-% training. The architectures were developed and tuned through empirical, reiterated testing.\\
-
-% Both the Recurrent and One-Dimensional Convolutional Neural Network
-% have the same non recurrent architecture. Except for \texttt{lemmatized\_stanzas}
-% and \texttt{title}, other attributes are preprocessed as in Static Models' preprocessing.\\
-
-% Term Frequency-Inverse Document Frequency is applied to \texttt{title},
-% followed by Non-Negative Matrix Factorization, to perform topic modeling.\\
-
-% \texttt{lemmatized\_stanzas} is first tokenized, and then padded in order to
-% get an input with consistent shape.\\
-
-% The script offers the option of downsampling classes in order to get
-% uniform label representation.\\
-
-% \textbf{cnn architecture}\\
-
-% \textbf{rnn architecture}\\
-
-% \textbf{optional semisupervised learning, reset}\\
-
-% \textbf{graphs}
-
-% %EVALUATION
-% \subsection*{Evaluation}
-
-
-
+\subsection*{Neural Networks}
 The architectures were developed and tuned through empirical,
 reiterated testing. These parameters helped with the process, and can
 be used for further experimentation.
-
-% Both the Recurrent and One-Dimensional Convolutional Neural Network
-% have the same non recurrent architecture. Except for\texttt{lemmatized\_stanzas}
-% and \texttt{title},
-% other attributes are preprocessed as in Static Models' preprocessing.\\
-
 Both the Recurrent Neural Network and the One-Dimensional Convolutional
 Neural Network share the same preprocessing
 architecture. Most attributes are processed in the same manner as in
@@ -228,7 +155,7 @@ Elements are first tokenized, and then padded in order to
 get an input with consistent shape, which is essential for both types of
 recurrent layers.\\
 
-\subsection*{One-Dimensional Convolutional Neural Network}
+\subsubsection*{One-Dimensional Convolutional Neural Network}
 % The Convolutional part of the network uses three convolutional
 % layers, followed by a 1-Dimensional Global Max Pooling layer, to reduce
 % dimensionality. This convolutional pipeline is then concatenated with the
@@ -245,7 +172,7 @@ A dropout layer is then applied, to introduce regularization and prevent
 overfitting.
 
 
-\subsection*{Recurrent Neural Network}
+\subsubsection*{Recurrent Neural Network}
 The Recurrent part of the architecture is designed to extract and learn
 local patterns in \texttt{embedding\_lyrics}.
 Its structure consists of three gated recurrent units (\texttt{GRU})
@@ -273,9 +200,14 @@ to the classification into 8 emotion categories.
 
 
 \section*{Evaluation}
-The performances of the models were evaluated using the \texttt{classification\_report} function from the \texttt{scikit-learn} library. 
-This function is particularly useful as it offers an overview of key evaluation metrics commonly used in Machine Learning, i.e. accuracy, precision, recall, and F1-score.\\
-For the static models implemented in this project, the classification report revealed an accuracy of 34\% for the Random Forest algorithm and 43\% for SVM. 
-These results can be considered reasonable, given that the task at hand is a multi-class classification problem with 8 classes.\\
+The performances of the models were evaluated using the
+\texttt{classification\_report} function from the \texttt{scikit-learn} library. 
+This function is particularly useful as it offers an overview of key evaluation
+metrics commonly used in Machine Learning, i.e. accuracy, precision, recall,
+and F1-score.\\
+For the static models implemented in this project, the classification report
+revealed an accuracy of 34\% for the Random Forest algorithm and 43\% for SVM. 
+These results can be considered reasonable, given that the task at hand is a
+multi-class classification problem with 8 classes.\\
 
 \textbf{AGGIUNGERE ALTRO}
