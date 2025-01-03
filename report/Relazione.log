@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  3 JAN 2025 18:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  3 JAN 2025 18:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -656,56 +656,56 @@ Overfull \vbox (9.74998pt too high) has occurred while \output is active []
  [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc} <./pictures/plutchik_primary_emotions.png>] (./methods.tex
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 13.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 51--55
+Underfull \hbox (badness 10000) in paragraph at lines 30--34
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 56--63
+Underfull \hbox (badness 10000) in paragraph at lines 35--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--79
+Underfull \hbox (badness 10000) in paragraph at lines 43--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--90
+Underfull \hbox (badness 10000) in paragraph at lines 59--69
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--96
+Underfull \hbox (badness 10000) in paragraph at lines 70--75
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 122--127
+Underfull \hbox (badness 10000) in paragraph at lines 101--106
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 149--163
+Underfull \hbox (badness 10000) in paragraph at lines 128--142
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--181
+Underfull \hbox (badness 10000) in paragraph at lines 148--160
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 182--187
+Underfull \hbox (badness 10000) in paragraph at lines 161--166
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 215--225
+Underfull \hbox (badness 10000) in paragraph at lines 194--204
 
  []
 
@@ -743,7 +743,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  123i,21n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (9 pages, 117183 bytes).
+Output written on Relazione.pdf (9 pages, 117188 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream

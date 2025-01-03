@@ -1,22 +1,12 @@
 \chapter*{Methods}
 \label{ch:capitolo2}
-
-% This section will provide an overview about the data, methods and procedures followed in the project.\\
-
 The dataset used in this project is a sampled subset of English-language
 songs derived from the \textit{Genius Song Lyrics Dataset}\textsuperscript{\cite{geniusdataset}}.
-% The original dataset (3m records) included songs in many different languages;
-% however, this work focused exclusively on English-language ones.
 The original dataset contained numerous attributes; the ones considered
 relevant for model training are:
 \begin{itemize}
     \item \textbf{title:} the song's title;
-    % \item \textbf{artist:} the artist
-    % \item \textbf{year:}
-    % \item \textbf{views:}
-    % \item \textbf{features:}
-
-    % \item \textbf{id:}
+    
     \item \textbf{lemmatized\_stanzas:} lyrics of the single stanza;
     
     \item \textbf{stanza\_number:} identifies the position of the stanza in the song;
@@ -28,18 +18,7 @@ relevant for model training are:
 
     \item \textbf{label:} represents the emotional classification of the stanza,
         assigned by Albert Base v2\textsuperscript{\cite{albert-base-v2}} model.
-    
-    % \item \textbf{is\_country:}
-    % \item \textbf{is\_pop:}
-    % \item \textbf{is\_rap:}
-    % \item \textbf{is\_rb:}
-    % \item \textbf{is\_rock:}
 \end{itemize}
-
-% The dataset originally didn't contain emotion labels, essential for training the models.
-% To create the ground truth, the model
-% Albert Base v2\textsuperscript{\cite{albert-base-v2}} was used, classifying
-% stanzas' lyrics into Plutchik's eight primary emotions.
 All of these attributes, except for \texttt{title}, were the result
 of the preprocessing phase, as described in section~\ref{preprocessing}.
 Due to limited computational power, the labeling process was time-intensive,
