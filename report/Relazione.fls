@@ -187,6 +187,7 @@ INPUT ./pictures/plutchik_primary_emotions.png
 INPUT ./pictures/plutchik_primary_emotions.png
 OUTPUT Relazione.pdf
 INPUT ./pictures/plutchik_primary_emotions.png
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmro7t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
@@ -217,7 +218,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
@@ -233,6 +233,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
@@ -240,8 +242,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
