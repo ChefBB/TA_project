@@ -131,7 +131,7 @@ with open(folder_path + "/model_summary.txt", "w") as f:
     with redirect_stdout(f):
         print(('1DConvnet' if args.type == 1 else 'RNN'))
         print(('semisupervised learning' if args.semisupervised != 0
-               else 'supervised learning') + '\n')
+                else 'supervised learning') + '\n')
         print(f'Epochs: {args.epochs}')
         if args.semisupervised!= 0:
             print(f'Epochs with pseudo-labeled data: {args.semisupervised}')
@@ -141,7 +141,7 @@ with open(folder_path + "/model_summary.txt", "w") as f:
 
 # undersampling
 if args.even_labels:
-    data_splitting(df)
+    df = data_splitting.downsample(df)
 
 data = data_splitting.train_test_val_split(df)
 
@@ -267,10 +267,11 @@ if args.semisupervised != 0:
 X_test = data_splitting.get_data_as_list(preprocessed_data['test'])
 
 # save summary
-with open(folder_path + "/model_summary.txt", "w") as f:
+with open(folder_path + "/model_summary.txt", "a") as f:
     with redirect_stdout(f):
         model.summary()
-        model.evaluate(X_test, preprocessed_data['test']['y'])
+
+model.evaluate(X_test, preprocessed_data['test']['y'])
 
 y_pred = model.predict(X_test)
 

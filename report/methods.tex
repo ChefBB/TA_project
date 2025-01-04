@@ -214,4 +214,11 @@ predicted classes. While it showed potential in improving generalization and
 preventing overfitting, it was ultimately discarded as a primary evaluation
 metric. This is because, with $k=2$, the model has a 25\% baseline
 chance of being correct when there are eight possible classes, which reduces
-the precision required for accurate learning and limits performance improvements.
+the precision required for accurate learning and limits performance improvements.\\
+
+In addition to standard supervised learning, the script supports semi-supervised
+learning. It can be utilized either strictly for transfer learning or in a data
+augmentation approach. When using the data augmentation approach, the model's
+weights can be reset prior to training on the newly pseudo-labeled data, allowing
+for more robust retraining on an expanded dataset.
+The results obtained
