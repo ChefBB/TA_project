@@ -20,6 +20,24 @@ df['cleaned_lyrics'] = df['lyrics'].apply(clean_lyrics)
 
 #Function to split the stanzas according to the various formats used to denote stanza breaks (keywords with [brackets], without brackets, (keyword), only \n\n between them)    
 def process_lyric(ly):
+    """
+    Processes a song lyric by splitting it into sections based on various patterns and cleaning up whitespace.
+    The function identifies and splits by specific section labels such as Verse, Chorus, Intro, etc. and further
+    splits the lyrics to isolate individual stanzas. Empty sections are removed.
+
+    Args:
+        ly (str): A string containing the full lyrics of a song, including section labels and the lyrics themselves.
+
+    Returns:
+        list of str: A list of processed lyrics sections (stanzas) after splitting by various patterns and removing
+                     extra whitespace. Empty sections are excluded.
+
+    The function performs the following operations:
+    - Identifies and splits the lyrics based on section labels (e.g., Verse, Chorus, etc.).
+    - Further splits the sections based on specific text patterns like "Verse" or newline characters.
+    - Cleans up whitespace by stripping each section.
+    - Removes any empty sections resulting from the splits.
+    """
     sections = [ly.strip()]
     
     #Split by the pattern
@@ -47,7 +65,20 @@ df["processed_lyrics"] = df["cleaned_lyrics"].apply(process_lyric)
 
 
 #Function to delete strings there are uninformative (only the keyword, empty strings, strings that are too short)
-def clean_list(lyrics_list): 
+def clean_list(lyrics_list):
+    """
+    Removes uninformative strings from a list of lyrics.
+    The function deletes lines that are either:
+    - Only contain a section label (e.g., "Hook", "Chorus", "Verse", etc.).
+    - Empty strings.
+    - Strings that are too short (less than or equal to 20 characters).
+
+    Args:
+        lyrics_list (list): A list of strings representing the lyrics of a song or sections of a song.
+
+    Returns:
+        list: A cleaned list of strings where uninformative lines have been removed. 
+    """
     if not isinstance(lyrics_list, list):
         return lyrics_list
     tag_pattern = r"^\s*(Hook|Chorus|Bridge|Verse|Outro|Intro|Refrain|Prehook|Posthook|Coda|Interlude|Conclusion).*?\]\s*$|^(.{,20})\s*$"
@@ -75,6 +106,16 @@ exploded_df['stanza_number'] = exploded_df.groupby(exploded_df.index).cumcount()
 
 #Function that creates a new variable "is_chorus" with a binary value T/F with true if it's a stanza with a specific header and/or whether a stanza is repeated for the same song (index)
 def is_chorus(stanza):
+    """
+    Determines whether a given stanza is a chorus (or similar section) based on its content.
+
+    Args:
+        stanza (str): A string representing a stanza or section of song lyrics.
+
+    Returns:
+        bool: True if the stanza contains a "Chorus", "Hook", "Refrain", or "Bridge" section label at the beginning,
+              False otherwise.
+    """
     if isinstance(stanza, str):
         pattern = r"^\s*[\[\(]?(Hook|Chorus|Refrain|Bridge)\s*(\]|\))"
         return bool(re.match(pattern, stanza, re.IGNORECASE))
@@ -89,6 +130,17 @@ exploded_df["is_chorus"] = (
 
 #Function that cleans the string header from the keywords in order to get only clean strings (e.g. eliminating "chorus]", "refrain]") and removes \n between single lines
 def pulire_stringhe(stanza):
+    """
+    Cleans the input string (stanza) by removing keywords like "chorus]", "refrain]" or any similar section labels,
+    and replaces newlines between single lines with a space.
+
+    Args:
+        stanza (str): A string representing a stanza or section of song lyrics to be cleaned.
+
+    Returns:
+        str: A cleaned string where the section labels (e.g., "chorus]", "refrain]") are removed,
+             and newlines between single lines are replaced by a space.
+    """
     pattern = r"^.*?\]|\)\n*"
     
     result1 = re.sub(pattern, "", stanza)
@@ -113,6 +165,17 @@ import spacy
 nlp = spacy.load("en_core_web_sm", disable=["ner", "parser", "textcat"])
 
 def tokenize(stanza):
+    """
+    Tokenizes a given stanza by converting it to lowercase, processing it with a spaCy NLP model,
+    and extracting its lemmatized tokens, excluding punctuation and spaces.
+
+    Args:
+        stanza (str): A string representing a stanza or section of song lyrics to be tokenized.
+
+    Returns:
+        list of str: A list of lemmatized tokens (words) from the input stanza, excluding punctuation
+                     and spaces.
+    """
     if isinstance(stanza, str):
         stanza = stanza.lower()
         doc = nlp(stanza)
