@@ -1,3 +1,8 @@
+"""
+Offers a series of methods to split and handle data.
+"""
+
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.utils import resample
