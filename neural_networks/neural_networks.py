@@ -119,7 +119,9 @@ if args.even_labels:
     y_train, y_test
 ) = train_test_split(
     df['lemmatized_stanzas'], df[['stanza_number']],
-    preprocessing.booleans_conv(df), df['title'],
+    df[['is_country', 'is_pop', 'is_rap',
+               'is_rb', 'is_rock', 'is_chorus']].astype(int).values,
+    df['title'],
     preprocessing.preprocess_labels(df['label']), test_size=0.3
 )
 
@@ -309,7 +311,8 @@ if args.semisupervised != 0:
     X_unlabeled = {
         'lemmatized_stanzas': X_unlabeled['lemmatized_stanzas'],
         'stanza_numbers': X_unlabeled[['stanza_number']],
-        'booleans': preprocessing.booleans_conv(X_unlabeled),
+        'booleans': X_unlabeled[['is_country', 'is_pop', 'is_rap',
+               'is_rb', 'is_rock', 'is_chorus']].astype(int).values,
         'titles': X_unlabeled['title']
     }
 

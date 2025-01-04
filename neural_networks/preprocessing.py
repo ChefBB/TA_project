@@ -1,3 +1,11 @@
+"""
+preprocessing.py
+
+This module contains functions and utilities for preprocessing data used in neural network models. 
+The preprocessing steps include tokenization, padding, feature extraction, and scaling, ensuring 
+the input data is in a suitable format for model training and evaluation.
+"""
+
 import pandas as pd
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
@@ -27,9 +35,26 @@ emotion_mapping = {
 
 
 def preprocess (data: dict, folder_path: str) -> dict:
-    #########################
+    """
+    Preprocesses the input data for training neural network models.
+
+    This function handles preprocessing tasks for training, validation
+    and test sets.
+    It ensures that the data is properly formatted and 
+    stored for model training and evaluation.
+
+    Args:
+        data (dict): A dictionary containing the raw input data.
+        
+        folder_path (str): Path to the folder where preprocessing tools are saved.
+
+    Returns:
+        dict: A dictionary containing the preprocessed data, including 
+              tokenized and padded sequences, scaled features, and any 
+              additional information needed for model training.
+    """
+    
     # title unsupervised learning
-    #########################
     preprocessed_data = {
         'train': {
             'booleans': data['train']['booleans'],
@@ -58,119 +83,86 @@ def preprocess (data: dict, folder_path: str) -> dict:
     joblib.dump(nmf_model, folder_path + '/nmf_model.joblib')
     
     # apply to test, val sets
-    preprocessed_data['val']['topic_distributions'] = topic_analysis(
-        tfidf_vectorizer= tfidf_vectorizer,
-        nmf_model= nmf_model,
-        titles= data['val']['titles']
+    preprocessed_data['val']['topic_distributions'] = nmf_model.transform(
+        tfidf_vectorizer.transform(data['val']['titles'])
     )
     
-    preprocessed_data['test']['topic_distributions'] = topic_analysis(
-        tfidf_vectorizer= tfidf_vectorizer,
-        nmf_model= nmf_model,
-        titles= data['test']['titles']
+    preprocessed_data['test']['topic_distributions'] = nmf_model.transform(
+        tfidf_vectorizer.transform(data['test']['titles'])
     )
     
-    #########################
-    # Initialize the tokenizer
-    #########################
+    # initialize the tokenizer
     tokenizer = Tokenizer(num_words= vocab_size, oov_token="<UNK>")
     tokenizer.fit_on_texts(data['train']['lemmatized_stanzas'])
 
-    preprocessed_data['train']['sequences'] = tokenize(tokenizer, data['train']['lemmatized_stanzas'])
+    preprocessed_data['train']['sequences'] = tokenizer.texts_to_sequences(data['train']['lemmatized_stanzas'])
     
-    preprocessed_data['val']['sequences'] = tokenize(tokenizer, data['val']['lemmatized_stanzas'])
+    preprocessed_data['val']['sequences'] = tokenizer.texts_to_sequences(data['val']['lemmatized_stanzas'])
 
-    preprocessed_data['test']['sequences'] = tokenize(tokenizer, data['test']['lemmatized_stanzas'])
+    preprocessed_data['test']['sequences'] = tokenizer.texts_to_sequences(data['test']['lemmatized_stanzas'])
 
     
-    preprocessed_data['train']['padded_sequences'] = padding(preprocessed_data['train']['sequences'])
+    preprocessed_data['train']['padded_sequences'] = pad_sequences(
+        preprocessed_data['train']['sequences'], maxlen=max_seq_length,
+        padding='post', truncating='post'
+    )
 
-    preprocessed_data['val']['padded_sequences'] = padding(preprocessed_data['val']['sequences'])
+    preprocessed_data['val']['padded_sequences'] = pad_sequences(
+        preprocessed_data['val']['sequences'], maxlen=max_seq_length,
+        padding='post', truncating='post'
+    )
 
-    preprocessed_data['test']['padded_sequences'] = padding(preprocessed_data['test']['sequences'])
+    preprocessed_data['test']['padded_sequences'] = pad_sequences(
+        preprocessed_data['test']['sequences'], maxlen=max_seq_length,
+        padding='post', truncating='post'
+    )
     
     joblib.dump(tokenizer, folder_path + '/basic_tokenizer.joblib')
     
     
-    #########################
     # preprocess non-text data
-    #########################
     scaler = StandardScaler()
     preprocessed_data['train']['stanza_numbers'] = scaler.fit_transform(data['train']['stanza_numbers'])
     
     joblib.dump(scaler, folder_path + '/scaler.joblib')
     
     # apply on val, test sets
-    preprocessed_data['val']['stanza_numbers'] = scale_stanza_numbers(
-        scaler, data['val']['stanza_numbers'])
+    preprocessed_data['val']['stanza_numbers'] = scaler.transform(data['val']['stanza_numbers'])
 
     
-    preprocessed_data['test']['stanza_numbers'] = scale_stanza_numbers(
-        scaler, data['test']['stanza_numbers'])
+    preprocessed_data['test']['stanza_numbers'] = scaler.transform(data['test']['stanza_numbers'])
     
     
     return preprocessed_data
     
 
-    
-#########################
-# obtain labels
-#########################
 def preprocess_labels (labels: pd.Series | list) -> np.array:
+    """
+    Converts emotion labels into a categorical format suitable for training neural network models.
+
+    Args:
+        labels (pd.Series | list): A pandas Series or list containing emotion labels as strings.
+
+    Returns:
+        np.array: A NumPy array representing the one-hot encoded labels, with shape 
+                  (num_samples, num_classes), where `num_classes` is set to 8.
+    """
     labels_indices = np.array([emotion_mapping[label] for label in labels])
 
     return to_categorical(labels_indices, num_classes=8)
 
 
-#########################
-# tokenization
-#########################
-def tokenize (tokenizer: Tokenizer, lyrics: pd.Series | list) -> list:
-    return tokenizer.texts_to_sequences(lyrics)
-
-
-#########################
-# add padding
-#########################
-def padding (sequences):
-    return pad_sequences(
-        sequences, maxlen=max_seq_length,
-        padding='post', truncating='post'
-    )
-    
-    
-#########################
-# convert booleans
-#########################
-def booleans_conv (df: pd.DataFrame) -> np.ndarray:
-    return df[['is_country', 'is_pop', 'is_rap',
-               'is_rb', 'is_rock', 'is_chorus']].astype(int).values
-
-
-#########################
-# title transformation
-#########################
-def topic_analysis (tfidf_vectorizer: TfidfVectorizer,
-                    nmf_model: NMF,
-                    titles: pd.Series | list) -> np.ndarray:
-    
-    tfidf_matrix = tfidf_vectorizer.transform(titles)
-    return nmf_model.transform(tfidf_matrix)
-
-
-#########################
-# title transformation
-#########################
-def scale_stanza_numbers (scaler: StandardScaler,
-                         stanza_numbers: pd.Series | list) -> np.ndarray:
-    # stanza_numbers = stanza_numbers.reshape(-1, 1)
-    return scaler.transform(stanza_numbers)
-
-
-#########################
-# preprocessing of unseen data
-#########################
 def preprocess_new_data(data: dict, path: str) -> dict:
+    """
+    Preprocesses new input data using pre-trained models and saved preprocessing objects.
+
+    Args:
+        data (dict): A dictionary containing the input data.
+
+    Returns:
+        dict: A dictionary containing the preprocessed data.
+    """
+
     processed_data = {'booleans': data['booleans']}
     
     with open(path + '/tfidf_vectorizer.joblib', 'rb') as f:
@@ -179,27 +171,26 @@ def preprocess_new_data(data: dict, path: str) -> dict:
     with open(path + '/nmf_model.joblib', 'rb') as f:
         nmf_model = joblib.load(f)
     
-    processed_data['topic_distributions'] = topic_analysis(
-        tfidf_vectorizer,
-        nmf_model,
-        data['titles']
+    processed_data['topic_distributions'] = nmf_model.transform(
+        tfidf_vectorizer.transform(data['titles'])
     )
     
     
     with open(path + '/basic_tokenizer.joblib', 'rb') as f:
         basic_tokenizer = joblib.load(f)
         
-    processed_data['sequences'] = tokenize(basic_tokenizer, data['lemmatized_stanzas'])
+    processed_data['sequences'] = basic_tokenizer.texts_to_sequences(data['lemmatized_stanzas'])
     
-    processed_data['padded_sequences'] = padding(processed_data['sequences'])
+    processed_data['padded_sequences'] = pad_sequences(
+        processed_data['sequences'], maxlen=max_seq_length,
+        padding='post', truncating='post'
+    )
     
     
     with open(path + '/scaler.joblib', 'rb') as f:
         scaler = joblib.load(f)
     
-    processed_data['stanza_numbers'] = scale_stanza_numbers(
-        scaler, data['stanza_numbers']
-    )
+    processed_data['stanza_numbers'] = scaler.transform(data['stanza_numbers'])
     
     
     return processed_data
