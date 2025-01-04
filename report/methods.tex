@@ -75,7 +75,16 @@ understanding, such as the one at hand.\\
 
 Since the dataset was not pre-labeled at the stanza level, ALBERT Base v2 was employed for this task.
 This transformer model is specifically designed to be fine-tuned on tasks that
-require an understanding of the entire sentence, such as sequence classification.
+require an understanding of the entire sentence, such as sequence classification. As specified above, due to computational issues the labeling was performed on around 100'000 stanzas. 
+A preliminary analysis of the distribution of the classes revealed a slight disparity in representation among the labels, which is expected in this scenario. 
+The most represented class was \textit{joy}: around 18\% of the total number of texts were classified as such, followed by \textit{fear} and \textit{anger} at 14\% each. 
+The categories \textit{sadness}, \textit{trust}, \textit{anticipation} and \textit{surprise} each constituted 11\%, while \textit{disgust} was the least represented at 10\%. In the image below, the number of texts belonging to each label.  
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{pictures/exploratory_graph.png}
+    \caption{Text distribution for each label}
+    \label{fig:enter-label}
+\end{figure}
 
 \section*{Models}
 The selected model architectures are:
@@ -146,11 +155,11 @@ estimate of model performance.
 
 \subsection*{Neural Networks}
 The architectures were developed and tuned through empirical,
-reiterated testing.
+reiterated testing. These parameters helped with the process, and can
+be used for further experimentation.
 Both the Recurrent Neural Network and the One-Dimensional Convolutional
 Neural Network share the same preprocessing
-architecture.
-Most attributes are processed in the same manner as in
+architecture. Most attributes are processed in the same manner as in
 the Static Models; specific steps are applied to \texttt{lemmatized\_stanzas}
 and \texttt{title}.
 Non-Negative Matrix Factorization is applied to \texttt{title} in addition to
@@ -162,7 +171,7 @@ textual data.\\
 pipelines of the two Networks.
 Elements are first tokenized, and then padded in order to
 get an input with consistent shape, which is essential for both types of
-recurrent layers.\\
+recurrent layers.
 
 \subsubsection*{One-Dimensional Convolutional Neural Network}
 The Convolutional part of the architecture is specifically designed to extract and learn
@@ -174,7 +183,6 @@ dimension to a fixed-length vector, as well as retaining focus on the most
 informative patterns.
 A dropout layer is then applied, to introduce regularization and prevent
 overfitting.
-
 
 \subsubsection*{Recurrent Neural Network}
 The Recurrent part of the architecture is specifically designed to extract and learn
@@ -188,7 +196,6 @@ the \texttt{sigmoid} activation function for the recurrent gate.
 The first and second layers return the full sequence of hidden states for each
 time step in the input sequence, enabling richer learning of patterns over time.
 Dropout is applied on every layer, to prevent overfitting and add regularization.
-
 
 \subsection*{Shared Components}
 The remaining features are handled by a simple pipeline, which concatenates
@@ -221,3 +228,4 @@ learning. It can be utilized either strictly for transfer learning or in a data
 augmentation approach. When using the data augmentation approach, the model's
 weights can be reset prior to training on the newly pseudo-labeled data, allowing
 for more robust retraining on an expanded dataset.
+The results obtained \textbf{FINIRE}
