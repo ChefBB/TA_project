@@ -142,85 +142,16 @@ history = model.fit(
     batch_size= 32
 )
 
-# semi-supervised preparation and retraining
-# if args.semisupervised != 0:
-    
-#     X_unlabeled = pd.read_csv(
-#         path + 'data/def_lemmatized_df.csv'
-#     ).iloc[130001:].dropna().sample(frac= 0.05)
-    
-#     X_unlabeled = {
-#         'lemmatized_stanzas': X_unlabeled['lemmatized_stanzas'],
-#         'stanza_numbers': X_unlabeled[['stanza_number']],
-#         'booleans': X_unlabeled[['is_country', 'is_pop', 'is_rap',
-#                'is_rb', 'is_rock', 'is_chorus']].astype(int).values,
-#         'titles': X_unlabeled['title']
-#     }
-
-#     X_unlabeled_preprocessed = preprocessing.preprocess_new_data(
-#         X_unlabeled, folder_path
-#     )
-    
-#     X_list = data_splitting.get_data_as_list(
-#         X_unlabeled_preprocessed
-#     )
-    
-#     predictions = model.predict(X_list)
-
-#     max_indices = np.argmax(predictions, axis=1)
-
-#     one_hot_batch = np.zeros_like(predictions)
-#     one_hot_batch[np.arange(predictions.shape[0]), max_indices] = 1
-    
-#     X_unlabeled['y'] = one_hot_batch
-    
-#     # concatenate the train set with the pseudo labeled training set
-#     data['train']['lemmatized_stanzas'] = pd.concat(
-#         [data['train']['lemmatized_stanzas'], X_unlabeled['lemmatized_stanzas']],
-#         ignore_index= True
-#     )
-    
-#     data['train']['stanza_numbers'] = pd.concat(
-#         [data['train']['stanza_numbers'], X_unlabeled['stanza_numbers']],
-#         ignore_index= True
-#     )
-    
-#     data['train']['booleans'] = np.concatenate((
-#         data['train']['booleans'], X_unlabeled['booleans']), axis= 0)
-
-#     data['train']['titles'] = pd.concat(
-#         [data['train']['titles'], X_unlabeled['titles']],
-#         ignore_index= True
-#     )
-    
-#     data['train']['y'] = np.concatenate((
-#         data['train']['y'], X_unlabeled['y']), axis= 0)
-
-#     preprocessed_data = preprocessing.preprocess(data, folder_path)
-
-#     X_train = data_splitting.get_data_as_list(preprocessed_data['train'])
-
-#     X_val = data_splitting.get_data_as_list(preprocessed_data['val'])
-
-#     if args.reset:
-#         reset_weights()
-    
-#     model.fit(
-#         X_train, preprocessed_data['train']['y'],
-#         validation_data=(X_val, preprocessed_data['val']['y']),
-#         epochs= args.semisupervised,
-#         batch_size=32
-#     )
-
 
 # Check if semi-supervised learning is enabled (i.e., not 0)
 if args.semisupervised != 0:
     
     # Load a subset of the unlabeled data for semi-supervised learning
-    # Load the CSV, start from the 130001st row, drop any missing values, and sample 5% of the data
+    # Load the CSV, start from the 130001st row, drop any missing values, and sample a number of entries equal
+    # to half of the training set
     X_unlabeled = pd.read_csv(
         path + 'data/def_lemmatized_df.csv'
-    ).iloc[130001:].dropna().sample(frac= 0.05)
+    ).iloc[130001:].dropna().sample(n= len(X_train) / 2)
     
     # Prepare the unlabeled data by extracting specific columns and organizing them in a dictionary
     X_unlabeled = {
