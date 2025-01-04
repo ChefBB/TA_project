@@ -1,3 +1,36 @@
+"""
+This script trains or evaluates an emotion labeling model for song stanzas using either 
+a 1D Convolutional Network or a Recurrent Neural Network. The user can enable various 
+training modes, such as semi-supervised learning, label balancing, and model weight resetting.
+
+Arguments:
+---------
+--dataset : str, optional
+    Path to the input dataset file (default: 
+    '/Users/brunobarbieri/Library/CloudStorage/OneDrive-UniversityofPisa/TA_Project/data/lab_lem_merge.csv').
+    This CSV file should contain labeled stanzas for model training.
+
+--type : int, optional
+    Type of model to train. Accepted values are:
+        1 -> 1D Convolutional Network
+        2 -> Recurrent Neural Network
+    Default is 1.
+
+--epochs : int, optional
+    Number of epochs to train the model. Default is 10.
+
+--semisupervised : int, optional
+    Number of epochs to train the model using semi-supervised learning with pseudo-labeled data. 
+    Set to 0 to disable semi-supervised learning and use supervised learning only. Default is 0.
+
+--reset : flag, optional
+    If specified, the model's weights will be reset before semi-supervised training.
+
+--even-labels : flag, optional
+    If specified, the dataset will be balanced by ensuring an even distribution of labels 
+    across all classes before training.
+"""
+
 import argparse
 import pandas as pd
 import graphs
@@ -151,7 +184,7 @@ if args.semisupervised != 0:
     # to half of the training set
     X_unlabeled = pd.read_csv(
         path + 'data/def_lemmatized_df.csv'
-    ).iloc[130001:].dropna().sample(n= len(X_train) / 2)
+    ).iloc[130001:].dropna().sample(n= int(len(X_train) / 2))
     
     # Prepare the unlabeled data by extracting specific columns and organizing them in a dictionary
     X_unlabeled = {
@@ -225,8 +258,8 @@ if args.semisupervised != 0:
     model.fit(
         X_train, preprocessed_data['train']['y'],
         validation_data=(X_val, preprocessed_data['val']['y']),
-        epochs=args.semisupervised,  # Number of epochs is determined by semi-supervised setting
-        batch_size=32  # Set batch size for training
+        epochs=args.semisupervised,
+        batch_size=32
     )
 
 
