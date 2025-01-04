@@ -146,11 +146,11 @@ estimate of model performance.
 
 \subsection*{Neural Networks}
 The architectures were developed and tuned through empirical,
-reiterated testing. These parameters helped with the process, and can
-be used for further experimentation.
+reiterated testing.
 Both the Recurrent Neural Network and the One-Dimensional Convolutional
 Neural Network share the same preprocessing
-architecture. Most attributes are processed in the same manner as in
+architecture.
+Most attributes are processed in the same manner as in
 the Static Models; specific steps are applied to \texttt{lemmatized\_stanzas}
 and \texttt{title}.
 Non-Negative Matrix Factorization is applied to \texttt{title} in addition to
@@ -221,4 +221,3 @@ learning. It can be utilized either strictly for transfer learning or in a data
 augmentation approach. When using the data augmentation approach, the model's
 weights can be reset prior to training on the newly pseudo-labeled data, allowing
 for more robust retraining on an expanded dataset.
-The results obtained

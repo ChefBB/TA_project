@@ -55,7 +55,6 @@ def train_test_val_split(df: pd.DataFrame) -> dict:
         dict: A dictionary containing three splits (train, val, test). 
               Each split is represented as a dictionary with the same structure.
     """
-
     # test split
     (
         lemmatized_stanzas_train, lemmatized_stanzas_test,
@@ -66,10 +65,11 @@ def train_test_val_split(df: pd.DataFrame) -> dict:
     ) = train_test_split(
         df['lemmatized_stanzas'], df[['stanza_number']],
         df[['is_country', 'is_pop', 'is_rap',
-                'is_rb', 'is_rock', 'is_chorus']].astype(int).values,
+            'is_rb', 'is_rock', 'is_chorus']].astype(int).values,
         df['title'],
         preprocess_labels(df['label']), test_size=0.3,
-        random_state= 42
+        random_state= 42,
+        stratify= preprocess_labels(df['label'])
     )
 
     # validation split
@@ -83,7 +83,8 @@ def train_test_val_split(df: pd.DataFrame) -> dict:
         lemmatized_stanzas_train, stanza_numbers_train,
         booleans_train, titles_train,
         y_train, test_size=0.3,
-        random_state= 42
+        random_state= 42,
+        stratify= y_train
     )
 
     return {

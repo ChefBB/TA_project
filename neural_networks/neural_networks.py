@@ -145,7 +145,6 @@ if args.even_labels:
 
 data = data_splitting.train_test_val_split(df)
 
-
 preprocessed_data = preprocessing.preprocess(data, folder_path)
 
 
@@ -184,7 +183,7 @@ if args.semisupervised != 0:
     # to half of the training set
     X_unlabeled = pd.read_csv(
         path + 'data/def_lemmatized_df.csv'
-    ).iloc[130001:].dropna().sample(n= int(len(X_train) / 2))
+    ).iloc[130001:].dropna().sample(n= int(len(X_train[0]) / 2))
     
     # Prepare the unlabeled data by extracting specific columns and organizing them in a dictionary
     X_unlabeled = {
