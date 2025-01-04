@@ -38,8 +38,18 @@ stopwords.extend(punctuation)
 ### Remove further noise from the texts: empty strings, numbers, apostrophes, quotation marks, expressions like "can't
 
 
-#Defining a function for cleaning the data
 def cleaning(data):
+    """
+    Cleans the input text data by removing unwanted characters (punctuation, numbers, specific patterns),
+    and filtering out stopwords. The text is tokenized into a list of words.
+
+    Args:
+        data (pandas.Series): A pandas Series where each element is a document (string) that needs to be cleaned.
+
+    Returns:
+        list of list of str: A list where each element is a list of cleaned tokens (words) from a document.
+                              Stopwords and unwanted patterns (like punctuation and numbers) are removed.
+    """
     #Deleting punctuations and \d, alias each number
     data_strip = data.apply(lambda x: re.sub(r"[',\[\]’\d]|(o+\s*h+|h+\s*o+)]", "", x).strip()) 
 
@@ -54,8 +64,26 @@ def cleaning(data):
     return data_cleaned
 
 
-#Function to create the correct formats for gensim ->  scikit-learn as suggested, so to use min_df e max_df 
+
 def formats(data):
+    """
+    Converts a given list of text data into a Bag-of-Words (BOW) representation using Gensim's Dictionary and corpus utilities.
+
+    Args:
+        data (list of list of str): A list where each element is a document represented as a list of words (tokens).
+
+    Returns:
+        tuple: A tuple containing:
+            - dictionary (gensim.corpora.Dictionary): The dictionary mapping each unique word to a unique id.
+            - corpus (list of list of tuples): A list of Bag-of-Words representations for each document, 
+              where each document is a list of (word_id, frequency) pairs.
+            - word_doc_matrix (numpy.ndarray): A dense matrix where each row corresponds to a document, 
+              and each column corresponds to the frequency of a word from the dictionary in that document.
+
+    Prints:
+        - The Gensim dictionary object.
+        - The Bag-of-Words (BOW) representation for each document.
+    """
     #Creating a dictionary on which the model can be based
     dictionary = corpora.Dictionary(data)
     print(dictionary)
@@ -80,7 +108,13 @@ def formats(data):
 
 
 #Function to compute tf-idf
-def tf_idf(corpus):
+def tf_idf(corpus: list[str]):
+    """
+    Prints the 5 most important features in a document.
+
+    Args:
+        corpus (list[str]): The document to be inspected
+    """
 
     #Initializing the vectorizer
     vectorizer = TfidfVectorizer(min_df=0.02, max_df=0.8)
@@ -101,20 +135,28 @@ def tf_idf(corpus):
     ordered_features = dict(sorted(feature_weights.items(), key=lambda x: x[1], reverse=True))
 
     #List of features 
-    list = []
+    lst = []
 
     for feature, weight in ordered_features.items():
-        list.append(f"{feature}: {weight}")
+        lst.append(f"{feature}: {weight}")
 
     #Printing the first five
-    print(list[:5])
-
-    return
+    print(lst[:5])
 
 
 
 #Function to select just the texts with a specified label
-def select_emotion(dataframe, emotion):
+def select_emotion(dataframe: pd.Series, emotion) -> pd.DataFrame:
+    """
+    Selects only entries with label equal to the given emotion.
+
+    Args:
+        dataframe: The dataset.
+        emotion: The emotion to filter the dataset with.
+
+    Returns:
+        pd.DataFrame: The filtered dataset.
+    """
     canzoni_emotion = dataframe[dataframe["label"] == emotion]["canzoni_cleaned"].apply(lambda x: " ".join(x))
 
     return canzoni_emotion
