@@ -1,6 +1,8 @@
-#########################
-# roc curve
-#########################
+"""
+Provides methods to generate graphs and plots, to
+describe various performance metrics.
+"""
+
 from sklearn.metrics import roc_curve, auc
 from sklearn.preprocessing import label_binarize
 import matplotlib.pyplot as plt
@@ -10,11 +12,18 @@ from sklearn.metrics import ConfusionMatrixDisplay
 import numpy as np
 
 
-#########################
-# ROC Curve
-#########################
 def roc_curve_graph(y_test, y_pred, classes: pd.Series | list,
                     folder_path: str):
+    """
+    Generates and saves the Receiver Operating Characteristic (ROC) curve for multi-class classification.
+    This function plots the ROC curve for each class in a multi-class setting and saves the plot to the specified folder.
+
+    Args:
+        y_test (array-like): True labels of the test set, typically an array or pandas Series.
+        y_pred (array-like): Predicted probabilities for each class, typically a 2D array or pandas DataFrame.
+        classes (pd.Series or list): A list or pandas Series containing the class labels.
+        folder_path (str): The directory path where the ROC curve plot will be saved
+    """ 
     y_test_bin = label_binarize(y_test, classes=classes)
 
     plt.figure(figsize=(8, 6))
@@ -36,10 +45,16 @@ def roc_curve_graph(y_test, y_pred, classes: pd.Series | list,
     plt.savefig(folder_path + '/roc_curve.png')
 
 
-#########################
-# Training and Validation Loss/Accuracy Curve
-#########################
 def accuracy_curve(history: History, folder_path: str):
+    """
+    Plots and saves the training and validation accuracy curve over epochs for a given model's history.
+    This function visualizes the accuracy performance during training and validation for each epoch.
+
+    Args:
+        history (History): The history object returned by the `fit()` method of a Keras model.
+        
+        folder_path (str): The directory path where the accuracy curve plot will be saved.
+    """
     plt.figure(figsize=(8, 6))
     plt.plot(history.history['categorical_accuracy'], label='Training Accuracy', marker='o')
     plt.plot(history.history['val_categorical_accuracy'], label='Validation Accuracy', marker='o')
@@ -51,24 +66,40 @@ def accuracy_curve(history: History, folder_path: str):
     plt.savefig(folder_path + '/accuracy.png')
     
 
-#########################
-# Confusion matrix graph
-#########################
 def confusion_matrix_graph(y_test, y_pred, classes: pd.Series | list,
                            folder_path: str):
+    """
+    Plots and saves the confusion matrix for a classification model's predictions.
+
+    Args:
+        y_test (array-like or pd.Series): True labels for the test set.
+        y_pred (array-like or pd.Series): Predicted labels by the model for the test set.
+        classes (pd.Series | list): List or series containing the names of the classes.
+                                    These will be used as the labels on the axes of the confusion matrix.
+        folder_path (str): Directory where the confusion matrix plot will be saved.
+    """
+    _, ax = plt.subplots(figsize=(12, 12))
     ConfusionMatrixDisplay.from_predictions(y_test, y_pred, display_labels= classes)
     # plt.figure(figsize= (12, 12))
-    plt.title("Confusion Matrix")
-    plt.xticks(rotation= 90)
+    ax.set_title("Confusion Matrix")
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
     plt.savefig(folder_path + '/confusion_matrix.png')
+    plt.close()
 
 
-#########################
-# Confusion matrix graph
-#########################
 def plot_class_wise_accuracy(y_test, y_pred, classes: pd.Series | list, folder_path: str):
+    """
+    Plots the class-wise accuracy of a classification model.
+
+    Args:
+        y_test (array-like or pd.Series): True labels for the test set.
+        y_pred (array-like or pd.Series): Predicted labels for the test set.
+        classes (pd.Series or list): List or series containing the class labels.
+                                     These will be used for the x-axis and labeling the bars.
+        folder_path (str): The directory where the class-wise accuracy plot will be saved.
+    """
     class_accuracies = []
-    for i, label in enumerate(classes):
+    for i, _ in enumerate(classes):
         indices = np.where(np.array(y_test) == i)
         correct = np.sum(np.array(y_pred)[indices] == i)
         total = len(indices[0])
