@@ -143,6 +143,7 @@ history = model.fit(
     batch_size= 32
 )
 
+# semi-supervised preparation and retraining
 if args.semisupervised != 0:
     X_unlabeled = pd.read_csv(
         path + 'data/def_lemmatized_df.csv'
@@ -211,16 +212,14 @@ if args.semisupervised != 0:
         batch_size=32
     )
 
+# test data into list
+X_test = data_splitting.get_data_as_list(preprocessed_data['test'])
 
 # save summary
 with open(folder_path + "/model_summary.txt", "w") as f:
     with redirect_stdout(f):
         model.summary()
-
-
-X_test = data_splitting.get_data_as_list(preprocessed_data['test'])
-
-loss, accuracy = model.evaluate(X_test, preprocessed_data['test']['y'])
+        model.evaluate(X_test, preprocessed_data['test']['y'])
 
 y_pred = model.predict(X_test)
 
@@ -229,10 +228,11 @@ y_pred_encoded = np.argmax(y_pred, axis=1)
 
 
 # save the Model
-model.save(folder_path + '/multi_input_emotion_model.h5')
+model.save(folder_path + '/model.keras')
 
 classes = df['label'].unique()
 
+# graph generation
 graphs.roc_curve_graph(
     y_pred = y_pred,
     classes = classes,
