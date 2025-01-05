@@ -1,8 +1,10 @@
 \babel@toc {english}{}\relax 
 \contentsline {figure}{\numberline {1}{\ignorespaces Plutchik's eight primary emotions}}{2}{}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Number of stanzas for each label}}{3}{}%
-\contentsline {figure}{\numberline {3}{\ignorespaces ROC Curve for the Random Forest Classifier}}{7}{}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Convolutional Neural Network's training and validation accuracy}}{8}{}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Convolutional Neural Network's class-wide accuracy}}{8}{}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Convolutional Neural Network's confusion matrix}}{9}{}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Explainability - visualization}}{10}{}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Number of stanzas for each label}}{4}{}%
+\contentsline {figure}{\numberline {3}{\ignorespaces \relax }}{7}{}%
+\contentsline {figure}{\numberline {4}{\ignorespaces ROC Curve - SVM}}{8}{}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Class-wise Accuracy - SVM}}{8}{}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Convolutional Neural Network's training and validation accuracy}}{9}{}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Convolutional Neural Network's class-wide accuracy}}{10}{}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Convolutional Neural Network's confusion matrix}}{11}{}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Explainability - visualization}}{12}{}%
