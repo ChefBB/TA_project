@@ -1,15 +1,24 @@
 \chapter*{Results}
 \label{ch:results}
-The performance metrics considered for evaluation in these analysis are the following: accuracy, precision,
-recall, and F1-score. The latter one is the harmonic mean of precision and recall and was therefore chosen for further discussion in this section. Considering all of these metrics is crucial to accurately evaluate how well each
-model performs.
-Regarding the static models implemented in this project, the classification report revealed an accuracy of
-34\% for the Random Forest algorithm and 43\% for SVM. These results can be considered reasonable, given that the task at hand is a multi-class classification problem with 8 classes.\\
+The performance metrics considered for evaluation in these analysis are the
+following: accuracy, precision, recall, and F1-score. Considering all of these
+metrics is crucial to accurately evaluate how well each model performs.
+Regarding the static models implemented in this project, the classification
+report revealed an accuracy of 34\% for the Random Forest algorithm and 43\% for
+SVM. These results can be considered reasonable, given that the task at hand
+is a multi-class classification problem with 8 classes.\\
 
-For the Random Forest model, the class with the highest F1-score is \texttt{anger}, which is the third class as for support, sitting at 4436. 
-\texttt{Joy} was the most supported class, with 5854 instances, but it came second as for the F1-score, which was of 0.40. The second class based off support, which was \texttt{fear} with 4652 instances, had a lower F1-score of 0.31. 
-The remaining classes showed comparable support and F1-scores, averaging around 3500 instances and 0.25 respectively, only \texttt{disgust} had a considerably lower F1-score, at 18\%. \\
-In image \ref{fig:roc_rf}, the ratio of true positives versus false positives is displayed, with the Random Forest classifier scoring lower than a random guesser in two out of eight classes. \\
+For the Random Forest model, the class with the highest F1-score is \texttt{anger},
+which is the third class as for support, sitting at 4436. 
+\texttt{Joy} was the most supported class, with 5854 instances, but it came second
+as for the F1-score, which was of 0.40. The second class based off support, which
+was \texttt{fear} with 4652 instances, had a lower F1-score of 0.31. 
+The remaining classes showed comparable support and F1-scores, averaging around
+3500 instances and 0.25 respectively, only \texttt{disgust} had a considerably
+lower F1-score, at 18\%. \\
+In image \ref{fig:roc_rf}, the ratio of true positives versus false positives is
+displayed, with the Random Forest classifier scoring lower than a random guesser in
+two out of eight classes. \\
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{pictures/roc_rf.png}
@@ -20,12 +29,15 @@ Image \textbf{DA AGGIUNGERE IMMAGINE} shows class-wise accuracy. \\
 
 \textbf{DA AGGIUNGERE SVM}\\
 
-The neural networks generally underperformed compared to the static models.
+
 As mentioned in the previous chapter, the development of neural networks
 iterated testing phases and adjustments over different aspects of training.
 Because of the generally poor results, semi-supervised learning did not get
 significant results; on the other hand, downsampling into evenly represented
-labels gave some minor improvements, for both architectures.\\
+labels gave some minor improvements, for both architectures.
+The neural networks generally underperformed compared to the static models:
+the convolutional neural network ultimately reached a test categorical accuracy
+of 0.2128, while the recurrent neural network had a test accuracy of.\\
 
 The graphs below show various performance metrics of the network with the better
 performances for the convolutional architecture.
@@ -49,6 +61,9 @@ performances for the convolutional architecture.
     \caption{Convolutional Neural Network's confusion matrix}
     \label{fig:cnn_confmatr}
 \end{figure}
+
+The graphs below show various performance metrics of the network with the better
+performances for the recurrent architecture.
 
 % Judging from the confusion matrices
 % and training and validation accuracy plots, the models tend to confuse the classes.

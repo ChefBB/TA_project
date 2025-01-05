@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  5 JAN 2025 16:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  5 JAN 2025 17:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -680,60 +680,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--179
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--190
+Underfull \hbox (badness 10000) in paragraph at lines 191--194
 
  []
 
 [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 272--276
+Underfull \hbox (badness 10000) in paragraph at lines 276--280
 
  []
 
 ) (./results.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--8
+Underfull \hbox (badness 10000) in paragraph at lines 3--10
 
  []
 
 <pictures/roc_rf.png, id=27, 417.7206pt x 328.8285pt>
 File: pictures/roc_rf.png Graphic file (type png)
 <use pictures/roc_rf.png>
-Package pdftex.def Info: pictures/roc_rf.png  used on input line 15.
+Package pdftex.def Info: pictures/roc_rf.png  used on input line 24.
 (pdftex.def)             Requested size: 330.42041pt x 260.10283pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--18
+Underfull \hbox (badness 10000) in paragraph at lines 11--27
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--29
+Underfull \hbox (badness 10000) in paragraph at lines 33--41
 
  []
 
 <pictures/cnn_accuracy.png, id=32, 578.16pt x 433.62pt>
 File: pictures/cnn_accuracy.png Graphic file (type png)
 <use pictures/cnn_accuracy.png>
-Package pdftex.def Info: pictures/cnn_accuracy.png  used on input line 34.
+Package pdftex.def Info: pictures/cnn_accuracy.png  used on input line 46.
 (pdftex.def)             Requested size: 330.42041pt x 247.81438pt.
 [7 <./pictures/roc_rf.png>]
 <pictures/cnn_class_accuracy.png, id=38, 722.7pt x 578.16pt>
 File: pictures/cnn_class_accuracy.png Graphic file (type png)
 <use pictures/cnn_class_accuracy.png>
-Package pdftex.def Info: pictures/cnn_class_accuracy.png  used on input line 41.
+Package pdftex.def Info: pictures/cnn_class_accuracy.png  used on input line 53.
 (pdftex.def)             Requested size: 330.42041pt x 264.33357pt.
 <pictures/cnn_confusion_matrix.png, id=39, 722.7pt x 722.7pt>
 File: pictures/cnn_confusion_matrix.png Graphic file (type png)
 <use pictures/cnn_confusion_matrix.png>
-Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 48.
+Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 60.
 (pdftex.def)             Requested size: 330.42041pt x 330.41696pt.
  [8 <./pictures/cnn_accuracy.png> <./pictures/cnn_class_accuracy.png>]) (./discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--7
@@ -794,7 +794,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  123i,21n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (12 pages, 363684 bytes).
+Output written on Relazione.pdf (12 pages, 363773 bytes).
 PDF statistics:
  84 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream

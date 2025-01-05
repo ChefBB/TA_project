@@ -180,9 +180,13 @@ extraction.\\
 To improve classification, feature importance analysis was conducted on the
 labeled dataset:
 \begin{itemize}
-    \item \textbf{Custom Stopword List Creation}: A custom list of frequent and generic words, punctuation, and common typographical errors was compiled.
-    \item \textbf{Stopword Removal}: Irrelevant words were removed to reduce data noise.
-    \item \textbf{TF-IDF Analysis per Label}: TF-IDF scores were computed for each emotion label, with parameters set to minimize the influence of overly common or rare words.
+    \item \textbf{Custom Stopword List Creation}: A custom list of frequent and
+    generic words, punctuation, and common typographical errors was compiled.
+    \item \textbf{Stopword Removal}: Irrelevant words were removed to reduce data
+    noise.
+    \item \textbf{TF-IDF Analysis per Label}: TF-IDF scores were computed for
+    each emotion label, with parameters set to minimize the influence of overly
+    common or rare words.
 \end{itemize}
 Despite these efforts, the analysis did not yield expected results, with most
 labels sharing common features and low TF-IDF scores.
