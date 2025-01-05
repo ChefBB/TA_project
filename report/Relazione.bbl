@@ -19,9 +19,34 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
-    \entry{geniusdataset}{misc}{}{}
+    \entry{plutchik1980general}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=050935e4cfedc32e862f19fc78769796}{%
+           family={Plutchik},
+           familyi={P\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{050935e4cfedc32e862f19fc78769796}
+      \strng{fullhash}{050935e4cfedc32e862f19fc78769796}
+      \strng{fullhashraw}{050935e4cfedc32e862f19fc78769796}
+      \strng{bibnamehash}{050935e4cfedc32e862f19fc78769796}
+      \strng{authorbibnamehash}{050935e4cfedc32e862f19fc78769796}
+      \strng{authornamehash}{050935e4cfedc32e862f19fc78769796}
+      \strng{authorfullhash}{050935e4cfedc32e862f19fc78769796}
+      \strng{authorfullhashraw}{050935e4cfedc32e862f19fc78769796}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Emotion: Theory, research, and experience}
+      \field{title}{A general psychoevolutionary theory of emotion}
+      \field{volume}{1}
+      \field{year}{1980}
+    \endentry
+    \entry{geniusdataset}{misc}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labeltitlesource}{title}
       \field{title}{Genius Song Lyrics}
       \verb{urlraw}
@@ -32,8 +57,8 @@
       \endverb
     \endentry
     \entry{albert-base-v2}{misc}{}{}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labeltitlesource}{title}
       \field{title}{Albert Base v2}
       \verb{urlraw}
