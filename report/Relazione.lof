@@ -4,7 +4,7 @@
 \contentsline {figure}{\numberline {3}{\ignorespaces ROC Curve for the Random Forest Classifier}}{7}{}%
 \contentsline {figure}{\numberline {4}{\ignorespaces Class-wise Accuracy - Random Forest}}{7}{}%
 \contentsline {figure}{\numberline {5}{\ignorespaces ROC curve for SVM}}{8}{}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Class-wise Accuracy - SVC}}{9}{}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Class-wise Accuracy - SVM}}{9}{}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Convolutional Neural Network's training and validation accuracy}}{9}{}%
 \contentsline {figure}{\numberline {8}{\ignorespaces Convolutional Neural Network's class-wide accuracy}}{10}{}%
 \contentsline {figure}{\numberline {9}{\ignorespaces Convolutional Neural Network's confusion matrix}}{10}{}%
