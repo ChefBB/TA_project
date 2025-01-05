@@ -1,15 +1,32 @@
 \chapter*{Conclusions}
 \label{ch:conclusions}
+% This study aimed at demonstrating how emotion detection in song
+% lyrics stanzas can provide valuable insights into the emotional landscape of
+% music and how it can be implemented with Machine Learning models. 
+% These findings have practical applications, such as improving music
+% recommendation systems and creating mood-based playlists.
+% At the same time, the study faced challenges, particularly with interpreting
+% ambiguous or context-dependent lyrics, which highlights opportunities for further
+% research in this field.
+This study aimed at exploring various Machine Learning techniques perform on an
+emotion detection task on songs, which are irregular, complex texts.
+The particular field has many practical applications, such as improving
+recommendation systems.
 
+The results of the project point towards better performances obtained by more
+straightforward, simpler models; neural networks generally struggled to find
+general, meaningful patterns and correlations, leading into suboptimal
+training and testing performances. On the other hand, static models obtained
+acceptable results. These results might have been caused by a series of
+factors, such as the likely feature overlap between different classes and
+poor labeling from the model used to generate the ground truth.\\
 
-In conclusion, this study aimed at demonstrating how emotion detection in song
-lyrics stanzas can provide valuable insights into the emotional landscape of
-music and how it can be implemented with Machine Learning models. 
-These findings have practical applications, such as improving music
-recommendation systems and creating mood-based playlists. 
-At the same time, the study faced challenges, particularly with interpreting
-ambiguous or context-dependent lyrics, which highlights opportunities for further
-research in this field.
+As mentioned in the previous chapter, there are things that can be done to
+solve both these issues, such as utilizing alternative models, techniques or
+sources for generating the ground truth. An other possible approach
+is to utilize a probabilistic approach for the labeling process, which
+can indeed guide models into more informed decisions.\\
 
-
-% \section*{Future developments}
+In conclusion, while the static models performed better in this particular study,
+it may be possible to achieve better performance on the emotion
+detection task, ultimately advancing its applicability in real-world scenarios.
