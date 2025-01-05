@@ -1,10 +1,5 @@
 \chapter*{Results}
 \label{ch:results}
-% The performances of the models were evaluated using the
-% \texttt{classification\_report} function from the \texttt{scikit-learn} library. 
-% This function is particularly useful as it offers an overview of key evaluation
-% metrics commonly used in Machine Learning, i.e. accuracy, precision, recall,
-% and F1-score.\\
 The performance metrics considered for evaluation in these analysis are the following: accuracy, precision,
 recall, and F1-score. The latter one is the harmonic mean of precision and recall and was therefore chosen for further discussion in this section. Considering all of these metrics is crucial to accurately evaluate how well each
 model performs.
@@ -21,7 +16,7 @@ In image \ref{fig:roc_rf}, the ratio of true positives versus false positives is
     \caption{ROC Curve for the Random Forest Classifier}
     \label{fig:roc_rf}
 \end{figure}
-Then, in image \textbf{DA AGGIUNGERE IMMAGINE}, the class-wise accuracy can be seen. \\
+Image \textbf{DA AGGIUNGERE IMMAGINE} shows class-wise accuracy. \\
 
 \textbf{DA AGGIUNGERE SVM}\\
 
@@ -34,27 +29,10 @@ Because of the generally poor results, semi-supervised learning did not get
 important results; downsampling into evenly represented labels gave some
 minor improvements, for both architectures.\\
 
-
-Judging from the confusion matrix % TODO quote graphs
-and training and validation accuracy plots, the models tend to confuse the classes.
-This might be because of heavy high frequency overlapping terms between the classes
+The graphs below show various performance metrics of the best networks for the
+two architectures.\\
 
 
-An interesting aspect of the explainability analysis is the visualization of the results.
-The \textbf{left section} of the graph in Figure~\ref{fig:expl} displays the predicted probabilities for each class. In the \textbf{center section}
-feature importances are ranked from most to least relevant and divided into two groups: on the right
-features with a positive influence on the predicted label; on the left, those with a negative influence that suggest the model should consider other classes.
-The \textbf{right section} of the graph highlights the values of the most important
-features, using bright colors to indicate features with a positive influence on the prediction.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale= 0.55]{pictures/expl.png}
-    \caption{Explainability - visualization}
-    \label{fig:expl}
-\end{figure}
-
-The figure above illustrates a prediction where the model assigned the label \texttt{joy} to the stanza under analysis, but the correct label, assigned by the ALBERT model (as mentioned in the \textit{Methods} section), was \texttt{sadness}.
-However, the word "smile" which is brighty highlighted, intuitively suggests that "joy" might be a more plausible class for this stanza, even one that ALBERT could reasonably assign. 
-This observation raises a critical issue: the transfer learning approach used to create the ground truth appears to have some limitations; in some instances the SVC model assigns a label that seems more contextually appropriate for the stanza, 
-yet it differs from the supposedly correct label provided by ALBERT.
+% Judging from the confusion matrices
+% and training and validation accuracy plots, the models tend to confuse the classes.
+% This might be because of heavy high frequency overlapping terms between the classes

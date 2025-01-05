@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  5 JAN 2025 13:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  5 JAN 2025 13:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -724,47 +724,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 214--226
  []
 
 [7]) (./results.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--13
+Underfull \hbox (badness 10000) in paragraph at lines 3--8
 
  []
 
 <pictures/roc_rf.png, id=34, 417.7206pt x 328.8285pt>
 File: pictures/roc_rf.png Graphic file (type png)
 <use pictures/roc_rf.png>
-Package pdftex.def Info: pictures/roc_rf.png  used on input line 20.
+Package pdftex.def Info: pictures/roc_rf.png  used on input line 15.
 (pdftex.def)             Requested size: 236.01561pt x 185.78844pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--23
+Underfull \hbox (badness 10000) in paragraph at lines 9--18
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--36
+Underfull \hbox (badness 10000) in paragraph at lines 23--31
 
  []
 
-[9 <./pictures/roc_rf.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--34
+
+ []
+
+) (./discussion.tex [9 <./pictures/roc_rf.png>]
 <pictures/expl.png, id=43, 849.77475pt x 280.04625pt>
 File: pictures/expl.png Graphic file (type png)
 <use pictures/expl.png>
-Package pdftex.def Info: pictures/expl.png  used on input line 52.
+Package pdftex.def Info: pictures/expl.png  used on input line 13.
 (pdftex.def)             Requested size: 467.37756pt x 154.0259pt.
-) (./discussion.tex) (./conclusions.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--22
+
+ []
+
+[10 <./pictures/expl.png>]) (./conclusions.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-[10 <./pictures/expl.png>]) [11] (./Relazione.lof)
+) [11] (./Relazione.lof)
 \tf@lof=\write4
 \openout4 = `Relazione.lof'.
 
@@ -788,7 +798,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  123i,21n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (12 pages, 251158 bytes).
+Output written on Relazione.pdf (12 pages, 251540 bytes).
 PDF statistics:
  78 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
