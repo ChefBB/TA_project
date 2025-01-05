@@ -1,5 +1,7 @@
 """
 This script provides functionality to load a pretrained model and use it to classify new data.
+The file also provides the classify method which can function as a very simple
+API for external usage.
 
 Arguments:
     --dataset (str, optional): Path to a CSV file containing the data to classify. If not provided, 
