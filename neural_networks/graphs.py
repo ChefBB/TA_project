@@ -78,7 +78,7 @@ def confusion_matrix_graph(y_test, y_pred, classes: pd.Series | list,
                                     These will be used as the labels on the axes of the confusion matrix.
         folder_path (str): Directory where the confusion matrix plot will be saved.
     """
-    fig, ax = plt.subplots(figsize=(12, 12))
+    _, ax = plt.subplots(figsize=(10, 10))
     ConfusionMatrixDisplay.from_predictions(y_test, y_pred, display_labels= classes, ax= ax)
     ax.set_title("Confusion Matrix")
     ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
