@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber Relazione"] 0 "Relazione.bcf" "Relazione.bbl" "Relazione" 1736076658.21229 -1
-  "Relazione.bcf" 1736076657.96452 107825 078555ea9f76382054247207ba136185 "pdflatex"
+["biber Relazione"] 0 "Relazione.bcf" "Relazione.bbl" "Relazione" 1736076866.66963 -1
+  "Relazione.bcf" 1736076866.43196 107825 078555ea9f76382054247207ba136185 "pdflatex"
   "bibliography.bib" 1735901366.69208 281 f725ed65e945b73067ef6b9e459276b9 ""
   (generated)
   "Relazione.bbl"
   "Relazione.blg"
   (rewritten before read)
-["pdflatex"] 1736076656.11797 "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" "Relazione.pdf" "Relazione" 1736076658.21307 2
+["pdflatex"] 1736076863.86266 "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" "Relazione.pdf" "Relazione" 1736076866.67036 2
   "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" 1735982875.93552 5882 000276c9a96252dc0995390445be4082 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -117,9 +117,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1718359646.02718 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1718359419 8221430 7882b9a7879b697c1714b9ec0b6e673c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Relazione.aux" 1736076657.96048 1478 0a71d0cb106194cbf8d3194cb2089876 "pdflatex"
+  "Relazione.aux" 1736076866.42723 1478 0a71d0cb106194cbf8d3194cb2089876 "pdflatex"
   "Relazione.bbl" 1735901366.68487 1536 31c8fd17c9d6d416792951f86bc6a2d3 "biber Relazione"
-  "Relazione.lof" 1736076657.96638 311 5343916ef7915fa65f1b2659b0eed7cb "pdflatex"
+  "Relazione.lof" 1736076866.43383 311 5343916ef7915fa65f1b2659b0eed7cb "pdflatex"
   "Relazione.tex" 1735982875.93552 5882 000276c9a96252dc0995390445be4082 ""
   "abstract.tex" 1736008714.93304 1045 c7bc114cd5f349140277179531e73c9b ""
   "conclusions.tex" 1735905175.50987 663 722ef7a96b80550fa953f17ac2e2261a ""
