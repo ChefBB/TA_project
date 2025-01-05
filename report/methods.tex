@@ -32,13 +32,11 @@ distribution. Text cleaning focused on removing irrelevant noise, such as
 square-bracketed items, and splitting lyrics into individual stanzas using
 stanza-related keywords (e.g., "chorus", "verse").
 Uninformative stanzas, such as empty or very short ones, were discarded,
-resulting in a dataset of numbered stanzas.\\
-
+resulting in a dataset of numbered stanzas.
 A boolean feature, \texttt{is\_chorus}, was added to mark repeated or chorus-related
 stanzas, and duplicate stanzas were removed to eliminate redundancy.
 Further cleaning involved removing stanza headers and newline characters,
-producing cleaner stanzas for labeling.\\
-
+producing cleaner stanzas for labeling.
 Lemmatization was performed using the \texttt{spaCy} library, generating
 tokenized stanzas by filtering out punctuation. ALBERT Base v2 was then
 fine-tuned to label approximately 100,000 stanzas with emotional categories.
@@ -128,51 +126,70 @@ complexity required for detecting emotional tones in complex pieces of text.
 
 %MODELLI STATICI
 \subsection*{Static Models}
-The development of static models was then simple and straight forward.
-Static models are here meant to provide a performance comparison
-for the more complex Neural Networks.
-The two architectures are the same, consisting of a preprocessing
-layer to handle the inputs, followed by the classifier itself.\\
+% The development of static models was then simple and straight forward.
+% Static models are here meant to provide a performance comparison
+% for the more complex Neural Networks.
+% The two architectures are the same, consisting of a preprocessing
+% layer to handle the inputs, followed by the classifier itself.\\
 
-The preprocessing layers handle both \texttt{title} and
-\texttt{lemmatized\_stanzas} through TF-IDF for feature extraction.
-An additional analysis aimed at identifying the most significant features for
-each emotion label in the dataset was conducted to enhance classification.
-Feature importance analysis was performed on the already labeled and
-lemmatized dataset, following these steps:
+% The preprocessing layers handle both \texttt{title} and
+% \texttt{lemmatized\_stanzas} through TF-IDF for feature extraction.
+% An additional analysis aimed at identifying the most significant features for
+% each emotion label in the dataset was conducted to enhance classification.
+% Feature importance analysis was performed on the already labeled and
+% lemmatized dataset, following these steps:
+% \begin{itemize}
+%     \item \textbf{Custom Stopword List Creation}: A custom stopword list was
+%     compiled, consisting
+%     of the most frequent and generic words in the dataset, along with additional
+%     punctuation marks and common typographical errors not covered by the default
+%     NLTK stopword lists.
+
+%     \item \textbf{Stopword Removal}: Irrelevant words identified by the custom
+%     stopword list were removed from the lemmatized stanzas to reduce noise in
+%     the data.
+
+%     \item \textbf{TF-IDF Analysis per Label}: A function was developed to
+%     compute TF-IDF scores for a given text, with parameters \texttt{min\_df}
+%     set to 2 and \texttt{max\_df} set to 0.80.
+% \end{itemize}
+% This configuration ensured that words appearing in fewer than two or
+% more than 80\% of the documents were ignored, minimizing the influence of
+% extremely rare or overly common words. The function was applied separately to
+% the cleaned stanzas for each label, with the aim of identifying the most
+% relevant features per emotion category.
+% The results, however, did not meet expectations, though the outcome was not
+% entirely surprising. Most labels shared at least two common features, and
+% certain labels (such as surprise and trust) shared all features.
+% Additionally, all identified features exhibited very low TF-IDF scores,
+% below 0.05.
+% This result appears to be inherent to the nature of the dataset: song lyrics
+% frequently contain repetitive and generic language, making it difficult to
+% distinguish specific emotions based solely on textual features.
+% Consequently, the analysis was concluded at this point.\\
+
+% Random Search was chosen for hyperparameter tuning, for both models.
+% Cross validation is also used in order to provide a more accurate
+% estimate of model performance.
+The development of static models aimed at providing a performance benchmark for
+more complex neural networks.
+Both architectures consisted of a preprocessing layer, followed by a classifier.
+The preprocessing handled title and \texttt{lemmatized\_stanzas} using TF-IDF for feature
+extraction.\\
+
+To improve classification, feature importance analysis was conducted on the
+labeled dataset:
 \begin{itemize}
-    \item \textbf{Custom Stopword List Creation}: A custom stopword list was
-    compiled, consisting
-    of the most frequent and generic words in the dataset, along with additional
-    punctuation marks and common typographical errors not covered by the default
-    NLTK stopword lists.
-
-    \item \textbf{Stopword Removal}: Irrelevant words identified by the custom
-    stopword list were removed from the lemmatized stanzas to reduce noise in
-    the data.
-
-    \item \textbf{TF-IDF Analysis per Label}: A function was developed to
-    compute TF-IDF scores for a given text, with parameters \texttt{min\_df}
-    set to 2 and \texttt{max\_df} set to 0.80.
+    \item \textbf{Custom Stopword List Creation}: A custom list of frequent and generic words, punctuation, and common typographical errors was compiled.
+    \item \textbf{Stopword Removal}: Irrelevant words were removed to reduce data noise.
+    \item \textbf{TF-IDF Analysis per Label}: TF-IDF scores were computed for each emotion label, with parameters set to minimize the influence of overly common or rare words.
 \end{itemize}
-This configuration ensured that words appearing in fewer than two or
-more than 80\% of the documents were ignored, minimizing the influence of
-extremely rare or overly common words. The function was applied separately to
-the cleaned stanzas for each label, with the aim of identifying the most
-relevant features per emotion category.
-The results, however, did not meet expectations, though the outcome was not
-entirely surprising. Most labels shared at least two common features, and
-certain labels (such as surprise and trust) shared all features.
-Additionally, all identified features exhibited very low TF-IDF scores,
-below 0.05.
-This result appears to be inherent to the nature of the dataset: song lyrics
-frequently contain repetitive and generic language, making it difficult to
-distinguish specific emotions based solely on textual features.
-Consequently, the analysis was concluded at this point.\\
+Despite these efforts, the analysis did not yield expected results, with most
+labels sharing common features and low TF-IDF scores.
+This was likely due to the repetitive and generic nature of song lyrics.\\
 
-Random Search was chosen for hyperparameter tuning, for both models.
-Cross validation is also used in order to provide a more accurate
-estimate of model performance.
+For hyperparameter tuning, Random Search and cross-validation were used to
+estimate model performance more accurately.
 
 \subsection*{Neural Networks}
 The architectures were developed and tuned through empirical,
@@ -249,4 +266,4 @@ learning. It can be utilized either strictly for transfer learning or in a data
 augmentation approach. When using the data augmentation approach, the model's
 weights can be reset prior to training on the newly pseudo-labeled data, allowing
 for more robust retraining on an expanded dataset.
-The results obtained \textbf{FINIRE}
+The results obtained 
