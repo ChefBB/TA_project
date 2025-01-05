@@ -43,18 +43,26 @@ example provided below (figure~\ref{fig:expl}).
     \label{fig:expl}
 \end{figure}
 
-The \textbf{left section} of the graph displays the
-predicted probabilities for each class. In the \textbf{center section}
+The left section of the graph displays the
+predicted probabilities for each class. In the center section
 feature importances are ranked from most to least relevant and divided into two
 groups: on the right
 features with a positive influence on the predicted label; on the left, those
 with a negative influence that suggest the model should consider other classes.
-The \textbf{right section} of the graph highlights the values of the most important
+The right section of the graph highlights the values of the most important
 features, using bright colors to indicate features with a positive influence on the
 prediction.
 
-The figure above illustrates a prediction where the model assigned the label \textit{joy} to the stanza under analysis, but the correct label, assigned by the ALBERT model (as mentioned in the \textit{Methods} section), was \textit{sadness}.
+The example in question illustrates a prediction where the model assigned the label \textit{joy} to the stanza under analysis, but the expected label, assigned by the ALBERT model, was \textit{sadness}.
 However, the word \textit{smile}, which is brighty highlighted, intuitively suggests that \textit{joy} might be a more plausible class for this stanza, even one that ALBERT could reasonably assign. 
 This observation raises a critical issue: the transfer learning approach used to create the ground truth appears to have some limitations; in some instances the SVC model assigns a label that seems more contextually appropriate for the stanza, 
 yet it differs from the supposedly correct label provided by ALBERT.\\
+
+
+One possible solution is to switch to a different pseudo-labeling model.
+Alternatively, using probability vectors rather than direct classification for
+labeling could guide the models toward a regression-based approach. This strategy
+may provide more informative inputs for the models and facilitate a deeper
+understanding of their performance issues, helping to identify where and why they
+struggle.
 
