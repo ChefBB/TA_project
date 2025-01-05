@@ -63,7 +63,7 @@ def reset_weights():
 
 # arguments
 parser = argparse.ArgumentParser(
-    description= "Train or evaluate the emotion labeling model."
+    description= "Train the emotion labeling model."
 )
 
 path= '/Users/brunobarbieri/Library/CloudStorage/OneDrive-UniversityofPisa/TA_Project/'
