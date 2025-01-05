@@ -1,4 +1,10 @@
 \babel@toc {english}{}\relax 
 \contentsline {figure}{\numberline {1}{\ignorespaces Plutchik's eight primary emotions}}{2}{}%
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {2}{\ignorespaces Text distribution for each label}}{5}{}%
 \contentsline {figure}{\numberline {3}{\ignorespaces Explainability - visualization}}{9}{}%
+=======
+\contentsline {figure}{\numberline {2}{\ignorespaces Text distribution for each label}}{4}{}%
+\contentsline {figure}{\numberline {3}{\ignorespaces ROC Curve for the Random Forest Classifier}}{9}{}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Explainability - visualization}}{10}{}%
+>>>>>>> d52794a9c7a6c3947268789c6410f84d328b3449
