@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  5 JAN 2025 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  5 JAN 2025 15:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -753,41 +753,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--31
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--34
-
- []
-
-) (./discussion.tex
+<pictures/cnn_accuracy.png, id=39, 578.16pt x 433.62pt>
+File: pictures/cnn_accuracy.png Graphic file (type png)
+<use pictures/cnn_accuracy.png>
+Package pdftex.def Info: pictures/cnn_accuracy.png  used on input line 36.
+(pdftex.def)             Requested size: 330.42041pt x 247.81438pt.
+[9 <./pictures/roc_rf.png>]
+<pictures/cnn_class_accuracy.png, id=44, 722.7pt x 578.16pt>
+File: pictures/cnn_class_accuracy.png Graphic file (type png)
+<use pictures/cnn_class_accuracy.png>
+Package pdftex.def Info: pictures/cnn_class_accuracy.png  used on input line 43.
+(pdftex.def)             Requested size: 330.42041pt x 264.33357pt.
+<pictures/cnn_confusion_matrix.png, id=45, 722.7pt x 722.7pt>
+File: pictures/cnn_confusion_matrix.png Graphic file (type png)
+<use pictures/cnn_confusion_matrix.png>
+Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 50.
+(pdftex.def)             Requested size: 330.42041pt x 330.41696pt.
+ [10 <./pictures/cnn_accuracy.png> <./pictures/cnn_class_accuracy.png>]) (./discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--7
 
  []
 
-[9 <./pictures/roc_rf.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 8--24
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--18
 
  []
 
-<pictures/expl.png, id=43, 849.77475pt x 280.04625pt>
+[11 <./pictures/cnn_confusion_matrix.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--29
+
+ []
+
+<pictures/expl.png, id=55, 849.77475pt x 280.04625pt>
 File: pictures/expl.png Graphic file (type png)
 <use pictures/expl.png>
-Package pdftex.def Info: pictures/expl.png  used on input line 34.
+Package pdftex.def Info: pictures/expl.png  used on input line 41.
 (pdftex.def)             Requested size: 467.37756pt x 154.0259pt.
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 39--43
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--50
 
  []
 
-) (./conclusions.tex
+[12 <./pictures/expl.png>]) (./conclusions.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-) [11 <./pictures/expl.png>] [12] (./Relazione.lof)
+) [13] (./Relazione.lof)
 \tf@lof=\write4
 \openout4 = `Relazione.lof'.
 
- [13
+ [14
 
 ] (./Relazione.aux)
  ***********
@@ -799,18 +820,18 @@ Package logreq Info: Writing requests to 'Relazione.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16240 strings out of 474116
- 320315 string characters out of 5743682
+ 16264 strings out of 474116
+ 321141 string characters out of 5743682
  1937187 words of memory out of 5000000
- 38399 multiletter control sequences out of 15000+600000
+ 38423 multiletter control sequences out of 15000+600000
  582403 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,21n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (13 pages, 252441 bytes).
+Output written on Relazione.pdf (14 pages, 369883 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 91 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
