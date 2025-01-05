@@ -1,15 +1,15 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
-[1] Config.pm:311> INFO - Logfile is 'Relazione.blg'
-[162] biber:340> INFO - === Sun Jan  5, 2025, 18:59:56
-[195] Biber.pm:420> INFO - Reading 'Relazione.bcf'
-[352] Biber.pm:994> INFO - Found 2 citekeys in bib section 0
-[384] Biber.pm:4463> INFO - Processing section 0
-[402] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[403] bibtex.pm:1713> INFO - LaTeX decoding ...
-[407] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[421] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[422] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[422] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[422] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[435] bbl.pm:676> INFO - Writing 'Relazione.bbl' with encoding 'UTF-8'
-[436] bbl.pm:779> INFO - Output to Relazione.bbl
+[0] Config.pm:311> INFO - Logfile is 'Relazione.blg'
+[268] biber:340> INFO - === Sun Jan  5, 2025, 19:06:13
+[350] Biber.pm:420> INFO - Reading 'Relazione.bcf'
+[544] Biber.pm:994> INFO - Found 3 citekeys in bib section 0
+[578] Biber.pm:4463> INFO - Processing section 0
+[601] Biber.pm:4654> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[603] bibtex.pm:1713> INFO - LaTeX decoding ...
+[609] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[669] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[669] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[669] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[669] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[681] bbl.pm:676> INFO - Writing 'Relazione.bbl' with encoding 'UTF-8'
+[684] bbl.pm:779> INFO - Output to Relazione.bbl
