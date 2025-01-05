@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  5 JAN 2025 21:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  5 JAN 2025 22:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -725,24 +725,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--191
 
 
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 273--277
-
- []
-
-) (results.tex
+[5]) (results.tex
 <pictures/roc_rf.png, id=26, 417.7206pt x 328.8285pt>
 File: pictures/roc_rf.png Graphic file (type png)
 <use pictures/roc_rf.png>
-Package pdftex.def Info: pictures/roc_rf.png  used on input line 25.
+Package pdftex.def Info: pictures/roc_rf.png  used on input line 24.
 (pdftex.def)             Requested size: 212.41261pt x 167.2086pt.
 <pictures/class_accuracy.png, id=27, 722.7pt x 578.16pt>
 File: pictures/class_accuracy.png Graphic file (type png)
 <use pictures/class_accuracy.png>
-Package pdftex.def Info: pictures/class_accuracy.png  used on input line 32.
+Package pdftex.def Info: pictures/class_accuracy.png  used on input line 30.
 (pdftex.def)             Requested size: 212.41261pt x 169.92935pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--38
+Underfull \hbox (badness 10000) in paragraph at lines 3--36
 
  []
 
@@ -752,45 +747,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--38
 <pictures/roc_svc.png, id=32, 619.3539pt x 506.6127pt>
 File: pictures/roc_svc.png Graphic file (type png)
 <use pictures/roc_svc.png>
-Package pdftex.def Info: pictures/roc_svc.png  used on input line 61.
-(pdftex.def)             Requested size: 236.01561pt x 193.05594pt.
+Package pdftex.def Info: pictures/roc_svc.png  used on input line 62.
+(pdftex.def)             Requested size: 212.41261pt x 173.7457pt.
+<pictures/class_accuracy_SVC.png, id=33, 722.7pt x 578.16pt>
+File: pictures/class_accuracy_SVC.png Graphic file (type png)
+<use pictures/class_accuracy_SVC.png>
+Package pdftex.def Info: pictures/class_accuracy_SVC.png  used on input line 68.
+(pdftex.def)             Requested size: 212.41261pt x 169.92935pt.
 
 
 [7 <./pictures/roc_rf.png> <./pictures/class_accuracy.png>]
-<pictures/class_accuracy_SVC.png, id=39, 722.7pt x 578.16pt>
-File: pictures/class_accuracy_SVC.png Graphic file (type png)
-<use pictures/class_accuracy_SVC.png>
-Package pdftex.def Info: pictures/class_accuracy_SVC.png  used on input line 67.
-(pdftex.def)             Requested size: 236.01561pt x 188.80844pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--80
-
- []
-
-
-
-[8 <./pictures/roc_svc.png> <./pictures/class_accuracy_SVC.png>]
-<pictures/cnn_accuracy.png, id=45, 578.16pt x 433.62pt>
+<pictures/cnn_accuracy.png, id=40, 578.16pt x 433.62pt>
 File: pictures/cnn_accuracy.png Graphic file (type png)
 <use pictures/cnn_accuracy.png>
-Package pdftex.def Info: pictures/cnn_accuracy.png  used on input line 85.
-(pdftex.def)             Requested size: 330.42041pt x 247.81438pt.
-<pictures/cnn_class_accuracy.png, id=46, 722.7pt x 578.16pt>
+Package pdftex.def Info: pictures/cnn_accuracy.png  used on input line 101.
+(pdftex.def)             Requested size: 188.8096pt x 141.60632pt.
+<pictures/cnn_class_accuracy.png, id=41, 722.7pt x 578.16pt>
 File: pictures/cnn_class_accuracy.png Graphic file (type png)
 <use pictures/cnn_class_accuracy.png>
-Package pdftex.def Info: pictures/cnn_class_accuracy.png  used on input line 92.
-(pdftex.def)             Requested size: 377.62642pt x 302.10056pt.
+Package pdftex.def Info: pictures/cnn_class_accuracy.png  used on input line 108.
+(pdftex.def)             Requested size: 306.81741pt x 245.4545pt.
 
 
-[9 <./pictures/cnn_accuracy.png>]
-<pictures/cnn_confusion_matrix.png, id=51, 722.7pt x 722.7pt>
+[8 <./pictures/roc_svc.png> <./pictures/class_accuracy_SVC.png> <./pictures/cnn_accuracy.png>]
+<pictures/cnn_confusion_matrix.png, id=48, 722.7pt x 722.7pt>
 File: pictures/cnn_confusion_matrix.png Graphic file (type png)
 <use pictures/cnn_confusion_matrix.png>
-Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 99.
-(pdftex.def)             Requested size: 377.62642pt x 377.6257pt.
+Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 115.
+(pdftex.def)             Requested size: 306.81741pt x 306.81812pt.
 
 
-[10 <./pictures/cnn_class_accuracy.png>]) (discussion.tex
+[9 <./pictures/cnn_class_accuracy.png> <./pictures/cnn_confusion_matrix.png>]) (discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
@@ -801,8 +788,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--17
  []
 
 
-
-[11 <./pictures/cnn_confusion_matrix.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 18--24
 
  []
@@ -812,19 +797,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--30
 
  []
 
-<pictures/expl.png, id=60, 849.77475pt x 280.04625pt>
+<pictures/expl.png, id=54, 849.77475pt x 280.04625pt>
 File: pictures/expl.png Graphic file (type png)
 <use pictures/expl.png>
 Package pdftex.def Info: pictures/expl.png  used on input line 40.
 (pdftex.def)             Requested size: 467.37756pt x 154.0259pt.
 
 
-[12 <./pictures/expl.png>]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 55--60
 
  []
 
 ) (conclusions.tex
+
+[11 <./pictures/expl.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 16--23
 
  []
@@ -834,17 +821,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--29
 
  []
 
+)
 
-
-[13])
-
-[14] (Relazione.lof)
+[12] (Relazione.lof)
 \tf@lof=\write4
 \openout4 = `Relazione.lof'.
 
 
 
-[15
+[13
 
 ] (Relazione.aux)
  ***********
@@ -856,17 +841,17 @@ Package logreq Info: Writing requests to 'Relazione.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17738 strings out of 473897
- 352421 string characters out of 5726462
- 1224835 words of memory out of 5000000
- 40395 multiletter control sequences out of 15000+600000
+ 17741 strings out of 473897
+ 352472 string characters out of 5726462
+ 1224877 words of memory out of 5000000
+ 40398 multiletter control sequences out of 15000+600000
  583988 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,19n,121p,1229b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (15 pages, 519050 bytes).
+Output written on Relazione.pdf (13 pages, 518255 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
+ 92 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

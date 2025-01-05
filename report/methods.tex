@@ -274,7 +274,6 @@ Other features are processed through a simple pipeline, which concatenates input
 passes them through a dense layer, and combines them with the lyrics-processing
 output. The final output layer uses 8 units with softmax activation for emotion
 classification.\\
-
 The models are trained using categorical cross-entropy as the loss function, and
 categorical accuracy as the evaluation metric. Other metrics, such as top-k
 categorical accuracy with $k=2$, were tested but discarded due to limited
