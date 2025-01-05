@@ -191,25 +191,35 @@ This was likely due to the repetitive and generic nature of song lyrics.\\
 For hyperparameter tuning, Random Search and cross-validation were used to
 estimate model performance more accurately.
 
-\subsection*{Neural Networks}
-The architectures were developed and tuned through empirical,
-reiterated testing. These parameters helped with the process, and can
-be used for further experimentation.
-Both the Recurrent Neural Network and the One-Dimensional Convolutional
-Neural Network share the same preprocessing
-architecture. Most attributes are processed in the same manner as in
-the Static Models; specific steps are applied to \texttt{lemmatized\_stanzas}
-and \texttt{title}.
-Non-Negative Matrix Factorization is applied to \texttt{title} in addition to
-Term Frequency-Inverse Document Frequency
-to extract latent topics, providing a richer representation of the
-textual data.\\
 
-\texttt{lemmatized\_stanzas} are handled by Convolutional and Recurrent
-pipelines of the two Networks.
-Elements are first tokenized, and then padded in order to
-get an input with consistent shape, which is essential for both types of
-recurrent layers.
+
+\subsection*{Neural Networks}
+% The architectures were developed and tuned through empirical,
+% reiterated testing. These parameters helped with the process, and can
+% be used for further experimentation.
+% Both the Recurrent Neural Network and the One-Dimensional Convolutional
+% Neural Network share the same preprocessing
+% architecture. Most attributes are processed in the same manner as in
+% the Static Models; specific steps are applied to \texttt{lemmatized\_stanzas}
+% and \texttt{title}.
+% Non-Negative Matrix Factorization is applied to \texttt{title} in addition to
+% Term Frequency-Inverse Document Frequency
+% to extract latent topics, providing a richer representation of the
+% textual data.\\
+
+% \texttt{lemmatized\_stanzas} are handled by Convolutional and Recurrent
+% pipelines of the two networks.
+% Elements are first tokenized, and then padded in order to
+% get an input with consistent shape, which is essential for both types of
+% recurrent layers.
+The neural network architectures were developed and tuned through empirical
+testing, with parameters to aid further experimentation. Both the Recurrent
+Neural Network and One-Dimensional Convolutional Neural Network share the same
+preprocessing steps, including Non-Negative Matrix Factorization applied to title
+for extracting latent topics, in addition to TF-IDF for richer text representation.
+The \texttt{lemmatized\_stanzas} are processed through convolutional and
+recurrent pipelines, where elements are tokenized and padded to maintain
+consistent input shapes.
 
 \subsubsection*{One-Dimensional Convolutional Neural Network}
 The Convolutional part of the architecture is specifically designed to extract and learn
@@ -236,34 +246,42 @@ time step in the input sequence, enabling richer learning of patterns over time.
 Dropout is applied on every layer, to prevent overfitting and add regularization.
 
 \subsection*{Shared Components}
-The remaining features are handled by a simple pipeline, which concatenates
-their Input layers.
-The inputs are passed them through a dense layer to create a compact
-representation.
-The output of the lyrics-processing branch is concatenated with the processed
-additional features.
-The combined representation is passed through a Dense layer with 32 units
-(ReLU activation), followed by a Dropout layer with a rate of 0.3.
-Finally, the output layer uses 8 units with a softmax activation, corresponding
-to the classification into 8 emotion categories.\\
+% The remaining features are handled by a simple pipeline, which concatenates
+% their Input layers.
+% The inputs are passed them through a dense layer to create a compact
+% representation.
+% The output of the lyrics-processing branch is concatenated with the processed
+% additional features.
+% The combined representation is passed through a Dense layer with 32 units
+% (ReLU activation), followed by a Dropout layer with a rate of 0.3.
+% Finally, the output layer uses 8 units with a softmax activation, corresponding
+% to the classification into 8 emotion categories.\\
 
+% The models are trained using categorical cross-entropy as the loss function,
+% as it consistently produced better-performing results for both types of
+% neural networks.
+% As evaluation metric, the better performing one was categorical accuracy.
+% Other metrics were tested for evaluation purposes, particularly
+% top-k categorical accuracy with $k=2$, which yielded interesting insights
+% by considering a prediction correct if the true label is among the top two
+% predicted classes. While it showed potential in improving generalization and
+% preventing overfitting, it was ultimately discarded as a primary evaluation
+% metric. This is because, with $k=2$, the model has a 25\% baseline
+% chance of being correct when there are eight possible classes, which reduces
+% the precision required for accurate learning and limits performance improvements.\\
+Other features are processed through a simple pipeline, which concatenates inputs,
+passes them through a dense layer, and combines them with the lyrics-processing
+output. The final output layer uses 8 units with softmax activation for emotion
+classification.\\
 
-The models are trained using categorical cross-entropy as the loss function,
-as it consistently produced better-performing results for both types of
-neural networks.
-As evaluation metric, the better performing one was categorical accuracy.
-Other metrics were tested for evaluation purposes, particularly
-top-k categorical accuracy with $k=2$, which yielded interesting insights
-by considering a prediction correct if the true label is among the top two
-predicted classes. While it showed potential in improving generalization and
-preventing overfitting, it was ultimately discarded as a primary evaluation
-metric. This is because, with $k=2$, the model has a 25\% baseline
-chance of being correct when there are eight possible classes, which reduces
-the precision required for accurate learning and limits performance improvements.\\
+The models are trained using categorical cross-entropy as the loss function, and
+categorical accuracy as the evaluation metric. Other metrics, such as top-k
+categorical accuracy with $k=2$, were tested but discarded due to limited
+performance improvements and lower precision.
 
-In addition to standard supervised learning, the script supports semi-supervised
-learning. It can be utilized either strictly for transfer learning or in a data
-augmentation approach. When using the data augmentation approach, the model's
-weights can be reset prior to training on the newly pseudo-labeled data, allowing
-for more robust retraining on an expanded dataset.
-The results obtained 
+% In addition to standard supervised learning, the script supports semi-supervised
+% learning. It can be utilized either strictly for transfer learning or in a data
+% augmentation approach. When using the data augmentation approach, the model's
+% weights can be reset prior to training on the newly pseudo-labeled data, allowing
+% for more robust retraining on an expanded dataset.
+% The results obtained 
