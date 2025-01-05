@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber Relazione"] 1736108798.90445 "Relazione.bcf" "Relazione.bbl" "Relazione" 1736109985.29252 0
-  "Relazione.bcf" 1736109984 107899 e9a61650f10e11db5c14a42537f424a2 "pdflatex"
+["biber Relazione"] 1736111087.36249 "Relazione.bcf" "Relazione.bbl" "Relazione" 1736111696.44026 0
+  "Relazione.bcf" 1736111696 107899 e9a61650f10e11db5c14a42537f424a2 "pdflatex"
   "bibliography.bib" 1736107772 484 16c4c76652b5527d64d05614c9ce9be0 ""
   (generated)
   "Relazione.bbl"
   "Relazione.blg"
   (rewritten before read)
-["pdflatex"] 1736109982.6772 "c:/Users/Gagia/Desktop/progetto_TXA/report/Relazione.tex" "Relazione.pdf" "Relazione" 1736109985.29337 0
+["pdflatex"] 1736111693.76944 "c:/Users/Gagia/Desktop/progetto_TXA/report/Relazione.tex" "Relazione.pdf" "Relazione" 1736111696.44172 0
   "C:/Users/Gagia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1735202916 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Gagia/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1730486100 11948315 6548ab8caeecfc235d79a24208231612 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -118,17 +118,17 @@
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1718356376 7243 e5dac1240636811edb77568b81818372 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Relazione.aux" 1736109984 2942 64c22368602b3683e21126c521a1759d "pdflatex"
-  "Relazione.bbl" 1736108801 2682 4cdee87552103a4630ee6ffa8689b814 "biber Relazione"
-  "Relazione.lof" 1736109984 893 10cf705dd060e146a4a4b7bcddff01ec "pdflatex"
-  "Relazione.run.xml" 1736109984 2342 fdd720ce795ac3cc0ce6fceafe4ae2e0 "pdflatex"
+  "Relazione.aux" 1736111696 2945 982f349df73595ad9a6a5df70f3cd256 "pdflatex"
+  "Relazione.bbl" 1736111090 2682 4cdee87552103a4630ee6ffa8689b814 "biber Relazione"
+  "Relazione.lof" 1736111696 814 872ed4837c545fb0b8300363e82e88b0 "pdflatex"
+  "Relazione.run.xml" 1736111696 2342 fdd720ce795ac3cc0ce6fceafe4ae2e0 "pdflatex"
   "Relazione.tex" 1736109843 5907 5313d0cbfaa30a249b344edbd432c44a ""
   "abstract.tex" 1736108421 1577 a5db9b410945a464d0b34ce24dc0770d ""
   "c:/Users/Gagia/Desktop/progetto_TXA/report/Relazione.tex" 1736109843 5907 5313d0cbfaa30a249b344edbd432c44a ""
-  "conclusions.tex" 1736107772 1914 adce38f5bed7bc025de0869293f58209 ""
-  "discussion.tex" 1736107772 3725 a7c3ae93a6b2b59897fd204843008461 ""
+  "conclusions.tex" 1736111692 1903 a7d046efbc15dca97801b150bc989b5f ""
+  "discussion.tex" 1736111432 3756 c88859c3f8f76cbf958a03e238dcd16d ""
   "introduzione.tex" 1736108795 1328 141547b72e97d144989f516fdc553f54 ""
-  "methods.tex" 1736109476 17175 a60d7179bef1f84862d468ee528acf25 ""
+  "methods.tex" 1736110322 17174 190012f1d90c59c75d4df1eb235bf40f ""
   "pictures/class_accuracy.png" 1736107772 27852 b131f4d33d9bd1613aec4aa7292be723 ""
   "pictures/class_accuracy_SVC.png" 1736107772 29958 90195b371eee72da771f9d7aa0969213 ""
   "pictures/cnn_accuracy.png" 1736107772 40264 e820476106fa0795f2957d2307abd2cc ""
@@ -139,7 +139,7 @@
   "pictures/plutchik_primary_emotions.png" 1736107772 53124 c92c5ae70719468a069243c05127e594 ""
   "pictures/roc_rf.png" 1736107772 99612 e9252e55f274a55a37135c2d47caed21 ""
   "pictures/roc_svc.png" 1736107772 126447 c9c749736162f6c68b057ee90195e6cb ""
-  "results.tex" 1736109979 5396 6ebac2976d9acb5cb1d93b47b0f65f69 ""
+  "results.tex" 1736111580 5952 6e4575ee1bb1d543e0f67eb63a730a35 ""
   (generated)
   "Relazione.aux"
   "Relazione.bcf"
