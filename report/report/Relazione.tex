@@ -1,0 +1,173 @@
+% Carattere dimensione 12
+\documentclass[12pt,openany]{report}
+
+\setlength{\parindent}{0pt}
+
+% Per la stampa fronte-retro sostituire con:
+% \documentclass[12pt, twoside]{report}
+
+% Margini (4cm a sx, 2.5cm a dx, 2.5cm in alto, 2.5cm in basso)
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, centering]{geometry}
+
+% Per la stampa fronte-retro sostituire con: 
+% \usepackage[top=2.5cm, bottom=2.5cm, inner=4cm, outer=4cm, right=2.5cm, centering]{geometry}
+
+% Interlinea
+\linespread{1.5}
+
+% Librerie utili
+\usepackage[english]{babel} % applicazione regole di scrittura per la lingua italiana 
+\usepackage[utf8]{inputenc} % codifica UTF-8
+\usepackage{scrlayer-scrpage} % stili pagina per il frontespizio
+\ifoot[]{}
+\cfoot[]{}
+\cfoot[\pagemark]{\pagemark}
+\pagestyle{scrplain}
+\usepackage{mathptmx} % font Times New Roman (simile)
+\usepackage{graphicx} % inserimento di immagini
+\usepackage{csquotes} % per le citazioni "in blocco"
+\usepackage[backend=biber, sorting=none, ]{biblatex} % bibliografia con pacchetto biblatex (https://ctan.org/pkg/biblatex?lang=en)
+\addbibresource{bibliography.bib}
+\appto{\bibsetup}{\raggedright}
+
+\usepackage{titlesec} % per la formattazione dei titoli delle sezioni, capitoli etc.
+\usepackage{float} % per il posizionamento delle immagini
+
+\usepackage{listings} % per il codice di programmazione
+% Fonte https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings. Per la lista di sintassi riconosciute.
+\renewcommand{\lstlistingname}{Code}% Listing -> Codice
+\usepackage{xcolor}  % stile del codice
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{navy}{HTML}{000080}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% \usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+
+
+% Stili configurabili del codice (lslisting) 
+\lstset{ %
+belowcaptionskip=0.5em,
+backgroundcolor=\color{backcolour}, % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+basicstyle=\footnotesize, % the size of the fonts that are used for the code
+breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace
+breaklines=true, % sets automatic line breaking
+captionpos=b, % sets the caption-position to bottom
+commentstyle=\color{mygreen}, % comment style
+deletekeywords={...}, % if you want to delete keywords from the given language
+escapeinside={\%*}{*)}, % if you want to add LaTeX within your code
+extendedchars=true, % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+frame=single, % adds a frame around the code
+keepspaces=true, % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+keywordstyle=\color{codepurple}, % keyword style
+% language=Octave, % the language of the code
+morekeywords={*,...}, % if you want to add more keywords to the set
+numbers=left, % where to put the line-numbers; possible values are (none, left, right)
+numbersep=5pt, % how far the line-numbers are from the code
+numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+rulecolor=\color{black}, % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+showspaces=false, % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+showstringspaces=false, % underline spaces within strings only
+showtabs=false, % show tabs within strings adding particular underscores
+stepnumber=1, % the step between two line-numbers. If it's 1, each line will be numbered
+stringstyle=\color{mymauve}, % string literal style
+tabsize=2, % sets default tabsize to 2 spaces
+title=\lstname % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+
+% END of listing package
+
+\makeatletter
+\renewcommand{\chapter}{%
+  \thispagestyle{plain}% Optional: Adjust page style
+  \global\@topnum\z@
+  \@afterindentfalse
+  \secdef\@schapter\@schapter}
+\makeatother
+
+% Formato delle intestazioni
+\titleformat{\chapter}[hang]
+  {\normalfont\LARGE\bfseries}{\thechapter.}{0.5em}{\LARGE}
+\titlespacing*{\chapter}{0pt}{30pt}{25pt}
+
+\newcommand{\firstchapter}{
+  \titlespacing*{\chapter}{0pt}{0pt}{25pt} % Reduce space before first chapter title
+}
+
+\begin{document}
+\justify
+
+\setcounter{page}{1}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\addcontentsline{toc}{chapter}{Introduction} % Capitolo non numerato
+
+%header (da migliorare)
+EMOTION DETECTION IN SONG LYRICS STANZAS\\
+TEXT ANALYTICS - A.Y. 2024/2025\\
+Group 2 - Barbieri, Bosco, Ferrara, Rotellini, Zizza
+
+
+% Abstract section
+\input{abstract.tex}
+% \section*{Abstract}
+% Analyzing the emotional tone of songs texts can give insights into
+% societal trends and this information can be useful especially for recommendation
+% algorithms.
+% This study aims to build 4 Machine Learning models that classify
+% emotions expressed in English song lyrics at the stanza level; 
+% the emotion labels are given according to
+% Plutchik's 8 primary emotions.
+
+% Introduction (on the same page)
+\input{introduzione.tex}
+
+
+% Dataset overview
+% !!! cut, content in intro
+% \input{dataset_overview.tex}
+% 
+% \clearpage
+
+%  "METHODS" 
+\input{methods.tex}
+
+%\clearpage
+
+% static models
+% \input{static_models.tex}
+
+% \clearpage
+
+% neural networks
+% \input{neural_networks.tex}
+
+% \clearpage
+\input{results.tex}
+
+\input{discussion.tex}
+
+%DISCUSSIONS AND CONCLUSION
+\input{conclusions.tex}
+\clearpage
+
+% \renewcommand{\contentsname}{Bibliography}
+% \bibliographystyle{plain}
+% \bibliography{bibliography}
+% \addbibresource{bibliography.bib}
+\printbibliography
+\renewcommand{\listfigurename}{List of figures}
+\listoffigures
+
+% \thispagestyle{empty}
+% \clearpage
+
+
+\end{document}
