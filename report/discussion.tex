@@ -5,24 +5,31 @@ uncertainty in the models. This has a few possible explanations:
 one of the most likely is general overlapping of features. One of the most likely
 explanations is the significant overlap of features.\\
 
-There are signs that point to this in neural networks' performance representations,
-especially recurrent architectures.
-This is evident during training, where meaningful improvements on training are
-observed only in later epochs, as shown in the training and validation accuracy
-plots (figure [...]): as soon as training accuracy starts rising meaningfully,
-the model tends to overfit. Some interesting information can also be seen in
-the confusion matrix and the class-wise accuracy plot, where the general tendency
-for each training is to get a predominant class with a large number of predictions,
-and a second one with a large percentage of correct predictions, while the rest of
-the classes is left behind with few predictions going their way.
-The convolutional architecture does not have the same tendency (figure [...]):
-training accuracy rises in earlier epochs, without meaningful results in validation
-accuracy.
-By applying a filter to exclude the most common words, it's possible that the
-remaining words carry less ambiguous emotional meanings, and are easier to interpret.\\
-% TODO quote figures
+There are clear indications of this issue in the performance of neural networks,
+particularly the recurrent architecture. This is evident during training, where
+significant improvements in training accuracy occur only in later epochs, as shown
+in the training and validation accuracy plot (figure~\ref{fig:cnn_train_val_acc}):
+once training accuracy begins to rise meaningfully, the model quickly overfits.
+Additional insights are provided by the confusion matrix and class-wise accuracy
+plot (figures~\ref{fig:cnn_classacc},~\ref{fig:cnn_confmatr}), which consistently
+show a dominant class with a high number of predictions and a secondary class
+with relatively high accuracy, while the remaining classes receive significantly
+fewer predictions overall.\\
 
-An interesting aspect of the explainability analysis is the visualization of the results.
+The convolutional architecture exhibits similar behavior, albeit less prominently
+(figures [...]). In this case, training accuracy improves earlier in the epochs,
+but with minimal corresponding gains in validation accuracy.
+The confusion matrix and class-wise accuracy plot reveal analogous patterns, though
+to a lesser extent.\\
+
+There are a few different solutions to solve this problem: by applying a filter to
+exclude the most common words, it's possible that the remaining words carry less ambiguous emotional meanings.
+Another unexplored approach is the use of custom metrics during training, designed
+to prioritize class-wise accuracy rather than overall model accuracy.\\
+
+% \section*{Explainability analysis}
+Another problem is the general fallacy of the generated ground truth. This can
+also explain general poor
 The \textbf{left section} of the graph in Figure~\ref{fig:expl} displays the predicted probabilities for each class. In the \textbf{center section}
 feature importances are ranked from most to least relevant and divided into two groups: on the right
 features with a positive influence on the predicted label; on the left, those with a negative influence that suggest the model should consider other classes.
