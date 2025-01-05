@@ -18,17 +18,35 @@ The remaining classes showed comparable support and F1-scores, averaging around
 lower F1-score, at 18\%. \\
 In image \ref{fig:roc_rf}, the ratio of true positives versus false positives is
 displayed, with the Random Forest classifier scoring lower than a random guesser in
-two out of eight classes. \\
+two out of eight classes. Image \ref{fig:cwa_rf} shows class-wise accuracy.\\
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth]{pictures/roc_rf.png}
+    \includegraphics[width=0.5\linewidth]{pictures/roc_rf.png}
     \caption{ROC Curve for the Random Forest Classifier}
     \label{fig:roc_rf}
 \end{figure}
-Image \textbf{DA AGGIUNGERE IMMAGINE} shows class-wise accuracy. \\
 
-\textbf{DA AGGIUNGERE SVM}\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{pictures/class_accuracy_rf.png}
+    \caption{Class-wise Accuracy - Random Forest}
+    \label{fig:cwa_rf}
+\end{figure}
 
+For the Support Vector Machine model, the class with the highest F1-score is \textit{fear}, followed by \textit{anger} at 0.31 and \textit{anticipation} at 0.25. As for the other classes, the scores were not as comparable as for Random Forest, oscillating between the 22\% of \textit{sadness} and the 7\% of \textit{joy}, with \textit{disgust} and \textit{trust} sitting at 16\%, and \textit{surprise} at 12\%. Surprisingly, \textit{joy} is the least performing class for SVC, dispite having the highest support.   
+In image \ref{fig:roc_svm}, the ratio of true positives versus false positives is displayed. The SVM model performs better than a random guesser in all of the classes, therefore surpassing Random Forest despite the lower scores of accuracy. Lastly, image \ref{fig:cwa_svm} shows the class-wise accuracy by SVM, highlighting a clear and strong disparity in the classification performances among the classes.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{pictures/roc_svc.png}
+    \caption{ROC Curve - SVM}
+    \label{fig:roc_svm}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{pictures/class_accuracy_SVC.png}
+    \caption{Class-wise Accuracy - SVM}
+    \label{fig:cwa_svm}
+\end{figure}
 
 As mentioned in the previous chapter, the development of neural networks
 iterated testing phases and adjustments over different aspects of training.
