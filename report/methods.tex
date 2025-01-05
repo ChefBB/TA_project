@@ -213,10 +213,10 @@ estimate model performance more accurately.
 % get an input with consistent shape, which is essential for both types of
 % recurrent layers.
 The neural network architectures were developed and tuned through empirical
-testing, with parameters to aid further experimentation. Both the Recurrent
+testing. Both the Recurrent
 Neural Network and One-Dimensional Convolutional Neural Network share the same
-preprocessing steps, including Non-Negative Matrix Factorization applied to title
-for extracting latent topics, in addition to TF-IDF for richer text representation.
+preprocessing steps: Non-Negative Matrix Factorization is applied to title
+for extracting latent topics, following TF-IDF for richer text representation.
 The \texttt{lemmatized\_stanzas} are processed through convolutional and
 recurrent pipelines, where elements are tokenized and padded to maintain
 consistent input shapes.
