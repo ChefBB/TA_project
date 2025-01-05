@@ -20,7 +20,7 @@ relevant for model training are:
         assigned by Albert Base v2\textsuperscript{\cite{albert-base-v2}}.
 \end{itemize}
 All of these attributes, except for \texttt{title}, were the result
-of the preprocessing phase, as described in section~\ref{preprocessing}.
+of the preprocessing phase, as described in the preprocessing section.
 Due to limited computational power, the labeling process was time-intensive,
 ultimately resulting in a limited dataset, with a few more than 100.000 entries.
 
@@ -177,22 +177,11 @@ Both architectures consisted of a preprocessing layer, followed by a classifier.
 The preprocessing handled title and \texttt{lemmatized\_stanzas} using TF-IDF for feature
 extraction.\\
 
-To improve classification, feature importance analysis was conducted on the
-labeled dataset:
-\begin{itemize}
-    \item \textbf{Custom Stopword List Creation}: A custom list of frequent and
-    generic words, punctuation, and common typographical errors was compiled.
-    \item \textbf{Stopword Removal}: Irrelevant words were removed to reduce data
-    noise.
-    \item \textbf{TF-IDF Analysis per Label}: TF-IDF scores were computed for
-    each emotion label, with parameters set to minimize the influence of overly
-    common or rare words.
-\end{itemize}
-Despite these efforts, the analysis did not yield expected results, with most
-labels sharing common features and low TF-IDF scores.
+To improve classification, feature exctraction was conducted on the labeled dataset. Firstly, we deepened the preprocessing by devising a \textbf{custom stopword list} of frequent and generic words, punctuation, and common typographical errors. To this list were then added the NLTK stopword one and the NLTK numbers' one.
+Then, TF-IDF scores were computed for each emotion label, using the parameters \texttt{min\_df} and \texttt{max\_df} to minimize the influence of overly common or rare words. \\
+Despite these efforts, the analysis did not yield the expected results, with most labels sharing common features and low TF-IDF scores.
 This was likely due to the repetitive and generic nature of song lyrics.\\
-
-For hyperparameter tuning, Random Search and cross-validation were used to
+With regard to hyperparameters tuning, Random Search and cross-validation were used to
 estimate model performance more accurately.
 
 

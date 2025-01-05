@@ -4,7 +4,7 @@ The performance metrics considered for evaluation in these analysis are the
 following: accuracy, precision, recall, and F1-score. Considering all of these
 metrics is crucial to accurately evaluate how well each model performs.
 Regarding the static models implemented in this project, the classification
-report revealed an accuracy of 34\% for the Random Forest algorithm and 43\% for
+report revealed an accuracy of 34\% for the Random Forest algorithm and 24\% for
 SVM. These results can be considered reasonable, given that the task at hand
 is a multi-class classification problem with 8 classes.\\
 
@@ -21,70 +21,48 @@ displayed, with the Random Forest classifier scoring lower than a random guesser
 two out of eight classes. \\
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{pictures/roc_rf.png}
+    \includegraphics[width=0.7\linewidth]{pictures/roc_rf.png}
     \caption{ROC Curve for the Random Forest Classifier}
     \label{fig:roc_rf}
 \end{figure}
-Image \ref{fig:class_acc} below shows the class-wise accuracy. \\
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{pictures/class_accuracy.png}
-    \caption{Class-wise Accuracy - Random Forest}
-    \label{fig:class_acc}
-\end{figure}
+Image \textbf{DA AGGIUNGERE IMMAGINE} shows class-wise accuracy. \\
 
-For the Support Vector Machine model, the class with the highest F1-score is \textit{fear}, followed by \textit{anger} at 0.31 and \textit{anticipation} at 0.25. As for the other classes, the scores were not as comparable as for Random Forest, oscillating between the 22\% of \textit{sadness} and the 7\% of \textit{joy}, with \textit{disgust} and \textit{trust} sitting at 16\%, and \textit{surprise} at 12\%. Surprisingly, \textit{joy} is the least performing class for SVM, dispite the higher support.   
-In image \ref{fig:roc_svc}, the ratio of true positives versus false positives is displayed. The SVM model performs better than a random guesser in all of the classes, therefore surpassing Random Forest despite the lower scores of accuracy. 
-
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.5\linewidth]{pictures/roc_svc.png}
-    \caption{ROC curve for SVM}
-    \label{fig:roc_svc}
-\end{figure}
-However, image \ref{fig:acc_svc} shows a very imbalanced situation regarding the class-wise accuracy.
-\begin{figure}
-      \centering
-      \includegraphics[width=0.5\linewidth]{pictures/class_accuracy_SVC.png}
-      \caption{Class-wise Accuracy - SVM}
-      \label{fig:acc_svc}
-\end{figure}
+\textbf{DA AGGIUNGERE SVM}\\
 
 
 As mentioned in the previous chapter, the development of neural networks
 iterated testing phases and adjustments over different aspects of training.
-Because of the generally poor results, semi-supervised learning did not get
-significant results; on the other hand, downsampling into evenly represented
+Semi-supervised learning generally got poor results; on the other hand, downsampling into evenly represented
 labels gave some minor improvements, for both architectures.
 The neural networks generally underperformed compared to the static models:
 the convolutional neural network ultimately reached a test categorical accuracy
-of 0.2128, while the recurrent neural network had a test accuracy of \textbf{DA FINIRE}.\\
+of 0.2128, while the recurrent neural network had a test accuracy of.\\
 
 The graphs below show various performance metrics of the network with the better
 performances for the convolutional architecture.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{pictures/cnn_accuracy.png}
+    \includegraphics[width=0.7\linewidth]{pictures/cnn_accuracy.png}
     \caption{Convolutional Neural Network's training and validation accuracy}
     \label{fig:cnn_train_val_acc}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{pictures/cnn_class_accuracy.png}
+    \includegraphics[width=0.8\linewidth]{pictures/cnn_class_accuracy.png}
     \caption{Convolutional Neural Network's class-wide accuracy}
     \label{fig:cnn_classacc}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{pictures/cnn_confusion_matrix.png}
+    \includegraphics[width=0.8\linewidth]{pictures/cnn_confusion_matrix.png}
     \caption{Convolutional Neural Network's confusion matrix}
     \label{fig:cnn_confmatr}
 \end{figure}
 
 The graphs below show various performance metrics of the network with the better
-performances for the recurrent architecture. \textbf{DA FINIRE}
+performances for the recurrent architecture.
 % TODO
 
 % Judging from the confusion matrices
