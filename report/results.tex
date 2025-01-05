@@ -33,8 +33,8 @@ Image \ref{fig:class_acc} below shows the class-wise accuracy. \\
     \label{fig:class_acc}
 \end{figure}
 
-For the Support Vector Machine model, the class with the highest F1-score is \textit{fear}, followed by \textit{anger} at 0.31 and \textit{anticipation} at 0.25. As for the other classes, the scores were not as comparable as for Random Forest, oscillating between the 22\% of \textit{sadness} and the 7\% of \textit{joy}, with \textit{disgust} and \textit{trust} sitting at 16\%, and \textit{surprise} at 12\%. Surprisingly, \textit{joy} is the least performing class for SVC, dispite the higher support.   
-In image \ref{fig:roc_svc}, the ratio of true positives versus false positives is displayed. The SVC model performs better than a random guesser in all of the classes, therefore surpassing Random Forest despite the lower scores of accuracy. 
+For the Support Vector Machine model, the class with the highest F1-score is \textit{fear}, followed by \textit{anger} at 0.31 and \textit{anticipation} at 0.25. As for the other classes, the scores were not as comparable as for Random Forest, oscillating between the 22\% of \textit{sadness} and the 7\% of \textit{joy}, with \textit{disgust} and \textit{trust} sitting at 16\%, and \textit{surprise} at 12\%. Surprisingly, \textit{joy} is the least performing class for SVM, dispite the higher support.   
+In image \ref{fig:roc_svc}, the ratio of true positives versus false positives is displayed. The SVM model performs better than a random guesser in all of the classes, therefore surpassing Random Forest despite the lower scores of accuracy. 
 
 \begin{figure}[!h]
     \centering
@@ -46,7 +46,7 @@ However, image \ref{fig:acc_svc} shows a very imbalanced situation regarding the
 \begin{figure}
       \centering
       \includegraphics[width=0.5\linewidth]{pictures/class_accuracy_SVC.png}
-      \caption{Class-wise Accuracy - SVC}
+      \caption{Class-wise Accuracy - SVM}
       \label{fig:acc_svc}
 \end{figure}
 
@@ -58,7 +58,7 @@ significant results; on the other hand, downsampling into evenly represented
 labels gave some minor improvements, for both architectures.
 The neural networks generally underperformed compared to the static models:
 the convolutional neural network ultimately reached a test categorical accuracy
-of 0.2128, while the recurrent neural network had a test accuracy of.\\
+of 0.2128, while the recurrent neural network had a test accuracy of \textbf{DA FINIRE}.\\
 
 The graphs below show various performance metrics of the network with the better
 performances for the convolutional architecture.
