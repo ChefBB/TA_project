@@ -5,36 +5,36 @@ uncertainty in the models. This has a few possible explanations:
 one of the most likely is general overlapping of features. One of the most likely
 explanations is the significant overlap of features.\\
 
-There are clear indications of this issue in the performance of neural networks,
+There are clear indications of this issue in the performances of neural networks,
 particularly the recurrent architecture. This is evident during training, where
 significant improvements in training accuracy occur only in later epochs, as shown
-in the training and validation accuracy plot (figure~\ref{fig:cnn_train_val_acc}):
+in the training and validation accuracy plot (figure[...]):
 once training accuracy begins to rise meaningfully, the model quickly overfits.
 Additional insights are provided by the confusion matrix and class-wise accuracy
-plot (figures~\ref{fig:cnn_classacc},~\ref{fig:cnn_confmatr}), which consistently
+plot (figures [...]), which consistently
 show a dominant class with a high number of predictions and a secondary class
 with relatively high accuracy, while the remaining classes receive significantly
 fewer predictions overall.\\
 
 The convolutional architecture exhibits similar behavior, albeit less prominently
-(figures [...]). In this case, training accuracy improves earlier in the epochs,
+(figures~\ref{fig:cnn_train_val_acc},~\ref{fig:cnn_classacc},~\ref{fig:cnn_confmatr}).
+In this case, training accuracy improves earlier in the epochs,
 but with minimal corresponding gains in validation accuracy.
 The confusion matrix and class-wise accuracy plot reveal analogous patterns, though
 to a lesser extent.\\
 
-There are a few different solutions to solve this problem: by applying a filter to
-exclude the most common words, it's possible that the remaining words carry less ambiguous emotional meanings.
-Another unexplored approach is the use of custom metrics during training, designed
-to prioritize class-wise accuracy rather than overall model accuracy.\\
+To address this issue, one solution could be applying a filter to exclude the most
+common words, allowing the remaining words to better convey clear emotional
+meanings. Another potential unexplored approach is the use of custom
+metrics during training that focus on class-wise accuracy instead of overall model
+accuracy.\\
 
 % \section*{Explainability analysis}
-Another problem is the general fallacy of the generated ground truth. This can
-also explain general poor
-The \textbf{left section} of the graph in Figure~\ref{fig:expl} displays the predicted probabilities for each class. In the \textbf{center section}
-feature importances are ranked from most to least relevant and divided into two groups: on the right
-features with a positive influence on the predicted label; on the left, those with a negative influence that suggest the model should consider other classes.
-The \textbf{right section} of the graph highlights the values of the most important
-features, using bright colors to indicate features with a positive influence on the prediction.
+Another probable issue is the fallacy of the generated ground truth, which may
+also contribute to the poor performance and could be linked to the vague distinction
+between classes.
+This possibility can be investigated through explainability analysis, with an
+example provided below (figure~\ref{fig:expl}).
 
 \begin{figure}[H]
     \centering
@@ -42,6 +42,16 @@ features, using bright colors to indicate features with a positive influence on 
     \caption{Explainability - visualization}
     \label{fig:expl}
 \end{figure}
+
+The \textbf{left section} of the graph displays the
+predicted probabilities for each class. In the \textbf{center section}
+feature importances are ranked from most to least relevant and divided into two
+groups: on the right
+features with a positive influence on the predicted label; on the left, those
+with a negative influence that suggest the model should consider other classes.
+The \textbf{right section} of the graph highlights the values of the most important
+features, using bright colors to indicate features with a positive influence on the
+prediction.
 
 The figure above illustrates a prediction where the model assigned the label \textit{joy} to the stanza under analysis, but the correct label, assigned by the ALBERT model (as mentioned in the \textit{Methods} section), was \textit{sadness}.
 However, the word \textit{smile}, which is brighty highlighted, intuitively suggests that \textit{joy} might be a more plausible class for this stanza, even one that ALBERT could reasonably assign. 
