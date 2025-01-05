@@ -4,17 +4,16 @@
 Lyrics serve as one of the main foundations of songs, playing a crucial role in
 expressing feelings in many different ways.
 The emotional tone of songs can also serve various purposes, such as
-automatized playlist creation or songs' organization,
+automatized playlist creation,
 offering an alternative to the more traditional genre-based classification.\\
-
 This study focuses on developing four Machine Learning models - two Static Models
 and two Neural Networks - to classify emotions conveyed in English song lyrics,
-at the stanza level.
-The models were chosen for their proven effectiveness across various domains and
+at the stanza level. The models were chosen for their proven effectiveness across various domains and
 their diverse approaches, providing a thorough investigation of different
 techniques and depths for emotion classification in text.\\
-
-The models were trained through transfer learning, by creating the ground truth
-via an existing model. This proved to be a challenge, because of computational
-complexity; additionally, the generated labels are imprecise and overlapping,
-generating \textbf{DA FINIRE}
+The study begins with the preprocessing of the \textit{Genius Song Lyrics} dataset, which our analysis is based on. 
+This was a deep and time-consuming process, which ultimately resulted in a complete reshape of the originale dataset. 
+Then, the models were trained through transfer learning. The ground truth was created with an already existing model: Albert Base v2, which was chosen to avoid the computational costs of larger models like BERT. 
+The resulting labelled dataframe was then splitted following the train/test split protocol. \\
+The study proceeded with the training and the performance analysis of the following models: Random Forest and Support Vector Machine, followed by a One-Dimensional Convolutional Neural Network and a Recurrent Neural Network. 
+Lastly, the results are discussed to highlight the specific challenges encountered.
