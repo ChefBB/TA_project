@@ -30,10 +30,11 @@ the static models.
 As mentioned in the previous chapter, the development of neural networks
 iterated testing phases and adjustments over different configurations for data
 splitting, preprocessing, architectures and training parameters were tested.
-Downsampling the set into evenly represented classes, and splitting evenly
-improves the models' performances slightly.
 Because of the generally poor results, semi-supervised learning did not get
-important results.
+important results; downsampling into evenly represented labels gave some
+minor improvements, for both architectures.\\
+
+
 Judging from the confusion matrix % TODO quote graphs
 and training and validation accuracy plots, the models tend to confuse the classes.
 This might be because of heavy high frequency overlapping terms between the classes
