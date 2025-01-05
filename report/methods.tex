@@ -17,7 +17,7 @@ relevant for model training are:
     \item \textbf{is\_country, is\_pop, is\_rap, is\_rb, is\_rock:} boolean variables, result of a one-hot encoding process, that represent songs genres;
 
     \item \textbf{label:} represents the emotional classification of the stanza,
-        assigned by Albert Base v2\textsuperscript{\cite{albert-base-v2}} model.
+        assigned by Albert Base v2\textsuperscript{\cite{albert-base-v2}}.
 \end{itemize}
 All of these attributes, except for \texttt{title}, were the result
 of the preprocessing phase, as described in section~\ref{preprocessing}.
@@ -27,62 +27,82 @@ ultimately resulting in a limited dataset, with a few more than 100.000 entries.
 %PREPROCESSING
 \section*{Preprocessing}
 \label{preprocessing}
-The initial preprocessing step involved sampling from the original dataset
-while maintaining the proportional distribution of genres.
-This approach ensured that the genre representation in the sampled subset
-accurately reflected that of the full dataset.\\
+The preprocessing phase began by sampling the dataset while maintaining genre
+distribution. Text cleaning focused on removing irrelevant noise, such as
+square-bracketed items, and splitting lyrics into individual stanzas using
+stanza-related keywords (e.g., "chorus", "verse").
+Uninformative stanzas, such as empty or very short ones, were discarded,
+resulting in a dataset of numbered stanzas.\\
 
-The preliminary text cleaning process focused on the \texttt{lyrics} attribute,
-which contained the complete lyrics of each song in string format.
-Initially, a regular expression (RegEx) was built to remove noise from the
-lyrics, specifically targeting words enclosed in square brackets that were
-irrelevant to the stanza splitting process. Many keywords marking different
-stanzas were written within square brackets, and removing non-keyword items
-inside brackets was crucial to avoid potential issues.\\
+A boolean feature, \texttt{is\_chorus}, was added to mark repeated or chorus-related
+stanzas, and duplicate stanzas were removed to eliminate redundancy.
+Further cleaning involved removing stanza headers and newline characters,
+producing cleaner stanzas for labeling.\\
 
-The next critical step was stanza splitting. After cleaning texts from
-noisy square-bracketed items, lyrics were split based on various keywords
-used to denote stanzas (such as "chorus", "verse", "intro", "outro", "refrain", "hook", etc.).
-The RegEx developed accounted for the different formats in which these keywords
-appeared, including square brackets, parentheses, or no brackets at all, as well
-as stanzas separated only by double newline characters.
-The output of this step was, for each song record, a list of strings
-representing individual stanzas (each stanza has also a header with the corresponding
-keyword; this aspect will be discussed in the next paragraph).
-Next, uninformative strings—such as empty strings or those with fewer
-than 20 characters—were removed, as they were too short to provide meaningful
-content.
-As a result, the output of this preliminary preprocessing phase was a dataset
-where the records were no longer whole songs but individual stanzas, each
-numbered according to its position within the song.\\
+Lemmatization was performed using the \texttt{spaCy} library, generating
+tokenized stanzas by filtering out punctuation. ALBERT Base v2 was then
+fine-tuned to label approximately 100,000 stanzas with emotional categories.
+A preliminary class distribution analysis showed a slight imbalance, with
+\textit{joy} being the most frequent (18\%) and \textit{disgust} the least (10\%).
+Figure~\ref{fig:enter-label} illustrates the distribution across all classes.
 
-A further and more detailed cleaning process on the stanzas involved the creation
-of the boolean feature \texttt{is\_chorus}, which was assigned a \texttt{true}
-value for repeated stanzas within the same song or for stanzas with headers such
-as "hook", "chorus", "refrain", or "bridge".
-Next, stanza headers and newline characters between verses were removed to obtain
-cleaner stanzas.
-Since choruses, hooks, bridges, and refrains often repeat throughout songs,
-duplicate stanzas were discarded to avoid redundant data. This resulted in a
-dataset of cleaned, non-duplicate stanzas, which served as the checkpoint for
-the labeling step and the starting point for the text lemmatization process.\\
 
-The subsequent step involved lemmatizing the stanzas using the \texttt{spaCy}
-library. A list of lemmatized tokens was created by filtering out punctuation
-and empty words. Lemmatization was chosen over stemming because it produces
-more accurate and meaningful results, particularly for tasks requiring semantic
-understanding, such as the one at hand.\\
+% The initial preprocessing step involved sampling from the original dataset
+% while maintaining the proportional distribution of genres.
+% This approach ensured that the genre representation in the sampled subset
+% accurately reflected that of the full dataset.\\
 
-Since the dataset was not pre-labeled at the stanza level, ALBERT Base v2 was employed for this task.
-This transformer model is specifically designed to be fine-tuned on tasks that
-require an understanding of the entire sentence, such as sequence classification. As specified above, due to computational issues the labeling was performed on around 100'000 stanzas. 
-A preliminary analysis of the distribution of the classes revealed a slight disparity in representation among the labels, which is expected in this scenario. 
-The most represented class was \textit{joy}: around 18\% of the total number of texts were classified as such, followed by \textit{fear} and \textit{anger} at 14\% each. 
-The categories \textit{sadness}, \textit{trust}, \textit{anticipation} and \textit{surprise} each constituted 11\%, while \textit{disgust} was the least represented at 10\%. 
-Figure~\ref{fig:enter-label} shows the number of stanzas belonging to each label.
+% The preliminary text cleaning process focused on the \texttt{lyrics} attribute,
+% which contained the complete lyrics of each song in string format.
+% Initially, a regular expression (RegEx) was built to remove noise from the
+% lyrics, specifically targeting words enclosed in square brackets that were
+% irrelevant to the stanza splitting process. Many keywords marking different
+% stanzas were written within square brackets, and removing non-keyword items
+% inside brackets was crucial to avoid potential issues.\\
+
+% The next critical step was stanza splitting. After cleaning texts from
+% noisy square-bracketed items, lyrics were split based on various keywords
+% used to denote stanzas (such as "chorus", "verse", "intro", "outro", "refrain", "hook", etc.).
+% The RegEx developed accounted for the different formats in which these keywords
+% appeared, including square brackets, parentheses, or no brackets at all, as well
+% as stanzas separated only by double newline characters.
+% The output of this step was, for each song record, a list of strings
+% representing individual stanzas (each stanza has also a header with the corresponding
+% keyword; this aspect will be discussed in the next paragraph).
+% Next, uninformative strings—such as empty strings or those with fewer
+% than 20 characters—were removed, as they were too short to provide meaningful
+% content.
+% As a result, the output of this preliminary preprocessing phase was a dataset
+% where the records were no longer whole songs but individual stanzas, each
+% numbered according to its position within the song.\\
+
+% A further and more detailed cleaning process on the stanzas involved the creation
+% of the boolean feature \texttt{is\_chorus}, which was assigned a \texttt{true}
+% value for repeated stanzas within the same song or for stanzas with headers such
+% as "hook", "chorus", "refrain", or "bridge".
+% Next, stanza headers and newline characters between verses were removed to obtain
+% cleaner stanzas.
+% Since choruses, hooks, bridges, and refrains often repeat throughout songs,
+% duplicate stanzas were discarded to avoid redundant data. This resulted in a
+% dataset of cleaned, non-duplicate stanzas, which served as the checkpoint for
+% the labeling step and the starting point for the text lemmatization process.\\
+
+% The subsequent step involved lemmatizing the stanzas using the \texttt{spaCy}
+% library. A list of lemmatized tokens was created by filtering out punctuation
+% and empty words. Lemmatization was chosen over stemming because it produces
+% more accurate and meaningful results, particularly for tasks requiring semantic
+% understanding, such as the one at hand.\\
+
+% Since the dataset was not pre-labeled at the stanza level, ALBERT Base v2 was employed for this task.
+% This transformer model is specifically designed to be fine-tuned on tasks that
+% require an understanding of the entire sentence, such as sequence classification. As specified above, due to computational issues the labeling was performed on around 100'000 stanzas. 
+% A preliminary analysis of the distribution of the classes revealed a slight disparity in representation among the labels, which is expected in this scenario. 
+% The most represented class was \textit{joy}: around 18\% of the total number of texts were classified as such, followed by \textit{fear} and \textit{anger} at 14\% each. 
+% The categories \textit{sadness}, \textit{trust}, \textit{anticipation} and \textit{surprise} each constituted 11\%, while \textit{disgust} was the least represented at 10\%. 
+% Figure~\ref{fig:enter-label} shows the number of stanzas belonging to each label.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{pictures/exploratory_graph.png}
+    \includegraphics[width=0.7\linewidth]{pictures/exploratory_graph.png}
     \caption{Number of stanzas for each label}
     \label{fig:enter-label}
 \end{figure}
