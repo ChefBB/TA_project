@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  6 JAN 2025 11:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  6 JAN 2025 11:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -759,15 +759,15 @@ Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 1
 [8 <./pictures/roc_svc.png> <./pictures/class_accuracy_SVC.png>]
 File: pictures/cnn_accuracy.png Graphic file (type png)
 <use pictures/cnn_accuracy.png>
-Package pdftex.def Info: pictures/cnn_accuracy.png  used on input line 139.
+Package pdftex.def Info: pictures/cnn_accuracy.png  used on input line 140.
 (pdftex.def)             Requested size: 226.57297pt x 169.92494pt.
 File: pictures/cnn_class_accuracy.png Graphic file (type png)
 <use pictures/cnn_class_accuracy.png>
-Package pdftex.def Info: pictures/cnn_class_accuracy.png  used on input line 144.
+Package pdftex.def Info: pictures/cnn_class_accuracy.png  used on input line 145.
 (pdftex.def)             Requested size: 236.01561pt x 188.80844pt.
 File: pictures/cnn_confusion_matrix.png Graphic file (type png)
 <use pictures/cnn_confusion_matrix.png>
-Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 149.
+Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 150.
 (pdftex.def)             Requested size: 306.81741pt x 306.81812pt.
  [9 <./pictures/cnn_accuracy.png> <./pictures/cnn_class_accuracy.png> <./pictures/cnn_confusion_matrix.png>]) (./discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--6
@@ -833,7 +833,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  123i,19n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (14 pages, 510790 bytes).
+Output written on Relazione.pdf (14 pages, 510230 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream
