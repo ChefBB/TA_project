@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  6 JAN 2025 11:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  6 JAN 2025 11:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -755,29 +755,39 @@ Package pdftex.def Info: pictures/cnn_class_accuracy.png  used on input line 108
 File: pictures/cnn_confusion_matrix.png Graphic file (type png)
 <use pictures/cnn_confusion_matrix.png>
 Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 113.
-(pdftex.def)             Requested size: 306.81741pt x 306.81812pt.
+(pdftex.def)             Requested size: 250.17596pt x 250.16985pt.
+<pictures/cnn_roc_curve.png, id=44, 578.16pt x 433.62pt>
+File: pictures/cnn_roc_curve.png Graphic file (type png)
+<use pictures/cnn_roc_curve.png>
+Package pdftex.def Info: pictures/cnn_roc_curve.png  used on input line 118.
+(pdftex.def)             Requested size: 212.41261pt x 159.30547pt.
 [8 <./pictures/roc_svc.png> <./pictures/class_accuracy_SVC.png>]
-<pictures/rnn_accuracy.png, id=49, 578.16pt x 433.62pt>
+<pictures/rnn_accuracy.png, id=50, 578.16pt x 433.62pt>
 File: pictures/rnn_accuracy.png Graphic file (type png)
 <use pictures/rnn_accuracy.png>
-Package pdftex.def Info: pictures/rnn_accuracy.png  used on input line 140.
+Package pdftex.def Info: pictures/rnn_accuracy.png  used on input line 145.
 (pdftex.def)             Requested size: 226.57297pt x 169.92494pt.
-<pictures/rnn_class_accuracy.png, id=50, 722.7pt x 578.16pt>
+<pictures/rnn_class_accuracy.png, id=51, 722.7pt x 578.16pt>
 File: pictures/rnn_class_accuracy.png Graphic file (type png)
 <use pictures/rnn_class_accuracy.png>
-Package pdftex.def Info: pictures/rnn_class_accuracy.png  used on input line 145.
+Package pdftex.def Info: pictures/rnn_class_accuracy.png  used on input line 150.
 (pdftex.def)             Requested size: 236.01561pt x 188.80844pt.
-<pictures/rnn_confusion_matrix.png, id=51, 722.7pt x 722.7pt>
+<pictures/rnn_confusion_matrix.png, id=52, 722.7pt x 722.7pt>
 File: pictures/rnn_confusion_matrix.png Graphic file (type png)
 <use pictures/rnn_confusion_matrix.png>
-Package pdftex.def Info: pictures/rnn_confusion_matrix.png  used on input line 150.
-(pdftex.def)             Requested size: 306.81741pt x 306.81812pt.
- [9 <./pictures/cnn_accuracy.png> <./pictures/cnn_class_accuracy.png> <./pictures/cnn_confusion_matrix.png>]) (./discussion.tex
+Package pdftex.def Info: pictures/rnn_confusion_matrix.png  used on input line 155.
+(pdftex.def)             Requested size: 250.17596pt x 250.16985pt.
+<pictures/rnn_roc_curve.png, id=53, 578.16pt x 433.62pt>
+File: pictures/rnn_roc_curve.png Graphic file (type png)
+<use pictures/rnn_roc_curve.png>
+Package pdftex.def Info: pictures/rnn_roc_curve.png  used on input line 160.
+(pdftex.def)             Requested size: 212.41261pt x 159.30547pt.
+ [9 <./pictures/cnn_accuracy.png> <./pictures/cnn_class_accuracy.png> <./pictures/cnn_confusion_matrix.png> <./pictures/cnn_roc_curve.png>]) (./discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
 
-[10 <./pictures/rnn_accuracy.png> <./pictures/rnn_class_accuracy.png> <./pictures/rnn_confusion_matrix.png>]
+[10 <./pictures/rnn_accuracy.png> <./pictures/rnn_class_accuracy.png> <./pictures/rnn_confusion_matrix.png> <./pictures/rnn_roc_curve.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 7--17
 
  []
@@ -792,7 +802,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--30
 
  []
 
-<pictures/expl.png, id=64, 849.77475pt x 280.04625pt>
+<pictures/expl.png, id=68, 849.77475pt x 280.04625pt>
 File: pictures/expl.png Graphic file (type png)
 <use pictures/expl.png>
 Package pdftex.def Info: pictures/expl.png  used on input line 40.
@@ -828,18 +838,18 @@ Package logreq Info: Writing requests to 'Relazione.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17764 strings out of 474116
- 351059 string characters out of 5743682
+ 17782 strings out of 474116
+ 351599 string characters out of 5743682
  1938187 words of memory out of 5000000
- 39913 multiletter control sequences out of 15000+600000
+ 39931 multiletter control sequences out of 15000+600000
  583988 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,19n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,20n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (14 pages, 647547 bytes).
+Output written on Relazione.pdf (14 pages, 784704 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
+ 107 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
