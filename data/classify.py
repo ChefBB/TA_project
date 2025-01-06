@@ -88,20 +88,21 @@ def classify(dataset: str | pd.DataFrame,
     if isinstance(dataset, str):
         dataset = pd.read_csv(dataset)
     
-    if t == 1 | t == 2:
+    if t == 1 or t == 2:
+        print('AAAAAA')
         # prepare data
-        dataset['text_str'] = dataset['lemmatized_stanzas'].apply(
+        dataset['text_str'] = dataset[['lemmatized_stanzas']].apply(
             lambda x: ' '.join(x)
         )
         
         # load model
-        clf_loaded = joblib.load(
-            model_folder + 'best_' +
-            ('rf' if t == 1 else 'svm') +
-            'pipeline.pkl')
+        model = joblib.load(
+            model_folder +
+            ('rf' if t == 1 else 'svc') +
+            '_model.joblib')
         
         # predict
-        return clf_loaded.best_predictor.predict(
+        return model.predict(
             dataset[[
                 'text_str', 'title', 'stanza_number', 'is_country',
                 'is_pop', 'is_rap', 'is_rb', 'is_rock', 'is_chorus'
