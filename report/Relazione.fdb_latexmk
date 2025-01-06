@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber Relazione"] 1736161799.65709 "Relazione.bcf" "Relazione.bbl" "Relazione" 1736171525.26261 0
-  "Relazione.bcf" 1736171524 107967 4f4cea1544772d088c353da47d1a12d8 "pdflatex"
+["biber Relazione"] 1736161799.65709 "Relazione.bcf" "Relazione.bbl" "Relazione" 1736171760.9596 0
+  "Relazione.bcf" 1736171760 107967 4f4cea1544772d088c353da47d1a12d8 "pdflatex"
   "bibliography.bib" 1736170806 484 16c4c76652b5527d64d05614c9ce9be0 ""
   (generated)
   "Relazione.bbl"
   "Relazione.blg"
   (rewritten before read)
-["pdflatex"] 1736171522.16762 "c:/Users/Gagia/Desktop/progetto_TXA/report/Relazione.tex" "Relazione.pdf" "Relazione" 1736171525.26473 0
+["pdflatex"] 1736171757.84474 "c:/Users/Gagia/Desktop/progetto_TXA/report/Relazione.tex" "Relazione.pdf" "Relazione" 1736171760.96064 0
   "C:/Users/Gagia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1735202916 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Gagia/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1730486100 11948315 6548ab8caeecfc235d79a24208231612 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -118,10 +118,10 @@
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1718356376 7243 e5dac1240636811edb77568b81818372 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Relazione.aux" 1736171524 3409 ff0bbc8e18d1e64503e69b94ef42872b "pdflatex"
+  "Relazione.aux" 1736171760 3409 ff0bbc8e18d1e64503e69b94ef42872b "pdflatex"
   "Relazione.bbl" 1736170805 2608 5d760a0bd42d5efd09a46430b6484a0b "biber Relazione"
-  "Relazione.lof" 1736171524 686 9ae5c7accd6e8a94c7b047302706f834 "pdflatex"
-  "Relazione.run.xml" 1736171524 2342 fdd720ce795ac3cc0ce6fceafe4ae2e0 "pdflatex"
+  "Relazione.lof" 1736171760 686 9ae5c7accd6e8a94c7b047302706f834 "pdflatex"
+  "Relazione.run.xml" 1736171760 2342 fdd720ce795ac3cc0ce6fceafe4ae2e0 "pdflatex"
   "Relazione.tex" 1736170806 5966 f7e6b2ae4acfeffc65307373c56e7bac ""
   "abstract.tex" 1736170806 1660 546f23373a946a8a00a9336ca4928370 ""
   "c:/Users/Gagia/Desktop/progetto_TXA/report/Relazione.tex" 1736170806 5966 f7e6b2ae4acfeffc65307373c56e7bac ""
@@ -143,7 +143,7 @@
   "pictures/rnn_confusion_matrix_80_epochs.png" 1736170806 72453 d111edfbbe5e6430cd50783ab1da8b85 ""
   "pictures/roc_rf.png" 1736170806 99612 e9252e55f274a55a37135c2d47caed21 ""
   "pictures/roc_svc.png" 1736170806 126447 c9c749736162f6c68b057ee90195e6cb ""
-  "results.tex" 1736171156 8305 c6df926f79278b2ad3f9b1963f39756e ""
+  "results.tex" 1736171756 8305 e99b68d9c8eab4b51b95e72437e0e25f ""
   (generated)
   "Relazione.aux"
   "Relazione.bcf"
