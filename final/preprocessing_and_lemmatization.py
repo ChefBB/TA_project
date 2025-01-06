@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-path = "./data/"
+path = "./models/data/"
 df = pd.read_csv(path + "sampled_dataset.csv")
 
 
