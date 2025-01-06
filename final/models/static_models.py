@@ -18,8 +18,8 @@ from sklearn.metrics import classification_report
 from graphs import confusion_matrix_graph, plot_class_wise_accuracy
 
 # Reading the dataframe
-path = 'C:\\Users\\cinna\\Desktop\\progetto_TA\\Data\\'
-df = pd.read_csv(path + "lab_lem_merge.csv")
+path = ".\\models\\data"
+df = pd.read_csv(path + "\\lab_lem_merge.csv")
 
 df['lemmatized_stanzas'] = df['lemmatized_stanzas'].apply(ast.literal_eval)
 
