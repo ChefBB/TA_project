@@ -306,6 +306,11 @@ INPUT ./pictures/cnn_confusion_matrix.png
 INPUT ./pictures/cnn_confusion_matrix.png
 INPUT ./pictures/cnn_confusion_matrix.png
 INPUT ./pictures/cnn_confusion_matrix.png
+INPUT ./pictures/cnn_roc_curve.png
+INPUT ./pictures/cnn_roc_curve.png
+INPUT ./pictures/cnn_roc_curve.png
+INPUT ./pictures/cnn_roc_curve.png
+INPUT ./pictures/cnn_roc_curve.png
 INPUT ./pictures/rnn_accuracy.png
 INPUT ./pictures/rnn_accuracy.png
 INPUT ./pictures/rnn_accuracy.png
@@ -321,6 +326,11 @@ INPUT ./pictures/rnn_confusion_matrix.png
 INPUT ./pictures/rnn_confusion_matrix.png
 INPUT ./pictures/rnn_confusion_matrix.png
 INPUT ./pictures/rnn_confusion_matrix.png
+INPUT ./pictures/rnn_roc_curve.png
+INPUT ./pictures/rnn_roc_curve.png
+INPUT ./pictures/rnn_roc_curve.png
+INPUT ./pictures/rnn_roc_curve.png
+INPUT ./pictures/rnn_roc_curve.png
 INPUT ./discussion.tex
 INPUT ./discussion.tex
 INPUT discussion.tex
