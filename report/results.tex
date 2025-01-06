@@ -63,7 +63,7 @@ Lastly, image \ref{fig:cwa_svm} shows the class-wise accuracy by SVM, highlighti
         \caption{ROC Curve - SVM}
         \label{fig:roc_svm}
     \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
+    \begin{subfigure}{0.53\textwidth}
         \centering
         \includegraphics[width=\textwidth]{pictures/class_accuracy_SVC.png}
         \caption{Class-wise Accuracy - SVM}
@@ -93,32 +93,85 @@ trained models generally yielded poor results; on the other hand, downsampling
 into evenly represented labels gave some minor improvements, for both architectures.
 The neural networks generally underperformed compared to the static models:
 the convolutional neural network ultimately reached a test categorical accuracy
-of 0.2128, while the recurrent neural network had a test accuracy of \textbf{MANCA QUALCOSA}. \\
+of 0.2128, while the recurrent neural network had a test accuracy of 0.1869. \\
+
 The graphs below show various performance metrics of the network with the better
 performances for the convolutional architecture.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.40\linewidth]{pictures/cnn_accuracy.png}
-    \caption{Convolutional Neural Network's training and validation accuracy}
-    \label{fig:cnn_train_val_acc}
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\textwidth]{pictures/cnn_accuracy.png}
+        \caption{Convolutional Neural Network's training and validation accuracy}
+        \label{fig:cnn_train_val_acc}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{pictures/cnn_class_accuracy.png}
+        \caption{Convolutional Neural Network's class-wide accuracy}
+        \label{fig:cnn_classacc}
+    \end{subfigure}
+    \begin{subfigure}{0.65\textwidth}
+        \includegraphics[width=\textwidth]{pictures/cnn_confusion_matrix.png}
+        \caption{Convolutional Neural Network's confusion matrix}
+        \label{fig:cnn_confmatr}
+    \end{subfigure}
+    \label{fig:cnn_performances}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.65\linewidth]{pictures/cnn_class_accuracy.png}
-    \caption{Convolutional Neural Network's class-wide accuracy}
-    \label{fig:cnn_classacc}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.65\linewidth]{pictures/cnn_class_accuracy.png}
+%     \caption{Convolutional Neural Network's class-wide accuracy}
+%     \label{fig:cnn_classacc}
+% \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.65\linewidth]{pictures/cnn_confusion_matrix.png}
-    \caption{Convolutional Neural Network's confusion matrix}
-    \label{fig:cnn_confmatr}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.65\linewidth]{pictures/cnn_confusion_matrix.png}
+%     \caption{Convolutional Neural Network's confusion matrix}
+%     \label{fig:cnn_confmatr}
+% \end{figure}
 
 The graphs below show various performance metrics of the network with the better
-performances for the recurrent architecture \textbf{GRAFICI RECURRENT}.
+performances for the recurrent architecture.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\textwidth]{pictures/cnn_accuracy.png}
+        \caption{Convolutional Neural Network's training and validation accuracy}
+        \label{fig:rnn_train_val_acc}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{pictures/cnn_class_accuracy.png}
+        \caption{Convolutional Neural Network's class-wide accuracy}
+        \label{fig:rnn_classacc}
+    \end{subfigure}
+    \begin{subfigure}{0.65\textwidth}
+        \includegraphics[width=\textwidth]{pictures/cnn_confusion_matrix.png}
+        \caption{Convolutional Neural Network's confusion matrix}
+        \label{fig:rnn_confmatr}
+    \end{subfigure}
+    \label{fig:rnn_performances}
+\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.40\linewidth]{pictures/rnn_accuracy.png}
+%     \caption{Convolutional Neural Network's training and validation accuracy}
+%     \label{fig:rnn_train_val_acc}
+% \end{figure}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.65\linewidth]{pictures/rnn_class_accuracy.png}
+%     \caption{Convolutional Neural Network's class-wide accuracy}
+%     \label{fig:rnn_classacc}
+% \end{figure}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.65\linewidth]{pictures/rnn_confusion_matrix.png}
+%     \caption{Convolutional Neural Network's confusion matrix}
+%     \label{fig:rnn_confmatr}
+% \end{figure}
 % TODO
 
 % Judging from the confusion matrices

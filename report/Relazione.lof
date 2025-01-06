@@ -3,7 +3,4 @@
 \contentsline {figure}{\numberline {2}{\ignorespaces Number of stanzas for each label}}{4}{}%
 \contentsline {figure}{\numberline {3}{\ignorespaces Random Forest - plots}}{7}{}%
 \contentsline {figure}{\numberline {4}{\ignorespaces SVM - plots}}{8}{}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Convolutional Neural Network's training and validation accuracy}}{8}{}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Convolutional Neural Network's class-wide accuracy}}{9}{}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Convolutional Neural Network's confusion matrix}}{9}{}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Explainability - visualization}}{11}{}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Explainability - visualization}}{12}{}%
