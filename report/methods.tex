@@ -30,16 +30,22 @@ ultimately resulting in a limited dataset, with a few more than 100.000 entries.
 The preprocessing phase began by sampling the dataset while maintaining genre
 distribution. Text cleaning focused on removing irrelevant noise, such as
 square-bracketed items, and splitting lyrics into individual stanzas using
-stanza-related keywords (e.g., "chorus", "verse").
-Uninformative stanzas, such as empty or very short ones, were discarded,
-resulting in a dataset of numbered stanzas.
-A boolean feature, \texttt{is\_chorus}, was added to mark repeated or chorus-related
+stanza-related keywords (e.g. "chorus", "verse", "bridge" etc.).
+Resulting uninformative stanzas, such as empty or very short ones, were discarded.
+The output of this preliminary preprocessing phase was a dataset
+where the records were no longer whole songs but individual stanzas, each
+numbered according to its position within the song.
+A boolean feature, \texttt{is\_chorus}, was then added to mark repeated or chorus-related
 stanzas, and duplicate stanzas were removed to eliminate redundancy.
 Further cleaning involved removing stanza headers and newline characters,
-producing cleaner stanzas for labeling.
+producing cleaner stanzas for labeling.\\
+
 Lemmatization was performed using the \texttt{spaCy} library, generating
-tokenized stanzas by filtering out punctuation. ALBERT Base v2 was then
-fine-tuned to label approximately 100,000 stanzas with emotional categories.
+tokenized stanzas by filtering out punctuation. Lemmatization was chosen over stemming because it produces
+more accurate and meaningful results, particularly for tasks requiring semantic
+understanding, such as the one at hand.\\
+
+Since the dataset was not pre-labeled at the stanza level, ALBERT Base v2 was then fine-tuned to label approximately 100,000 stanzas with emotional categories.
 A preliminary class distribution analysis showed a slight imbalance, with
 \textit{joy} being the most frequent (18\%) and \textit{disgust} the least (10\%).
 Figure~\ref{fig:enter-label} illustrates the distribution across all classes.
@@ -171,16 +177,18 @@ complexity required for detecting emotional tones in complex pieces of text.
 % Random Search was chosen for hyperparameter tuning, for both models.
 % Cross validation is also used in order to provide a more accurate
 % estimate of model performance.
-The development of static models aimed at providing a performance benchmark for
+The development of static models aimed at providing a benchmark for
 more complex neural networks.
-Both architectures consisted of a preprocessing layer, followed by a classifier.
+Both architectures, Random Forest and Support Vector Machine, consisted of a preprocessing layer, followed by a classifier.
 The preprocessing handled title and \texttt{lemmatized\_stanzas} using TF-IDF for feature
 extraction.\\
 
-To improve classification, feature exctraction was conducted on the labeled dataset. Firstly, we deepened the preprocessing by devising a \textbf{custom stopword list} of frequent and generic words, punctuation, and common typographical errors. To this list were then added the NLTK stopword one and the NLTK numbers' one.
+To improve classification, feature extraction was conducted on the labeled dataset. 
+Firstly, we deepened the preprocessing by creating a \textbf{custom stopword list} of frequent and generic words, punctuation, and common typographical errors. To this list were then added the NLTK stopword one and the NLTK numbers' one.
 Then, TF-IDF scores were computed for each emotion label, using the parameters \texttt{min\_df} and \texttt{max\_df} to minimize the influence of overly common or rare words. \\
 Despite these efforts, the analysis did not yield the expected results, with most labels sharing common features and low TF-IDF scores.
 This was likely due to the repetitive and generic nature of song lyrics.\\
+
 With regard to hyperparameters tuning, Random Search and cross-validation were used to
 estimate model performance more accurately.
 
@@ -208,7 +216,7 @@ estimate model performance more accurately.
 The neural network architectures were developed and tuned through empirical
 testing. Both the Recurrent
 Neural Network and One-Dimensional Convolutional Neural Network share the same
-preprocessing steps: Non-Negative Matrix Factorization is applied to title
+preprocessing steps: Non-Negative Matrix Factorization is applied to the title
 for extracting latent topics, following TF-IDF for richer text representation.
 The \texttt{lemmatized\_stanzas} are processed through convolutional and
 recurrent pipelines, where elements are tokenized and padded to maintain
@@ -266,7 +274,6 @@ Other features are processed through a simple pipeline, which concatenates input
 passes them through a dense layer, and combines them with the lyrics-processing
 output. The final output layer uses 8 units with softmax activation for emotion
 classification.\\
-
 The models are trained using categorical cross-entropy as the loss function, and
 categorical accuracy as the evaluation metric. Other metrics, such as top-k
 categorical accuracy with $k=2$, were tested but discarded due to limited
