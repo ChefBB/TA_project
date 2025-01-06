@@ -3,10 +3,11 @@
 The performance metrics considered for evaluation in these analysis are the
 following: accuracy, precision, recall, and F1-score. Considering all of these
 metrics is crucial to accurately evaluate how well each model performs.
-Regarding the static models implemented in this project, the classification
-report revealed an accuracy of 34\% for the Random Forest algorithm and 24\% for
-SVM. These results can be considered reasonable, given that the task at hand
+The classification
+report revealed an accuracy of 34\% for Random Forest.
+This result can be considered reasonable, given the fact that the task at hand
 is a multi-class classification problem with 8 classes.\\
+
 For the Random Forest model, the class with the highest F1-score is \texttt{anger},
 which is the third class as for support, sitting at 4436. 
 \texttt{Joy} was the most supported class, with 5854 instances, but it came second
@@ -49,29 +50,29 @@ two out of eight classes. Image \ref{fig:cwa_rf} shows class-wise accuracy.\\
   %  \label{fig:cwa_rf}
 %\end{figure}
 
-For the Support Vector Machine model, the class with the highest F1-score is \texttt{fear}, followed by \texttt{anger} at 0.31 and \texttt{anticipation} at 0.25. 
-As for the other classes, the scores were not as comparable as for Random Forest, oscillating between the 22\% of \texttt{sadness} and the 7\% of \texttt{joy}, with \texttt{disgust} and \texttt{trust} sitting at 16\%, and \texttt{surprise} at 12\%. 
-Surprisingly, \texttt{joy} is the least performing class for SVC, dispite having the highest support.   
-In image \ref{fig:roc_svm}, the ratio of true positives versus false positives is displayed. 
-The SVM model performs better than a random guesser in all of the classes, therefore surpassing Random Forest despite the lower scores of accuracy. 
-Lastly, image \ref{fig:cwa_svm} shows the class-wise accuracy by SVM, highlighting a clear and strong disparity in the classification performances among the classes.
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{pictures/roc_svc.png}
-        \caption{ROC Curve - SVM}
-        \label{fig:roc_svm}
-    \end{subfigure}
-    \begin{subfigure}{0.53\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{pictures/class_accuracy_SVC.png}
-        \caption{Class-wise Accuracy - SVM}
-        \label{fig:cwa_svm}
-    \end{subfigure}
-    \caption{SVM - plots}
-    \label{fig:svm_metrics}
-\end{figure}
+% For the Support Vector Machine model, the class with the highest F1-score is \texttt{fear}, followed by \texttt{anger} at 0.31 and \texttt{anticipation} at 0.25. 
+% As for the other classes, the scores were not as comparable as for Random Forest, oscillating between the 22\% of \texttt{sadness} and the 7\% of \texttt{joy}, with \texttt{disgust} and \texttt{trust} sitting at 16\%, and \texttt{surprise} at 12\%. 
+% Surprisingly, \texttt{joy} is the least performing class for SVC, dispite having the highest support.   
+% In image \ref{fig:roc_svm}, the ratio of true positives versus false positives is displayed. 
+% The SVM model performs better than a random guesser in all of the classes, therefore surpassing Random Forest despite the lower scores of accuracy. 
+% Lastly, image \ref{fig:cwa_svm} shows the class-wise accuracy by SVM, highlighting a clear and strong disparity in the classification performances among the classes.
+% \begin{figure}[H]
+%     \centering
+%     \begin{subfigure}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{pictures/roc_svc.png}
+%         \caption{ROC Curve - SVM}
+%         \label{fig:roc_svm}
+%     \end{subfigure}
+%     \begin{subfigure}{0.53\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{pictures/class_accuracy_SVC.png}
+%         \caption{Class-wise Accuracy - SVM}
+%         \label{fig:cwa_svm}
+%     \end{subfigure}
+%     \caption{SVM - plots}
+%     \label{fig:svm_metrics}
+% \end{figure}
 
 %\begin{figure}[H]
  %   \centering
@@ -91,7 +92,7 @@ iterated testing phases and adjustments over different aspects of training.
 Semi-supervised learning through generation of pseudo labels via the partially
 trained models generally yielded poor results; on the other hand, downsampling
 into evenly represented labels gave some minor improvements, for both architectures.
-The neural networks generally underperformed compared to the static models:
+The neural networks generally underperformed compared to Random Forest:
 the convolutional neural network ultimately reached a test categorical accuracy
 of 0.2128, while the recurrent neural network had a test accuracy of 0.1869.\\
 

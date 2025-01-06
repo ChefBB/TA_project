@@ -89,7 +89,6 @@ def classify(dataset: str | pd.DataFrame,
         dataset = pd.read_csv(dataset)
     
     if t == 1 or t == 2:
-        print('AAAAAA')
         # prepare data
         dataset['text_str'] = dataset[['lemmatized_stanzas']].apply(
             lambda x: ' '.join(x)

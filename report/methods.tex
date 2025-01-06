@@ -116,9 +116,9 @@ The selected model architectures are:
 \begin{itemize} 
     \item \textbf{Random Forest}: A robust ensemble learning method known for
     its ability to handle complex, high-dimensional datasets effectively.
-    \item \textbf{Support Vector Machine (SVM)}: A powerful classifier that
-    excels in separating classes by finding the optimal hyperplane,
-    particularly effective in text classification tasks.
+    % \item \textbf{Support Vector Machine (SVM)}: A powerful classifier that
+    % excels in separating classes by finding the optimal hyperplane,
+    % particularly effective in text classification tasks.
     \item \textbf{One-Dimensional Convolutional Neural Network (1D-CNN)}:
     Designed to capture local patterns in sequential data, leveraging
     convolutional layers to learn hierarchical features.
@@ -126,12 +126,15 @@ The selected model architectures are:
     in processing sequential data, with the ability to capture contextual
     relationships between words across different stanzas.
 \end{itemize}
+The initial project proposal included a Support Vector Machine as well,
+but it was discarded as the training was computationally too expensive.
+The code is still available in the project, both for training and for usage.
 Their different approaches and depths are an important point of the study, as they
 offer interesting insights into the possible different techniques and levels of
 complexity required for detecting emotional tones in complex pieces of text.
 
 %MODELLI STATICI
-\subsection*{Static Models}
+\subsection*{Random Forest}
 % The development of static models was then simple and straight forward.
 % Static models are here meant to provide a performance comparison
 % for the more complex Neural Networks.
@@ -177,9 +180,9 @@ complexity required for detecting emotional tones in complex pieces of text.
 % Random Search was chosen for hyperparameter tuning, for both models.
 % Cross validation is also used in order to provide a more accurate
 % estimate of model performance.
-The development of static models aimed at providing a benchmark for the
+The development of Random Forest aimed at providing a benchmark for the
 more complex neural networks.
-Both architectures, Random Forest and Support Vector Machine, consisted of a preprocessing layer, followed by a classifier.
+Its architecture consists of a preprocessing layer, followed by a classifier.
 The preprocessing handled \texttt{title} and \texttt{lemmatized\_stanzas} using TF-IDF for feature
 extraction.\\
 
