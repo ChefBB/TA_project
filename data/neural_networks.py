@@ -183,9 +183,7 @@ if args.semisupervised != 0:
     # X_unlabeled = pd.read_csv(
     #     'data/def_lemmatized_df.csv'
     # ).iloc[130001:].dropna().sample(n= int(len(X_train[0]) / 2))
-    X_unlabeled = pd.read_csv(
-        'data/def_lemmatized_df.csv'
-    ).iloc[130001:].dropna().sample(n= int(len(X_train[0]) / 2))
+    X_unlabeled = pd.read_csv('data/sampled_semisupervised.csv')
     
     # Prepare the unlabeled data by extracting specific columns and organizing them in a dictionary
     X_unlabeled = {

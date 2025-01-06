@@ -15,11 +15,13 @@ Arguments:
 """
 
 import preprocessing
+import data_splitting
 
 import argparse
 import pandas as pd
+import numpy as np
 import joblib
-from tensorflow.keras.model import load_model
+from tensorflow.keras.models import load_model
 
 # arguments
 parser = argparse.ArgumentParser(
@@ -28,7 +30,7 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument(
     '--dataset', type= str, required= False,
-    default= None,                              # TODO add default test file
+    default= 'data/unlabeled_sample.csv',
     help= 'Path to .csv file to classify.'
 )
 
@@ -41,6 +43,25 @@ parser.add_argument(
     '--type', type= int, required= True,
     help= 'Type of model to use.'
 )
+
+emotion_labels = [
+    'anger', 'anticipation', 'disgust', 'fear', 'joy', 'sadness', 'surprise', 'trust'
+]
+
+
+def translate_into_labels(predictions: np.ndarray) -> pd.Series:
+    """
+    Translate the predicted probabilities into corresponding emotion labels.
+
+    Args:
+        predictions (numpy.ndarray): The predicted probabilities for each emotion class.
+
+    Returns:
+        pd.Series: A Pandas Series with emotion labels corresponding to the highest probability for each row.
+    """
+    predicted_indices = np.argmax(predictions, axis=1)
+    
+    return pd.Series([emotion_labels[i] for i in predicted_indices])
 
 
 def classify(dataset: str | pd.DataFrame,
@@ -88,25 +109,29 @@ def classify(dataset: str | pd.DataFrame,
         )
     
     else:
-        # convert data into dict
         X_unlabeled = {
-            'lemmatized_stanzas': X_unlabeled['lemmatized_stanzas'],
-            'stanza_numbers': X_unlabeled[['stanza_number']],
-            'booleans': X_unlabeled[['is_country', 'is_pop', 'is_rap',
+            'lemmatized_stanzas': dataset['lemmatized_stanzas'],
+            'stanza_numbers': dataset[['stanza_number']],
+            'booleans': dataset[['is_country', 'is_pop', 'is_rap',
                 'is_rb', 'is_rock', 'is_chorus']].astype(int).values,
-            'titles': X_unlabeled['title']
+            'titles': dataset['title']
         }
-        
-        # preprocess data
-        X_unlabeled = preprocessing.preprocess_new_data(
+
+        # Preprocess the unlabeled data (e.g., tokenization, normalization, etc.)
+        X_unlabeled_preprocessed = preprocessing.preprocess_new_data(
             X_unlabeled, model_folder
         )
         
-        # load model
+        # Convert the preprocessed data into a list format suitable for the model
+        X_list = data_splitting.get_data_as_list(
+            X_unlabeled_preprocessed
+        )
+        
+         # load model
         model = load_model(model_folder + 'model.keras')
         
-        # predict
-        return pd.Series(model.predict(X_unlabeled))
+        # Use the model to predict the labels for the unlabeled data
+        return translate_into_labels(model.predict(X_list))
 
 
 
