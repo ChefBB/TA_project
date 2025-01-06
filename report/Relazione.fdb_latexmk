@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber Relazione"] 1736111087.36249 "Relazione.bcf" "Relazione.bbl" "Relazione" 1736158536.55508 0
-  "Relazione.bcf" 1736158536.39696 107899 e9a61650f10e11db5c14a42537f424a2 "pdflatex"
+["biber Relazione"] 1736161463.45202 "Relazione.bcf" "Relazione.bbl" "Relazione" 1736161629.8992 0
+  "Relazione.bcf" 1736161629.74649 107967 4f4cea1544772d088c353da47d1a12d8 "pdflatex"
   "bibliography.bib" 1736100360.25705 484 16c4c76652b5527d64d05614c9ce9be0 ""
   (generated)
   "Relazione.bbl"
   "Relazione.blg"
   (rewritten before read)
-["pdflatex"] 1736158533.98486 "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" "Relazione.pdf" "Relazione" 1736158536.55557 0
-  "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" 1736157147.05465 5907 5313d0cbfaa30a249b344edbd432c44a ""
+["pdflatex"] 1736161627.36643 "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" "Relazione.pdf" "Relazione" 1736161629.89962 0
+  "/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex" 1736161624.10936 5965 4211b0f85094f4fb8822c8f54e4da013 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -120,15 +120,15 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1718359646.02718 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1718359419 8221430 7882b9a7879b697c1714b9ec0b6e673c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Relazione.aux" 1736158536.3925 3453 1abf94897a342216e9b7784ea6512407 "pdflatex"
-  "Relazione.bbl" 1736157147.04117 2682 c8eb3b775743e38f9a39d83aa3298fa1 "biber Relazione"
-  "Relazione.lof" 1736158536.39933 661 0168f8e4a5eca448be9c6d687349be83 "pdflatex"
-  "Relazione.run.xml" 1736158536.39917 2342 fdd720ce795ac3cc0ce6fceafe4ae2e0 "pdflatex"
-  "Relazione.tex" 1736157147.05465 5907 5313d0cbfaa30a249b344edbd432c44a ""
-  "abstract.tex" 1736157147.05514 1577 a5db9b410945a464d0b34ce24dc0770d ""
+  "Relazione.aux" 1736161629.74158 3726 b2a915f5d2bdccefd9d09bac90806f93 "pdflatex"
+  "Relazione.bbl" 1736161465.18518 2608 5d760a0bd42d5efd09a46430b6484a0b "biber Relazione"
+  "Relazione.lof" 1736161629.74781 781 1acbbc2c76265c80f49136a064381d6e "pdflatex"
+  "Relazione.run.xml" 1736161629.74769 2342 fdd720ce795ac3cc0ce6fceafe4ae2e0 "pdflatex"
+  "Relazione.tex" 1736161624.10936 5965 4211b0f85094f4fb8822c8f54e4da013 ""
+  "abstract.tex" 1736161460.34582 1660 546f23373a946a8a00a9336ca4928370 ""
   "conclusions.tex" 1736157147.0556 1903 a7d046efbc15dca97801b150bc989b5f ""
-  "discussion.tex" 1736158101.62086 3782 473b31aef1a0cf561f0e76d562c14064 ""
-  "introduzione.tex" 1736157147.05725 1328 141547b72e97d144989f516fdc553f54 ""
+  "discussion.tex" 1736160212.63761 4633 cf5502aab098fae71fd0943203011bdc ""
+  "introduzione.tex" 1736161431.6955 1327 19d748a628c1824360fac894e00802b6 ""
   "methods.tex" 1736157147.05776 17174 190012f1d90c59c75d4df1eb235bf40f ""
   "pictures/class_accuracy.png" 1736099990.07227 27852 18e0ec4c01eb618f824fde4cadaf5517 ""
   "pictures/class_accuracy_SVC.png" 1736099990.07339 29958 c04da4c64098ae8b46af45baadd40a55 ""
@@ -142,10 +142,11 @@
   "pictures/rnn_accuracy.png" 1736142446.62366 63541 f05361ecee05eff0551a49f4c492a533 ""
   "pictures/rnn_class_accuracy.png" 1736142447.00573 28520 b84f32814b356f8246e679f483f1c13b ""
   "pictures/rnn_confusion_matrix.png" 1736142446.86592 76829 e6c060a613b73717f65e6db3eeeb2329 ""
+  "pictures/rnn_confusion_matrix_80_epochs.png" 1736107109.78219 72453 42136e5330a677e6ead54c711755b2ff ""
   "pictures/rnn_roc_curve.png" 1736142446.48497 97731 f43b5cbcf9ebe6bb91131327faaa1277 ""
   "pictures/roc_rf.png" 1736077247.54352 99612 d5100d846aefcd7c879b0369fa568ca4 ""
   "pictures/roc_svc.png" 1736099990.07515 126447 21d242d828df74b4ecf36318d31d3839 ""
-  "results.tex" 1736158531.01461 8288 4243d388e9aba51b363c048ce3250988 ""
+  "results.tex" 1736158668.82866 8287 6c2b8bfaa8930caaf89c7c5b2c0998c6 ""
   (generated)
   "Relazione.aux"
   "Relazione.bcf"

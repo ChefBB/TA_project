@@ -5,4 +5,5 @@
 \contentsline {figure}{\numberline {4}{\ignorespaces SVM - plots}}{8}{}%
 \contentsline {figure}{\numberline {5}{\ignorespaces Convolutional Neural Network - plots}}{9}{}%
 \contentsline {figure}{\numberline {6}{\ignorespaces Recurrent Neural Network - plots}}{10}{}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Explainability - visualization}}{12}{}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Confusion matrix for a 80-epochs recurrent neural network}}{11}{}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Explainability - visualization}}{12}{}%

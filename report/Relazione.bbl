@@ -19,6 +19,18 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
+    \entry{geniusdataset}{misc}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Genius Song Lyrics}
+      \verb{urlraw}
+      \verb https://www.kaggle.com/datasets/carlosgdcj/genius-song-lyrics-with-language-information?select=song_lyrics.csv
+      \endverb
+      \verb{url}
+      \verb https://www.kaggle.com/datasets/carlosgdcj/genius-song-lyrics-with-language-information?select=song_lyrics.csv
+      \endverb
+    \endentry
     \entry{plutchik1980general}{article}{}{}
       \name{author}{1}{}{%
         {{hash=050935e4cfedc32e862f19fc78769796}{%
@@ -35,8 +47,8 @@
       \strng{authornamehash}{050935e4cfedc32e862f19fc78769796}
       \strng{authorfullhash}{050935e4cfedc32e862f19fc78769796}
       \strng{authorfullhashraw}{050935e4cfedc32e862f19fc78769796}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Emotion: Theory, research, and experience}
@@ -44,21 +56,9 @@
       \field{volume}{1}
       \field{year}{1980}
     \endentry
-    \entry{geniusdataset}{misc}{}{}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labeltitlesource}{title}
-      \field{title}{Genius Song Lyrics}
-      \verb{urlraw}
-      \verb https://www.kaggle.com/datasets/carlosgdcj/genius-song-lyrics-with-language-information?select=song_lyrics.csv
-      \endverb
-      \verb{url}
-      \verb https://www.kaggle.com/datasets/carlosgdcj/genius-song-lyrics-with-language-information?select=song_lyrics.csv
-      \endverb
-    \endentry
     \entry{albert-base-v2}{misc}{}{}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labeltitlesource}{title}
       \field{title}{Albert Base v2}
       \verb{urlraw}
