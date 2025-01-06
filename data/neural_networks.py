@@ -66,12 +66,10 @@ parser = argparse.ArgumentParser(
     description= "Train the emotion labeling model."
 )
 
-path= '/Users/brunobarbieri/Library/CloudStorage/OneDrive-UniversityofPisa/TA_Project/'
-
 # Path to the dataset file
 parser.add_argument(
     '--dataset', type=str, required=False,
-    default=path + 'data/lab_lem_merge.csv',
+    default= 'data/lab_lem_merge.csv',
     help='Path to the input dataset file. Defaults to "data/lab_lem_merge.csv".'
 )
 
@@ -122,7 +120,7 @@ folder_name = datetime.now().strftime(
     "_%d-%m-%Y_%H-%M-%S"
 )
 
-folder_path= path + 'neural_networks/' + folder_name
+folder_path= 'neural_networks/' + folder_name
 
 os.makedirs(folder_path)
 
@@ -179,10 +177,14 @@ history = model.fit(
 if args.semisupervised != 0:
     
     # Load a subset of the unlabeled data for semi-supervised learning
-    # Load the CSV, start from the 130001st row, drop any missing values, and sample a number of entries equal
-    # to half of the training set
+    
+    # !!! THE PROVIDED DATASET COULD NOT BE LOADED DUE TO SIZE LIMITATIONS
+    # !!! RESORT TO NEWLY SAMPLED DATASET
+    # X_unlabeled = pd.read_csv(
+    #     'data/def_lemmatized_df.csv'
+    # ).iloc[130001:].dropna().sample(n= int(len(X_train[0]) / 2))
     X_unlabeled = pd.read_csv(
-        path + 'data/def_lemmatized_df.csv'
+        'data/def_lemmatized_df.csv'
     ).iloc[130001:].dropna().sample(n= int(len(X_train[0]) / 2))
     
     # Prepare the unlabeled data by extracting specific columns and organizing them in a dictionary
