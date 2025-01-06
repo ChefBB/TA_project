@@ -1,4 +1,4 @@
-#PREPROCESSING AND SAMPLING ON THE ORIGINAL DATASET
+#BASIC ORIGINAL DATASET PREPROCESSING AND SAMPLING 
 
 import pandas as pd
 
@@ -40,48 +40,9 @@ df = pd.concat(
  ).drop(columns= 'tag')
 
 
-# save sampled dataset -----> PERCHE' E' SALVATO COME DROP_DATASET E NON SAMPLED_DATA (ossia quello su cui abbiamo fatto tutti i procedimenti dopo?)
-# df.to_csv(path + 'drop_dataset.csv', index= False)
+# save sampled dataset 
+# df.to_csv(path + 'sampled_dataset.csv', index= False)
 
 
 
 
-#----------------------------------------------------------------------------
-
-
-
-#COSA SONO QUESTI PASSAGGI SOTTO?
-
-#df = pd.read_csv(path + 'drop_dataset.csv')
-
-# split stanzas, take into account chorus/verse number
-def split_into_stanzas(row):
-    stanzas = row['lyrics'].split('\n\n')  # Split by double newlines
-    stanza_entries = []
-    for stanza in stanzas:
-        stanza_entry = row.to_dict()  # Convert all metadata to a dictionary
-        stanza_entry['stanza'] = stanza.strip()  # Add the stanza
-        stanza_entries.append(stanza_entry)
-    return stanza_entries
-
-# Transform the dataframe
-stanza_data = []
-for _, row in df.iterrows():
-    stanza_data.extend(split_into_stanzas(row))  # Extend with stanza dictionaries
-
-# Create a new dataframe with stanzas
-stanza_df = pd.DataFrame(stanza_data)
-
-# Drop the original 'lyrics' column (optional)
-stanza_df = stanza_df.drop(columns=['lyrics'])
-
-
-# for encoding, sentence_transformers.SentenceTransformer
-# seems to be the best fit for the task
-
-# simple explanation: this encodes the stanza as a vector
-# of real numbers, which can then be passed to models for
-# training and classification
-
-# !IMPORTANT: this is the last step of preprocessing
-# for both pipelines
