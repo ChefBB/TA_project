@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 from matplotlib.cm import get_cmap
 
 
-path = 'C:\\Users\\cinna\\Desktop\\progetto_TA\\Data'
-df = pd.read_csv(path + '\\lab_lem_merge.csv')
+path = '.\\models\\data\\'
+df = pd.read_csv(path + 'lab_lem_merge.csv')
 df
 
 
