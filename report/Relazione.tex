@@ -98,10 +98,10 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 % Formato delle intestazioni
 \titleformat{\chapter}[hang]
   {\normalfont\LARGE\bfseries}{\thechapter.}{0.5em}{\LARGE}
-\titlespacing*{\chapter}{0pt}{30pt}{25pt}
+\titlespacing*{\chapter}{0pt}{30pt}{20pt}
 
 \newcommand{\firstchapter}{
-  \titlespacing*{\chapter}{0pt}{0pt}{25pt} % Reduce space before first chapter title
+  \titlespacing*{\chapter}{0pt}{0pt}{20pt} % Reduce space before first chapter title
 }
 
 \begin{document}
@@ -112,10 +112,11 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 \addcontentsline{toc}{chapter}{Introduction} % Capitolo non numerato
 
 %header (da migliorare)
-EMOTION DETECTION IN SONG LYRICS STANZAS\\
-TEXT ANALYTICS - A.Y. 2024/2025\\
-Group 2 - Barbieri, Bosco, Ferrara, Rotellini, Zizza
-
+\begin{flushright}
+  \large{\textbf{EMOTION DETECTION IN SONG LYRICS STANZAS}}\\
+  TEXT ANALYTICS - A.Y. 2024/2025\\
+  Group 2 - Barbieri, Bosco, Ferrara, Rotellini, Zizza
+\end{flushright}
 
 % Abstract section
 \input{abstract.tex}
