@@ -177,20 +177,21 @@ complexity required for detecting emotional tones in complex pieces of text.
 % Random Search was chosen for hyperparameter tuning, for both models.
 % Cross validation is also used in order to provide a more accurate
 % estimate of model performance.
-The development of static models aimed at providing a benchmark for
+The development of static models aimed at providing a benchmark for the
 more complex neural networks.
 Both architectures, Random Forest and Support Vector Machine, consisted of a preprocessing layer, followed by a classifier.
 The preprocessing handled title and \texttt{lemmatized\_stanzas} using TF-IDF for feature
 extraction.\\
 
 To improve classification, feature extraction was conducted on the labeled dataset. 
-Firstly, we deepened the preprocessing by creating a \textbf{custom stopword list} of frequent and generic words, punctuation, and common typographical errors. To this list were then added the NLTK stopword one and the NLTK numbers' one.
+Firstly, we deepened the preprocessing by creating a custom stopword list of frequent and generic words, punctuation, and common typographical errors. To this list were then added NLTK's stopwords and numbers lists.
 Then, TF-IDF scores were computed for each emotion label, using the parameters \texttt{min\_df} and \texttt{max\_df} to minimize the influence of overly common or rare words. \\
+
 Despite these efforts, the analysis did not yield the expected results, with most labels sharing common features and low TF-IDF scores.
 This was likely due to the repetitive and generic nature of song lyrics.\\
 
-With regard to hyperparameters tuning, Random Search and cross-validation were used to
-estimate model performance more accurately.
+Random Search was employed for hyperparameter tuning, with 5-fold cross-validation
+used to provide a more reliable estimate of model performance.
 
 
 
@@ -213,7 +214,7 @@ estimate model performance more accurately.
 % Elements are first tokenized, and then padded in order to
 % get an input with consistent shape, which is essential for both types of
 % recurrent layers.
-The neural network architectures were developed and tuned through empirical
+Neural network architectures were developed and tuned through empirical
 testing. Both the Recurrent
 Neural Network and One-Dimensional Convolutional Neural Network share the same
 preprocessing steps: Non-Negative Matrix Factorization is applied to the title
