@@ -8,33 +8,69 @@ report revealed an accuracy of 34\% for Random Forest.
 This result can be considered reasonable, given the fact that the task at hand
 is a multi-class classification problem with 8 classes.\\
 
-For the Random Forest model, the class with the highest F1-score is \texttt{anger},
+For the Random Forest model, the class with the highest F1-score is \textit{anger}, at 51\%,
 which is the third class as for support, sitting at 4436. 
-\texttt{Joy} was the most supported class, with 5854 instances, but it came second
+\textit{Joy} was the most supported class, with 5854 instances, but it came second
 as for the F1-score, which was of 0.40. The second class based off support, which
-was \texttt{fear} with 4652 instances, had a lower F1-score of 0.31. 
+was \textit{fear} with 4652 instances, had a lower F1-score of 0.31. 
 The remaining classes showed comparable support and F1-scores, averaging around
-3500 instances and 0.25 respectively, only \texttt{disgust} had a considerably
-lower F1-score, at 18\%. In image \ref{fig:roc_rf}, the ratio of true positives versus false positives is
-displayed, with the Random Forest classifier scoring lower than a random guesser in
-two out of eight classes. Image \ref{fig:cwa_rf} shows class-wise accuracy.\\
+3500 instances and 0.25 respectively, only \textit{disgust} had a considerably
+lower F1-score, at 18\%. \\
+In image \ref{fig:cm_rf}, the confusion matrix of Random Forest is displayed.
+It is clear how the best classified classes are
+\textit{joy} and \textit{anger}. However, the most interesting insight that can
+be gathered from the confusion matrix is the extent to which all other classes
+get misclassified as \textit{joy}. This is probably because \textit{joy} is the
+dominant class, due to an imbalanced dataset.
+Furthermore, as was highlighted in previous sections, the most important
+features for classification are significantly shared between the classes,
+therefore making it harder for the model to classify correctly.
+Then, image \ref{fig:cwa_rf} shows class-wise accuracy.\\
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{pictures/roc_rf.png}
-        \caption{ROC Curve for the Random Forest Classifier}
-        \label{fig:roc_rf}
-    \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{pictures/class_accuracy.png}
+        \includegraphics[width=\textwidth]{pictures/class_accuracy_rf.png}
         \caption{Class-wise Accuracy - Random Forest}
         \label{fig:cwa_rf}
+    \end{subfigure}
+    \begin{subfigure}{0.55\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/confusion_matrix_rf.png}
+        \caption{Confusion Matrix for the Random Forest Classifier}
+        \label{fig:roc_rf}
     \end{subfigure}
     \caption{Random Forest - plots}
     \label{fig:side_by_side}
 \end{figure}
+
+% For the Random Forest model, the class with the highest F1-score is \texttt{anger},
+% which is the third class as for support, sitting at 4436. 
+% \texttt{Joy} was the most supported class, with 5854 instances, but it came second
+% as for the F1-score, which was of 0.40. The second class based off support, which
+% was \texttt{fear} with 4652 instances, had a lower F1-score of 0.31. 
+% The remaining classes showed comparable support and F1-scores, averaging around
+% 3500 instances and 0.25 respectively, only \texttt{disgust} had a considerably
+% lower F1-score, at 18\%. In image \ref{fig:roc_rf}, the ratio of true positives versus false positives is
+% displayed, with the Random Forest classifier scoring lower than a random guesser in
+% two out of eight classes. Image \ref{fig:cwa_rf} shows class-wise accuracy.\\
+% \begin{figure}[H]
+%     \centering
+%     \begin{subfigure}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{pictures/roc_rf.png}
+%         \caption{ROC Curve for the Random Forest Classifier}
+%         \label{fig:roc_rf}
+%     \end{subfigure}
+%     \begin{subfigure}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{pictures/class_accuracy.png}
+%         \caption{Class-wise Accuracy - Random Forest}
+%         \label{fig:cwa_rf}
+%     \end{subfigure}
+%     \caption{Random Forest - plots}
+%     \label{fig:side_by_side}
+% \end{figure}
 
 %\begin{figure}[H]
  %   \centering

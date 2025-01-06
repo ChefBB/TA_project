@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  6 JAN 2025 18:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  6 JAN 2025 18:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -721,64 +721,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--10
 
  []
 
-<pictures/roc_rf.png, id=27, 417.7206pt x 328.8285pt>
-File: pictures/roc_rf.png Graphic file (type png)
-<use pictures/roc_rf.png>
-Package pdftex.def Info: pictures/roc_rf.png  used on input line 25.
-(pdftex.def)             Requested size: 212.41261pt x 167.2086pt.
-<pictures/class_accuracy.png, id=28, 722.7pt x 578.16pt>
-File: pictures/class_accuracy.png Graphic file (type png)
-<use pictures/class_accuracy.png>
-Package pdftex.def Info: pictures/class_accuracy.png  used on input line 31.
-(pdftex.def)             Requested size: 212.41261pt x 169.92935pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--37
+LaTeX Warning: Reference `fig:cm_rf' on page 6 undefined on input line 19.
+
+<pictures/class_accuracy_rf.png, id=27, 722.7pt x 578.16pt>
+File: pictures/class_accuracy_rf.png Graphic file (type png)
+<use pictures/class_accuracy_rf.png>
+Package pdftex.def Info: pictures/class_accuracy_rf.png  used on input line 33.
+(pdftex.def)             Requested size: 212.41261pt x 169.92935pt.
+<pictures/confusion_matrix_rf.png, id=28, 867.24pt x 867.24pt>
+File: pictures/confusion_matrix_rf.png Graphic file (type png)
+<use pictures/confusion_matrix_rf.png>
+Package pdftex.def Info: pictures/confusion_matrix_rf.png  used on input line 39.
+(pdftex.def)             Requested size: 259.6186pt x 259.61823pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--45
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 90--98
+Underfull \hbox (badness 10000) in paragraph at lines 126--134
 
  []
 
-<pictures/cnn_accuracy.png, id=33, 578.16pt x 433.62pt>
+[7 <./pictures/class_accuracy_rf.png> <./pictures/confusion_matrix_rf.png>]
+<pictures/cnn_accuracy.png, id=39, 578.16pt x 433.62pt>
 File: pictures/cnn_accuracy.png Graphic file (type png)
 <use pictures/cnn_accuracy.png>
-Package pdftex.def Info: pictures/cnn_accuracy.png  used on input line 104.
+Package pdftex.def Info: pictures/cnn_accuracy.png  used on input line 140.
 (pdftex.def)             Requested size: 226.57297pt x 169.92494pt.
-<pictures/cnn_class_accuracy.png, id=34, 722.7pt x 578.16pt>
+<pictures/cnn_class_accuracy.png, id=40, 722.7pt x 578.16pt>
 File: pictures/cnn_class_accuracy.png Graphic file (type png)
 <use pictures/cnn_class_accuracy.png>
-Package pdftex.def Info: pictures/cnn_class_accuracy.png  used on input line 109.
+Package pdftex.def Info: pictures/cnn_class_accuracy.png  used on input line 145.
 (pdftex.def)             Requested size: 236.01561pt x 188.80844pt.
-<pictures/cnn_confusion_matrix.png, id=35, 722.7pt x 722.7pt>
+<pictures/cnn_confusion_matrix.png, id=41, 722.7pt x 722.7pt>
 File: pictures/cnn_confusion_matrix.png Graphic file (type png)
 <use pictures/cnn_confusion_matrix.png>
-Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 114.
+Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 150.
 (pdftex.def)             Requested size: 283.22162pt x 283.21927pt.
-[7 <./pictures/roc_rf.png> <./pictures/class_accuracy.png>]
-<pictures/rnn_accuracy.png, id=42, 578.16pt x 433.62pt>
+ [8]
+<pictures/rnn_accuracy.png, id=45, 578.16pt x 433.62pt>
 File: pictures/rnn_accuracy.png Graphic file (type png)
 <use pictures/rnn_accuracy.png>
-Package pdftex.def Info: pictures/rnn_accuracy.png  used on input line 146.
+Package pdftex.def Info: pictures/rnn_accuracy.png  used on input line 182.
 (pdftex.def)             Requested size: 226.57297pt x 169.92494pt.
-<pictures/rnn_class_accuracy.png, id=43, 722.7pt x 578.16pt>
+<pictures/rnn_class_accuracy.png, id=46, 722.7pt x 578.16pt>
 File: pictures/rnn_class_accuracy.png Graphic file (type png)
 <use pictures/rnn_class_accuracy.png>
-Package pdftex.def Info: pictures/rnn_class_accuracy.png  used on input line 151.
+Package pdftex.def Info: pictures/rnn_class_accuracy.png  used on input line 187.
 (pdftex.def)             Requested size: 236.01561pt x 188.80844pt.
-<pictures/rnn_confusion_matrix.png, id=44, 722.7pt x 722.7pt>
+<pictures/rnn_confusion_matrix.png, id=47, 722.7pt x 722.7pt>
 File: pictures/rnn_confusion_matrix.png Graphic file (type png)
 <use pictures/rnn_confusion_matrix.png>
-Package pdftex.def Info: pictures/rnn_confusion_matrix.png  used on input line 156.
+Package pdftex.def Info: pictures/rnn_confusion_matrix.png  used on input line 192.
 (pdftex.def)             Requested size: 283.22162pt x 283.21927pt.
- [8 <./pictures/cnn_accuracy.png> <./pictures/cnn_class_accuracy.png> <./pictures/cnn_confusion_matrix.png>]) (./discussion.tex
+ [9 <./pictures/cnn_accuracy.png> <./pictures/cnn_class_accuracy.png> <./pictures/cnn_confusion_matrix.png>]) (./discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--9
 
  []
 
-[9 <./pictures/rnn_accuracy.png> <./pictures/rnn_class_accuracy.png> <./pictures/rnn_confusion_matrix.png>]
-<pictures/rnn_confusion_matrix_80_epochs.png, id=57, 722.7pt x 722.7pt>
+[10 <./pictures/rnn_accuracy.png> <./pictures/rnn_class_accuracy.png> <./pictures/rnn_confusion_matrix.png>]
+<pictures/rnn_confusion_matrix_80_epochs.png, id=60, 722.7pt x 722.7pt>
 File: pictures/rnn_confusion_matrix_80_epochs.png Graphic file (type png)
 <use pictures/rnn_confusion_matrix_80_epochs.png>
 Package pdftex.def Info: pictures/rnn_confusion_matrix_80_epochs.png  used on input line 18.
@@ -788,7 +792,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--31
 
  []
 
-[10 <./pictures/rnn_confusion_matrix_80_epochs.png>]
+[11 <./pictures/rnn_confusion_matrix_80_epochs.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 32--38
 
  []
@@ -803,7 +807,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--48
 
  []
 
-<pictures/expl.png, id=62, 849.77475pt x 280.04625pt>
+<pictures/expl.png, id=65, 849.77475pt x 280.04625pt>
 File: pictures/expl.png Graphic file (type png)
 <use pictures/expl.png>
 Package pdftex.def Info: pictures/expl.png  used on input line 58.
@@ -813,7 +817,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--77
 
  []
 
-[11 <./pictures/expl.png>]) (./conclusions.tex
+[12 <./pictures/expl.png>]) (./conclusions.tex
 Underfull \hbox (badness 10000) in paragraph at lines 16--22
 
  []
@@ -823,34 +827,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--28
 
  []
 
-[12]) [13] (./Relazione.lof)
+[13]) [14] (./Relazione.lof)
 \tf@lof=\write4
 \openout4 = `Relazione.lof'.
 
- [14
+ [15
 
 ] (./Relazione.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'Relazione.run.xml'.
 \openout1 = `Relazione.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17758 strings out of 474116
- 351028 string characters out of 5743682
+ 17759 strings out of 474116
+ 351151 string characters out of 5743682
  1937187 words of memory out of 5000000
- 39906 multiletter control sequences out of 15000+600000
+ 39907 multiletter control sequences out of 15000+600000
  585066 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,19n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (14 pages, 589800 bytes).
+Output written on Relazione.pdf (15 pages, 586154 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 104 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
