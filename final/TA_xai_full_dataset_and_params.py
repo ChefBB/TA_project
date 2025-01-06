@@ -19,7 +19,7 @@ from sklearn.preprocessing import label_binarize, LabelEncoder
 
 from lime.lime_text import LimeTextExplainer
 
-df = pd.read_csv(r".\\data\\lab_lem_merge.csv", skipinitialspace=True)
+df = pd.read_csv(r".\\models\\data\\lab_lem_merge.csv", skipinitialspace=True)
 
 import ast
 
