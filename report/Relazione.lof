@@ -1,9 +1,8 @@
 \babel@toc {english}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Plutchik's eight primary emotions}}{1}{}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Number of stanzas for each label}}{3}{}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Random Forest - plots}}{7}{}%
-\contentsline {figure}{\numberline {4}{\ignorespaces SVM - plots}}{8}{}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Convolutional Neural Network - plots}}{9}{}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Recurrent Neural Network - plots}}{10}{}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Confusion matrix for a 80-epochs recurrent neural network}}{11}{}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Explainability - visualization}}{12}{}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Number of stanzas for each label}}{3}{}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Random Forest - plots}}{7}{}%
+\contentsline {figure}{\numberline {3}{\ignorespaces SVM - plots}}{8}{}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Convolutional Neural Network - plots}}{9}{}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Recurrent Neural Network - plots}}{10}{}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Confusion matrix for a 80-epochs recurrent neural network}}{11}{}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Explainability - visualization}}{12}{}%
