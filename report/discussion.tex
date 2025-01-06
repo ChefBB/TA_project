@@ -4,24 +4,23 @@ The results presented in the previous chapter show general
 uncertainty in the models. This has a few possible explanations:
 one of the most likely is the significant overlap of features. This
 might explain why all class-wide accuracy plots show the predominance of one
-or two classes.\\
+or two classes over the rest. In different trainings, the resulting predominant
+classes seem to be chosen at random.\\
 
-There are clear indications of this issue in the performances of neural networks,
-particularly the recurrent architecture.
+There are clear indications of this issue in the recurrrent network's performances.
 The model presented in the previous chapter shows a general low training accuracy
-(figure~\ref{fig:rnn_train_val_acc}), which translates into slightly better
-performances for all classes (figures~\ref{fig:rnn_classacc},~\ref{fig:rnn_confmatr}).
-With a lower number of epochs, the general tendency is to assign most predictions
-to one class and have another class with high accuracy, but less predictions
-(figure~\ref{fig:rnn_confmatr80}).
+(figure~\ref{fig:rnn_train_val_acc}), but this was the configuration that
+yielded better class-wise accuracies (figures~\ref{fig:rnn_classacc},~\ref{fig:rnn_confmatr}).
+With a lower number of epochs, the two predominant classes tendency is worsened, as shown below for an
+80 epochs model (figure~\ref{fig:rnn_confmatr80}).
 \begin{figure}[H]
     \centering
-    \includegraphics[scale= 0.55]{pictures/rnn_confusion_matrix_80_epochs.png}
+    \includegraphics[scale= 0.4]{pictures/rnn_confusion_matrix_80_epochs.png}
     \caption{Confusion matrix for a 80-epochs recurrent neural network}
     \label{fig:rnn_confmatr80}
 \end{figure}
-It is possible that with a higher number of epochs the model continues improving
-on lower performing classes, but for computational reasons this was not tested.
+It is possible that with higher numbers of epochs the model continues improving
+on lower performing classes, but for computational reasons this was not tested.\\
 % in the training and validation accuracy plot (figure~\ref{fig:rnn_train_val_acc}):
 % once training accuracy begins to rise meaningfully, the model quickly overfits.
 % Additional insights are provided by the confusion matrix and class-wise accuracy
@@ -33,11 +32,12 @@ on lower performing classes, but for computational reasons this was not tested.
 The convolutional architecture reaches a better training accuracy, but with minimal
 corresponding gains in validation accuracy
 (figures~\ref{fig:cnn_train_val_acc}).
-The model also shows the characteristic of having a single
-predominant class and a second class with good accuracy, as seen in
-the confusion matrix and class-wise accuracy plot
-(figures~\ref{fig:cnn_classacc},~\ref{fig:cnn_confmatr}), though
-to a lesser extent.\\
+To a lesser extent, the model also shows the two predominant classes tendency,
+as seen in the confusion matrix and class-wise accuracy plot
+(figures~\ref{fig:cnn_classacc},~\ref{fig:cnn_confmatr}).\\
+
+The static models (Random Forest in particular) have better perfomances in this metric as well,
+although it is still present.
 
 To address this issue, one solution could be applying a filter to exclude the most
 common words, allowing the remaining words to better convey clear emotional

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  6 JAN 2025 12:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  6 JAN 2025 12:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -525,26 +525,26 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 107.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 108.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (./Relazione.aux)
 \openout1 = `Relazione.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 107.
-LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 108.
+LaTeX Font Info:    ... okay on input line 108.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -629,8 +629,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Relazione.bbl' found.
  (./Relazione.bbl)
-Package biblatex Info: Reference section=0 on input line 107.
-Package biblatex Info: Reference segment=0 on input line 107.
+Package biblatex Info: Reference section=0 on input line 108.
+Package biblatex Info: Reference segment=0 on input line 108.
 \c@lstlisting=\count422
  (./abstract.tex
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 11.
@@ -659,13 +659,14 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 <pictures/plutchik_primary_emotions.png, id=1, 357.335pt x 356.33125pt>
 File: pictures/plutchik_primary_emotions.png Graphic file (type png)
 <use pictures/plutchik_primary_emotions.png>
-Package pdftex.def Info: pictures/plutchik_primary_emotions.png  used on input line 13.
-(pdftex.def)             Requested size: 107.20132pt x 106.90019pt.
+Package pdftex.def Info: pictures/plutchik_primary_emotions.png  used on input line 25.
+(pdftex.def)             Requested size: 127.45044pt x 127.09384pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--16
+Underfull \hbox (badness 10000) in paragraph at lines 12--29
 
  []
 
+)
 
 Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                At least 21.74998pt needed,
@@ -674,43 +675,48 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                processing, but you should do this yourself,
 (scrlayer-scrpage)                e.g., setting geometry's option
 (scrlayer-scrpage)                `head=21.74998pt'.
-(scrlayer-scrpage)                I'll also decrease \topmargin on input line 17.
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 135.
 
 
 Overfull \vbox (9.74998pt too high) has occurred while \output is active []
 
  [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}]) (./methods.tex
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc} <./pictures/plutchik_primary_emotions.png>] (./methods.tex
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [2 <./pictures/plutchik_primary_emotions.png>]
+)
 Underfull \hbox (badness 10000) in paragraph at lines 30--42
 
  []
 
-
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 43--47
 
  []
 
-<pictures/exploratory_graph.png, id=15, 627.3036pt x 396.0396pt>
+<pictures/exploratory_graph.png, id=16, 627.3036pt x 396.0396pt>
 File: pictures/exploratory_graph.png Graphic file (type png)
 <use pictures/exploratory_graph.png>
 Package pdftex.def Info: pictures/exploratory_graph.png  used on input line 109.
 (pdftex.def)             Requested size: 330.42041pt x 208.61281pt.
-[3]
+[3 <./pictures/exploratory_graph.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 180--185
 
  []
 
-[4 <./pictures/exploratory_graph.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 186--191
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--189
 
  []
 
-[5]) (./results.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--192
+
+ []
+
+[4] [5]) (./results.tex
 <pictures/roc_rf.png, id=27, 417.7206pt x 328.8285pt>
 File: pictures/roc_rf.png Graphic file (type png)
 <use pictures/roc_rf.png>
@@ -756,65 +762,60 @@ Package pdftex.def Info: pictures/cnn_class_accuracy.png  used on input line 108
 File: pictures/cnn_confusion_matrix.png Graphic file (type png)
 <use pictures/cnn_confusion_matrix.png>
 Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 113.
-(pdftex.def)             Requested size: 250.17596pt x 250.16985pt.
-<pictures/cnn_roc_curve.png, id=44, 578.16pt x 433.62pt>
-File: pictures/cnn_roc_curve.png Graphic file (type png)
-<use pictures/cnn_roc_curve.png>
-Package pdftex.def Info: pictures/cnn_roc_curve.png  used on input line 118.
-(pdftex.def)             Requested size: 212.41261pt x 159.30547pt.
+(pdftex.def)             Requested size: 283.22162pt x 283.21927pt.
 [8 <./pictures/roc_svc.png> <./pictures/class_accuracy_SVC.png>]
-<pictures/rnn_accuracy.png, id=50, 578.16pt x 433.62pt>
+<pictures/rnn_accuracy.png, id=49, 578.16pt x 433.62pt>
 File: pictures/rnn_accuracy.png Graphic file (type png)
 <use pictures/rnn_accuracy.png>
 Package pdftex.def Info: pictures/rnn_accuracy.png  used on input line 145.
 (pdftex.def)             Requested size: 226.57297pt x 169.92494pt.
-<pictures/rnn_class_accuracy.png, id=51, 722.7pt x 578.16pt>
+<pictures/rnn_class_accuracy.png, id=50, 722.7pt x 578.16pt>
 File: pictures/rnn_class_accuracy.png Graphic file (type png)
 <use pictures/rnn_class_accuracy.png>
 Package pdftex.def Info: pictures/rnn_class_accuracy.png  used on input line 150.
 (pdftex.def)             Requested size: 236.01561pt x 188.80844pt.
-<pictures/rnn_confusion_matrix.png, id=52, 722.7pt x 722.7pt>
+<pictures/rnn_confusion_matrix.png, id=51, 722.7pt x 722.7pt>
 File: pictures/rnn_confusion_matrix.png Graphic file (type png)
 <use pictures/rnn_confusion_matrix.png>
 Package pdftex.def Info: pictures/rnn_confusion_matrix.png  used on input line 155.
-(pdftex.def)             Requested size: 250.17596pt x 250.16985pt.
-<pictures/rnn_roc_curve.png, id=53, 578.16pt x 433.62pt>
-File: pictures/rnn_roc_curve.png Graphic file (type png)
-<use pictures/rnn_roc_curve.png>
-Package pdftex.def Info: pictures/rnn_roc_curve.png  used on input line 160.
-(pdftex.def)             Requested size: 212.41261pt x 159.30547pt.
- [9 <./pictures/cnn_accuracy.png> <./pictures/cnn_class_accuracy.png> <./pictures/cnn_confusion_matrix.png> <./pictures/cnn_roc_curve.png>]) (./discussion.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--8
+(pdftex.def)             Requested size: 283.22162pt x 283.21927pt.
+ [9 <./pictures/cnn_accuracy.png> <./pictures/cnn_class_accuracy.png> <./pictures/cnn_confusion_matrix.png>]) (./discussion.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--9
 
  []
 
-[10 <./pictures/rnn_accuracy.png> <./pictures/rnn_class_accuracy.png> <./pictures/rnn_confusion_matrix.png> <./pictures/rnn_roc_curve.png>]
-<pictures/rnn_confusion_matrix_80_epochs.png, id=68, 722.7pt x 722.7pt>
+[10 <./pictures/rnn_accuracy.png> <./pictures/rnn_class_accuracy.png> <./pictures/rnn_confusion_matrix.png>]
+<pictures/rnn_confusion_matrix_80_epochs.png, id=64, 722.7pt x 722.7pt>
 File: pictures/rnn_confusion_matrix_80_epochs.png Graphic file (type png)
 <use pictures/rnn_confusion_matrix_80_epochs.png>
-Package pdftex.def Info: pictures/rnn_confusion_matrix_80_epochs.png  used on input line 19.
-(pdftex.def)             Requested size: 397.48622pt x 397.48622pt.
+Package pdftex.def Info: pictures/rnn_confusion_matrix_80_epochs.png  used on input line 18.
+(pdftex.def)             Requested size: 289.07487pt x 289.07487pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--41
+Underfull \hbox (badness 10000) in paragraph at lines 22--31
 
  []
 
 [11 <./pictures/rnn_confusion_matrix_80_epochs.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 32--38
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 42--47
 
  []
 
-<pictures/expl.png, id=73, 849.77475pt x 280.04625pt>
+<pictures/expl.png, id=69, 849.77475pt x 280.04625pt>
 File: pictures/expl.png Graphic file (type png)
 <use pictures/expl.png>
 Package pdftex.def Info: pictures/expl.png  used on input line 57.
 (pdftex.def)             Requested size: 467.37756pt x 154.0259pt.
-
+[12 <./pictures/expl.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 72--77
 
  []
 
-[12 <./pictures/expl.png>]) (./conclusions.tex
+) (./conclusions.tex
 Underfull \hbox (badness 10000) in paragraph at lines 16--23
 
  []
@@ -824,7 +825,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--29
 
  []
 
-) [13] [14] (./Relazione.lof)
+[13]) [14] (./Relazione.lof)
 \tf@lof=\write4
 \openout4 = `Relazione.lof'.
 
@@ -840,18 +841,18 @@ Package logreq Info: Writing requests to 'Relazione.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17793 strings out of 474116
- 352038 string characters out of 5743682
- 1938187 words of memory out of 5000000
- 39941 multiletter control sequences out of 15000+600000
+ 17777 strings out of 474116
+ 351558 string characters out of 5743682
+ 1937187 words of memory out of 5000000
+ 39925 multiletter control sequences out of 15000+600000
  585066 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,19n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (15 pages, 844208 bytes).
+Output written on Relazione.pdf (15 pages, 707171 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
+ 108 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
