@@ -1,101 +1,95 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  7 JAN 2025 11:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  7 JAN 2025 11:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/Gagia/Desktop/progetto_TXA/report/Relazione.tex
-(c:/Users/Gagia/Desktop/progetto_TXA/report/Relazione.tex
-LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2024-10-09>
-(C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
-Document Class: report 2024/02/08 v1.4n Standard LaTeX document class
-(C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
-File: size12.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
+**/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex
+(/Users/brunobarbieri/Documents/Uni/master/first/text_analytics/TA_project/report/Relazione.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count194
-\c@chapter=\count195
-\c@section=\count196
-\c@subsection=\count197
-\c@subsubsection=\count198
-\c@paragraph=\count199
-\c@subparagraph=\count266
-\c@figure=\count267
-\c@table=\count268
-\abovecaptionskip=\skip49
-\belowcaptionskip=\skip50
-\bibindent=\dimen141
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+\c@part=\count188
+\c@chapter=\count189
+\c@section=\count190
+\c@subsection=\count191
+\c@subsubsection=\count192
+\c@paragraph=\count193
+\c@subparagraph=\count194
+\c@figure=\count195
+\c@table=\count196
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count269
-\Gm@cntv=\count270
-\c@Gm@tempcnt=\count271
-\Gm@bindingoffset=\dimen142
-\Gm@wd@mp=\dimen143
-\Gm@odd@mp=\dimen144
-\Gm@even@mp=\dimen145
-\Gm@layoutwidth=\dimen146
-\Gm@layoutheight=\dimen147
-\Gm@layouthoffset=\dimen148
-\Gm@layoutvoffset=\dimen149
+\Gm@cnth=\count197
+\Gm@cntv=\count198
+\c@Gm@tempcnt=\count199
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
 \Gm@dimlist=\toks18
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2024/10/20 v24.12 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
-\babel@savecnt=\count272
-\U@D=\dimen150
-\l@unhyphenated=\language79
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/11/30 v24.14 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
+\babel@savecnt=\count266
+\U@D=\dimen149
+\l@unhyphenated=\language89
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count273
-
-*************************************
-* Local config file bblopts.cfg used
-*
-(C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.ldf
+\bbl@dirlevel=\count267
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
 Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
-(babel)             (\language73). Reported on input line 105.
+(babel)             (\language23). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
-(babel)             (\language73). Reported on input line 108.
-)) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babel-english.tex
+(babel)             (\language23). Reported on input line 108.
+)) (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
-Package: inputenc 2024/02/08 v1.3d Input encoding file
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks19
 \inpenc@posthook=\toks20
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlayer-scrpage.sty
-Package: scrlayer-scrpage 2024/10/24 v3.43 KOMA-Script package (end user interface for scrlayer)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlayer.sty
-Package: scrlayer 2024/10/24 v3.43 KOMA-Script package (defining layers and page styles)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrkbase.sty
-Package: scrkbase 2024/10/24 v3.43 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
-Package: scrbase 2024/10/24 v3.43 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.sty
-Package: scrlfile 2024/10/24 v3.43 KOMA-Script package (file load hooks)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-hook.sty
-Package: scrlfile-hook 2024/10/24 v3.43 KOMA-Script package (using LaTeX hooks)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
-Package: scrlogo 2024/10/24 v3.43 KOMA-Script package (logo)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+Package: scrlayer-scrpage 2023/07/07 v3.41 KOMA-Script package (end user interface for scrlayer)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrlayer.sty
+Package: scrlayer 2023/07/07 v3.41 KOMA-Script package (defining layers and page styles)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
 )))
-Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
-Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
 ))
-\footheight=\skip51
-Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 2182.
-)) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\mathptmx.sty
+\footheight=\skip50
+Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 2183.
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/mathptmx.sty
 Package: mathptmx 2020/03/25 PSNFSS-v9.3 Times w/ Math, improved (SPQR, WaS) 
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -130,274 +124,274 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
 LaTeX Info: Redefining \hbar on input line 50.
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
-Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
-Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 106.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen151
-\Gin@req@width=\dimen152
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen153
-\captionmargin=\dimen154
-\caption@leftmargin=\dimen155
-\caption@rightmargin=\dimen156
-\caption@width=\dimen157
-\caption@indent=\dimen158
-\caption@parindent=\dimen159
-\caption@hangindent=\dimen160
+\caption@tempdima=\dimen152
+\captionmargin=\dimen153
+\caption@leftmargin=\dimen154
+\caption@rightmargin=\dimen155
+\caption@width=\dimen156
+\caption@indent=\dimen157
+\caption@parindent=\dimen158
+\caption@hangindent=\dimen159
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count274
-\c@continuedfloat=\count275
+\c@caption@flags=\count268
+\c@continuedfloat=\count269
 )
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count276
+\c@subfigure=\count270
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count277
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
-Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+\c@subtable=\count271
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count278
+\etb@tempcnta=\count272
 )
-\csq@reset=\count279
-\csq@gtype=\count280
-\csq@glevel=\count281
-\csq@qlevel=\count282
-\csq@maxlvl=\count283
-\csq@tshold=\count284
+\csq@reset=\count273
+\csq@gtype=\count274
+\csq@glevel=\count275
+\csq@qlevel=\count276
+\csq@maxlvl=\count277
+\csq@tshold=\count278
 \csq@ltx@everypar=\toks21
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
-File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
-)) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count285
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+\lrq@indent=\count279
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
-Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
-\Urlmuskip=\muskip17
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count286
-\c@listtotal=\count287
-\c@listcount=\count288
-\c@liststart=\count289
-\c@liststop=\count290
-\c@citecount=\count291
-\c@citetotal=\count292
-\c@multicitecount=\count293
-\c@multicitetotal=\count294
-\c@instcount=\count295
-\c@maxnames=\count296
-\c@minnames=\count297
-\c@maxitems=\count298
-\c@minitems=\count299
-\c@citecounter=\count300
-\c@maxcitecounter=\count301
-\c@savedcitecounter=\count302
-\c@uniquelist=\count303
-\c@uniquename=\count304
-\c@refsection=\count305
-\c@refsegment=\count306
-\c@maxextratitle=\count307
-\c@maxextratitleyear=\count308
-\c@maxextraname=\count309
-\c@maxextradate=\count310
-\c@maxextraalpha=\count311
-\c@abbrvpenalty=\count312
-\c@highnamepenalty=\count313
-\c@lownamepenalty=\count314
-\c@maxparens=\count315
-\c@parenlevel=\count316
-\blx@tempcnta=\count317
-\blx@tempcntb=\count318
-\blx@tempcntc=\count319
-\c@blx@maxsection=\count320
-\blx@maxsegment@0=\count321
-\blx@notetype=\count322
-\blx@parenlevel@text=\count323
-\blx@parenlevel@foot=\count324
-\blx@sectionciteorder@0=\count325
-\blx@sectionciteorderinternal@0=\count326
-\blx@entrysetcounter=\count327
-\blx@biblioinstance=\count328
-\labelnumberwidth=\skip52
-\labelalphawidth=\skip53
-\biblabelsep=\skip54
-\bibitemsep=\skip55
-\bibnamesep=\skip56
-\bibinitsep=\skip57
-\bibparsep=\skip58
-\bibhang=\skip59
+\c@tabx@nest=\count280
+\c@listtotal=\count281
+\c@listcount=\count282
+\c@liststart=\count283
+\c@liststop=\count284
+\c@citecount=\count285
+\c@citetotal=\count286
+\c@multicitecount=\count287
+\c@multicitetotal=\count288
+\c@instcount=\count289
+\c@maxnames=\count290
+\c@minnames=\count291
+\c@maxitems=\count292
+\c@minitems=\count293
+\c@citecounter=\count294
+\c@maxcitecounter=\count295
+\c@savedcitecounter=\count296
+\c@uniquelist=\count297
+\c@uniquename=\count298
+\c@refsection=\count299
+\c@refsegment=\count300
+\c@maxextratitle=\count301
+\c@maxextratitleyear=\count302
+\c@maxextraname=\count303
+\c@maxextradate=\count304
+\c@maxextraalpha=\count305
+\c@abbrvpenalty=\count306
+\c@highnamepenalty=\count307
+\c@lownamepenalty=\count308
+\c@maxparens=\count309
+\c@parenlevel=\count310
+\blx@tempcnta=\count311
+\blx@tempcntb=\count312
+\blx@tempcntc=\count313
+\c@blx@maxsection=\count314
+\blx@maxsegment@0=\count315
+\blx@notetype=\count316
+\blx@parenlevel@text=\count317
+\blx@parenlevel@foot=\count318
+\blx@sectionciteorder@0=\count319
+\blx@sectionciteorderinternal@0=\count320
+\blx@entrysetcounter=\count321
+\blx@biblioinstance=\count322
+\labelnumberwidth=\skip51
+\labelalphawidth=\skip52
+\biblabelsep=\skip53
+\bibitemsep=\skip54
+\bibnamesep=\skip55
+\bibinitsep=\skip56
+\bibparsep=\skip57
+\bibhang=\skip58
 \blx@bcfin=\read3
 \blx@bcfout=\write3
-\blx@langwohyphens=\language80
-\c@mincomprange=\count329
-\c@maxcomprange=\count330
-\c@mincompwidth=\count331
+\blx@langwohyphens=\language90
+\c@mincomprange=\count323
+\c@maxcomprange=\count324
+\c@mincompwidth=\count325
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/blx-dm.def
 File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count332
-\c@savedafterword=\count333
-\c@annotator=\count334
-\c@savedannotator=\count335
-\c@author=\count336
-\c@savedauthor=\count337
-\c@bookauthor=\count338
-\c@savedbookauthor=\count339
-\c@commentator=\count340
-\c@savedcommentator=\count341
-\c@editor=\count342
-\c@savededitor=\count343
-\c@editora=\count344
-\c@savededitora=\count345
-\c@editorb=\count346
-\c@savededitorb=\count347
-\c@editorc=\count348
-\c@savededitorc=\count349
-\c@foreword=\count350
-\c@savedforeword=\count351
-\c@holder=\count352
-\c@savedholder=\count353
-\c@introduction=\count354
-\c@savedintroduction=\count355
-\c@namea=\count356
-\c@savednamea=\count357
-\c@nameb=\count358
-\c@savednameb=\count359
-\c@namec=\count360
-\c@savednamec=\count361
-\c@translator=\count362
-\c@savedtranslator=\count363
-\c@shortauthor=\count364
-\c@savedshortauthor=\count365
-\c@shorteditor=\count366
-\c@savedshorteditor=\count367
-\c@labelname=\count368
-\c@savedlabelname=\count369
-\c@institution=\count370
-\c@savedinstitution=\count371
-\c@lista=\count372
-\c@savedlista=\count373
-\c@listb=\count374
-\c@savedlistb=\count375
-\c@listc=\count376
-\c@savedlistc=\count377
-\c@listd=\count378
-\c@savedlistd=\count379
-\c@liste=\count380
-\c@savedliste=\count381
-\c@listf=\count382
-\c@savedlistf=\count383
-\c@location=\count384
-\c@savedlocation=\count385
-\c@organization=\count386
-\c@savedorganization=\count387
-\c@origlocation=\count388
-\c@savedoriglocation=\count389
-\c@origpublisher=\count390
-\c@savedorigpublisher=\count391
-\c@publisher=\count392
-\c@savedpublisher=\count393
-\c@language=\count394
-\c@savedlanguage=\count395
-\c@origlanguage=\count396
-\c@savedoriglanguage=\count397
-\c@pageref=\count398
-\c@savedpageref=\count399
-\shorthandwidth=\skip60
-\shortjournalwidth=\skip61
-\shortserieswidth=\skip62
-\shorttitlewidth=\skip63
-\shortauthorwidth=\skip64
-\shorteditorwidth=\skip65
-\locallabelnumberwidth=\skip66
-\locallabelalphawidth=\skip67
-\localshorthandwidth=\skip68
-\localshortjournalwidth=\skip69
-\localshortserieswidth=\skip70
-\localshorttitlewidth=\skip71
-\localshortauthorwidth=\skip72
-\localshorteditorwidth=\skip73
+\c@afterword=\count326
+\c@savedafterword=\count327
+\c@annotator=\count328
+\c@savedannotator=\count329
+\c@author=\count330
+\c@savedauthor=\count331
+\c@bookauthor=\count332
+\c@savedbookauthor=\count333
+\c@commentator=\count334
+\c@savedcommentator=\count335
+\c@editor=\count336
+\c@savededitor=\count337
+\c@editora=\count338
+\c@savededitora=\count339
+\c@editorb=\count340
+\c@savededitorb=\count341
+\c@editorc=\count342
+\c@savededitorc=\count343
+\c@foreword=\count344
+\c@savedforeword=\count345
+\c@holder=\count346
+\c@savedholder=\count347
+\c@introduction=\count348
+\c@savedintroduction=\count349
+\c@namea=\count350
+\c@savednamea=\count351
+\c@nameb=\count352
+\c@savednameb=\count353
+\c@namec=\count354
+\c@savednamec=\count355
+\c@translator=\count356
+\c@savedtranslator=\count357
+\c@shortauthor=\count358
+\c@savedshortauthor=\count359
+\c@shorteditor=\count360
+\c@savedshorteditor=\count361
+\c@labelname=\count362
+\c@savedlabelname=\count363
+\c@institution=\count364
+\c@savedinstitution=\count365
+\c@lista=\count366
+\c@savedlista=\count367
+\c@listb=\count368
+\c@savedlistb=\count369
+\c@listc=\count370
+\c@savedlistc=\count371
+\c@listd=\count372
+\c@savedlistd=\count373
+\c@liste=\count374
+\c@savedliste=\count375
+\c@listf=\count376
+\c@savedlistf=\count377
+\c@location=\count378
+\c@savedlocation=\count379
+\c@organization=\count380
+\c@savedorganization=\count381
+\c@origlocation=\count382
+\c@savedoriglocation=\count383
+\c@origpublisher=\count384
+\c@savedorigpublisher=\count385
+\c@publisher=\count386
+\c@savedpublisher=\count387
+\c@language=\count388
+\c@savedlanguage=\count389
+\c@origlanguage=\count390
+\c@savedoriglanguage=\count391
+\c@pageref=\count392
+\c@savedpageref=\count393
+\shorthandwidth=\skip59
+\shortjournalwidth=\skip60
+\shortserieswidth=\skip61
+\shorttitlewidth=\skip62
+\shortauthorwidth=\skip63
+\shorteditorwidth=\skip64
+\locallabelnumberwidth=\skip65
+\locallabelalphawidth=\skip66
+\localshorthandwidth=\skip67
+\localshortjournalwidth=\skip68
+\localshortserieswidth=\skip69
+\localshorttitlewidth=\skip70
+\localshortauthorwidth=\skip71
+\localshorteditorwidth=\skip72
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count400
-\c@textcitetotal=\count401
-\c@textcitemaxnames=\count402
-\c@biburlbigbreakpenalty=\count403
-\c@biburlbreakpenalty=\count404
-\c@biburlnumpenalty=\count405
-\c@biburlucpenalty=\count406
-\c@biburllcpenalty=\count407
-\biburlbigskip=\muskip18
-\biburlnumskip=\muskip19
-\biburlucskip=\muskip20
-\biburllcskip=\muskip21
-\c@smartand=\count408
+\c@textcitecount=\count394
+\c@textcitetotal=\count395
+\c@textcitemaxnames=\count396
+\c@biburlbigbreakpenalty=\count397
+\c@biburlbreakpenalty=\count398
+\c@biburlnumpenalty=\count399
+\c@biburlucpenalty=\count400
+\c@biburllcpenalty=\count401
+\biburlbigskip=\muskip17
+\biburlnumskip=\muskip18
+\biburlucskip=\muskip19
+\biburllcskip=\muskip20
+\c@smartand=\count402
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
 File: numeric.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count409
-\c@bbx:relatedtotal=\count410
+\c@bbx:relatedcount=\count403
+\c@bbx:relatedtotal=\count404
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cbx
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
 File: numeric.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -413,128 +407,128 @@ Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2024-10-09 L3 programming layer (loader) 
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count411
-\l__pdf_internal_box=\box52
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-02-20 L3 programming layer (loader) 
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count405
+\l__pdf_internal_box=\box51
 ))
 Package biblatex Info: ... and expl3
-(biblatex)             2024-10-09 L3 programming layer (loader) 
+(biblatex)             2024-02-20 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
-Package: xparse 2024-08-16 L3 Experimental document command parser
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2024-02-18 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
-)) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2023/10/27 v2.16 Sectioning titles
-\ttl@box=\box53
-\beforetitleunit=\skip74
-\aftertitleunit=\skip75
-\ttl@plus=\dimen161
-\ttl@minus=\dimen162
+\ttl@box=\box52
+\beforetitleunit=\skip73
+\aftertitleunit=\skip74
+\ttl@plus=\dimen160
+\ttl@minus=\dimen161
 \ttl@toksa=\toks22
-\titlewidth=\dimen163
-\titlewidthlast=\dimen164
-\titlewidthfirst=\dimen165
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+\titlewidth=\dimen162
+\titlewidthlast=\dimen163
+\titlewidthfirst=\dimen164
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count412
+\c@float@type=\count406
 \float@exts=\toks23
-\float@box=\box54
+\float@box=\box53
 \@float@everytoks=\toks24
-\@floatcapt=\box55
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count413
-\lst@gtempboxa=\box56
+\@floatcapt=\box54
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count407
+\lst@gtempboxa=\box55
 \lst@token=\toks25
-\lst@length=\count414
-\lst@currlwidth=\dimen166
-\lst@column=\count415
-\lst@pos=\count416
-\lst@lostspace=\dimen167
-\lst@width=\dimen168
-\lst@newlines=\count417
-\lst@lineno=\count418
-\lst@maxwidth=\dimen169
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
-File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
-File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count419
-\lst@skipnumbers=\count420
-\lst@framebox=\box57
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
-File: listings.cfg 2024/09/23 1.10c listings configuration
+\lst@length=\count408
+\lst@currlwidth=\dimen165
+\lst@column=\count409
+\lst@pos=\count410
+\lst@lostspace=\dimen166
+\lst@width=\dimen167
+\lst@newlines=\count411
+\lst@lineno=\count412
+\lst@maxwidth=\dimen168
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+\c@lstnumber=\count413
+\lst@skipnumbers=\count414
+\lst@framebox=\box56
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/02/21 1.10 listings configuration
 ))
-Package: listings 2024/09/23 1.10c (Carsten Heinz)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+Package: listings 2024/02/21 1.10 (Carsten Heinz)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1365.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
-Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
-\col@sep=\dimen170
-\ar@mcellbox=\box58
-\extrarowheight=\dimen171
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen169
+\ar@mcellbox=\box57
+\extrarowheight=\dimen170
 \NC@list=\toks26
-\extratabsurround=\skip76
-\backup@length=\skip77
-\ar@cellbox=\box59
+\extratabsurround=\skip75
+\backup@length=\skip76
+\ar@cellbox=\box58
 )
-\TX@col@width=\dimen172
-\TX@old@table=\dimen173
-\TX@old@col=\dimen174
-\TX@target=\dimen175
-\TX@delta=\dimen176
-\TX@cols=\count421
+\TX@col@width=\dimen171
+\TX@old@table=\dimen172
+\TX@old@col=\dimen173
+\TX@target=\dimen174
+\TX@delta=\dimen175
+\TX@cols=\count415
 \TX@ftn=\toks27
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/ragged2e/ragged2e.sty
 Package: ragged2e 2023/06/22 v3.6 ragged2e Package
-\CenteringLeftskip=\skip78
-\RaggedLeftLeftskip=\skip79
-\RaggedRightLeftskip=\skip80
-\CenteringRightskip=\skip81
-\RaggedLeftRightskip=\skip82
-\RaggedRightRightskip=\skip83
-\CenteringParfillskip=\skip84
-\RaggedLeftParfillskip=\skip85
-\RaggedRightParfillskip=\skip86
-\JustifyingParfillskip=\skip87
-\CenteringParindent=\skip88
-\RaggedLeftParindent=\skip89
-\RaggedRightParindent=\skip90
-\JustifyingParindent=\skip91
+\CenteringLeftskip=\skip77
+\RaggedLeftLeftskip=\skip78
+\RaggedRightLeftskip=\skip79
+\CenteringRightskip=\skip80
+\RaggedLeftRightskip=\skip81
+\RaggedRightRightskip=\skip82
+\CenteringParfillskip=\skip83
+\RaggedLeftParfillskip=\skip84
+\RaggedRightParfillskip=\skip85
+\JustifyingParfillskip=\skip86
+\CenteringParindent=\skip87
+\RaggedLeftParindent=\skip88
+\RaggedRightParindent=\skip89
+\JustifyingParindent=\skip90
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 108.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) (Relazione.aux)
+) (./Relazione.aux)
 \openout1 = `Relazione.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
@@ -598,25 +592,25 @@ Package scrlayer-scrpage Warning: Very small head height detected!
 (scrlayer-scrpage)                geometry option `head=21.75pt'
 (scrlayer-scrpage)                \relax to avoid this warning.
 
-\big@size=\dimen177
-(C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+\big@size=\dimen176
+(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count422
-\scratchdimen=\dimen178
-\scratchbox=\box60
-\nofMPsegments=\count423
-\nofMParguments=\count424
+\scratchcounter=\count416
+\scratchdimen=\dimen177
+\scratchbox=\box59
+\nofMPsegments=\count417
+\nofMParguments=\count418
 \everyMPshowfont=\toks28
-\MPscratchCnt=\count425
-\MPscratchDim=\dimen179
-\MPnumerator=\count426
-\makeMPintoPDFobject=\count427
+\MPscratchCnt=\count419
+\MPscratchDim=\dimen178
+\MPnumerator=\count420
+\makeMPintoPDFobject=\count421
 \everyMPtoPDFconversion=\toks29
-) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -624,7 +618,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -634,25 +628,25 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Relazione.bbl' found.
- (Relazione.bbl)
+ (./Relazione.bbl)
 Package biblatex Info: Reference section=0 on input line 108.
 Package biblatex Info: Reference segment=0 on input line 108.
-\c@lstlisting=\count428
- (abstract.tex
+\c@lstlisting=\count422
+ (./abstract.tex
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 12.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 12.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlztmcm.fd
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 12.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsztmcm.fd
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 12.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxztmcm.fd
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
@@ -661,7 +655,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
-) (introduzione.tex
+) (./introduzione.tex
 <pictures/plutchik_primary_emotions.png, id=1, 357.335pt x 356.33125pt>
 File: pictures/plutchik_primary_emotions.png Graphic file (type png)
 <use pictures/plutchik_primary_emotions.png>
@@ -673,7 +667,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--29
  []
 
 )
-
 
 Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                At least 21.74998pt needed,
@@ -689,29 +682,25 @@ Overfull \vbox (9.74998pt too high) has occurred while \output is active []
 
  [1
 
-{C:/Users/Gagia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./pictures/plutchik_primary_emotions.png>] (methods.tex
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc} <./pictures/plutchik_primary_emotions.png>] (./methods.tex
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8.
- (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 30--42
 
  []
 
-
-
 [2]
 Underfull \hbox (badness 10000) in paragraph at lines 43--47
 
  []
 
-<pictures/exploratory_graph.png, id=15, 627.3036pt x 396.0396pt>
+<pictures/exploratory_graph.png, id=16, 627.3036pt x 396.0396pt>
 File: pictures/exploratory_graph.png Graphic file (type png)
 <use pictures/exploratory_graph.png>
 Package pdftex.def Info: pictures/exploratory_graph.png  used on input line 109.
 (pdftex.def)             Requested size: 330.42041pt x 208.61281pt.
-
-
 [3 <./pictures/exploratory_graph.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 183--188
 
@@ -727,21 +716,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 193--195
 
  []
 
-
-
-[4]
-
-[5]) (results.tex
+[4] [5]) (./results.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--10
 
  []
 
-<pictures/class_accuracy_rf.png, id=26, 722.7pt x 578.16pt>
+<pictures/class_accuracy_rf.png, id=27, 722.7pt x 578.16pt>
 File: pictures/class_accuracy_rf.png Graphic file (type png)
 <use pictures/class_accuracy_rf.png>
 Package pdftex.def Info: pictures/class_accuracy_rf.png  used on input line 33.
 (pdftex.def)             Requested size: 259.6186pt x 207.69633pt.
-<pictures/confusion_matrix_rf.png, id=27, 867.24pt x 867.24pt>
+<pictures/confusion_matrix_rf.png, id=28, 867.24pt x 867.24pt>
 File: pictures/confusion_matrix_rf.png Graphic file (type png)
 <use pictures/confusion_matrix_rf.png>
 Package pdftex.def Info: pictures/confusion_matrix_rf.png  used on input line 39.
@@ -751,20 +736,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--45
 
  []
 
-
-
 [6]
-<pictures/cnn_accuracy.png, id=32, 578.16pt x 433.62pt>
+<pictures/cnn_accuracy.png, id=33, 578.16pt x 433.62pt>
 File: pictures/cnn_accuracy.png Graphic file (type png)
 <use pictures/cnn_accuracy.png>
 Package pdftex.def Info: pictures/cnn_accuracy.png  used on input line 138.
 (pdftex.def)             Requested size: 226.57297pt x 169.92494pt.
-<pictures/cnn_class_accuracy.png, id=33, 722.7pt x 578.16pt>
+<pictures/cnn_class_accuracy.png, id=34, 722.7pt x 578.16pt>
 File: pictures/cnn_class_accuracy.png Graphic file (type png)
 <use pictures/cnn_class_accuracy.png>
 Package pdftex.def Info: pictures/cnn_class_accuracy.png  used on input line 143.
 (pdftex.def)             Requested size: 212.41261pt x 169.92935pt.
-<pictures/cnn_confusion_matrix.png, id=34, 722.7pt x 722.7pt>
+<pictures/cnn_confusion_matrix.png, id=35, 722.7pt x 722.7pt>
 File: pictures/cnn_confusion_matrix.png Graphic file (type png)
 <use pictures/cnn_confusion_matrix.png>
 Package pdftex.def Info: pictures/cnn_confusion_matrix.png  used on input line 148.
@@ -774,37 +757,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--154
 
  []
 
-
-
-[7 <./pictures/class_accuracy_rf.png> <./pictures/confusion_matrix_rf.png>]
-
-[8]
-<pictures/rnn_accuracy.png, id=44, 578.16pt x 433.62pt>
+[7 <./pictures/class_accuracy_rf.png> <./pictures/confusion_matrix_rf.png>] [8]
+<pictures/rnn_accuracy.png, id=45, 578.16pt x 433.62pt>
 File: pictures/rnn_accuracy.png Graphic file (type png)
 <use pictures/rnn_accuracy.png>
 Package pdftex.def Info: pictures/rnn_accuracy.png  used on input line 175.
 (pdftex.def)             Requested size: 226.57297pt x 169.92494pt.
-<pictures/rnn_class_accuracy.png, id=45, 722.7pt x 578.16pt>
+<pictures/rnn_class_accuracy.png, id=46, 722.7pt x 578.16pt>
 File: pictures/rnn_class_accuracy.png Graphic file (type png)
 <use pictures/rnn_class_accuracy.png>
 Package pdftex.def Info: pictures/rnn_class_accuracy.png  used on input line 180.
 (pdftex.def)             Requested size: 236.01561pt x 188.80844pt.
-<pictures/rnn_confusion_matrix.png, id=46, 722.7pt x 722.7pt>
+<pictures/rnn_confusion_matrix.png, id=47, 722.7pt x 722.7pt>
 File: pictures/rnn_confusion_matrix.png Graphic file (type png)
 <use pictures/rnn_confusion_matrix.png>
 Package pdftex.def Info: pictures/rnn_confusion_matrix.png  used on input line 185.
 (pdftex.def)             Requested size: 283.22162pt x 283.21927pt.
-
-
-[9 <./pictures/cnn_accuracy.png> <./pictures/cnn_class_accuracy.png> <./pictures/cnn_confusion_matrix.png>]) (discussion.tex
+ [9 <./pictures/cnn_accuracy.png> <./pictures/cnn_class_accuracy.png> <./pictures/cnn_confusion_matrix.png>]) (./discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--9
 
  []
 
-
-
 [10 <./pictures/rnn_accuracy.png> <./pictures/rnn_class_accuracy.png> <./pictures/rnn_confusion_matrix.png>]
-<pictures/rnn_confusion_matrix_80_epochs.png, id=59, 722.7pt x 722.7pt>
+<pictures/rnn_confusion_matrix_80_epochs.png, id=60, 722.7pt x 722.7pt>
 File: pictures/rnn_confusion_matrix_80_epochs.png Graphic file (type png)
 <use pictures/rnn_confusion_matrix_80_epochs.png>
 Package pdftex.def Info: pictures/rnn_confusion_matrix_80_epochs.png  used on input line 18.
@@ -813,8 +788,6 @@ Package pdftex.def Info: pictures/rnn_confusion_matrix_80_epochs.png  used on in
 Underfull \hbox (badness 10000) in paragraph at lines 22--31
 
  []
-
-
 
 [11 <./pictures/rnn_confusion_matrix_80_epochs.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 32--38
@@ -831,7 +804,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--48
 
  []
 
-<pictures/expl.png, id=64, 849.77475pt x 280.04625pt>
+<pictures/expl.png, id=65, 849.77475pt x 280.04625pt>
 File: pictures/expl.png Graphic file (type png)
 <use pictures/expl.png>
 Package pdftex.def Info: pictures/expl.png  used on input line 58.
@@ -841,9 +814,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--77
 
  []
 
-
-
-[12 <./pictures/expl.png>]) (conclusions.tex
+[12 <./pictures/expl.png>]) (./conclusions.tex
 Underfull \hbox (badness 10000) in paragraph at lines 16--22
 
  []
@@ -853,39 +824,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--28
 
  []
 
-
-
-[13])
-
-[14] (Relazione.lof)
+[13]) [14] (./Relazione.lof)
 \tf@lof=\write4
 \openout4 = `Relazione.lof'.
 
+ [15
 
-
-[15
-
-] (Relazione.aux)
+] (./Relazione.aux)
  ***********
-LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2024-10-09>
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
  ***********
 Package logreq Info: Writing requests to 'Relazione.run.xml'.
 \openout1 = `Relazione.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17767 strings out of 473897
- 353563 string characters out of 5726462
- 1223986 words of memory out of 5000000
- 40423 multiletter control sequences out of 15000+600000
+ 17758 strings out of 474116
+ 351138 string characters out of 5743682
+ 1937187 words of memory out of 5000000
+ 39906 multiletter control sequences out of 15000+600000
  585066 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,19n,121p,1229b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relazione.pdf (15 pages, 593857 bytes).
+ 123i,19n,121p,1215b,1759s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Relazione.pdf (15 pages, 585730 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
+ 104 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
