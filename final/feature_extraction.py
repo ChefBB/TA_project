@@ -15,7 +15,7 @@ nltk.download('stopwords')
 nltk.download('punkt')
 
 
-df = pd.read_csv(".\\data\\resampled_data_for_tf_idf.csv", skipinitialspace=True)
+df = pd.read_csv(".\\models\\data\\resampled_data_for_tf_idf.csv", skipinitialspace=True)
 
 
 # Defining the stopwords
