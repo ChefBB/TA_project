@@ -14,15 +14,11 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import classification_report, roc_curve, auc
+import datetime
 
-# Reading the dataframe
-path = 'C:\\Users\\cinna\\Desktop\\progetto_TA\\Data\\'
-df = pd.read_csv(path + "lab_lem_merge.csv")
+df = pd.read_csv("data/lab_lem_merge.csv")
 
 df['lemmatized_stanzas'] = df['lemmatized_stanzas'].apply(ast.literal_eval)
-
-# Visualizing the dataframe
-df
 
 # Converting the token lists back into space-separated strings
 # (needed for vectorizer)
@@ -40,22 +36,20 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 # Converting the boolean array into an integer object
 def convert_bool_to_int(x):
+    """
+    Convert a boolean array to integers.bjects:
+
+    Parameters:
+    - x: array-like
+        An array of boolean values to be converted to integers.
+
+    Returns:
+    - array-like
+        An array of integers (0 or 1) corresponding to the input booleans.
+
+    """
     return x.astype(int)
 
-"""
-Convert a boolean array to integers.bjects:
-
-   Parameters:
-   - x: array-like
-     An array of boolean values to be converted to integers.
-
-   Returns:
-   - array-like
-     An array of integers (0 or 1) corresponding to the input booleans.
-
-"""
-
-# Defining the preprocessor
 
 preprocessor = ColumnTransformer(
     transformers=[
@@ -94,50 +88,41 @@ Preprocessing steps:
 
 ### RANDOM FOREST ###
 
-# Define the pipeline
 rf_pipeline = Pipeline([
     ('preprocessor', preprocessor),
     ('classifier', RandomForestClassifier(random_state=42))
 ])
 
 rf_param_distributions = {
-    'preprocessor__text__max_features': [500, 1000, 5000, None],  # Max features for TF-IDF
-    'preprocessor__text__ngram_range': [(1, 1), (1, 2)],          # Unigrams or bigrams
-    'classifier__n_estimators': [50, 100, 200, 300],              # Number of trees
-    'classifier__max_depth': [None, 10, 20, 30],                  # Tree depth
-    'classifier__min_samples_split': [2, 5, 10],                  # Min samples per split
-    'classifier__min_samples_leaf': [1, 2, 4],                    # Min samples per leaf
-    'classifier__bootstrap': [True, False],                       # Bootstrap sampling
+    'preprocessor__text__max_features': [500, 1000, 5000, None],
+    'preprocessor__text__ngram_range': [(1, 1), (1, 2)],
+    'classifier__n_estimators': [50, 100, 200, 300],
+    'classifier__max_depth': [None, 10, 20, 30],
+    'classifier__min_samples_split': [2, 5, 10],
+    'classifier__min_samples_leaf': [1, 2, 4],
+    'classifier__bootstrap': [True, False],
 }
 
 # RandomizedSearchCV setup
 random_search_rf = RandomizedSearchCV(
     estimator= rf_pipeline,
     param_distributions= rf_param_distributions,
-    n_iter=20,                                  # Number of random combinations to try
-    cv=5,                                       # 5-fold cross-validation
-    scoring='accuracy',                         # Metric to optimize
+    n_iter=20,
+    cv=5,
+    scoring='accuracy',
     verbose=2,
     random_state=42,
-    n_jobs=-1                                   # Use all available cores
+    n_jobs=-1
 )
 
-# Fit RandomizedSearchCV to the data
-#random_search_rf.fit(X_train, y_train)
 
-# Best parameters and cross-validation accuracy
-# print(f"Best Parameters: {random_search_rf.best_params_}")
-# print(f"Best Cross-Validation Accuracy: {random_search_rf.best_score_}")
+model_path = 'RF' + datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
 
-# The model was trained, saved and loaded for further inspection using joblib
 
-model_path = '/Users/brunobarbieri/Library/CloudStorage/OneDrive-UniversityofPisa/TA_Project/models/'
-
-'''import joblib
 joblib.dump(
     random_search_rf.best_estimator_,
-    model_path + 'RF_' + datetime.now().strftime("%d-%m-%Y_%H-%M-%S") + '.pkl'
-)'''
+    model_path + 'RF_' +  + '.pkl'
+)
 
 rf_path = "C:\\Users\\cinna\\Downloads\\OneDrive_2_05-01-2025\\RF_01-01-2025_16-24-37.pkl"
 rf_loaded = joblib.load(rf_path)
@@ -209,7 +194,7 @@ def plot_class_wise_accuracy(y_test, y_pred, classes: pd.Series | list, folder_p
     
     plt.savefig(folder_path + '/class_accuracy_SVC.png')
 
-plot_class_wise_accuracy(y_test, y_pred_rf, classes = classes_list, folder_path= "C:\\Users\\cinna\\Desktop\\progetto_TA\\Immagini")
+plot_class_wise_accuracy(y_test, y_pred_rf, classes = classes_list, folder_path= )
 
 ### SUPPORT VECTOR MACHINE ###
 

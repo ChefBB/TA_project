@@ -12,6 +12,21 @@ Arguments:
         - 2: Support Vector Machine (SVM)
         - 3: 1D Convolutional Neural Network (CNN)
         - 4: Recurrent Neural Network (RNN)
+
+From within the main directory of the project, run a demo using the following:
+
+python models/classify.py --model-folder models/static_models/<model> --type <appropriate_type>
+
+To test on random forest:
+python3 models/classify.py --model-folder models/static_models/rf_model.pkl --type 1
+
+To test on 1dconvnet:
+python3 models/classify.py --model-folder models/1DConvnet/ --type 3
+
+To test on rnn:
+python3 models/classify.py --model-folder models/RNN/ --type 4
+
+Note: this script was not tested for svm models.
 """
 
 import preprocessing
@@ -21,6 +36,7 @@ import argparse
 import pandas as pd
 import numpy as np
 import joblib
+import ast
 from tensorflow.keras.models import load_model
 
 # arguments
@@ -30,7 +46,7 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument(
     '--dataset', type= str, required= False,
-    default= 'data/unlabeled_sample.csv',
+    default= 'models/data/unlabeled_sample.csv',
     help= 'Path to .csv file to classify.'
 )
 
@@ -47,6 +63,19 @@ parser.add_argument(
 emotion_labels = [
     'anger', 'anticipation', 'disgust', 'fear', 'joy', 'sadness', 'surprise', 'trust'
 ]
+
+
+def convert_bool_to_int(x: np.ndarray) -> np.ndarray:
+    """
+    Converts bool to int
+
+    Args:
+        x (np.ndarray): a matrix of booleans
+
+    Returns:
+        np.ndarray: a matrix of integers
+    """
+    return x.astype(int)
 
 
 def translate_into_labels(predictions: np.ndarray) -> pd.Series:
@@ -84,29 +113,28 @@ def classify(dataset: str | pd.DataFrame,
 
     Returns:
         pd.Series: series of labels.
+        
+    Note: this method was not tested for svm models.
     """
     if isinstance(dataset, str):
         dataset = pd.read_csv(dataset)
     
     if t == 1 or t == 2:
         # prepare data
-        dataset['text_str'] = dataset[['lemmatized_stanzas']].apply(
-            lambda x: ' '.join(x)
-        )
+        dataset['lemmatized_stanzas'] = dataset['lemmatized_stanzas'].apply(ast.literal_eval)
+
+        dataset['text_str'] = dataset['lemmatized_stanzas'].apply(lambda x: ' '.join(x))
         
         # load model
-        model = joblib.load(
-            model_folder +
-            ('rf' if t == 1 else 'svc') +
-            '_model.joblib')
+        model = joblib.load(model_folder)
         
         # predict
-        return model.predict(
+        return pd.Series(model.predict(
             dataset[[
                 'text_str', 'title', 'stanza_number', 'is_country',
                 'is_pop', 'is_rap', 'is_rb', 'is_rock', 'is_chorus'
             ]]
-        )
+        ))
     
     else:
         X_unlabeled = {

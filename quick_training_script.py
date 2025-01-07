@@ -91,7 +91,7 @@ model = Pipeline([
 
 model.fit(X_train, y_train)
 
-joblib.dump(model, '/final/models/static_models/rf_model.joblib')
+joblib.dump(model, 'final/models/static_models/rf_model.joblib')
 
 # print(f"Best Parameters: {model.best_params_}")
 # print(f"Best Cross-Validation Accuracy: {model.best_score_}")
