@@ -1,21 +1,21 @@
-### FEATURE EXTRACTION: TF-IDF TO IDENTIFY THE MOST IMPORTANT FEATURES FOR EACH LABEL 
+
+'''
+This script further cleans the already lemmatized and labelled dataframe with a specified stopwords list. Then finds the most important
+feature for each emotion. 
+
+'''
 
 import pandas as pd
 import numpy as np
-import gensim
 import string
 import re
 import nltk
 
 from nltk.tokenize import word_tokenize
-from gensim import corpora
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 nltk.download('stopwords')
 nltk.download('punkt')
-
-
-df = pd.read_csv(".\\models\\data\\resampled_data_for_tf_idf.csv", skipinitialspace=True)
 
 
 # Defining the stopwords
@@ -35,8 +35,7 @@ stopwords.extend(stopwords_adhoc)
 stopwords.extend(punctuation)
 
 
-### Remove further noise from the texts: empty strings, numbers, apostrophes, quotation marks, expressions like "can't
-
+### Remove further noise from the texts: empty strings, numbers, apostrophes, quotation marks, expressions like "can't"
 
 def cleaning(data):
     """
@@ -63,48 +62,20 @@ def cleaning(data):
 
     return data_cleaned
 
-
-
-def formats(data):
+# Function to read and clean the dataframe
+def preprocess_and_clean_data(file_path):
     """
-    Converts a given list of text data into a Bag-of-Words (BOW) representation using Gensim's Dictionary and corpus utilities.
+    Reads and cleans the dataframe selected through file_path.
 
     Args:
-        data (list of list of str): A list where each element is a document represented as a list of words (tokens).
+        file_path (str): path to the CSV file.
 
     Returns:
-        tuple: A tuple containing:
-            - dictionary (gensim.corpora.Dictionary): The dictionary mapping each unique word to a unique id.
-            - corpus (list of list of tuples): A list of Bag-of-Words representations for each document, 
-              where each document is a list of (word_id, frequency) pairs.
-            - word_doc_matrix (numpy.ndarray): A dense matrix where each row corresponds to a document, 
-              and each column corresponds to the frequency of a word from the dictionary in that document.
-
-    Prints:
-        - The Gensim dictionary object.
-        - The Bag-of-Words (BOW) representation for each document.
+        pd.DataFrame: DataFrame with cleaned texts.
     """
-    #Creating a dictionary on which the model can be based
-    dictionary = corpora.Dictionary(data)
-    print(dictionary)
-
-    #Taking the id of each word
-    dictionary.token2id
-
-    #Transforming the corpus
-    corpus = [dictionary.doc2bow(text) for text in data]
-
-    #Visualizing the BOW
-    for i, doc in enumerate(corpus):
-        print("document:\t", data[i])
-        print("Bag-of-words:\t", [(dictionary[_id], freq) for _id, freq in doc])
-        print()
-
-    #Space vector
-    word_doc_matrix = gensim.matutils.corpus2dense(corpus, num_terms = len(dictionary))
-    word_doc_matrix.shape
-    return dictionary, corpus, word_doc_matrix
-
+    df = pd.read_csv(file_path)
+    df["canzoni_cleaned"] = cleaning(df["lemmatized_stanzas"])
+    return df
 
 
 #Function to compute tf-idf
@@ -161,47 +132,18 @@ def select_emotion(dataframe: pd.Series, emotion) -> pd.DataFrame:
 
     return canzoni_emotion
 
+# Run the script
+if __name__ == "__main__":
+    # Percorso al dataset
+    file_path = ".\\models\\data\\resampled_data_for_tf_idf.csv"
+    
+    # Preprocessing e pulizia
+    df = preprocess_and_clean_data(file_path)
 
-# Cleaning of the songs
-df["canzoni_cleaned"] = cleaning(df["lemmatized_stanzas"])
-
-
-#TfIdf for Anger
-canzoni_anger = select_emotion(df, emotion = "anger")
-tf_idf(canzoni_anger)
-
-
-#Tf-Idf for Anticipation
-canzoni_anticipation = select_emotion(df, emotion = "anticipation")
-tf_idf(canzoni_anticipation)
-
-
-#TfIdf for Disgust
-canzoni_disgust = select_emotion(df, emotion = "disgust")
-tf_idf(canzoni_disgust)
-
-
-#Tf_Idf for Fear
-canzoni_fear = select_emotion(df, emotion = "fear")
-tf_idf(canzoni_fear)
-
-
-#Tf-Idf for Joy
-canzoni_joy = select_emotion(df, emotion = "joy")
-tf_idf(canzoni_joy)
-
-
-#Tf-Idf for Sadness
-canzoni_sadness = select_emotion(df, emotion = "sadness")
-tf_idf(canzoni_sadness)
-
-
-#Tf_Idf for Surprise
-canzoni_surprise = select_emotion(df, emotion = "surprise")
-tf_idf(canzoni_surprise)
-
-
-#Tf-Idf for Trust
-canzoni_trust = select_emotion(df, emotion = "surprise")
-tf_idf(canzoni_trust)
+    # Calcolo TF-IDF per ogni emozione
+    emotions = ["anger", "anticipation", "disgust", "fear", "joy", "sadness", "surprise", "trust"]
+    for emotion in emotions:
+        print(f"TF-IDF per {emotion}")
+        canzoni = select_emotion(df, emotion)
+        tf_idf(canzoni)
 
