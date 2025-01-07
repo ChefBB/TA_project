@@ -133,6 +133,12 @@ def is_chorus(stanza):
         pattern = r"^\s*[\[\(]?(Hook|Chorus|Refrain|Bridge)\s*(\]|\))"
         return bool(re.match(pattern, stanza, re.IGNORECASE))
 
+# Add a new column "is_chorus" to flag whether each stanza is part of a chorus:
+# 1. Apply the `is_chorus` function to check if a stanza explicitly contains section labels like "[Chorus]" or "(Hook)".
+# 2. Group stanzas by their original song (using the DataFrame index) and flag repeated stanzas 
+#    (using `.duplicated(keep=False)`) since choruses are often repeated within a song.
+# 3. Combine these two conditions with a logical OR (`|`), marking a stanza as a chorus if it matches 
+#    either explicit labels or repetition within the song.
 exploded_df["is_chorus"] = (
     exploded_df["stanzas"].apply(is_chorus) | 
     exploded_df.groupby(exploded_df.index)["stanzas"].transform(
