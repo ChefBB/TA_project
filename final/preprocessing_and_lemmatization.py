@@ -11,7 +11,20 @@ df = pd.read_csv(path + "sampled_dataset.csv")
 #Function to clean the lyrics strings from words inside square brackets that are not keywords for the stanza splitting
 import re
 keep_pattern = r"\[(Chorus|Verse|Bridge|Intro|Outro|Hook|Prehook|Posthook|Introduction|Interlude|Coda|Conclusion|Refrain).\]*"
+
 def clean_lyrics(lyrics):
+    """
+    Cleans song lyrics by removing specific bracketed text based on a pattern.
+
+    This function uses regular expressions to identify text within square brackets (e.g., "[Chorus]"). 
+    It removes the text unless it matches a predefined pattern (`keep_pattern`), in which case it retains the text.
+
+    Args:
+        lyrics (str): A string containing the song lyrics to be cleaned.
+
+    Returns:
+        str: The cleaned lyrics with unwanted bracketed text removed.
+        """
     cleaned_lyrics = re.sub(r"\[.*?\]", lambda match: match.group(0) if re.match(keep_pattern, match.group(0)) else "", lyrics)
     return cleaned_lyrics
 
@@ -22,7 +35,7 @@ df['cleaned_lyrics'] = df['lyrics'].apply(clean_lyrics)
 def process_lyric(ly):
     """
     Processes a song lyric by splitting it into sections based on various patterns and cleaning up whitespace.
-    The function identifies and splits by specific section labels such as Verse, Chorus, Intro, etc. and further
+    The function identifies and splits by specific stanza labels such as Verse, Chorus, Intro, etc. and further
     splits the lyrics to isolate individual stanzas. Empty sections are removed.
 
     Args:
@@ -74,7 +87,7 @@ def clean_list(lyrics_list):
     - Strings that are too short (less than or equal to 20 characters).
 
     Args:
-        lyrics_list (list): A list of strings representing the lyrics of a song or sections of a song.
+        lyrics_list (list): A list of strings representing the sections of a song.
 
     Returns:
         list: A cleaned list of strings where uninformative lines have been removed. 
@@ -202,8 +215,8 @@ exploded_df.rename(
     inplace= True
 )
 
-#Download the lemmatized_df 
-exploded_df.to_csv(path + 'def_lemmatized_df.csv', index= False)
+#Download the lemmatized_df; this step produces a lemmatized df 
+#exploded_df.to_csv(path + 'def_lemmatized_df.csv', index= False)
 
 
 
