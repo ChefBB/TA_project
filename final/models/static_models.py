@@ -18,8 +18,8 @@ from sklearn.metrics import classification_report
 from graphs import confusion_matrix_graph, plot_class_wise_accuracy
 
 # Reading the dataframe
-path = ".\\models\\data"
-df = pd.read_csv(path + "\\lab_lem_merge.csv")
+path = ".\\models\\data\\"
+df = pd.read_csv(path + "lab_lem_merge.csv")
 
 df['lemmatized_stanzas'] = df['lemmatized_stanzas'].apply(ast.literal_eval)
 
@@ -143,7 +143,7 @@ joblib.dump(
 )
 '''
 
-rf_path = "C:\\Users\\cinna\\Desktop\\static_models\\random_forest.pkl"
+rf_path = ".\\models\\static_models\\rf_model.pkl"
 rf_loaded = joblib.load(rf_path)
 
 # Predict on the test set
