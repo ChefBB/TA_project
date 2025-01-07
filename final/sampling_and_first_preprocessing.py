@@ -2,7 +2,6 @@
 
 import pandas as pd
 
-
 path = '.\\models\\data\\'
 df = pd.read_csv(path + 'en_lyrics.csv')
 
@@ -23,11 +22,11 @@ df['tag'] = df[
  ].idxmax(axis=1)
 
 
-#sampling 
+#sampling by keeping a proper proportion of the "tag" variable
 df = df.groupby('tag').sample(frac=0.05, random_state=42)
 
 
-# remove misc values, write df
+# remove misc values
 df = df.loc[df['tag'] != 'misc']
 
 
@@ -40,8 +39,8 @@ df = pd.concat(
  ).drop(columns= 'tag')
 
 
-# save sampled dataset 
-# df.to_csv(path + 'sampled_dataset.csv', index= False)
+# save sampled dataset; there's already the "sampled_dataset" in the "data" folder
+#df.to_csv(path + 'sampled_dataset.csv', index= False)
 
 
 
