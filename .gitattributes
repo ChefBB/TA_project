@@ -1,2 +1,5 @@
 *.large_file_extension filter=lfs diff=lfs merge=lfs -text
+<<<<<<< HEAD
 final/models/static_models/best_rf_pipeline.pkl filter=lfs diff=lfs merge=lfs -text
+=======
+>>>>>>> b325ae40012d358e1d936856b613844cb9cac9ba
